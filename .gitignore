@@ -104,3 +104,4 @@ iOSInjectionProject/
 
 ### etc ###
 .DS_Store
+!*.xcodeproj/project.xcworkspace/xcuserdata
