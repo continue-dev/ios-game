@@ -3,19 +3,19 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		10377E6ED351259EA933B162 /* Pods_slokaraUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2089619EA01BEF941BD01E4D /* Pods_slokaraUITests.framework */; };
 		10AC9BB6B1EB3931051A36DF /* Pods_slokaraTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C900A38A419D57E2BDEECE08 /* Pods_slokaraTests.framework */; };
 		9821B32E2378560300CF964D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9821B32D2378560300CF964D /* AppDelegate.swift */; };
-		9821B3322378560300CF964D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9821B3312378560300CF964D /* ViewController.swift */; };
-		9821B3352378560300CF964D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9821B3332378560300CF964D /* Main.storyboard */; };
 		9821B3372378560400CF964D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9821B3362378560400CF964D /* Assets.xcassets */; };
 		9821B33A2378560400CF964D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9821B3382378560400CF964D /* LaunchScreen.storyboard */; };
 		9821B3452378560400CF964D /* slokaraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9821B3442378560400CF964D /* slokaraTests.swift */; };
 		9821B3502378560400CF964D /* slokaraUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9821B34F2378560400CF964D /* slokaraUITests.swift */; };
+		98B652A7237DA9E200C4A5B5 /* Title.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98B652A6237DA9E200C4A5B5 /* Title.storyboard */; };
+		98B652A9237DA9F300C4A5B5 /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B652A8237DA9F300C4A5B5 /* TitleViewController.swift */; };
 		F7CC822837DDD1BD79B885D4 /* Pods_slokara.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB3FE3407287E8AE2D0827B2 /* Pods_slokara.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,8 +42,6 @@
 		2089619EA01BEF941BD01E4D /* Pods_slokaraUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_slokaraUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9821B32A2378560300CF964D /* slokara.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = slokara.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9821B32D2378560300CF964D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9821B3312378560300CF964D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		9821B3342378560300CF964D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9821B3362378560400CF964D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9821B3392378560400CF964D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9821B33B2378560400CF964D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -53,6 +51,8 @@
 		9821B34B2378560400CF964D /* slokaraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = slokaraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9821B34F2378560400CF964D /* slokaraUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = slokaraUITests.swift; sourceTree = "<group>"; };
 		9821B3512378560400CF964D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		98B652A6237DA9E200C4A5B5 /* Title.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Title.storyboard; sourceTree = "<group>"; };
+		98B652A8237DA9F300C4A5B5 /* TitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
 		9B5C144CA3C74AF3E8B91662 /* Pods-slokara.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-slokara.debug.xcconfig"; path = "Target Support Files/Pods-slokara/Pods-slokara.debug.xcconfig"; sourceTree = "<group>"; };
 		A289E1AEE7FA019E770B30B7 /* Pods-slokaraUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-slokaraUITests.release.xcconfig"; path = "Target Support Files/Pods-slokaraUITests/Pods-slokaraUITests.release.xcconfig"; sourceTree = "<group>"; };
 		BB3FE3407287E8AE2D0827B2 /* Pods_slokara.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_slokara.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,7 +109,6 @@
 				E621BD475B31DAB477190F56 /* Pods-slokaraUITests.debug.xcconfig */,
 				A289E1AEE7FA019E770B30B7 /* Pods-slokaraUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -138,9 +137,8 @@
 		9821B32C2378560300CF964D /* slokara */ = {
 			isa = PBXGroup;
 			children = (
+				98B652A5237DA9CE00C4A5B5 /* Title */,
 				9821B32D2378560300CF964D /* AppDelegate.swift */,
-				9821B3312378560300CF964D /* ViewController.swift */,
-				9821B3332378560300CF964D /* Main.storyboard */,
 				9821B3362378560400CF964D /* Assets.xcassets */,
 				9821B3382378560400CF964D /* LaunchScreen.storyboard */,
 				9821B33B2378560400CF964D /* Info.plist */,
@@ -164,6 +162,15 @@
 				9821B3512378560400CF964D /* Info.plist */,
 			);
 			path = slokaraUITests;
+			sourceTree = "<group>";
+		};
+		98B652A5237DA9CE00C4A5B5 /* Title */ = {
+			isa = PBXGroup;
+			children = (
+				98B652A6237DA9E200C4A5B5 /* Title.storyboard */,
+				98B652A8237DA9F300C4A5B5 /* TitleViewController.swift */,
+			);
+			path = Title;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,8 +283,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9821B33A2378560400CF964D /* LaunchScreen.storyboard in Resources */,
+				98B652A7237DA9E200C4A5B5 /* Title.storyboard in Resources */,
 				9821B3372378560400CF964D /* Assets.xcassets in Resources */,
-				9821B3352378560300CF964D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,8 +412,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9821B3322378560300CF964D /* ViewController.swift in Sources */,
 				9821B32E2378560300CF964D /* AppDelegate.swift in Sources */,
+				98B652A9237DA9F300C4A5B5 /* TitleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,14 +449,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		9821B3332378560300CF964D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9821B3342378560300CF964D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		9821B3382378560400CF964D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
