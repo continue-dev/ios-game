@@ -32,7 +32,7 @@
                                 <color key="trackTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </progressView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="grade_hp" translatesAutoresizingMaskIntoConstraints="NO" id="WJX-Q3-dYD">
-                                <rect key="frame" x="0.0" y="10" width="264.5" height="94.5"/>
+                                <rect key="frame" x="0.0" y="10" width="264.50000000000011" height="94.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="WJX-Q3-dYD" secondAttribute="height" multiplier="201:72" id="5Pw-61-ppm"/>
                                 </constraints>
@@ -209,6 +209,19 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ONa-V0-476"/>
                     </view>
+                    <connections>
+                        <outlet property="coinsLabel" destination="fdi-uo-vhS" id="fDD-QB-ywH"/>
+                        <outlet property="gradeLabel" destination="0oQ-i0-aTc" id="J4u-L1-y7p"/>
+                        <outlet property="hpProgressView" destination="Q9M-Za-WXy" id="FQO-aZ-BcQ"/>
+                        <outlet property="kochoButton" destination="i6i-Di-WZj" id="aIl-a8-R6U"/>
+                        <outlet property="kodoButton" destination="LJU-sd-xLJ" id="laq-8m-9V4"/>
+                        <outlet property="lockerButton" destination="pcj-GC-eEE" id="lx0-6S-feF"/>
+                        <outlet property="rankLabel" destination="JyS-WN-At0" id="3mW-M6-RGn"/>
+                        <outlet property="roomButton" destination="Z5S-Xm-emI" id="q4X-ZE-B6q"/>
+                        <outlet property="ryoButton" destination="2Rp-7R-XfM" id="vpx-ac-ZHn"/>
+                        <outlet property="shopButton" destination="uwR-Rl-Xnm" id="dyx-S9-X1P"/>
+                        <outlet property="taniLabel" destination="QBD-CL-zj7" id="dfA-xq-FWW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZ1-b3-6np" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
