@@ -32,7 +32,7 @@
                                 <color key="trackTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </progressView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="grade_hp" translatesAutoresizingMaskIntoConstraints="NO" id="WJX-Q3-dYD">
-                                <rect key="frame" x="0.0" y="10" width="264.50000000000011" height="94.5"/>
+                                <rect key="frame" x="0.0" y="10" width="264.5" height="94.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="WJX-Q3-dYD" secondAttribute="height" multiplier="201:72" id="5Pw-61-ppm"/>
                                 </constraints>
