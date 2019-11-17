@@ -144,6 +144,12 @@
                                 <color key="textColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HP5/100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydo-ug-HYm">
+                                <rect key="frame" x="191" y="57.5" width="42" height="12"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -190,6 +196,7 @@
                             <constraint firstItem="REv-uF-C4z" firstAttribute="top" secondItem="WJX-Q3-dYD" secondAttribute="bottom" constant="3" id="apy-HS-Rrr"/>
                             <constraint firstItem="WJX-Q3-dYD" firstAttribute="leading" secondItem="ONa-V0-476" secondAttribute="leading" id="cQf-lA-HZg"/>
                             <constraint firstItem="pFQ-PP-NBm" firstAttribute="height" secondItem="ONa-V0-476" secondAttribute="height" multiplier="1:5" id="dRM-fr-yek"/>
+                            <constraint firstItem="ydo-ug-HYm" firstAttribute="trailing" secondItem="Q9M-Za-WXy" secondAttribute="trailing" constant="-2" id="e5h-aA-9Xj"/>
                             <constraint firstItem="WJX-Q3-dYD" firstAttribute="height" secondItem="ONa-V0-476" secondAttribute="height" multiplier="1:6" id="eaT-UG-Cml"/>
                             <constraint firstItem="QBD-CL-zj7" firstAttribute="centerY" secondItem="REv-uF-C4z" secondAttribute="centerY" id="jrx-UT-0TT"/>
                             <constraint firstItem="QBD-CL-zj7" firstAttribute="leading" secondItem="REv-uF-C4z" secondAttribute="trailing" constant="2" id="kDV-K1-Sey"/>
@@ -206,12 +213,14 @@
                             <constraint firstItem="fFH-FV-9In" firstAttribute="top" secondItem="HLl-PH-4oG" secondAttribute="top" id="tWs-Cg-rEd"/>
                             <constraint firstItem="hkI-Pj-ZUc" firstAttribute="top" secondItem="WJX-Q3-dYD" secondAttribute="top" id="vgo-JW-mfD"/>
                             <constraint firstItem="9WL-BH-hUG" firstAttribute="top" secondItem="WJX-Q3-dYD" secondAttribute="top" id="vpo-NW-r9m"/>
+                            <constraint firstItem="ydo-ug-HYm" firstAttribute="centerY" secondItem="Q9M-Za-WXy" secondAttribute="centerY" constant="11" id="yuu-hs-6B3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ONa-V0-476"/>
                     </view>
                     <connections>
                         <outlet property="coinsLabel" destination="fdi-uo-vhS" id="fDD-QB-ywH"/>
                         <outlet property="gradeLabel" destination="0oQ-i0-aTc" id="J4u-L1-y7p"/>
+                        <outlet property="hpLabel" destination="ydo-ug-HYm" id="zuC-o9-iWH"/>
                         <outlet property="hpProgressView" destination="Q9M-Za-WXy" id="FQO-aZ-BcQ"/>
                         <outlet property="kochoButton" destination="i6i-Di-WZj" id="aIl-a8-R6U"/>
                         <outlet property="kodoButton" destination="LJU-sd-xLJ" id="laq-8m-9V4"/>

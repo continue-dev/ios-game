@@ -6,6 +6,8 @@ final class HomeViewModel {
     private let disposeBag = DisposeBag()
     
     let hpProgress = BehaviorRelay<Float>(value: 0)
+    let currentHp = BehaviorRelay<Int>(value: 0)
+    let maxHp = BehaviorRelay<Int>(value: 1)
     let currentCions = BehaviorRelay<Int>(value: 0)
     let currentTani = BehaviorRelay<Int>(value: 0)
     let currentRank = BehaviorRelay<Int>(value: 1)
@@ -55,6 +57,8 @@ final class HomeViewModel {
             }).disposed(by: disposeBag)
         Observable.zip(self.homeModel.maxHp, self.homeModel.currentHp).subscribe(onNext: { [weak self] max, current in
             self?.hpProgress.accept(Float(current) / Float(max))
+            self?.currentHp.accept(current)
+            self?.maxHp.accept(max)
             }).disposed(by: disposeBag)
         }
 }

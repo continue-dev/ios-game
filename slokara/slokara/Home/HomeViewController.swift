@@ -8,6 +8,7 @@ class HomeViewController: UIViewController {
     @IBOutlet private weak var taniLabel: UILabel!
     @IBOutlet private weak var rankLabel: UILabel!
     @IBOutlet private weak var gradeLabel: UILabel!
+    @IBOutlet private weak var hpLabel: UILabel!
     @IBOutlet private weak var kochoButton: UIButton!
     @IBOutlet private weak var kodoButton: UIButton!
     @IBOutlet private weak var ryoButton: UIButton!
@@ -30,6 +31,11 @@ class HomeViewController: UIViewController {
         
         viewModel.hpProgress
             .bind(to: hpProgressView.rx.progress)
+            .disposed(by: dispodeBag)
+        
+        BehaviorRelay.zip(viewModel.currentHp, viewModel.maxHp)
+            .map { "HP:\($0)/\($1)" }
+            .bind(to: hpLabel.rx.text)
             .disposed(by: dispodeBag)
         
         viewModel.currentCions
