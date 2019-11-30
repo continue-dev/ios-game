@@ -14,13 +14,14 @@
 		9821B33A2378560400CF964D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9821B3382378560400CF964D /* LaunchScreen.storyboard */; };
 		9821B3452378560400CF964D /* slokaraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9821B3442378560400CF964D /* slokaraTests.swift */; };
 		9821B3502378560400CF964D /* slokaraUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9821B34F2378560400CF964D /* slokaraUITests.swift */; };
+		987F28A82392BCC800131C27 /* Oranienbaum.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 987F28A72392BCC800131C27 /* Oranienbaum.ttf */; };
 		98B652A7237DA9E200C4A5B5 /* Title.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98B652A6237DA9E200C4A5B5 /* Title.storyboard */; };
 		98B652A9237DA9F300C4A5B5 /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B652A8237DA9F300C4A5B5 /* TitleViewController.swift */; };
 		98B652AC237DAC3200C4A5B5 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98B652AB237DAC3200C4A5B5 /* Home.storyboard */; };
 		98B652AE237DAC4900C4A5B5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B652AD237DAC4900C4A5B5 /* HomeViewController.swift */; };
 		98B652B0237DAC6500C4A5B5 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B652AF237DAC6500C4A5B5 /* HomeViewModel.swift */; };
 		98B652B2237DACCA00C4A5B5 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B652B1237DACCA00C4A5B5 /* HomeModel.swift */; };
-		F47D662F23926C88009BA0EA /* gamefont.otf in Resources */ = {isa = PBXBuildFile; fileRef = F47D662E23926C88009BA0EA /* gamefont.otf */; };
+		F47D662F23926C88009BA0EA /* 07LogoTypeGothic7.otf in Resources */ = {isa = PBXBuildFile; fileRef = F47D662E23926C88009BA0EA /* 07LogoTypeGothic7.otf */; };
 		F7CC822837DDD1BD79B885D4 /* Pods_slokara.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB3FE3407287E8AE2D0827B2 /* Pods_slokara.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		9821B34B2378560400CF964D /* slokaraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = slokaraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9821B34F2378560400CF964D /* slokaraUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = slokaraUITests.swift; sourceTree = "<group>"; };
 		9821B3512378560400CF964D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		987F28A72392BCC800131C27 /* Oranienbaum.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Oranienbaum.ttf; sourceTree = "<group>"; };
 		98B652A6237DA9E200C4A5B5 /* Title.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Title.storyboard; sourceTree = "<group>"; };
 		98B652A8237DA9F300C4A5B5 /* TitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
 		98B652AB237DAC3200C4A5B5 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
@@ -68,7 +70,7 @@
 		C900A38A419D57E2BDEECE08 /* Pods_slokaraTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_slokaraTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E621BD475B31DAB477190F56 /* Pods-slokaraUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-slokaraUITests.debug.xcconfig"; path = "Target Support Files/Pods-slokaraUITests/Pods-slokaraUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		EDD5E91303E38F5B9B9DEDE4 /* Pods-slokara.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-slokara.release.xcconfig"; path = "Target Support Files/Pods-slokara/Pods-slokara.release.xcconfig"; sourceTree = "<group>"; };
-		F47D662E23926C88009BA0EA /* gamefont.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gamefont.otf; sourceTree = "<group>"; };
+		F47D662E23926C88009BA0EA /* 07LogoTypeGothic7.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 07LogoTypeGothic7.otf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,7 +155,7 @@
 				9821B3362378560400CF964D /* Assets.xcassets */,
 				9821B3382378560400CF964D /* LaunchScreen.storyboard */,
 				9821B33B2378560400CF964D /* Info.plist */,
-				F47D662E23926C88009BA0EA /* gamefont.otf */,
+				987F28A62392BBC900131C27 /* Fonts */,
 			);
 			path = slokara;
 			sourceTree = "<group>";
@@ -174,6 +176,15 @@
 				9821B3512378560400CF964D /* Info.plist */,
 			);
 			path = slokaraUITests;
+			sourceTree = "<group>";
+		};
+		987F28A62392BBC900131C27 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F47D662E23926C88009BA0EA /* 07LogoTypeGothic7.otf */,
+				987F28A72392BCC800131C27 /* Oranienbaum.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		98B652A5237DA9CE00C4A5B5 /* Title */ = {
@@ -307,8 +318,9 @@
 			files = (
 				9821B33A2378560400CF964D /* LaunchScreen.storyboard in Resources */,
 				98B652A7237DA9E200C4A5B5 /* Title.storyboard in Resources */,
+				987F28A82392BCC800131C27 /* Oranienbaum.ttf in Resources */,
 				9821B3372378560400CF964D /* Assets.xcassets in Resources */,
-				F47D662F23926C88009BA0EA /* gamefont.otf in Resources */,
+				F47D662F23926C88009BA0EA /* 07LogoTypeGothic7.otf in Resources */,
 				98B652AC237DAC3200C4A5B5 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
