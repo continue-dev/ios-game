@@ -15,6 +15,7 @@
 		9821B3452378560400CF964D /* slokaraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9821B3442378560400CF964D /* slokaraTests.swift */; };
 		9821B3502378560400CF964D /* slokaraUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9821B34F2378560400CF964D /* slokaraUITests.swift */; };
 		987F28A82392BCC800131C27 /* Oranienbaum.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 987F28A72392BCC800131C27 /* Oranienbaum.ttf */; };
+		987F28AB2392BD7F00131C27 /* CommonFontLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987F28AA2392BD7F00131C27 /* CommonFontLabel.swift */; };
 		98B652A7237DA9E200C4A5B5 /* Title.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98B652A6237DA9E200C4A5B5 /* Title.storyboard */; };
 		98B652A9237DA9F300C4A5B5 /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B652A8237DA9F300C4A5B5 /* TitleViewController.swift */; };
 		98B652AC237DAC3200C4A5B5 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98B652AB237DAC3200C4A5B5 /* Home.storyboard */; };
@@ -58,6 +59,7 @@
 		9821B34F2378560400CF964D /* slokaraUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = slokaraUITests.swift; sourceTree = "<group>"; };
 		9821B3512378560400CF964D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		987F28A72392BCC800131C27 /* Oranienbaum.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Oranienbaum.ttf; sourceTree = "<group>"; };
+		987F28AA2392BD7F00131C27 /* CommonFontLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonFontLabel.swift; sourceTree = "<group>"; };
 		98B652A6237DA9E200C4A5B5 /* Title.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Title.storyboard; sourceTree = "<group>"; };
 		98B652A8237DA9F300C4A5B5 /* TitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
 		98B652AB237DAC3200C4A5B5 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 			children = (
 				98B652A5237DA9CE00C4A5B5 /* Title */,
 				98B652AA237DAC0E00C4A5B5 /* Home */,
+				987F28A92392BD2900131C27 /* CustomViews */,
 				9821B32D2378560300CF964D /* AppDelegate.swift */,
 				9821B3362378560400CF964D /* Assets.xcassets */,
 				9821B3382378560400CF964D /* LaunchScreen.storyboard */,
@@ -185,6 +188,14 @@
 				987F28A72392BCC800131C27 /* Oranienbaum.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		987F28A92392BD2900131C27 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				987F28AA2392BD7F00131C27 /* CommonFontLabel.swift */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 		98B652A5237DA9CE00C4A5B5 /* Title */ = {
@@ -451,6 +462,7 @@
 			files = (
 				9821B32E2378560300CF964D /* AppDelegate.swift in Sources */,
 				98B652A9237DA9F300C4A5B5 /* TitleViewController.swift in Sources */,
+				987F28AB2392BD7F00131C27 /* CommonFontLabel.swift in Sources */,
 				98B652AE237DAC4900C4A5B5 /* HomeViewController.swift in Sources */,
 				98B652B2237DACCA00C4A5B5 /* HomeModel.swift in Sources */,
 				98B652B0237DAC6500C4A5B5 /* HomeViewModel.swift in Sources */,
