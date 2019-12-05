@@ -2,13 +2,9 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class HomeViewController: UIViewController {
-    @IBOutlet private weak var hpProgressView: UIProgressView!
-    @IBOutlet private weak var coinsLabel: UILabel!
-    @IBOutlet private weak var taniLabel: UILabel!
-    @IBOutlet private weak var rankLabel: UILabel!
-    @IBOutlet private weak var gradeLabel: UILabel!
-    @IBOutlet private weak var hpLabel: UILabel!
+class HomeViewController: UIViewController, NavigationChildViewController {
+    
+    @IBOutlet weak var topSpacer: UIView!
     @IBOutlet private weak var kochoButton: UIButton!
     @IBOutlet private weak var kodoButton: UIButton!
     @IBOutlet private weak var ryoButton: UIButton!
@@ -28,34 +24,6 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        viewModel.hpProgress
-            .bind(to: hpProgressView.rx.progress)
-            .disposed(by: dispodeBag)
-        
-        BehaviorRelay.zip(viewModel.currentHp, viewModel.maxHp)
-            .map { "HP:\($0)/\($1)" }
-            .bind(to: hpLabel.rx.text)
-            .disposed(by: dispodeBag)
-        
-        viewModel.currentCions
-            .map{ String($0) }
-            .bind(to: coinsLabel.rx.text)
-            .disposed(by: dispodeBag)
-        
-        viewModel.currentTani
-            .map{ String($0) }
-            .bind(to: taniLabel.rx.text)
-            .disposed(by: dispodeBag)
-        
-        viewModel.currentRank
-            .map{ String($0) }
-            .bind(to: rankLabel.rx.text)
-            .disposed(by: dispodeBag)
-        
-        viewModel.currentGrade
-            .bind(to: gradeLabel.rx.text)
-            .disposed(by: dispodeBag)
         
         viewModel.transitionToFinalButtle
             .bind(to: transitionToFinalButtle)
@@ -88,6 +56,12 @@ extension HomeViewController {
         return Binder(self) { me, _ in
             // TODO: TransitionToNextScreen
             print("FinalButtle")
+            
+            // 仮の画面遷移（遷移先がわかりやすい様にTOPのマージン部分を赤にしている）
+            let navigation = self.parent as! NavigationViewController
+            let homeVC = UIStoryboard(name: "Home", bundle: nil).instantiateInitialViewController() as! NavigationChildViewController
+            homeVC.title = "ホーム"
+            navigation.push(homeVC, animate: true)
         }
     }
     
@@ -95,6 +69,10 @@ extension HomeViewController {
         return Binder(self) { me, _ in
             // TODO: TransitionToNextScreen
             print("BossButtle")
+            
+            // 仮の画面遷移（前の画面に戻る）
+            let navigation = self.parent as! NavigationViewController
+            navigation.popViewController(animate: true)
         }
     }
     

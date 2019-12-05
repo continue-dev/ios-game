@@ -54,7 +54,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Sm-US-Ks6">
                                         <rect key="frame" x="0.0" y="39.333333333333329" width="375" height="52.666666666666671"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title_bar" translatesAutoresizingMaskIntoConstraints="NO" id="BdO-ep-6xn">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title_bar" translatesAutoresizingMaskIntoConstraints="NO" id="BdO-ep-6xn">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="52.666666666666664"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="EaH-Ee-eE4" customClass="CommonFontLabel" customModule="slokara" customModuleProvider="target">

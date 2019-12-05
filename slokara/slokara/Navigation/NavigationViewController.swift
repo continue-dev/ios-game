@@ -28,6 +28,7 @@ class NavigationViewController: UIViewController {
     private(set) var navigationChildViewControllers = [NavigationChildViewController]()
     
     private lazy var viewModel = NavigationViewModel(backButtonTapped: backButton.rx.tap.asObservable())
+    private var _navigationChildViewControllers: BehaviorRelay<[NavigationChildViewController]>!
     private let dispodeBag = DisposeBag()
 
     
@@ -40,6 +41,7 @@ class NavigationViewController: UIViewController {
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         topSpacer.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.safeAreaInsets.top)
+        applyRootTopSpacer()
         applyGradientColor(view: topSpacer)
     }
     
@@ -78,7 +80,12 @@ class NavigationViewController: UIViewController {
             .bind(to: gradeLabel.rx.text)
             .disposed(by: dispodeBag)
         
-        BehaviorRelay(value: navigationChildViewControllers)
+        viewModel.transtionBack
+            .bind(to: transitionToBack)
+            .disposed(by: dispodeBag)
+        
+        _navigationChildViewControllers = BehaviorRelay(value: navigationChildViewControllers)
+        _navigationChildViewControllers
             .map{ $0.count < 2 }
             .bind(to: backButton.rx.isHidden)
             .disposed(by: dispodeBag)
@@ -87,6 +94,7 @@ class NavigationViewController: UIViewController {
     func push(_ viewController: NavigationChildViewController, animate: Bool) {
         guard let current = currentViewController else { return }
         navigationChildViewControllers.append(viewController)
+        _navigationChildViewControllers.accept(navigationChildViewControllers)
         
         addChild(viewController)
         viewController.view.frame = self.container.frame
@@ -103,11 +111,17 @@ class NavigationViewController: UIViewController {
         } else {
             viewController.didMove(toParent: self)
         }
+        
+        let topFrame = CGRect(x: 0, y: 0, width: topSpacer.bounds.width, height: backButton.frame.maxY)
+        viewController.applyTopSpacer(frame: topFrame)
     }
     
     func popViewController(animate: Bool) {
         guard let current = currentViewController else { return }
+        guard navigationChildViewControllers.count >= 2 else { return }
         let previous = navigationChildViewControllers[navigationChildViewControllers.count - 2]
+        navigationChildViewControllers.removeLast()
+        _navigationChildViewControllers.accept(navigationChildViewControllers)
         
         addChild(previous)
         previous.view.frame = self.container.frame
@@ -157,5 +171,16 @@ extension NavigationViewController {
         gradientLayer.frame = view.bounds
 
         view.layer.insertSublayer(gradientLayer, at: 0)
+    }
+    
+    private func applyRootTopSpacer() {
+        let topFrame = CGRect(x: 0, y: 0, width: topSpacer.bounds.width, height: backButton.frame.maxY)
+        rootViewController.applyTopSpacer(frame: topFrame)
+    }
+    
+    private var transitionToBack: Binder<Void> {
+        return Binder(self) { [weak self] me, _ in
+            self?.popViewController(animate: true)
+        }
     }
 }

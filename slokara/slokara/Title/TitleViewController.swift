@@ -15,10 +15,9 @@ class TitleViewController: UIViewController {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let homeViewController = UIStoryboard(name: "Home", bundle: nil).instantiateInitialViewController() else { return }
-        let navigationController = UINavigationController(rootViewController: homeViewController)
+        guard let homeViewController = UIStoryboard(name: "Home", bundle: nil).instantiateInitialViewController() as? NavigationChildViewController else { return }
+        let navigationController = NavigationViewController.instantiate(rootViewController: homeViewController)
         navigationController.modalPresentationStyle = .fullScreen
-        navigationController.setNavigationBarHidden(true, animated: false)
         navigationController.modalTransitionStyle = .crossDissolve
         self.present(navigationController, animated: true, completion: nil)
     }

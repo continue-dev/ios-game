@@ -5,14 +5,6 @@ final class HomeViewModel {
     private let homeModel: HomeModelProtocol
     private let disposeBag = DisposeBag()
     
-    let hpProgress = BehaviorRelay<Float>(value: 0)
-    let currentHp = BehaviorRelay<Int>(value: 0)
-    let maxHp = BehaviorRelay<Int>(value: 1)
-    let currentCions = BehaviorRelay<Int>(value: 0)
-    let currentTani = BehaviorRelay<Int>(value: 0)
-    let currentRank = BehaviorRelay<Int>(value: 1)
-    let currentGrade = BehaviorRelay<String>(value: "幼等部")
-    
     let transitionToFinalButtle: Observable<Void>
     let transitionToBossButtle: Observable<Void>
     let transitionToStatus: Observable<Void>
@@ -42,23 +34,5 @@ final class HomeViewModel {
             .throttle(RxTimeInterval.seconds(1), latest: false, scheduler: MainScheduler.instance)
         self.transitionToTask = roomButtonTapped
             .throttle(RxTimeInterval.seconds(1), latest: false, scheduler: MainScheduler.instance)
-        
-        self.homeModel.numberOfCoins.subscribe(onNext: { [weak self] num in
-            self?.currentCions.accept(num)
-        }).disposed(by: disposeBag)
-        self.homeModel.numberOfTani.subscribe(onNext: { [weak self] num in
-            self?.currentTani.accept(num)
-            }).disposed(by: disposeBag)
-        self.homeModel.gradeName.subscribe(onNext: { [weak self] gradeName in
-            self?.currentGrade.accept(gradeName)
-            }).disposed(by: disposeBag)
-        self.homeModel.rankValue.subscribe(onNext: { [weak self] rankValue in
-            self?.currentRank.accept(rankValue)
-            }).disposed(by: disposeBag)
-        Observable.zip(self.homeModel.maxHp, self.homeModel.currentHp).subscribe(onNext: { [weak self] max, current in
-            self?.hpProgress.accept(Float(current) / Float(max))
-            self?.currentHp.accept(current)
-            self?.maxHp.accept(max)
-            }).disposed(by: disposeBag)
-        }
+    }
 }
