@@ -25,10 +25,14 @@ class NavigationViewController: UIViewController {
             navigationChildViewControllers.append(rootViewController)
         }
     }
-    private(set) var navigationChildViewControllers = [NavigationChildViewController]()
+    private(set) var navigationChildViewControllers = [NavigationChildViewController]() {
+        didSet{
+            _navigationChildViewControllers.accept(navigationChildViewControllers)
+        }
+    }
     
     private lazy var viewModel = NavigationViewModel(backButtonTapped: backButton.rx.tap.asObservable())
-    private var _navigationChildViewControllers: BehaviorRelay<[NavigationChildViewController]>!
+    private lazy var _navigationChildViewControllers = BehaviorRelay(value: navigationChildViewControllers)
     private let dispodeBag = DisposeBag()
 
     
@@ -84,17 +88,25 @@ class NavigationViewController: UIViewController {
             .bind(to: transitionToBack)
             .disposed(by: dispodeBag)
         
-        _navigationChildViewControllers = BehaviorRelay(value: navigationChildViewControllers)
         _navigationChildViewControllers
             .map{ $0.count < 2 }
             .bind(to: backButton.rx.isHidden)
+            .disposed(by: dispodeBag)
+        
+        _navigationChildViewControllers
+            .map{ $0.last?.title == nil }
+            .bind(to: titleView.rx.isHidden)
+            .disposed(by: dispodeBag)
+        
+        _navigationChildViewControllers
+            .map{ $0.last?.title }
+            .bind(to: titleLabel.rx.text)
             .disposed(by: dispodeBag)
     }
     
     func push(_ viewController: NavigationChildViewController, animate: Bool) {
         guard let current = currentViewController else { return }
         navigationChildViewControllers.append(viewController)
-        _navigationChildViewControllers.accept(navigationChildViewControllers)
         
         addChild(viewController)
         viewController.view.frame = self.container.frame
@@ -121,7 +133,6 @@ class NavigationViewController: UIViewController {
         guard navigationChildViewControllers.count >= 2 else { return }
         let previous = navigationChildViewControllers[navigationChildViewControllers.count - 2]
         navigationChildViewControllers.removeLast()
-        _navigationChildViewControllers.accept(navigationChildViewControllers)
         
         addChild(previous)
         previous.view.frame = self.container.frame
