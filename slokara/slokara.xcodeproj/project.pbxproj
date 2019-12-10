@@ -14,6 +14,9 @@
 		9821B33A2378560400CF964D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9821B3382378560400CF964D /* LaunchScreen.storyboard */; };
 		9821B3452378560400CF964D /* slokaraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9821B3442378560400CF964D /* slokaraTests.swift */; };
 		9821B3502378560400CF964D /* slokaraUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9821B34F2378560400CF964D /* slokaraUITests.swift */; };
+		98367111239810D100F590ED /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98367110239810D100F590ED /* NavigationViewController.swift */; };
+		98367113239810E000F590ED /* Navigation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98367112239810E000F590ED /* Navigation.storyboard */; };
+		98367115239810F200F590ED /* NavigationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98367114239810F200F590ED /* NavigationViewModel.swift */; };
 		987F28A82392BCC800131C27 /* Oranienbaum.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 987F28A72392BCC800131C27 /* Oranienbaum.ttf */; };
 		987F28AB2392BD7F00131C27 /* CommonFontLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987F28AA2392BD7F00131C27 /* CommonFontLabel.swift */; };
 		98B652A7237DA9E200C4A5B5 /* Title.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98B652A6237DA9E200C4A5B5 /* Title.storyboard */; };
@@ -22,6 +25,9 @@
 		98B652AE237DAC4900C4A5B5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B652AD237DAC4900C4A5B5 /* HomeViewController.swift */; };
 		98B652B0237DAC6500C4A5B5 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B652AF237DAC6500C4A5B5 /* HomeViewModel.swift */; };
 		98B652B2237DACCA00C4A5B5 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B652B1237DACCA00C4A5B5 /* HomeModel.swift */; };
+		98D049782398161B00CA868A /* NavigationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D049772398161B00CA868A /* NavigationModel.swift */; };
+		98D0497A2398166900CA868A /* Grade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D049792398166900CA868A /* Grade.swift */; };
+		98D0497C239953AF00CA868A /* NavigationChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D0497B239953AF00CA868A /* NavigationChildViewController.swift */; };
 		F47D662F23926C88009BA0EA /* 07LogoTypeGothic7.otf in Resources */ = {isa = PBXBuildFile; fileRef = F47D662E23926C88009BA0EA /* 07LogoTypeGothic7.otf */; };
 		F7CC822837DDD1BD79B885D4 /* Pods_slokara.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB3FE3407287E8AE2D0827B2 /* Pods_slokara.framework */; };
 /* End PBXBuildFile section */
@@ -58,6 +64,9 @@
 		9821B34B2378560400CF964D /* slokaraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = slokaraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9821B34F2378560400CF964D /* slokaraUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = slokaraUITests.swift; sourceTree = "<group>"; };
 		9821B3512378560400CF964D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		98367110239810D100F590ED /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
+		98367112239810E000F590ED /* Navigation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Navigation.storyboard; sourceTree = "<group>"; };
+		98367114239810F200F590ED /* NavigationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewModel.swift; sourceTree = "<group>"; };
 		987F28A72392BCC800131C27 /* Oranienbaum.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Oranienbaum.ttf; sourceTree = "<group>"; };
 		987F28AA2392BD7F00131C27 /* CommonFontLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonFontLabel.swift; sourceTree = "<group>"; };
 		98B652A6237DA9E200C4A5B5 /* Title.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Title.storyboard; sourceTree = "<group>"; };
@@ -66,6 +75,9 @@
 		98B652AD237DAC4900C4A5B5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		98B652AF237DAC6500C4A5B5 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		98B652B1237DACCA00C4A5B5 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		98D049772398161B00CA868A /* NavigationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationModel.swift; sourceTree = "<group>"; };
+		98D049792398166900CA868A /* Grade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grade.swift; sourceTree = "<group>"; };
+		98D0497B239953AF00CA868A /* NavigationChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationChildViewController.swift; sourceTree = "<group>"; };
 		9B5C144CA3C74AF3E8B91662 /* Pods-slokara.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-slokara.debug.xcconfig"; path = "Target Support Files/Pods-slokara/Pods-slokara.debug.xcconfig"; sourceTree = "<group>"; };
 		A289E1AEE7FA019E770B30B7 /* Pods-slokaraUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-slokaraUITests.release.xcconfig"; path = "Target Support Files/Pods-slokaraUITests/Pods-slokaraUITests.release.xcconfig"; sourceTree = "<group>"; };
 		BB3FE3407287E8AE2D0827B2 /* Pods_slokara.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_slokara.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,10 +163,12 @@
 		9821B32C2378560300CF964D /* slokara */ = {
 			isa = PBXGroup;
 			children = (
+				98D049762398105200CA868A /* Navigation */,
 				98B652A5237DA9CE00C4A5B5 /* Title */,
 				98B652AA237DAC0E00C4A5B5 /* Home */,
 				987F28A92392BD2900131C27 /* CustomViews */,
 				9821B32D2378560300CF964D /* AppDelegate.swift */,
+				98D049792398166900CA868A /* Grade.swift */,
 				9821B3362378560400CF964D /* Assets.xcassets */,
 				9821B3382378560400CF964D /* LaunchScreen.storyboard */,
 				9821B33B2378560400CF964D /* Info.plist */,
@@ -194,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				987F28AA2392BD7F00131C27 /* CommonFontLabel.swift */,
+				98D0497B239953AF00CA868A /* NavigationChildViewController.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -216,6 +231,17 @@
 				98B652B1237DACCA00C4A5B5 /* HomeModel.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		98D049762398105200CA868A /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				98367110239810D100F590ED /* NavigationViewController.swift */,
+				98367112239810E000F590ED /* Navigation.storyboard */,
+				98367114239810F200F590ED /* NavigationViewModel.swift */,
+				98D049772398161B00CA868A /* NavigationModel.swift */,
+			);
+			path = Navigation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,6 +359,7 @@
 				9821B3372378560400CF964D /* Assets.xcassets in Resources */,
 				F47D662F23926C88009BA0EA /* 07LogoTypeGothic7.otf in Resources */,
 				98B652AC237DAC3200C4A5B5 /* Home.storyboard in Resources */,
+				98367113239810E000F590ED /* Navigation.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,11 +487,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98367115239810F200F590ED /* NavigationViewModel.swift in Sources */,
 				9821B32E2378560300CF964D /* AppDelegate.swift in Sources */,
+				98D0497C239953AF00CA868A /* NavigationChildViewController.swift in Sources */,
 				98B652A9237DA9F300C4A5B5 /* TitleViewController.swift in Sources */,
+				98D0497A2398166900CA868A /* Grade.swift in Sources */,
 				987F28AB2392BD7F00131C27 /* CommonFontLabel.swift in Sources */,
 				98B652AE237DAC4900C4A5B5 /* HomeViewController.swift in Sources */,
+				98D049782398161B00CA868A /* NavigationModel.swift in Sources */,
 				98B652B2237DACCA00C4A5B5 /* HomeModel.swift in Sources */,
+				98367111239810D100F590ED /* NavigationViewController.swift in Sources */,
 				98B652B0237DAC6500C4A5B5 /* HomeViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
