@@ -28,6 +28,8 @@
 		98D049782398161B00CA868A /* NavigationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D049772398161B00CA868A /* NavigationModel.swift */; };
 		98D0497A2398166900CA868A /* Grade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D049792398166900CA868A /* Grade.swift */; };
 		98D0497C239953AF00CA868A /* NavigationChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D0497B239953AF00CA868A /* NavigationChildViewController.swift */; };
+		F4605B6D23AA2DD600728D92 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4605B6C23AA2DD600728D92 /* TaskListViewController.swift */; };
+		F4605B6F23AA2E4700728D92 /* TaskList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4605B6E23AA2E4700728D92 /* TaskList.storyboard */; };
 		F47D662F23926C88009BA0EA /* 07LogoTypeGothic7.otf in Resources */ = {isa = PBXBuildFile; fileRef = F47D662E23926C88009BA0EA /* 07LogoTypeGothic7.otf */; };
 		F7CC822837DDD1BD79B885D4 /* Pods_slokara.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB3FE3407287E8AE2D0827B2 /* Pods_slokara.framework */; };
 /* End PBXBuildFile section */
@@ -84,6 +86,8 @@
 		C900A38A419D57E2BDEECE08 /* Pods_slokaraTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_slokaraTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E621BD475B31DAB477190F56 /* Pods-slokaraUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-slokaraUITests.debug.xcconfig"; path = "Target Support Files/Pods-slokaraUITests/Pods-slokaraUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		EDD5E91303E38F5B9B9DEDE4 /* Pods-slokara.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-slokara.release.xcconfig"; path = "Target Support Files/Pods-slokara/Pods-slokara.release.xcconfig"; sourceTree = "<group>"; };
+		F4605B6C23AA2DD600728D92 /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
+		F4605B6E23AA2E4700728D92 /* TaskList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TaskList.storyboard; sourceTree = "<group>"; };
 		F47D662E23926C88009BA0EA /* 07LogoTypeGothic7.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 07LogoTypeGothic7.otf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -163,6 +167,7 @@
 		9821B32C2378560300CF964D /* slokara */ = {
 			isa = PBXGroup;
 			children = (
+				F4605B6B23AA2D8100728D92 /* TaskList */,
 				98D049762398105200CA868A /* Navigation */,
 				98B652A5237DA9CE00C4A5B5 /* Title */,
 				98B652AA237DAC0E00C4A5B5 /* Home */,
@@ -242,6 +247,15 @@
 				98D049772398161B00CA868A /* NavigationModel.swift */,
 			);
 			path = Navigation;
+			sourceTree = "<group>";
+		};
+		F4605B6B23AA2D8100728D92 /* TaskList */ = {
+			isa = PBXGroup;
+			children = (
+				F4605B6C23AA2DD600728D92 /* TaskListViewController.swift */,
+				F4605B6E23AA2E4700728D92 /* TaskList.storyboard */,
+			);
+			path = TaskList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,6 +368,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9821B33A2378560400CF964D /* LaunchScreen.storyboard in Resources */,
+				F4605B6F23AA2E4700728D92 /* TaskList.storyboard in Resources */,
 				98B652A7237DA9E200C4A5B5 /* Title.storyboard in Resources */,
 				987F28A82392BCC800131C27 /* Oranienbaum.ttf in Resources */,
 				9821B3372378560400CF964D /* Assets.xcassets in Resources */,
@@ -492,6 +507,7 @@
 				98D0497C239953AF00CA868A /* NavigationChildViewController.swift in Sources */,
 				98B652A9237DA9F300C4A5B5 /* TitleViewController.swift in Sources */,
 				98D0497A2398166900CA868A /* Grade.swift in Sources */,
+				F4605B6D23AA2DD600728D92 /* TaskListViewController.swift in Sources */,
 				987F28AB2392BD7F00131C27 /* CommonFontLabel.swift in Sources */,
 				98B652AE237DAC4900C4A5B5 /* HomeViewController.swift in Sources */,
 				98D049782398161B00CA868A /* NavigationModel.swift in Sources */,
