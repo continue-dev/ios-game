@@ -10,7 +10,10 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class TaskListViewController: UIViewController {
+class TaskListViewController: UIViewController, NavigationChildViewController {
+
+    @IBOutlet weak var topSpacer: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

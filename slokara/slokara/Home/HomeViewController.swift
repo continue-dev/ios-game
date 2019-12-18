@@ -101,6 +101,10 @@ extension HomeViewController {
         return Binder(self) { me, _ in
             // TODO: TransitionToNextScreen
             print("Task")
+            let navigation = self.parent as! NavigationViewController
+            let taskVC = UIStoryboard(name: "TaskList", bundle: nil).instantiateInitialViewController() as! NavigationChildViewController
+            taskVC.title = "課題リスト"
+            navigation.push(taskVC, animate: true)
         }
     }
 }
