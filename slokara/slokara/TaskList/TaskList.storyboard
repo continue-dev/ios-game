@@ -25,11 +25,31 @@
                                 <rect key="frame" x="-90" y="0.0" width="598" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TGy-bc-3EG">
+                                <rect key="frame" x="0.0" y="223" width="414" height="673"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="gP5-Ji-teT"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="nU8-fT-Vlf"/>
+                            </scrollView>
+                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YTZ-XO-VyN">
+                                <rect key="frame" x="0.0" y="174" width="414" height="49"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <tabBarItem tag="1" title="すべて" id="b76-bc-8jb"/>
+                                    <tabBarItem tag="2" title="幼" id="8aS-ZZ-j2v"/>
+                                    <tabBarItem tag="3" title="小" id="A9U-DI-qQW"/>
+                                    <tabBarItem tag="4" title="中" id="k3R-uQ-TWG"/>
+                                    <tabBarItem tag="5" title="高" id="48A-0L-OSt"/>
+                                </items>
+                            </tabBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="PBw-O1-PVY"/>
                     </view>
                     <connections>
+                        <outlet property="scrollView" destination="TGy-bc-3EG" id="b4Q-Qc-lka"/>
+                        <outlet property="tabBar" destination="YTZ-XO-VyN" id="m2w-TS-O2e"/>
                         <outlet property="topSpacer" destination="UoK-wH-xUf" id="n65-gh-Atc"/>
                     </connections>
                 </viewController>
