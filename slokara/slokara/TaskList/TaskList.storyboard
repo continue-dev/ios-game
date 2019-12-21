@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bfQ-Ck-dOo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0DY-Fq-YiY">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -8,54 +8,210 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Task List View Controller-->
-        <scene sceneID="kaa-vd-FYh">
+        <!--TaskListViewController-->
+        <scene sceneID="0lf-fF-YXd">
             <objects>
-                <viewController storyboardIdentifier="TaskList" id="bfQ-Ck-dOo" customClass="TaskListViewController" customModule="slokara" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="nMB-AF-ZkD">
+                <viewController storyboardIdentifier="TaskListViewController" title="TaskListViewController" id="0DY-Fq-YiY" customClass="TaskListViewController" customModule="slokara" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="h04-Qr-lrc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UoK-wH-xUf" userLabel="Top Spacer">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gPv-eN-XeC" userLabel="Top Spacer">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="dNL-JF-iep">
-                                <rect key="frame" x="-90" y="0.0" width="598" height="896"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Hdg-fK-BhM">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TGy-bc-3EG">
-                                <rect key="frame" x="0.0" y="223" width="414" height="673"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <viewLayoutGuide key="contentLayoutGuide" id="gP5-Ji-teT"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="nU8-fT-Vlf"/>
-                            </scrollView>
-                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YTZ-XO-VyN">
-                                <rect key="frame" x="0.0" y="174" width="414" height="49"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0jS-1t-HOZ">
+                                <rect key="frame" x="0.0" y="226" width="414" height="670"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <segue destination="r3J-pD-WA6" kind="embed" id="hpr-Kn-jY4"/>
+                                </connections>
+                            </containerView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XUm-1g-7Rv">
+                                <rect key="frame" x="0.0" y="182" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <tabBarItem tag="1" title="すべて" id="b76-bc-8jb"/>
-                                    <tabBarItem tag="2" title="幼" id="8aS-ZZ-j2v"/>
-                                    <tabBarItem tag="3" title="小" id="A9U-DI-qQW"/>
-                                    <tabBarItem tag="4" title="中" id="k3R-uQ-TWG"/>
-                                    <tabBarItem tag="5" title="高" id="48A-0L-OSt"/>
+                                    <barButtonItem title="すべて" width="130" id="gwE-DA-Ijq"/>
+                                    <barButtonItem tag="1" title="幼" width="70.5" id="lvl-Ha-9oq"/>
+                                    <barButtonItem title="小" width="70.5" id="UKE-3X-d97"/>
+                                    <barButtonItem title="中" width="70.5" id="sn1-HZ-hbr"/>
+                                    <barButtonItem title="高" width="71.5" id="OXr-X2-oHC"/>
                                 </items>
-                            </tabBar>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="PBw-O1-PVY"/>
+                        <viewLayoutGuide key="safeArea" id="VFC-GN-rCr"/>
                     </view>
                     <connections>
-                        <outlet property="scrollView" destination="TGy-bc-3EG" id="b4Q-Qc-lka"/>
-                        <outlet property="tabBar" destination="YTZ-XO-VyN" id="m2w-TS-O2e"/>
-                        <outlet property="topSpacer" destination="UoK-wH-xUf" id="n65-gh-Atc"/>
+                        <outlet property="buttonFifthView" destination="OXr-X2-oHC" id="ja7-HY-UnQ"/>
+                        <outlet property="buttonFirstView" destination="gwE-DA-Ijq" id="f2m-Pb-zY8"/>
+                        <outlet property="buttonFourthView" destination="sn1-HZ-hbr" id="dSZ-BK-alq"/>
+                        <outlet property="buttonSecondView" destination="lvl-Ha-9oq" id="E61-bC-KCS"/>
+                        <outlet property="buttonThirdView" destination="UKE-3X-d97" id="Cfa-yV-9Ce"/>
+                        <outlet property="topSpacer" destination="gPv-eN-XeC" id="6Eu-Yx-Th0"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="L4i-g8-w1g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RzC-cZ-Chk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="146.65178571428569"/>
+            <point key="canvasLocation" x="-891.304347826087" y="344.86607142857139"/>
+        </scene>
+        <!--First View Controller-->
+        <scene sceneID="Pt8-hr-ilz">
+            <objects>
+                <viewController storyboardIdentifier="FirstViewController" id="tsp-qv-pov" customClass="FirstViewController" customModule="slokara" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="FirstViewController" id="mig-Dm-F4i" userLabel="FirstViewController">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="sMa-C8-a1C">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EIX-Rj-ztf">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="pQ9-4Y-qpl"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="GTj-zo-ZMd"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="uNi-Mu-cEd"/>
+                    </view>
+                    <connections>
+                        <outlet property="scrollView" destination="EIX-Rj-ztf" id="xnA-Gp-wgK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xng-EN-aBr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1424.6376811594205" y="1041.9642857142858"/>
+        </scene>
+        <!--SecondViewController-->
+        <scene sceneID="gLB-3G-IQl">
+            <objects>
+                <viewController storyboardIdentifier="SecondViewController" title="SecondViewController" id="NM3-Pb-FGP" customClass="SecondViewController" customModule="slokara" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" tag="1" contentMode="scaleToFill" restorationIdentifier="SecondViewController" id="OCH-hp-ebR" userLabel="SecondViewController">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="ODG-rY-IZE">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nzN-GE-lYj">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="be7-Xc-h2f"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="CH0-Kf-GiF"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="1ot-DW-B7w"/>
+                    </view>
+                    <connections>
+                        <outlet property="scrollView" destination="nzN-GE-lYj" id="4Ps-lL-ha6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="goN-a8-T7i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-646.37681159420299" y="1039.9553571428571"/>
+        </scene>
+        <!--ThirdViewController-->
+        <scene sceneID="NEC-PP-FHR">
+            <objects>
+                <viewController storyboardIdentifier="ThirdViewController" title="ThirdViewController" id="Hbh-jx-CuP" customClass="ThirdViewController" customModule="slokara" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" tag="2" contentMode="scaleToFill" id="iqK-Ch-oyC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="oqZ-V7-lZE">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bcz-EG-M6B">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="dU2-iQ-wvS"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="mUW-4K-NbI"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="o4o-xS-ozX"/>
+                    </view>
+                    <connections>
+                        <outlet property="scrollView" destination="bcz-EG-M6B" id="GDz-Il-Cbp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JH3-up-BEX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="1038.6160714285713"/>
+        </scene>
+        <!--FourthViewController-->
+        <scene sceneID="frJ-DI-Eku">
+            <objects>
+                <viewController restorationIdentifier="FourthViewController" storyboardIdentifier="FourthViewController" title="FourthViewController" id="yiF-FQ-J4b" customClass="FourthViewController" customModule="slokara" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vZ9-OW-Bua">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Cgx-cW-Bvu">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ptt-Om-RwG">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="tJj-uU-gLb"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="7yg-L8-xLl"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="anU-84-3c3"/>
+                    </view>
+                    <connections>
+                        <outlet property="scrollView" destination="ptt-Om-RwG" id="Com-Cu-Dtq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7P1-uv-IBf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="873.91304347826099" y="1041.9642857142858"/>
+        </scene>
+        <!--FifthViewController-->
+        <scene sceneID="tR5-4M-EEM">
+            <objects>
+                <viewController restorationIdentifier="FifthViewController" storyboardIdentifier="FifthViewController" title="FifthViewController" id="Hqw-7T-Uad" customClass="FifthViewController" customModule="slokara" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yhM-9D-4kR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Nsm-c9-183">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vsi-t4-bLu">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="Id2-wc-cvr"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="3Qh-EJ-ol6"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="d8p-Fw-4ac"/>
+                    </view>
+                    <connections>
+                        <outlet property="scrollView" destination="Vsi-t4-bLu" id="RCs-Mh-abh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ae1-2L-jWr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1592.753623188406" y="1045.9821428571429"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="SyL-Bw-FDz">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="r3J-pD-WA6" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SVT-Bp-YwD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-120" y="352"/>
         </scene>
     </scenes>
     <resources>
