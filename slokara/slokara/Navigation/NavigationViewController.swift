@@ -7,9 +7,9 @@ class NavigationViewController: UIViewController {
     @IBOutlet private weak var container: UIView!
     @IBOutlet private weak var topSpacer: UIView!
     @IBOutlet private weak var hpProgressView: UIProgressView!
-    @IBOutlet private weak var rankNumberLabel: UILabel!
+    @IBOutlet private weak var rankNumberLabel: BorderedLabel!
     @IBOutlet private weak var titleView: UIView!
-    @IBOutlet private weak var gradeLabel: CommonFontLabel!
+    @IBOutlet private weak var gradeLabel: BorderedLabel!
     @IBOutlet private weak var titleLabel: CommonFontLabel!
     @IBOutlet private weak var creditLabel: CommonFontLabel!
     @IBOutlet private weak var coinLabel: CommonFontLabel!
@@ -52,6 +52,7 @@ class NavigationViewController: UIViewController {
     private func setUp() {
         topSpacer.translatesAutoresizingMaskIntoConstraints = true
         add(rootViewController)
+        gradeLabel.setFont(.logoTypeGothic)
     }
     
     private func bind() {
@@ -82,6 +83,21 @@ class NavigationViewController: UIViewController {
         viewModel.currentGrade
             .map{ $0.name }
             .bind(to: gradeLabel.rx.text)
+            .disposed(by: dispodeBag)
+        
+        viewModel.currentGrade
+            .map{ $0.emblemImage }
+            .bind(to: emblemImageView.rx.image)
+            .disposed(by: dispodeBag)
+        
+        viewModel.currentGrade
+            .map{ $0.textBorderColor }
+            .bind(to: gradeLabel.borderColor)
+            .disposed(by: dispodeBag)
+        
+        viewModel.currentGrade
+            .map{ $0.textBorderColor }
+            .bind(to: rankNumberLabel.borderColor)
             .disposed(by: dispodeBag)
         
         viewModel.transtionBack
@@ -190,8 +206,8 @@ extension NavigationViewController {
     }
     
     private var transitionToBack: Binder<Void> {
-        return Binder(self) { [weak self] me, _ in
-            self?.popViewController(animate: true)
+        return Binder(self) { me, _ in
+            me.popViewController(animate: true)
         }
     }
 }
