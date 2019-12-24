@@ -40,9 +40,13 @@
                                     <constraint firstAttribute="height" constant="1" id="s2g-j4-n4A"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="igW-kx-v4P">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="igW-kx-v4P">
                                 <rect key="frame" x="0.0" y="85" width="414" height="811"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="E3n-tZ-YN8" id="vy8-bq-f9u"/>
+                                    <outlet property="delegate" destination="E3n-tZ-YN8" id="8aA-yx-3tM"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -69,6 +73,7 @@
                     </view>
                     <connections>
                         <outlet property="tabView" destination="zVU-6e-CHb" id="fw2-QZ-zfY"/>
+                        <outlet property="taskListTableView" destination="igW-kx-v4P" id="KC9-rE-kKH"/>
                         <outlet property="topSpacer" destination="OpC-z4-sSZ" id="dqE-ds-E5O"/>
                     </connections>
                 </viewController>

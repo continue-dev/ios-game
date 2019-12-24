@@ -81,7 +81,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="101.5"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uAI-tD-qPL" customClass="CommonFontLabel" customModule="slokara" customModuleProvider="target">
-                                        <rect key="frame" x="356" y="35" width="42" height="17"/>
+                                        <rect key="frame" x="356" y="33" width="42" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -99,7 +99,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" text="1" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="eXb-jh-210" customClass="BorderedLabel" customModule="slokara" customModuleProvider="target">
-                                        <rect key="frame" x="38.5" y="8" width="29" height="75"/>
+                                        <rect key="frame" x="25" y="8" width="56" height="75"/>
                                         <fontDescription key="fontDescription" name="Oranienbaum" family="Oranienbaum" pointSize="100"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
