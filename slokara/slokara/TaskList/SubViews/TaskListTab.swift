@@ -1,5 +1,6 @@
 import UIKit
 import RxSwift
+import RxCocoa
 
 class TaskListTab: UIView {
     
@@ -9,7 +10,7 @@ class TaskListTab: UIView {
     private let selectedTabSubject = PublishSubject<TabKind>()
     var tabSelected: Observable<TabKind> { return selectedTabSubject }
         
-    func setCurrentGrade(_ grade: Grade) {
+    private func setCurrentGrade(_ grade: Grade) {
         currentGrade = grade
         clearTabState()
         guard let allTab = tabView.subviews.first as? TabButton else { return }
@@ -70,5 +71,28 @@ class TaskListTab: UIView {
         case primary = "小"
         case juniorHigh = "中"
         case high = "高"
+        
+        var toGrade: [Grade] {
+            switch self {
+            case .all:
+                return [.wood, .stone, .copper, .silver, .gold]
+            case .kindergarten:
+                return [.wood]
+            case .primary:
+                return [.stone, .copper]
+            case .juniorHigh:
+                return [.silver]
+            case .high:
+                return [.gold]
+            }
+        }
+    }
+}
+
+extension TaskListTab {
+    var bindCurrentGrade: Binder<Grade> {
+        return Binder(self) { me, grade in
+            me.setCurrentGrade(grade)
+        }
     }
 }
