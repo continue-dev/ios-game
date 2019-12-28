@@ -14,6 +14,7 @@ class TaskListViewController: UIViewController, NavigationChildViewController {
     override func viewDidLoad() {
         taskListTableView.register(UINib(nibName: "TaskListCell", bundle: nil), forCellReuseIdentifier: "cell")
         bind()
+        setUp()
     }
     
     private func bind() {
@@ -26,6 +27,28 @@ class TaskListViewController: UIViewController, NavigationChildViewController {
         viewModel.showAlertView
             .bind(to: presentAlert)
             .disposed(by: dispodeBag)
+        
+        taskListTableView.rx.didScroll.subscribe({ [unowned self] _ in
+            guard let indicator = self.taskListTableView.subviews.last else { return }
+            indicator.backgroundColor = UIColor(red: 61.0 / 255, green: 144.0 / 255, blue: 1, alpha: 1)
+            }).disposed(by: dispodeBag)
+    }
+    
+    private func setUp() {
+        let swipeGestureToRight = UISwipeGestureRecognizer(target: self, action: #selector(swipeToRight(_:)))
+        swipeGestureToRight.direction = .right
+        let swipeGestureToLeft = UISwipeGestureRecognizer(target: self, action: #selector(swipeToLeft(_:)))
+        swipeGestureToLeft.direction = .left
+        taskListTableView.addGestureRecognizer(swipeGestureToRight)
+        taskListTableView.addGestureRecognizer(swipeGestureToLeft)
+    }
+    
+    @objc private func swipeToRight(_ sender: Any) {
+        tabView.switchPrevTab()
+    }
+    
+    @objc private func swipeToLeft(_ sender: Any) {
+        tabView.switchNextTab()
     }
 }
 

@@ -7,6 +7,7 @@ class TaskListTab: UIView {
     @IBOutlet weak var tabView: UIStackView!
     
     private var currentGrade: Grade?
+    private var currentTab: TabKind?
     private let selectedTabSubject = PublishSubject<TabKind>()
     var tabSelected: Observable<TabKind> { return selectedTabSubject }
         
@@ -35,22 +36,11 @@ class TaskListTab: UIView {
     
     private func clearTabState() {
         guard let currentGrade = self.currentGrade else { return }
-        var current: TabKind {
-            switch currentGrade {
-            case .wood:
-                return .kindergarten
-            case .stone, .copper:
-                return .primary
-            case .silver:
-                return .juniorHigh
-            case .gold:
-                return .high
-            }
-        }
+        guard let gradeToTab = TabKind(from: currentGrade) else { return }
         
-        for view in tabView.subviews.enumerated() {
-            guard let tab = view.element as? TabButton else { continue }
-            if view.offset <= TabKind.allCases.firstIndex(of: current)! {
+        tabView.subviews.enumerated().forEach { index, view in
+            guard let tab = view as? TabButton else { return }
+            if index <= TabKind.allCases.firstIndex(of: gradeToTab)! {
                 tab.tabState = .normal
             } else {
                 tab.tabState = .disable
@@ -62,6 +52,7 @@ class TaskListTab: UIView {
         clearTabState()
         sender.tabState = .selected
         guard let tabTitle = sender.titleLabel?.text, let senderTab = TabKind(rawValue: tabTitle) else { return }
+        currentTab = senderTab
         selectedTabSubject.onNext(senderTab)
     }
     
@@ -71,6 +62,19 @@ class TaskListTab: UIView {
         case primary = "小"
         case juniorHigh = "中"
         case high = "高"
+        
+        init?(from: Grade) {
+            switch from {
+            case .wood:
+                self = .kindergarten
+            case .stone, .copper:
+                self = .primary
+            case .silver:
+                self = .juniorHigh
+            case .gold:
+                self = .high
+            }
+        }
         
         var toGrade: [Grade] {
             switch self {
@@ -86,6 +90,25 @@ class TaskListTab: UIView {
                 return [.gold]
             }
         }
+    }
+}
+
+extension TaskListTab {
+    func switchNextTab() {
+        guard let currentGrade = self.currentGrade else { return }
+        guard let currentTab = self.currentTab else { return }
+        guard let selectedIndex = TabKind.allCases.firstIndex(of: currentTab) else { return }
+        guard selectedIndex < TabKind.allCases.firstIndex(of: TabKind(from: currentGrade)!)! else { return }
+        guard let nextTab = tabView.subviews[selectedIndex + 1] as? TabButton else { return }
+        tappedTabAction(nextTab)
+    }
+    
+    func switchPrevTab() {
+        guard let currentTab = self.currentTab else { return }
+        guard let selectedIndex = TabKind.allCases.firstIndex(of: currentTab) else { return }
+        guard selectedIndex > 0 else { return }
+        guard let prevTab = tabView.subviews[selectedIndex - 1] as? TabButton else { return }
+        tappedTabAction(prevTab)
     }
 }
 
