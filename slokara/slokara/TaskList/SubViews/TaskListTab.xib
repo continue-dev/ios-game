@@ -18,39 +18,39 @@
             <rect key="frame" x="0.0" y="0.0" width="433" height="78"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="haa-zN-zHP">
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="haa-zN-zHP">
                     <rect key="frame" x="0.0" y="0.0" width="433" height="78"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5VK-2P-hNt" customClass="TabButton" customModule="slokara" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="86.5" height="78"/>
+                            <rect key="frame" x="0.0" y="0.0" width="86" height="78"/>
                             <state key="normal" title="すべて"/>
                             <connections>
                                 <action selector="tappedTabAction:" destination="-1" eventType="touchUpInside" id="TO3-XY-sy3"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pfP-9b-Tjj" customClass="TabButton" customModule="slokara" customModuleProvider="target">
-                            <rect key="frame" x="86.5" y="0.0" width="86.5" height="78"/>
+                            <rect key="frame" x="87" y="0.0" width="85.5" height="78"/>
                             <state key="normal" title="幼"/>
                             <connections>
                                 <action selector="tappedTabAction:" destination="-1" eventType="touchUpInside" id="xNF-8x-BOD"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S2m-66-opa" customClass="TabButton" customModule="slokara" customModuleProvider="target">
-                            <rect key="frame" x="173" y="0.0" width="87" height="78"/>
+                            <rect key="frame" x="173.5" y="0.0" width="86" height="78"/>
                             <state key="normal" title="小"/>
                             <connections>
                                 <action selector="tappedTabAction:" destination="-1" eventType="touchUpInside" id="F3Y-8N-qmK"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GQw-Kd-wpq" customClass="TabButton" customModule="slokara" customModuleProvider="target">
-                            <rect key="frame" x="260" y="0.0" width="86.5" height="78"/>
+                            <rect key="frame" x="260.5" y="0.0" width="85.5" height="78"/>
                             <state key="normal" title="中"/>
                             <connections>
                                 <action selector="tappedTabAction:" destination="-1" eventType="touchUpInside" id="Krd-oj-cds"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B03-Nq-JW9" customClass="TabButton" customModule="slokara" customModuleProvider="target">
-                            <rect key="frame" x="346.5" y="0.0" width="86.5" height="78"/>
+                            <rect key="frame" x="347" y="0.0" width="86" height="78"/>
                             <state key="normal" title="高"/>
                             <connections>
                                 <action selector="tappedTabAction:" destination="-1" eventType="touchUpInside" id="SKu-Tx-Sr0"/>
