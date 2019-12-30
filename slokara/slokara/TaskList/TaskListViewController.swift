@@ -9,7 +9,7 @@ class TaskListViewController: UIViewController, NavigationChildViewController {
     
     private lazy var viewModel = TaskListViewModel(tabSelected: tabView.tabSelected, cellTaped: taskListTableView.rx.itemSelected)
     private var taskList = [Task]()
-    private let dispodeBag = DisposeBag()
+    private let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         taskListTableView.register(UINib(nibName: "TaskListCell", bundle: nil), forCellReuseIdentifier: "cell")
@@ -18,20 +18,20 @@ class TaskListViewController: UIViewController, NavigationChildViewController {
     }
     
     private func bind() {
-        viewModel.currentGrade.bind(to: tabView.bindCurrentGrade).disposed(by: dispodeBag)
+        viewModel.currentGrade.bind(to: tabView.bindCurrentGrade).disposed(by: disposeBag)
         viewModel.taskList
             .bind(to: taskListTableView.rx.items(cellIdentifier: "cell", cellType: TaskListCell.self)) {index, task, cell in
                 cell.setTask(task)
-        }.disposed(by: dispodeBag)
+        }.disposed(by: disposeBag)
         
         viewModel.showAlertView
             .bind(to: presentAlert)
-            .disposed(by: dispodeBag)
+            .disposed(by: disposeBag)
         
         taskListTableView.rx.didScroll.subscribe({ [unowned self] _ in
             guard let indicator = self.taskListTableView.subviews.last else { return }
             indicator.backgroundColor = UIColor(red: 61.0 / 255, green: 144.0 / 255, blue: 1, alpha: 1)
-            }).disposed(by: dispodeBag)
+            }).disposed(by: disposeBag)
     }
     
     private func setUp() {

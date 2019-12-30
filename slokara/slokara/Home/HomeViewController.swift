@@ -20,34 +20,34 @@ class HomeViewController: UIViewController, NavigationChildViewController {
         lockerButtonTapped: lockerButton.rx.tap.asObservable(),
         roomButtonTapped: roomButton.rx.tap.asObservable())
     
-    private let dispodeBag = DisposeBag()
+    private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         viewModel.transitionToFinalButtle
             .bind(to: transitionToFinalButtle)
-            .disposed(by: dispodeBag)
+            .disposed(by: disposeBag)
         
         viewModel.transitionToBossButtle
             .bind(to: transitionToBossButtle)
-            .disposed(by: dispodeBag)
+            .disposed(by: disposeBag)
         
         viewModel.transitionToShop
             .bind(to: transitionToShop)
-            .disposed(by: dispodeBag)
+            .disposed(by: disposeBag)
         
         viewModel.transitionToItems
             .bind(to: transitionToItems)
-            .disposed(by: dispodeBag)
+            .disposed(by: disposeBag)
         
         viewModel.transitionToStatus
             .bind(to: transitionToStatus)
-            .disposed(by: dispodeBag)
+            .disposed(by: disposeBag)
         
         viewModel.transitionToTask
             .bind(to: transitionToTask)
-            .disposed(by: dispodeBag)
+            .disposed(by: disposeBag)
     }
 }
 
