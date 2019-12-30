@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZKx-ib-rF0">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Task Confirm View Controller-->
+        <scene sceneID="r75-Be-RdL">
+            <objects>
+                <viewController id="ZKx-ib-rF0" customClass="TaskConfirmViewController" customModule="slokara" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6PE-sI-HCe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="magic_background" translatesAutoresizingMaskIntoConstraints="NO" id="0lv-3l-HD7">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BeF-Vf-2Mu">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="hbG-bW-mNX"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bRG-d0-Evn" customClass="TaskCellView" customModule="slokara" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="322" width="414" height="126"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="bRG-d0-Evn" secondAttribute="height" multiplier="528:161" id="dDJ-VC-aR9"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ooH-Md-DhM" customClass="AlertView" customModule="slokara" customModuleProvider="target">
+                                <rect key="frame" x="41.5" y="468" width="331" height="221"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ooH-Md-DhM" secondAttribute="height" multiplier="3:2" id="RVy-b4-nAf"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="BeF-Vf-2Mu" firstAttribute="leading" secondItem="JWO-0g-iT6" secondAttribute="leading" id="0Z6-mj-F5L"/>
+                            <constraint firstItem="JWO-0g-iT6" firstAttribute="trailing" secondItem="BeF-Vf-2Mu" secondAttribute="trailing" id="4CV-ZA-58I"/>
+                            <constraint firstItem="0lv-3l-HD7" firstAttribute="top" secondItem="6PE-sI-HCe" secondAttribute="top" id="AYM-J2-SLf"/>
+                            <constraint firstItem="ooH-Md-DhM" firstAttribute="top" secondItem="bRG-d0-Evn" secondAttribute="bottom" constant="20" id="CZQ-gE-4Fw"/>
+                            <constraint firstItem="JWO-0g-iT6" firstAttribute="trailing" secondItem="0lv-3l-HD7" secondAttribute="trailing" id="Cg8-0U-uwZ"/>
+                            <constraint firstAttribute="bottom" secondItem="0lv-3l-HD7" secondAttribute="bottom" id="SE2-mm-F84"/>
+                            <constraint firstItem="0lv-3l-HD7" firstAttribute="leading" secondItem="JWO-0g-iT6" secondAttribute="leading" id="WUK-n1-7gm"/>
+                            <constraint firstItem="ooH-Md-DhM" firstAttribute="width" secondItem="bRG-d0-Evn" secondAttribute="width" multiplier="4:5" id="hQh-Yg-WCJ"/>
+                            <constraint firstItem="bRG-d0-Evn" firstAttribute="leading" secondItem="JWO-0g-iT6" secondAttribute="leading" id="i4K-ya-9WG"/>
+                            <constraint firstItem="ooH-Md-DhM" firstAttribute="centerX" secondItem="6PE-sI-HCe" secondAttribute="centerX" id="pO0-Nr-FKX"/>
+                            <constraint firstItem="JWO-0g-iT6" firstAttribute="trailing" secondItem="bRG-d0-Evn" secondAttribute="trailing" id="rfY-W5-3J0"/>
+                            <constraint firstItem="bRG-d0-Evn" firstAttribute="bottom" secondItem="6PE-sI-HCe" secondAttribute="centerY" id="v5i-gx-CbJ"/>
+                            <constraint firstItem="BeF-Vf-2Mu" firstAttribute="top" secondItem="6PE-sI-HCe" secondAttribute="top" id="xpH-bg-m4Q"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="JWO-0g-iT6"/>
+                    </view>
+                    <connections>
+                        <outlet property="alertView" destination="ooH-Md-DhM" id="9hI-A7-zkz"/>
+                        <outlet property="taskCellView" destination="bRG-d0-Evn" id="9eY-EV-FeT"/>
+                        <outlet property="topSpacer" destination="BeF-Vf-2Mu" id="H3j-SW-cDp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="44p-i1-2uT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-606" y="-129"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="magic_background" width="540" height="1149"/>
+    </resources>
+</document>

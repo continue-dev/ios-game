@@ -55,10 +55,11 @@ class TaskListViewController: UIViewController, NavigationChildViewController {
 extension TaskListViewController {
     private var presentAlert: Binder<Task> {
         return Binder(self) { me, task in
-            let navigation = self.parent as! NavigationViewController
-            let taskListVC = UIStoryboard(name: "Home", bundle: nil).instantiateInitialViewController() as! NavigationChildViewController
-            taskListVC.title = task.name
-            navigation.push(taskListVC, animate: true)
+            let navigation = me.parent as! NavigationViewController
+            let taskConfirmVC = UIStoryboard(name: "TaskConfirm", bundle: nil).instantiateInitialViewController() as! TaskConfirmViewController
+            taskConfirmVC.title = me.title
+            taskConfirmVC.setTask(task)
+            navigation.push(taskConfirmVC, animate: true)
         }
     }
 }

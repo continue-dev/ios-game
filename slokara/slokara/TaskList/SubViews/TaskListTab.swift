@@ -31,6 +31,7 @@ class TaskListTab: UIView {
     private func loadNib() {
         guard let customView = Bundle.main.loadNibNamed("TaskListTab", owner: self, options: nil)?.first as? UIView else { return }
         customView.frame = self.bounds
+        customView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         self.addSubview(customView)
     }
     
