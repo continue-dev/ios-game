@@ -12,19 +12,23 @@ class TaskCellView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        loadNib()
+        setUp()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        loadNib()
+        setUp()
     }
     
-    private func loadNib() {
+    private func setUp() {
         guard let view = Bundle.main.loadNibNamed("TaskCellView", owner: self, options: nil)?.first as? UIView else { return }
         view.frame = self.bounds
         view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         addSubview(view)
+        emblemImageView.layer.shadowColor = UIColor.black.cgColor
+        emblemImageView.layer.shadowOffset = CGSize(width: 0, height: 2)
+        emblemImageView.layer.shadowOpacity = 0.35
+        emblemImageView.layer.shadowRadius = 1
     }
     
     func setTask(_ task: Task) {
