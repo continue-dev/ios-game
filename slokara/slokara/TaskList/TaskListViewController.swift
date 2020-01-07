@@ -44,11 +44,25 @@ class TaskListViewController: UIViewController, NavigationChildViewController {
     }
     
     @objc private func swipeToRight(_ sender: Any) {
+        guard tabView.canBackPrev() else { return }
+        taskListTableView.layer.add(switchTabTransition(from: .fromLeft), forKey: nil)
         tabView.switchPrevTab()
     }
     
     @objc private func swipeToLeft(_ sender: Any) {
+        guard tabView.canGoNext() else { return }
+        taskListTableView.layer.add(switchTabTransition(from: .fromRight), forKey: nil)
         tabView.switchNextTab()
+    }
+    
+    private func switchTabTransition(from: CATransitionSubtype) -> CATransition {
+        let transition:CATransition = CATransition()
+        transition.startProgress = 0
+        transition.endProgress = 1.0
+        transition.type = .push
+        transition.subtype = from
+        transition.duration = 0.2
+        return transition
     }
 }
 

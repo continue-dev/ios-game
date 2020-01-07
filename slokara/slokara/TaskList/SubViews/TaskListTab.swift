@@ -111,6 +111,19 @@ extension TaskListTab {
         guard let prevTab = tabView.subviews[selectedIndex - 1] as? TabButton else { return }
         tappedTabAction(prevTab)
     }
+    
+    func canGoNext() -> Bool {
+        guard let currentGrade = self.currentGrade else { return false }
+        guard let currentTab = self.currentTab else { return false }
+        guard let selectedIndex = TabKind.allCases.firstIndex(of: currentTab) else { return false }
+        return selectedIndex < TabKind.allCases.firstIndex(of: TabKind(from: currentGrade)!)!
+    }
+    
+    func canBackPrev() -> Bool {
+        guard let currentTab = self.currentTab else { return false }
+        guard let selectedIndex = TabKind.allCases.firstIndex(of: currentTab) else { return false }
+        return selectedIndex > 0
+    }
 }
 
 extension TaskListTab {
