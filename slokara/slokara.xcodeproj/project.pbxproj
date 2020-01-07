@@ -19,6 +19,7 @@
 		6A1C491623B9DE2B00261DF5 /* TaskConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1C491523B9DE2B00261DF5 /* TaskConfirmViewController.swift */; };
 		6A1C491923BA59B300261DF5 /* TaskCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A1C491823BA59B300261DF5 /* TaskCellView.xib */; };
 		6A1C491B23BA59BF00261DF5 /* TaskCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1C491A23BA59BF00261DF5 /* TaskCellView.swift */; };
+		6A1D5CA923C4C6D9005B8B48 /* BorderedButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A1D5CA823C4C6D9005B8B48 /* BorderedButton.xib */; };
 		6ABF318A23AF586A0014E0BD /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABF318923AF586A0014E0BD /* TaskListViewController.swift */; };
 		6ABF318C23AF58780014E0BD /* TaskList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6ABF318B23AF58780014E0BD /* TaskList.storyboard */; };
 		6ABF318E23AF59570014E0BD /* TaskListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABF318D23AF59570014E0BD /* TaskListViewModel.swift */; };
@@ -83,6 +84,7 @@
 		6A1C491523B9DE2B00261DF5 /* TaskConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskConfirmViewController.swift; sourceTree = "<group>"; };
 		6A1C491823BA59B300261DF5 /* TaskCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskCellView.xib; sourceTree = "<group>"; };
 		6A1C491A23BA59BF00261DF5 /* TaskCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCellView.swift; sourceTree = "<group>"; };
+		6A1D5CA823C4C6D9005B8B48 /* BorderedButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BorderedButton.xib; sourceTree = "<group>"; };
 		6ABF318923AF586A0014E0BD /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		6ABF318B23AF58780014E0BD /* TaskList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TaskList.storyboard; sourceTree = "<group>"; };
 		6ABF318D23AF59570014E0BD /* TaskListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewModel.swift; sourceTree = "<group>"; };
@@ -205,6 +207,15 @@
 			path = TaskCellView;
 			sourceTree = "<group>";
 		};
+		6A1D5CA723C4C6AF005B8B48 /* BorderedButton */ = {
+			isa = PBXGroup;
+			children = (
+				6A1D5CA823C4C6D9005B8B48 /* BorderedButton.xib */,
+				6A1C491023B903D200261DF5 /* BorderedButton.swift */,
+			);
+			path = BorderedButton;
+			sourceTree = "<group>";
+		};
 		6ABF318823AF584C0014E0BD /* TaskList */ = {
 			isa = PBXGroup;
 			children = (
@@ -311,12 +322,12 @@
 		987F28A92392BD2900131C27 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				6A1D5CA723C4C6AF005B8B48 /* BorderedButton */,
 				6A1C491723BA598700261DF5 /* TaskCellView */,
 				6A1C490B23B8E81800261DF5 /* AlertView */,
 				987F28AA2392BD7F00131C27 /* CommonFontLabel.swift */,
 				98D0497B239953AF00CA868A /* NavigationChildViewController.swift */,
 				989F52F523AF2B0200009D14 /* BorderedLabel.swift */,
-				6A1C491023B903D200261DF5 /* BorderedButton.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -469,6 +480,7 @@
 				6A1C490623B26C8F00261DF5 /* TaskListCell.xib in Resources */,
 				9821B3372378560400CF964D /* Assets.xcassets in Resources */,
 				F47D662F23926C88009BA0EA /* 07LogoTypeGothic7.otf in Resources */,
+				6A1D5CA923C4C6D9005B8B48 /* BorderedButton.xib in Resources */,
 				6A1C490A23B2710B00261DF5 /* LithosPro-Black.otf in Resources */,
 				98B652AC237DAC3200C4A5B5 /* Home.storyboard in Resources */,
 				6A1C490D23B8E8C500261DF5 /* AlertView.xib in Resources */,
