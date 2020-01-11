@@ -33,7 +33,7 @@ class NavigationViewController: UIViewController {
     
     private lazy var viewModel = NavigationViewModel(backButtonTapped: backButton.rx.tap.asObservable())
     private lazy var _navigationChildViewControllers = BehaviorRelay(value: navigationChildViewControllers)
-    private let dispodeBag = DisposeBag()
+    private let disposeBag = DisposeBag()
 
     
     override func viewDidLoad() {
@@ -58,66 +58,66 @@ class NavigationViewController: UIViewController {
     private func bind() {
         viewModel.hpProgress
             .bind(to: hpProgressView.rx.progress)
-            .disposed(by: dispodeBag)
+            .disposed(by: disposeBag)
         
         BehaviorRelay.zip(viewModel.currentHp, viewModel.maxHp)
             .map { "\($0)/\($1)" }
             .bind(to: hpLabel.rx.text)
-            .disposed(by: dispodeBag)
+            .disposed(by: disposeBag)
         
         viewModel.currentCions
             .map{ String($0) }
             .bind(to: coinLabel.rx.text)
-            .disposed(by: dispodeBag)
+            .disposed(by: disposeBag)
         
         viewModel.currentCredit
             .map{ String($0) }
             .bind(to: creditLabel.rx.text)
-            .disposed(by: dispodeBag)
+            .disposed(by: disposeBag)
         
         viewModel.currentRank
             .map{ String($0) }
             .bind(to: rankNumberLabel.rx.text)
-            .disposed(by: dispodeBag)
+            .disposed(by: disposeBag)
         
         viewModel.currentGrade
             .map{ $0.name }
             .bind(to: gradeLabel.rx.text)
-            .disposed(by: dispodeBag)
+            .disposed(by: disposeBag)
         
         viewModel.currentGrade
             .map{ $0.emblemImage }
             .bind(to: emblemImageView.rx.image)
-            .disposed(by: dispodeBag)
+            .disposed(by: disposeBag)
         
         viewModel.currentGrade
             .map{ $0.textBorderColor }
             .bind(to: gradeLabel.borderColor)
-            .disposed(by: dispodeBag)
+            .disposed(by: disposeBag)
         
         viewModel.currentGrade
             .map{ $0.textBorderColor }
             .bind(to: rankNumberLabel.borderColor)
-            .disposed(by: dispodeBag)
+            .disposed(by: disposeBag)
         
         viewModel.transtionBack
             .bind(to: transitionToBack)
-            .disposed(by: dispodeBag)
+            .disposed(by: disposeBag)
         
         _navigationChildViewControllers
             .map{ $0.count < 2 }
             .bind(to: backButton.rx.isHidden)
-            .disposed(by: dispodeBag)
+            .disposed(by: disposeBag)
         
         _navigationChildViewControllers
             .map{ $0.last?.title == nil }
             .bind(to: titleView.rx.isHidden)
-            .disposed(by: dispodeBag)
+            .disposed(by: disposeBag)
         
         _navigationChildViewControllers
             .map{ $0.last?.title }
             .bind(to: titleLabel.rx.text)
-            .disposed(by: dispodeBag)
+            .disposed(by: disposeBag)
     }
     
     func push(_ viewController: NavigationChildViewController, animate: Bool) {

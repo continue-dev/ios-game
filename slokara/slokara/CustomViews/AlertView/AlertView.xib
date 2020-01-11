@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AlertView" customModule="slokara" customModuleProvider="target">
+            <connections>
+                <outlet property="messageLabel" destination="2e2-SG-xrz" id="Hu8-AR-ETY"/>
+                <outlet property="negativeButton" destination="pgX-df-r7J" id="ufP-Od-iUl"/>
+                <outlet property="positiveButton" destination="u7w-QW-M3Z" id="dTA-0E-7Um"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iXP-fb-9zr">
+            <rect key="frame" x="0.0" y="0.0" width="313" height="197"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="alert_window_top" translatesAutoresizingMaskIntoConstraints="NO" id="m6n-Bw-5Jn">
+                    <rect key="frame" x="0.0" y="0.0" width="313" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="m6n-Bw-5Jn" secondAttribute="height" multiplier="360:37" id="goI-YK-FNM"/>
+                    </constraints>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="alert_window_bottom" translatesAutoresizingMaskIntoConstraints="NO" id="vhH-Up-7U4">
+                    <rect key="frame" x="0.0" y="132.5" width="313" height="32.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="vhH-Up-7U4" secondAttribute="height" multiplier="360:37" id="VrO-lR-dZg"/>
+                    </constraints>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="alert_window_body" translatesAutoresizingMaskIntoConstraints="NO" id="hCx-zn-I0Z">
+                    <rect key="frame" x="0.0" y="32" width="313" height="100.5"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2e2-SG-xrz" customClass="CommonFontLabel" customModule="slokara" customModuleProvider="target">
+                    <rect key="frame" x="5" y="32" width="303" height="100.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pgX-df-r7J" customClass="BorderedButton" customModule="slokara" customModuleProvider="target">
+                    <rect key="frame" x="12.5" y="132.5" width="137.5" height="64.5"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="pgX-df-r7J" secondAttribute="height" multiplier="15:7" id="AML-iK-vf4"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="image" keyPath="backBroundImageForNormal" value="alert_negative_button_normal"/>
+                        <userDefinedRuntimeAttribute type="image" keyPath="backGroundImageForNormal" value="alert_negative_button_normal"/>
+                        <userDefinedRuntimeAttribute type="image" keyPath="backGroundImageForHighlighted" value="alert_negative_button_highlighted"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="strokeSize">
+                            <real key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
+                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="いいえ"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                            <real key="value" value="22"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u7w-QW-M3Z" customClass="BorderedButton" customModule="slokara" customModuleProvider="target">
+                    <rect key="frame" x="163" y="132.5" width="137.5" height="64.5"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="u7w-QW-M3Z" secondAttribute="height" multiplier="15:7" id="0mp-md-blP"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="strokeSize">
+                            <real key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
+                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="image" keyPath="backGroundImageForNormal" value="alert_positive_button_normal"/>
+                        <userDefinedRuntimeAttribute type="image" keyPath="backGroundImageForHighlighted" value="alert_positive_button_highlighted"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="いいえ"/>
+                        <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                            <real key="value" value="22"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CdN-dE-uR6">
+                    <rect key="frame" x="150" y="132.5" width="13" height="64.5"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="2e2-SG-xrz" firstAttribute="top" secondItem="hCx-zn-I0Z" secondAttribute="top" id="4NF-73-lhl"/>
+                <constraint firstItem="Qii-Uk-DeF" firstAttribute="trailing" secondItem="m6n-Bw-5Jn" secondAttribute="trailing" id="6Yl-8P-DTT"/>
+                <constraint firstItem="hCx-zn-I0Z" firstAttribute="leading" secondItem="Qii-Uk-DeF" secondAttribute="leading" id="B3N-5g-p7J"/>
+                <constraint firstItem="Qii-Uk-DeF" firstAttribute="trailing" secondItem="hCx-zn-I0Z" secondAttribute="trailing" id="Cog-xH-xsO"/>
+                <constraint firstItem="u7w-QW-M3Z" firstAttribute="leading" secondItem="CdN-dE-uR6" secondAttribute="trailing" id="FGb-kx-QlZ"/>
+                <constraint firstItem="vhH-Up-7U4" firstAttribute="top" secondItem="hCx-zn-I0Z" secondAttribute="bottom" id="Gnc-uL-MRw"/>
+                <constraint firstItem="CdN-dE-uR6" firstAttribute="height" secondItem="pgX-df-r7J" secondAttribute="height" id="JCw-jf-fZM"/>
+                <constraint firstItem="m6n-Bw-5Jn" firstAttribute="top" secondItem="iXP-fb-9zr" secondAttribute="top" id="MJ1-v7-iBK"/>
+                <constraint firstItem="CdN-dE-uR6" firstAttribute="top" secondItem="hCx-zn-I0Z" secondAttribute="bottom" id="Mql-dp-CMW"/>
+                <constraint firstItem="vhH-Up-7U4" firstAttribute="leading" secondItem="Qii-Uk-DeF" secondAttribute="leading" id="NiJ-s1-gpm"/>
+                <constraint firstItem="CdN-dE-uR6" firstAttribute="height" secondItem="vhH-Up-7U4" secondAttribute="height" multiplier="2:1" id="Nn8-Pj-PXC"/>
+                <constraint firstItem="vhH-Up-7U4" firstAttribute="top" secondItem="2e2-SG-xrz" secondAttribute="bottom" id="ODQ-zy-hgU"/>
+                <constraint firstItem="Qii-Uk-DeF" firstAttribute="trailing" secondItem="2e2-SG-xrz" secondAttribute="trailing" constant="5" id="OOr-iQ-vxF"/>
+                <constraint firstItem="Qii-Uk-DeF" firstAttribute="bottom" secondItem="CdN-dE-uR6" secondAttribute="bottom" id="Vgf-yU-FQD"/>
+                <constraint firstItem="2e2-SG-xrz" firstAttribute="leading" secondItem="Qii-Uk-DeF" secondAttribute="leading" constant="5" id="WRF-R3-kDe"/>
+                <constraint firstItem="m6n-Bw-5Jn" firstAttribute="leading" secondItem="Qii-Uk-DeF" secondAttribute="leading" id="XnI-fG-JcJ"/>
+                <constraint firstItem="CdN-dE-uR6" firstAttribute="width" secondItem="vhH-Up-7U4" secondAttribute="width" multiplier="1:25" id="ZRP-GH-fw9"/>
+                <constraint firstItem="Qii-Uk-DeF" firstAttribute="trailing" secondItem="vhH-Up-7U4" secondAttribute="trailing" id="dcz-Jg-Efx"/>
+                <constraint firstItem="CdN-dE-uR6" firstAttribute="leading" secondItem="pgX-df-r7J" secondAttribute="trailing" id="e0a-s2-4zT"/>
+                <constraint firstItem="CdN-dE-uR6" firstAttribute="centerY" secondItem="u7w-QW-M3Z" secondAttribute="centerY" id="enN-LF-obA"/>
+                <constraint firstItem="hCx-zn-I0Z" firstAttribute="top" secondItem="m6n-Bw-5Jn" secondAttribute="bottom" id="f5C-oR-lK7"/>
+                <constraint firstItem="CdN-dE-uR6" firstAttribute="centerY" secondItem="pgX-df-r7J" secondAttribute="centerY" id="jbS-Er-sK9"/>
+                <constraint firstItem="CdN-dE-uR6" firstAttribute="centerX" secondItem="iXP-fb-9zr" secondAttribute="centerX" id="k5V-ay-Aqc"/>
+                <constraint firstItem="CdN-dE-uR6" firstAttribute="height" secondItem="u7w-QW-M3Z" secondAttribute="height" id="kLb-D4-sUe"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="Qii-Uk-DeF"/>
+            <point key="canvasLocation" x="-187.68115942028987" y="-122.20982142857142"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="alert_negative_button_highlighted" width="150" height="70"/>
+        <image name="alert_negative_button_normal" width="150" height="70"/>
+        <image name="alert_positive_button_highlighted" width="150" height="70"/>
+        <image name="alert_positive_button_normal" width="150" height="70"/>
+        <image name="alert_window_body" width="360" height="107"/>
+        <image name="alert_window_bottom" width="360" height="36.5"/>
+        <image name="alert_window_top" width="360" height="36.5"/>
+    </resources>
+</document>
