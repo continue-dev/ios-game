@@ -51,6 +51,8 @@
 		98D049782398161B00CA868A /* NavigationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D049772398161B00CA868A /* NavigationModel.swift */; };
 		98D0497A2398166900CA868A /* Grade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D049792398166900CA868A /* Grade.swift */; };
 		98D0497C239953AF00CA868A /* NavigationChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D0497B239953AF00CA868A /* NavigationChildViewController.swift */; };
+		F47674E4240BBC28008953E1 /* BattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47674E3240BBC28008953E1 /* BattleViewController.swift */; };
+		F47674E6240BBC42008953E1 /* Battle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F47674E5240BBC42008953E1 /* Battle.storyboard */; };
 		F47D662F23926C88009BA0EA /* 07LogoTypeGothic7.otf in Resources */ = {isa = PBXBuildFile; fileRef = F47D662E23926C88009BA0EA /* 07LogoTypeGothic7.otf */; };
 		F7CC822837DDD1BD79B885D4 /* Pods_slokara.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB3FE3407287E8AE2D0827B2 /* Pods_slokara.framework */; };
 /* End PBXBuildFile section */
@@ -130,6 +132,8 @@
 		C900A38A419D57E2BDEECE08 /* Pods_slokaraTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_slokaraTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E621BD475B31DAB477190F56 /* Pods-slokaraUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-slokaraUITests.debug.xcconfig"; path = "Target Support Files/Pods-slokaraUITests/Pods-slokaraUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		EDD5E91303E38F5B9B9DEDE4 /* Pods-slokara.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-slokara.release.xcconfig"; path = "Target Support Files/Pods-slokara/Pods-slokara.release.xcconfig"; sourceTree = "<group>"; };
+		F47674E3240BBC28008953E1 /* BattleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleViewController.swift; sourceTree = "<group>"; };
+		F47674E5240BBC42008953E1 /* Battle.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Battle.storyboard; sourceTree = "<group>"; };
 		F47D662E23926C88009BA0EA /* 07LogoTypeGothic7.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 07LogoTypeGothic7.otf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -280,6 +284,7 @@
 		9821B32C2378560300CF964D /* slokara */ = {
 			isa = PBXGroup;
 			children = (
+				F47674DE240BB08C008953E1 /* Battle */,
 				6A1C491223B9DC4400261DF5 /* TaskConfirm */,
 				6ABF318823AF584C0014E0BD /* TaskList */,
 				98D049762398105200CA868A /* Navigation */,
@@ -367,6 +372,15 @@
 				98D049772398161B00CA868A /* NavigationModel.swift */,
 			);
 			path = Navigation;
+			sourceTree = "<group>";
+		};
+		F47674DE240BB08C008953E1 /* Battle */ = {
+			isa = PBXGroup;
+			children = (
+				F47674E3240BBC28008953E1 /* BattleViewController.swift */,
+				F47674E5240BBC42008953E1 /* Battle.storyboard */,
+			);
+			path = Battle;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -482,6 +496,7 @@
 				6ABF318C23AF58780014E0BD /* TaskList.storyboard in Resources */,
 				98B652A7237DA9E200C4A5B5 /* Title.storyboard in Resources */,
 				6A1C491923BA59B300261DF5 /* TaskCellView.xib in Resources */,
+				F47674E6240BBC42008953E1 /* Battle.storyboard in Resources */,
 				987F28A82392BCC800131C27 /* Oranienbaum.ttf in Resources */,
 				6A1C490623B26C8F00261DF5 /* TaskListCell.xib in Resources */,
 				9821B3372378560400CF964D /* Assets.xcassets in Resources */,
@@ -635,6 +650,7 @@
 				6A63B27C2402B2EB00B8719D /* UserParameter.swift in Sources */,
 				6A1C491B23BA59BF00261DF5 /* TaskCellView.swift in Sources */,
 				98B652A9237DA9F300C4A5B5 /* TitleViewController.swift in Sources */,
+				F47674E4240BBC28008953E1 /* BattleViewController.swift in Sources */,
 				98D0497A2398166900CA868A /* Grade.swift in Sources */,
 				987F28AB2392BD7F00131C27 /* CommonFontLabel.swift in Sources */,
 				6A1C490823B26CCD00261DF5 /* TaskListCell.swift in Sources */,

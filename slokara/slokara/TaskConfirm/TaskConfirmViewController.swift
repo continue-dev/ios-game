@@ -18,6 +18,14 @@ class TaskConfirmViewController: UIViewController, NavigationChildViewController
         alertView.setMessage("この課題を履修しますか？")
         let positive = AlertAction(title: "履修する", style: .positive) {
             // TODO: ボタン選択時の画面遷移
+            
+            
+            
+            let navigation = self.parent as! NavigationViewController
+            let battleVC = UIStoryboard(name: "Battle", bundle: nil).instantiateInitialViewController() as! BattleViewController
+            battleVC.title = "バトル"
+            navigation.push(battleVC, animate: true)
+
         }
         let negative = AlertAction(title: "やめる", style: .negative) { [weak self] in
             let navigation = self?.parent as? NavigationViewController
