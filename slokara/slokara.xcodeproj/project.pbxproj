@@ -51,6 +51,8 @@
 		98D049782398161B00CA868A /* NavigationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D049772398161B00CA868A /* NavigationModel.swift */; };
 		98D0497A2398166900CA868A /* Grade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D049792398166900CA868A /* Grade.swift */; };
 		98D0497C239953AF00CA868A /* NavigationChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D0497B239953AF00CA868A /* NavigationChildViewController.swift */; };
+		F46E63B12413D85C0059055B /* BattleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46E63B02413D85C0059055B /* BattleModel.swift */; };
+		F46E63B32413E1300059055B /* BattleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46E63B22413E1300059055B /* BattleViewModel.swift */; };
 		F47674E4240BBC28008953E1 /* BattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47674E3240BBC28008953E1 /* BattleViewController.swift */; };
 		F47674E6240BBC42008953E1 /* Battle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F47674E5240BBC42008953E1 /* Battle.storyboard */; };
 		F47D662F23926C88009BA0EA /* 07LogoTypeGothic7.otf in Resources */ = {isa = PBXBuildFile; fileRef = F47D662E23926C88009BA0EA /* 07LogoTypeGothic7.otf */; };
@@ -132,6 +134,8 @@
 		C900A38A419D57E2BDEECE08 /* Pods_slokaraTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_slokaraTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E621BD475B31DAB477190F56 /* Pods-slokaraUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-slokaraUITests.debug.xcconfig"; path = "Target Support Files/Pods-slokaraUITests/Pods-slokaraUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		EDD5E91303E38F5B9B9DEDE4 /* Pods-slokara.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-slokara.release.xcconfig"; path = "Target Support Files/Pods-slokara/Pods-slokara.release.xcconfig"; sourceTree = "<group>"; };
+		F46E63B02413D85C0059055B /* BattleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleModel.swift; sourceTree = "<group>"; };
+		F46E63B22413E1300059055B /* BattleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleViewModel.swift; sourceTree = "<group>"; };
 		F47674E3240BBC28008953E1 /* BattleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleViewController.swift; sourceTree = "<group>"; };
 		F47674E5240BBC42008953E1 /* Battle.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Battle.storyboard; sourceTree = "<group>"; };
 		F47D662E23926C88009BA0EA /* 07LogoTypeGothic7.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 07LogoTypeGothic7.otf; sourceTree = "<group>"; };
@@ -379,6 +383,8 @@
 			children = (
 				F47674E3240BBC28008953E1 /* BattleViewController.swift */,
 				F47674E5240BBC42008953E1 /* Battle.storyboard */,
+				F46E63B02413D85C0059055B /* BattleModel.swift */,
+				F46E63B22413E1300059055B /* BattleViewModel.swift */,
 			);
 			path = Battle;
 			sourceTree = "<group>";
@@ -659,7 +665,9 @@
 				98B652AE237DAC4900C4A5B5 /* HomeViewController.swift in Sources */,
 				98D049782398161B00CA868A /* NavigationModel.swift in Sources */,
 				989F52F623AF2B0200009D14 /* BorderedLabel.swift in Sources */,
+				F46E63B32413E1300059055B /* BattleViewModel.swift in Sources */,
 				98B652B2237DACCA00C4A5B5 /* HomeModel.swift in Sources */,
+				F46E63B12413D85C0059055B /* BattleModel.swift in Sources */,
 				98367111239810D100F590ED /* NavigationViewController.swift in Sources */,
 				98B652B0237DAC6500C4A5B5 /* HomeViewModel.swift in Sources */,
 			);

@@ -69,11 +69,25 @@
                                 <rect key="frame" x="0.0" y="472" width="414" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <skView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="apd-01-lhi">
+                                <rect key="frame" x="48" y="251" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </skView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="WJi-Eg-JIJ"/>
                     </view>
                     <connections>
+                        <outlet property="image11" destination="3ZQ-fW-rGn" id="uDo-iT-sPH"/>
+                        <outlet property="image12" destination="VTY-4j-n22" id="u54-Zm-mjb"/>
+                        <outlet property="image13" destination="2nt-ed-B2W" id="EqF-W0-LIL"/>
+                        <outlet property="image21" destination="e7Z-eo-3MR" id="Gk8-nX-Xn8"/>
+                        <outlet property="image22" destination="omU-9C-qDI" id="WiK-SJ-me0"/>
+                        <outlet property="image23" destination="yS5-Jw-aT2" id="vQA-kY-l9Q"/>
+                        <outlet property="image31" destination="mOc-iF-p1l" id="osf-ei-oVo"/>
+                        <outlet property="image32" destination="bFf-j2-1x0" id="mpQ-LG-T4K"/>
+                        <outlet property="image33" destination="4Yp-E1-wZH" id="eSi-oX-sEz"/>
+                        <outlet property="skView001" destination="apd-01-lhi" id="3Ww-4n-qEK"/>
                         <outlet property="topSpacer" destination="hyv-vf-jmS" id="AWd-bn-QnJ"/>
                     </connections>
                 </viewController>
