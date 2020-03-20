@@ -141,7 +141,12 @@ class NavigationViewController: UIViewController {
         }
         
         let topFrame = CGRect(x: 0, y: 0, width: topSpacer.bounds.width, height: backButton.frame.maxY)
-        viewController.applyTopSpacer(frame: topFrame)
+        
+        if viewController.title != "Battle" {
+            viewController.applyTopSpacer(frame: topFrame)
+        } else {
+            self.backButton.isHidden = true
+        }
     }
     
     func popViewController(animate: Bool) {
