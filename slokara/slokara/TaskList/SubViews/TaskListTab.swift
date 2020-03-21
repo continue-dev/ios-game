@@ -60,7 +60,7 @@ class TaskListTab: UIView {
     enum TabKind: String, CaseIterable {
         case all = "すべて"
         case kindergarten = "幼"
-        case primary = "小"
+        case primary = "初"
         case juniorHigh = "中"
         case high = "高"
         
