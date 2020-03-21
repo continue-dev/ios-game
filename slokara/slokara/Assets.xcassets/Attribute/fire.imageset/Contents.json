@@ -2,15 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "reel_fire@1x.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "fire.png",
+      "filename" : "reel_fire@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "reel_fire@3x.png",
       "scale" : "3x"
     }
   ],

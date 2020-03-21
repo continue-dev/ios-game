@@ -1,12 +1,13 @@
 import UIKit
 
-enum AttributeType {
+enum AttributeType: CaseIterable {
     case fire
     case water
     case wind
     case soil
     case light
     case darkness
+    case enemy
     
     var image: UIImage {
         switch self {
@@ -22,6 +23,8 @@ enum AttributeType {
             return UIImage(named: "light")!
         case .darkness:
             return UIImage(named: "darkness")!
+        case .enemy:
+            return UIImage(named: "enemy")!
         }
     }
 }
