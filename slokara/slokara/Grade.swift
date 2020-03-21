@@ -57,7 +57,7 @@ enum Grade {
         case .wood:
             return "幼等部"
         case .stone, .copper:
-            return "小等部"
+            return "初等部"
         case .silver:
             return "中等部"
         case .gold:
