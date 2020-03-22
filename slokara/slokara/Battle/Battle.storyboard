@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7ld-Wa-uHc">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Battle View Controller-->
+        <scene sceneID="7ZD-U7-Yem">
+            <objects>
+                <viewController id="7ld-Wa-uHc" customClass="BattleViewController" customModule="slokara" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BlA-f4-NVb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2CB-DN-t4u">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="4NA-jL-11L"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ir-Uy-gqj" customClass="ReelView" customModule="slokara" customModuleProvider="target">
+                                <rect key="frame" x="-20" y="629" width="415" height="167"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" priority="250" constant="167" id="A4u-Iz-fGh"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oD3-v8-3Rj">
+                                <rect key="frame" x="0.0" y="779" width="375" height="33"/>
+                                <color key="backgroundColor" red="0.070588235294117646" green="0.058823529411764705" blue="0.039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="oD3-v8-3Rj" secondAttribute="trailing" id="2Cq-VI-75N"/>
+                            <constraint firstItem="oD3-v8-3Rj" firstAttribute="top" secondItem="beP-C9-vnq" secondAttribute="bottom" constant="1" id="66O-8K-R6w"/>
+                            <constraint firstItem="beP-C9-vnq" firstAttribute="trailing" secondItem="2CB-DN-t4u" secondAttribute="trailing" id="7fE-m2-Bzz"/>
+                            <constraint firstItem="beP-C9-vnq" firstAttribute="bottom" secondItem="6ir-Uy-gqj" secondAttribute="bottom" constant="-18" id="8Wh-GM-guu"/>
+                            <constraint firstItem="beP-C9-vnq" firstAttribute="trailing" secondItem="6ir-Uy-gqj" secondAttribute="trailing" constant="-20" id="GBL-rw-wNV"/>
+                            <constraint firstItem="oD3-v8-3Rj" firstAttribute="leading" secondItem="BlA-f4-NVb" secondAttribute="leading" id="Z9K-8j-9oX"/>
+                            <constraint firstItem="2CB-DN-t4u" firstAttribute="leading" secondItem="beP-C9-vnq" secondAttribute="leading" id="oRs-Ix-1mA"/>
+                            <constraint firstAttribute="bottom" secondItem="oD3-v8-3Rj" secondAttribute="bottom" id="pvY-l1-C0I"/>
+                            <constraint firstItem="6ir-Uy-gqj" firstAttribute="leading" secondItem="beP-C9-vnq" secondAttribute="leading" constant="-20" id="t4i-uU-Cvc"/>
+                            <constraint firstItem="2CB-DN-t4u" firstAttribute="top" secondItem="BlA-f4-NVb" secondAttribute="top" id="wbL-nZ-z9e"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="beP-C9-vnq"/>
+                    </view>
+                    <connections>
+                        <outlet property="reelView" destination="6ir-Uy-gqj" id="Mvb-qA-dRj"/>
+                        <outlet property="topSpacer" destination="2CB-DN-t4u" id="bCk-mZ-tDt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R7u-uY-q0l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-138.40000000000001" y="-10.344827586206897"/>
+        </scene>
+    </scenes>
+</document>
