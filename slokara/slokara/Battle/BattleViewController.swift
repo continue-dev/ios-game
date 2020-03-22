@@ -3,7 +3,9 @@ import SpriteKit
 
 class BattleViewController: UIViewController, NavigationChildViewController {
     @IBOutlet weak var topSpacer: UIView!
+    @IBOutlet private weak var baseView: UIView!
     @IBOutlet private weak var reelView: ReelView!
+    @IBOutlet private weak var progressView: BattleProgressView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -12,18 +14,10 @@ class BattleViewController: UIViewController, NavigationChildViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.reelView.line = .triple
+        self.progressView.progressMax = 5
     }
     
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.progressView.nextStep()
     }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-    
 }
