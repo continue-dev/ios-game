@@ -163,7 +163,7 @@
     </scenes>
     <resources>
         <image name="background_sample" width="560" height="980"/>
-        <image name="enemy_sample_small" width="540" height="948"/>
+        <image name="enemy_sample_small" width="560" height="980"/>
         <image name="item_sample_medicine" width="104.5" height="105"/>
         <image name="item_sample_talisman" width="104.5" height="105"/>
         <image name="reel_auto_button_green" width="246.66667175292969" height="41"/>

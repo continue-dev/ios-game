@@ -55,7 +55,7 @@ extension BattleProgressView {
         
         self.progressBar.translatesAutoresizingMaskIntoConstraints = false
         self.progressBar.widthAnchor.constraint(equalTo: self.baseBarView.heightAnchor, constant: -8).isActive = true
-        self.progressBar.heightAnchor.constraint(equalTo: self.baseBarView.widthAnchor, constant: -4).isActive = true
+        self.progressBar.heightAnchor.constraint(equalTo: self.baseBarView.widthAnchor, constant: -6).isActive = true
         self.progressBar.transform = CGAffineTransform(rotationAngle: -90 * .pi / 180)
         
         self.baseStackView.subviews.forEach { [weak self] v in
