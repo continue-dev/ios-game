@@ -11,7 +11,7 @@ class ReelView: UIView {
     @IBOutlet private weak var rightBottomStone: UIView!
     
     private var reelChars = [ReelCharacter]()
-    private var isAnimating = false
+    private(set) var isAnimating = false
     
     var line: ReelLine? {
         didSet {
@@ -29,7 +29,7 @@ class ReelView: UIView {
         setUp()
     }
     
-    func setUp() {
+    private func setUp() {
         guard let view = Bundle.main.loadNibNamed("ReelView", owner: self, options: nil)?.first as? UIView else { return }
         view.frame = self.bounds
         addSubview(view)
@@ -39,6 +39,23 @@ class ReelView: UIView {
         self.frameImageView.image = line?.frameImage
         addConstraints()
         addReelCharacters()
+    }
+    
+    func startAnimation() {
+        guard !self.isAnimating else { return }
+        self.reelChars.enumerated().forEach { offset, element in
+            element.startAnimation(delay: Double(offset)/20)
+        }
+        self.isAnimating.toggle()
+    }
+    
+    func stopAnimation(results: [AttributeType]) {
+        guard self.isAnimating else { return }
+        guard results.count == self.line?.numberOfCharacter else { assert(false, "Reel lines dosen't match."); return }
+        self.reelChars.enumerated().forEach { offset, element in
+            element.stopAnimation(result: results[offset], delay: Double(offset)/20)
+        }
+        self.isAnimating.toggle()
     }
     
     private func addConstraints() {
@@ -147,17 +164,6 @@ class ReelView: UIView {
         }
         
     }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.reelChars.enumerated().forEach { offset, element in
-            if isAnimating {
-                element.stopAnimation(result: .fire, delay: Double(offset)/20)
-            } else {
-                element.startAnimation(delay: Double(offset)/20)
-            }
-        }
-        self.isAnimating.toggle()
-    }
 }
 
 enum ReelLine {
@@ -173,6 +179,17 @@ enum ReelLine {
             return UIImage(named: "reel_frame_double")
         case .triple:
             return UIImage(named: "reel_frame_triple")
+        }
+    }
+    
+    var numberOfCharacter: Int {
+        switch self {
+        case .single:
+            return 3
+        case .double:
+            return 6
+        case .triple:
+            return 9
         }
     }
 }

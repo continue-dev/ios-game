@@ -9,5 +9,6 @@ struct Enemy {
     let attackType: [AttributeType]
     let defenseType: [AttributeType]
     let image: UIImage
+    let probability: Probability
 }
 

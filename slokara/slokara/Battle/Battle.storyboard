@@ -26,13 +26,13 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KSg-qx-4iC">
                                 <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_sample" translatesAutoresizingMaskIntoConstraints="NO" id="VyW-N0-1p0">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VyW-N0-1p0">
                                         <rect key="frame" x="-20" y="-121.33333333333331" width="415" height="726.33333333333326"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="VyW-N0-1p0" secondAttribute="height" multiplier="112:196" id="QTR-fF-5jm"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="enemy_sample_small" translatesAutoresizingMaskIntoConstraints="NO" id="bg7-dl-2LQ">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bg7-dl-2LQ">
                                         <rect key="frame" x="-20" y="-121.33333333333331" width="415" height="726.33333333333326"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ir-Uy-gqj" customClass="ReelView" customModule="slokara" customModuleProvider="target">
@@ -162,8 +162,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="background_sample" width="560" height="980"/>
-        <image name="enemy_sample_small" width="560" height="980"/>
         <image name="item_sample_medicine" width="104.5" height="105"/>
         <image name="item_sample_talisman" width="104.5" height="105"/>
         <image name="reel_auto_button_green" width="246.66667175292969" height="41"/>
