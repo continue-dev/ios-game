@@ -1,4 +1,6 @@
 import UIKit
+import RxSwift
+import RxCocoa
 
 class ReelView: UIView {
     
@@ -10,15 +12,18 @@ class ReelView: UIView {
     @IBOutlet private weak var rightCenterStone: UIView!
     @IBOutlet private weak var rightBottomStone: UIView!
     
+    private let disposeBag = DisposeBag()
     private var reelChars = [ReelCharacter]()
     private(set) var isAnimating = false
     
-    var line: ReelLine? {
-        didSet {
-            setUpFrame()
-        }
-    }
+    private var results = [AttributeType]()
+    private let reelStopEvent = PublishRelay<[AttributeType]>()
+    var reelStopped: Observable<[AttributeType]> { return reelStopEvent.asObservable() }
     
+    var line: ReelLine? {
+        didSet { setUpFrame() }
+    }
+        
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUp()
@@ -39,10 +44,20 @@ class ReelView: UIView {
         self.frameImageView.image = line?.frameImage
         addConstraints()
         addReelCharacters()
+        bind()
+    }
+    
+    private func bind() {
+        Observable.zip(self.reelChars.map{ $0.animationStoped }).subscribe(onNext: { [unowned self] _ in
+            guard self.isAnimating else { return }
+            self.reelStopEvent.accept(self.results)
+            self.isAnimating.toggle()
+        }).disposed(by: disposeBag)
     }
     
     func startAnimation() {
         guard !self.isAnimating else { return }
+        self.results.removeAll()
         self.reelChars.enumerated().forEach { offset, element in
             element.startAnimation(delay: Double(offset)/20)
         }
@@ -52,10 +67,10 @@ class ReelView: UIView {
     func stopAnimation(results: [AttributeType]) {
         guard self.isAnimating else { return }
         guard results.count == self.line?.numberOfCharacter else { assert(false, "Reel lines dosen't match."); return }
+        self.results = results
         self.reelChars.enumerated().forEach { offset, element in
             element.stopAnimation(result: results[offset], delay: Double(offset)/20)
         }
-        self.isAnimating.toggle()
     }
     
     private func addConstraints() {

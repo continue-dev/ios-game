@@ -1,7 +1,11 @@
 import UIKit
+import RxSwift
+import RxCocoa
 
 class ReelCharacter: UIImageView {
     private var currentCharacter: AttributeType? = .light
+    private let stoped = PublishRelay<Void>()
+    var animationStoped: Observable<Void> { return self.stoped.asObservable() }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -35,6 +39,7 @@ class ReelCharacter: UIImageView {
             self?.stopAnimating()
             self?.layer.removeAllAnimations()
             self?.image = result.image
+            self?.stoped.accept(())
         }
     }
 }

@@ -2,6 +2,7 @@ import RxSwift
 
 protocol BattleModelProtocol {
     var currentStage: Observable<Stage> { get }
+    var userParameter: Observable<UserParameter> { get }
 }
 
 final class BattleModelImpl: BattleModelProtocol {
@@ -21,5 +22,9 @@ final class BattleModelImpl: BattleModelProtocol {
     
     var currentStage: Observable<Stage> {
         return Observable.just(self.stage)
+    }
+    
+    var userParameter: Observable<UserParameter> {
+        return Observable.just(UserParameter(fireAttack: 5, waterAttack: 5, windAttack: 5, soilAttack: 5, lightAttack: 5, darknessAttack: 10, defense: 20, maxHp: 100))
     }
 }

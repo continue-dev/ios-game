@@ -16,9 +16,10 @@ class BattleViewController: UIViewController, NavigationChildViewController {
     
     private let disposeBag = DisposeBag()
     private let screenTapped = PublishRelay<Bool>()
+    private let reelStoped = PublishRelay<[AttributeType]>()
     var stageId: Int!
     
-    private lazy var viewModel = BattleViewModel(screenTaped: screenTapped.asObservable(), battleModel: BattleModelImpl(stageId: stageId))
+    private lazy var viewModel = BattleViewModel(screenTaped: screenTapped.asObservable(), reelStoped: reelStoped.asObservable(), battleModel: BattleModelImpl(stageId: stageId))
 
     
     override func viewDidLoad() {
@@ -46,9 +47,14 @@ class BattleViewController: UIViewController, NavigationChildViewController {
         viewModel.currentEnemy.map{ $0.image }.bind(to: enemyImageView.rx.image).disposed(by: disposeBag)
         viewModel.numberOfEnemy.subscribe(onNext: { [weak self] number in
             self?.progressView.progressMax = number
-            }).disposed(by: disposeBag)
+        }).disposed(by: disposeBag)
         viewModel.reelStart.bind(to: startReelAction).disposed(by: disposeBag)
-        viewModel.reelStop.bind(to: stopReelAction).disposed(by: disposeBag)
+        viewModel.reelActionResults.bind(to: stopReelAction).disposed(by: disposeBag)
+        viewModel.playerAttack.bind(to: playerAttack).disposed(by: disposeBag)
+        
+        self.reelView.reelStopped.subscribe(onNext: { [weak self] results in
+            self?.reelStoped.accept(results)
+        }).disposed(by: disposeBag)
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -64,6 +70,23 @@ extension BattleViewController {
             self.view.isUserInteractionEnabled = true
         }
     }
+    
+    private func swing(view: UIView, buffa: CGFloat) {
+        UIView.animateKeyframes(withDuration: 0.1, delay: 0, options: .autoreverse, animations: {
+            view.transform = CGAffineTransform(translationX: buffa, y: -buffa / 2)
+        }) { _ in
+            UIView.animateKeyframes(withDuration: 0.1, delay: 0, options: .autoreverse, animations: {
+                view.transform = CGAffineTransform(translationX: -buffa, y: buffa / 2)
+            }) { [weak self] (_) in
+                let buffa = buffa - 4
+                guard buffa > 0 else {
+                    view.transform = .identity
+                    return
+                }
+                self?.swing(view: view, buffa: buffa)
+            }
+        }
+    }
 }
 
 extension BattleViewController {
@@ -76,6 +99,12 @@ extension BattleViewController {
     private var stopReelAction: Binder<[AttributeType]> {
         return Binder(self) { me, value in
             me.reelView.stopAnimation(results: value)
+        }
+    }
+    
+    private var playerAttack: Binder<Int64> {
+        return Binder(self) { me, value in
+            me.swing(view: me.enemyImageView, buffa: 4)
         }
     }
 }
