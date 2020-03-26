@@ -5,6 +5,7 @@ final class BattleViewModel {
     private let battleModel: BattleModelProtocol
     private let disposeBag = DisposeBag()
     
+    // ここはDBから取得する
     private let reelLine = ReelLine.triple
     private var userParameter: UserParameter!
     
@@ -16,33 +17,35 @@ final class BattleViewModel {
         }
     }
     private var currentStep = 0
-    private var enemy: Enemy! {
-        didSet { currentEnemy.accept(enemy) }
-    }
-    
+    private var enemy: Enemy! { didSet { currentEnemy.accept(enemy) } }
     lazy var currentEnemy = BehaviorRelay<Enemy>(value: self.stage.enemies.first!)
     var backGround: Observable<UIImage>!
     var numberOfEnemy: Observable<Int>!
+   
     let reelStart: Observable<Void>
     var reelActionResults: Observable<[AttributeType]>!
     
+    // プレイヤーの攻撃
     private let playerAttackRelay = PublishRelay<Int64>()
     var playerAttack: Observable<Int64> { return playerAttackRelay.asObservable() }
     
+    // 次のステップに進める
     private let toNextEvent = PublishRelay<Void>()
     var toNextStep: Observable<Void> { return self.toNextEvent.asObservable() }
     
+    // 敵の攻撃
     private let toEnemyEvent = PublishRelay<Void>()
     var toEnemyTurn: Observable<Void> { return self.toEnemyEvent.asObservable() }
     
-//    private let enemyAttackRelay = PublishRelay<Void>()
-//    var enemyAttack: Observable<Void> { return self.enemyAttackRelay.asObservable() }
+    // 敵の攻撃時の数値を流しておくRelay
     private let enemyAttackPowerRelay = PublishRelay<Int64>()
     var damageFromEnemy: Observable<Int64> { return self.enemyAttackPowerRelay.asObservable() }
     
+    // 次の敵を表示させる
     private let startWithNewEnemyRelay = PublishRelay<Void>()
     var startWithNewEnemy: Observable<Void> { return self.startWithNewEnemyRelay.asObservable() }
     
+    // ステージクリア
     private let stageClearRelay = PublishRelay<Void>()
     var stageClear: Observable<Void> { return self.stageClearRelay.asObservable() }
     
@@ -84,7 +87,7 @@ final class BattleViewModel {
         }.reduce(0) { $0 + $1 }
         self.playerAttackRelay.accept(attackPower)
         
-        // 敵
+        // resultsを引き回さずに済むように、ここで敵の攻撃もacceptしておく。subscribe側でtoEnemyTurnをwithLatestFromする事で任意のタイミングで受け取れる
         let damage = results.filter{ $0 == .enemy}.map{ [unowned self] _ in self.enemy.attack }.reduce(0){ $0 + $1 } - self.userParameter.defense
         self.enemyAttackPowerRelay.accept(damage > 0 ? damage : 0)
     }

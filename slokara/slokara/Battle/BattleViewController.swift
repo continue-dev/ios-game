@@ -69,6 +69,7 @@ class BattleViewController: UIViewController, NavigationChildViewController {
     }
 }
 
+// Private method
 extension BattleViewController {
     private func startGame() {
         self.showEnemy { self.view.isUserInteractionEnabled = true }
@@ -109,19 +110,24 @@ extension BattleViewController {
     }
 }
 
+
+// Binder
 extension BattleViewController {
+    // リール始動
     private var startReelAction: Binder<Void> {
         return Binder(self) { me, _ in
             me.reelView.startAnimation()
         }
     }
     
+    // リール停止
     private var stopReelAction: Binder<[AttributeType]> {
         return Binder(self) { me, value in
             me.reelView.stopAnimation(results: value)
         }
     }
     
+    // 攻撃
     private var playerAttack: Binder<Int64> {
         return Binder(self) { me, value in
             me.view.isUserInteractionEnabled = false
@@ -131,12 +137,14 @@ extension BattleViewController {
         }
     }
     
+    // 次のステップへ
     private var goNextStep: Binder<Void> {
         return Binder(self) { me, _ in
             me.hideEnemy(){ [weak self] in self?.requesrNextEnemy.accept(()) }
         }
     }
     
+    // 防御
     private var goEnemyTurn: Binder<Int64> {
         return Binder(self) { me, damage in
             if damage > 30 {
@@ -151,6 +159,7 @@ extension BattleViewController {
         }
     }
     
+    // 新しい敵を表示
     private var startNext: Binder<Void> {
         return Binder(self) { me, _ in
             me.progressView.nextStep()
@@ -160,6 +169,7 @@ extension BattleViewController {
         }
     }
     
+    // ステージクリア
     private var stageCleared: Binder<Void> {
         return Binder(self) { me, _ in
             me.hideEnemy() { [weak self] in
