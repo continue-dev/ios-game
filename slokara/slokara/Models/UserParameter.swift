@@ -1,12 +1,31 @@
 import Foundation
 
 struct UserParameter {
-    let fireAttack: Int
-    let waterAttack: Int
-    let windAttack: Int
-    let soilAttack: Int
-    let lightAttack: Int
-    let darknessAttack: Int
-    let defense: Int
-    let maxHp: Int
+    let fireAttack: Int64
+    let waterAttack: Int64
+    let windAttack: Int64
+    let soilAttack: Int64
+    let lightAttack: Int64
+    let darknessAttack: Int64
+    let defense: Int64
+    let maxHp: Int64
+    
+    func attackPower(of type: AttributeType) -> Int64 {
+        switch type {
+        case .fire:
+            return fireAttack
+        case .water:
+            return waterAttack
+        case .wind:
+            return windAttack
+        case .soil:
+            return soilAttack
+        case .light:
+            return lightAttack
+        case .darkness:
+            return darknessAttack
+        default:
+            return 0
+        }
+    }
 }

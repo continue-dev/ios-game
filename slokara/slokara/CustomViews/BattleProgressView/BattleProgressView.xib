@@ -38,23 +38,23 @@
                     <color key="trackTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </progressView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="zBb-DK-0Hs">
-                    <rect key="frame" x="2" y="2" width="98" height="489"/>
+                    <rect key="frame" x="3" y="3" width="96" height="487"/>
                 </stackView>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="RMr-I6-eeg" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="DGP-Jb-sqj"/>
                 <constraint firstItem="4sf-Uz-EaC" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="H0u-pD-0h3"/>
-                <constraint firstItem="zBb-DK-0Hs" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" constant="-2" id="IHQ-TT-hnF"/>
+                <constraint firstItem="zBb-DK-0Hs" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" constant="-3" id="IHQ-TT-hnF"/>
                 <constraint firstItem="4sf-Uz-EaC" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="IVJ-lJ-e4t"/>
                 <constraint firstItem="RMr-I6-eeg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="SuW-fV-grT"/>
                 <constraint firstItem="LbJ-XN-IUY" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="1:2" id="aXz-mh-Fhb"/>
                 <constraint firstAttribute="bottom" secondItem="LbJ-XN-IUY" secondAttribute="bottom" constant="5" id="h5s-5U-ojZ"/>
                 <constraint firstAttribute="bottom" secondItem="RMr-I6-eeg" secondAttribute="bottom" id="hXR-cQ-7Fl"/>
-                <constraint firstAttribute="bottom" secondItem="zBb-DK-0Hs" secondAttribute="bottom" constant="2" id="ilg-Ye-WQG"/>
+                <constraint firstAttribute="bottom" secondItem="zBb-DK-0Hs" secondAttribute="bottom" constant="3" id="ilg-Ye-WQG"/>
                 <constraint firstItem="LbJ-XN-IUY" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="kFh-OS-fuw"/>
-                <constraint firstItem="zBb-DK-0Hs" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="2" id="mBC-aj-DHR"/>
-                <constraint firstItem="zBb-DK-0Hs" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="2" id="o81-to-H52"/>
+                <constraint firstItem="zBb-DK-0Hs" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="3" id="mBC-aj-DHR"/>
+                <constraint firstItem="zBb-DK-0Hs" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="3" id="o81-to-H52"/>
                 <constraint firstItem="LbJ-XN-IUY" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="qOg-I6-jxv"/>
                 <constraint firstAttribute="trailing" secondItem="RMr-I6-eeg" secondAttribute="trailing" id="sdw-DM-yaL"/>
             </constraints>

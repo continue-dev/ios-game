@@ -17,7 +17,8 @@ class TaskConfirmViewController: UIViewController, NavigationChildViewController
         taskCellView.setTask(task)
         alertView.setMessage("この課題を履修しますか？")
         let positive = AlertAction(title: "履修する", style: .positive) { [weak self] in
-            guard let battleViewController = UIStoryboard(name: "Battle", bundle: nil).instantiateInitialViewController() as? NavigationChildViewController else { return }
+            guard let battleViewController = UIStoryboard(name: "Battle", bundle: nil).instantiateInitialViewController() as? BattleViewController else { return }
+            battleViewController.stageId = task.stageId
             let navigationController = NavigationViewController.instantiate(rootViewController: battleViewController)
             navigationController.modalPresentationStyle = .fullScreen
             navigationController.modalTransitionStyle = .crossDissolve

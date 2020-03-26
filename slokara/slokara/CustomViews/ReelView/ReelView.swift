@@ -1,4 +1,6 @@
 import UIKit
+import RxSwift
+import RxCocoa
 
 class ReelView: UIView {
     
@@ -10,15 +12,18 @@ class ReelView: UIView {
     @IBOutlet private weak var rightCenterStone: UIView!
     @IBOutlet private weak var rightBottomStone: UIView!
     
+    private let disposeBag = DisposeBag()
     private var reelChars = [ReelCharacter]()
-    private var isAnimating = false
+    private(set) var isAnimating = false
+    
+    private var results = [AttributeType]()
+    private let reelStopEvent = PublishRelay<[AttributeType]>()
+    var reelStopped: Observable<[AttributeType]> { return reelStopEvent.asObservable() }
     
     var line: ReelLine? {
-        didSet {
-            setUpFrame()
-        }
+        didSet { setUpFrame() }
     }
-    
+        
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUp()
@@ -29,7 +34,7 @@ class ReelView: UIView {
         setUp()
     }
     
-    func setUp() {
+    private func setUp() {
         guard let view = Bundle.main.loadNibNamed("ReelView", owner: self, options: nil)?.first as? UIView else { return }
         view.frame = self.bounds
         addSubview(view)
@@ -39,6 +44,33 @@ class ReelView: UIView {
         self.frameImageView.image = line?.frameImage
         addConstraints()
         addReelCharacters()
+        bind()
+    }
+    
+    private func bind() {
+        Observable.zip(self.reelChars.map{ $0.animationStoped }).subscribe(onNext: { [unowned self] _ in
+            guard self.isAnimating else { return }
+            self.reelStopEvent.accept(self.results)
+            self.isAnimating.toggle()
+        }).disposed(by: disposeBag)
+    }
+    
+    func startAnimation() {
+        guard !self.isAnimating else { return }
+        self.results.removeAll()
+        self.reelChars.enumerated().forEach { offset, element in
+            element.startAnimation(delay: Double(offset)/20)
+        }
+        self.isAnimating.toggle()
+    }
+    
+    func stopAnimation(results: [AttributeType]) {
+        guard self.isAnimating else { return }
+        guard results.count == self.line?.numberOfCharacter else { assert(false, "Reel lines dosen't match."); return }
+        self.results = results
+        self.reelChars.enumerated().forEach { offset, element in
+            element.stopAnimation(result: results[offset], delay: Double(offset)/20)
+        }
     }
     
     private func addConstraints() {
@@ -147,17 +179,6 @@ class ReelView: UIView {
         }
         
     }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.reelChars.enumerated().forEach { offset, element in
-            if isAnimating {
-                element.stopAnimation(result: .fire, delay: Double(offset)/20)
-            } else {
-                element.startAnimation(delay: Double(offset)/20)
-            }
-        }
-        self.isAnimating.toggle()
-    }
 }
 
 enum ReelLine {
@@ -173,6 +194,17 @@ enum ReelLine {
             return UIImage(named: "reel_frame_double")
         case .triple:
             return UIImage(named: "reel_frame_triple")
+        }
+    }
+    
+    var numberOfCharacter: Int {
+        switch self {
+        case .single:
+            return 3
+        case .double:
+            return 6
+        case .triple:
+            return 9
         }
     }
 }
