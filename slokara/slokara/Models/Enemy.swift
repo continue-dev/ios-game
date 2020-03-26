@@ -3,9 +3,9 @@ import UIKit
 struct Enemy {
     let id: Int
     let name: String
-    let hp: Int
-    let attack: Int
-    let defense: Int
+    var hp: Int64
+    let attack: Int64
+    let defense: Int64
     let attackType: [AttributeType]
     let defenseType: [AttributeType]
     let image: UIImage

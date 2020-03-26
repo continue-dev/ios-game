@@ -75,12 +75,12 @@
                                     <constraint firstItem="bg7-dl-2LQ" firstAttribute="centerY" secondItem="VyW-N0-1p0" secondAttribute="centerY" id="Vbt-Ww-O3x"/>
                                     <constraint firstItem="bg7-dl-2LQ" firstAttribute="centerX" secondItem="VyW-N0-1p0" secondAttribute="centerX" id="XH6-XI-p0v"/>
                                     <constraint firstItem="Lsx-ll-Oc2" firstAttribute="height" secondItem="Bsu-4l-mSA" secondAttribute="height" multiplier="5:7" id="bxh-LH-U1W"/>
+                                    <constraint firstItem="6ir-Uy-gqj" firstAttribute="leading" secondItem="Bsu-4l-mSA" secondAttribute="leading" id="dpC-m7-450"/>
                                     <constraint firstAttribute="trailing" secondItem="6ir-Uy-gqj" secondAttribute="trailing" constant="-20" id="fTQ-Nh-eBi"/>
-                                    <constraint firstItem="Bsu-4l-mSA" firstAttribute="leading" secondItem="KSg-qx-4iC" secondAttribute="leading" constant="-20" id="gOD-Qk-IJw"/>
                                     <constraint firstAttribute="bottom" secondItem="6ir-Uy-gqj" secondAttribute="bottom" constant="-18" id="iPA-VH-a6e"/>
                                     <constraint firstItem="6ir-Uy-gqj" firstAttribute="top" secondItem="VyW-N0-1p0" secondAttribute="bottom" constant="-20" id="j56-DR-f4O"/>
-                                    <constraint firstAttribute="trailing" secondItem="Bsu-4l-mSA" secondAttribute="trailing" constant="-20" id="kw8-Zh-wWd"/>
                                     <constraint firstItem="VyW-N0-1p0" firstAttribute="leading" secondItem="KSg-qx-4iC" secondAttribute="leading" constant="-20" id="s50-pV-cRE"/>
+                                    <constraint firstItem="6ir-Uy-gqj" firstAttribute="trailing" secondItem="Bsu-4l-mSA" secondAttribute="trailing" id="sO0-k7-O4T"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6es-fn-r9Y" customClass="BattleProgressView" customModule="slokara" customModuleProvider="target">
@@ -150,6 +150,7 @@
                         <outlet property="enemyImageView" destination="bg7-dl-2LQ" id="iKs-FK-R3d"/>
                         <outlet property="firstItemButton" destination="RQ4-7i-iQ1" id="7Q1-lw-Am2"/>
                         <outlet property="progressView" destination="6es-fn-r9Y" id="O1F-dw-pra"/>
+                        <outlet property="reelHeader" destination="Bsu-4l-mSA" id="dZS-4x-nsx"/>
                         <outlet property="reelView" destination="6ir-Uy-gqj" id="Mvb-qA-dRj"/>
                         <outlet property="secondItemButton" destination="J2K-pY-TlY" id="s28-9m-Xt8"/>
                         <outlet property="thirdItemButton" destination="fXv-y5-3I4" id="Ras-WD-WFB"/>
