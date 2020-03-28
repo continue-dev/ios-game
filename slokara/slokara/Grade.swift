@@ -1,6 +1,6 @@
 import UIKit
 
-enum Grade {
+enum Grade: String {
     case wood
     case stone
     case copper
