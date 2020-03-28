@@ -57,7 +57,7 @@ class NavigationViewController: UIViewController {
     
     private func bind() {
         viewModel.hpProgress
-            .bind(to: hpProgressView.rx.progress)
+            .bind(to: progressWithAnim)
             .disposed(by: disposeBag)
         
         BehaviorRelay.zip(viewModel.currentHp, viewModel.maxHp)
@@ -208,6 +208,12 @@ extension NavigationViewController {
     private var transitionToBack: Binder<Void> {
         return Binder(self) { me, _ in
             me.popViewController(animate: true)
+        }
+    }
+    
+    private var progressWithAnim: Binder<Float> {
+        return Binder(self) { me, progress in
+            me.hpProgressView.setProgress(progress, animated: true)
         }
     }
 }

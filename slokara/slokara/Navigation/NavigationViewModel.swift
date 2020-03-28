@@ -6,8 +6,8 @@ final class NavigationViewModel {
     private let disposeBag = DisposeBag()
     
     let hpProgress = BehaviorRelay<Float>(value: 0)
-    let currentHp = BehaviorRelay<Int>(value: 0)
-    let maxHp = BehaviorRelay<Int>(value: 1)
+    let currentHp = BehaviorRelay<Int64>(value: 0)
+    let maxHp = BehaviorRelay<Int64>(value: 1)
     let currentCions = BehaviorRelay<Int>(value: 0)
     let currentCredit = BehaviorRelay<Int>(value: 0)
     let currentRank = BehaviorRelay<Int>(value: 1)
@@ -20,22 +20,14 @@ final class NavigationViewModel {
         self.transtionBack = backButtonTapped
             .throttle(RxTimeInterval.seconds(1), latest: false, scheduler: MainScheduler.instance)
         
-        self.navigationModel.numberOfCoins.subscribe(onNext: { [weak self] num in
-            self?.currentCions.accept(num)
-        }).disposed(by: disposeBag)
-        self.navigationModel.numberOfCredit.subscribe(onNext: { [weak self] num in
-            self?.currentCredit.accept(num)
-        }).disposed(by: disposeBag)
-        self.navigationModel.grade.subscribe(onNext: { [weak self] grade in
-            self?.currentGrade.accept(grade)
-        }).disposed(by: disposeBag)
-        self.navigationModel.rankValue.subscribe(onNext: { [weak self] rankValue in
-            self?.currentRank.accept(rankValue)
-        }).disposed(by: disposeBag)
-        Observable.zip(self.navigationModel.maxHp, self.navigationModel.currentHp).subscribe(onNext: { [weak self] max, current in
-            self?.hpProgress.accept(Float(current) / Float(max))
-            self?.currentHp.accept(current)
-            self?.maxHp.accept(max)
+        self.navigationModel.status.subscribe(onNext: { [weak self] status in
+            self?.hpProgress.accept(Float(status.currentHp) / Float(status.maxHp))
+            self?.currentHp.accept(status.currentHp)
+            self?.maxHp.accept(status.maxHp)
+            self?.currentCions.accept(status.numberOfCoins)
+            self?.currentCredit.accept(status.numberOfCredit)
+            self?.currentGrade.accept(status.grade)
+            self?.currentRank.accept(status.rankValue)
         }).disposed(by: disposeBag)
     }
 }

@@ -38,7 +38,7 @@ final class BattleViewModel {
     var toEnemyTurn: Observable<Void> { return self.toEnemyEvent.asObservable() }
     
     // 敵の攻撃時の数値を流しておくRelay
-    private let enemyAttackPowerRelay = PublishRelay<Int64>()
+    private let enemyAttackPowerRelay = BehaviorRelay<Int64>(value: 0)
     var damageFromEnemy: Observable<Int64> { return self.enemyAttackPowerRelay.asObservable() }
     
     // 次の敵を表示させる
@@ -95,6 +95,7 @@ final class BattleViewModel {
     private func checkEnemyLife(damage: Int64) {
         self.enemy.hp -= damage
         if self.enemy.hp > 0 {
+            self.battleModel.culcUserHp(-self.enemyAttackPowerRelay.value)
             self.toEnemyEvent.accept(())
         } else {
             guard self.currentStep < self.stage.enemies.count - 1 else { self.stageClearRelay.accept(()); return }
