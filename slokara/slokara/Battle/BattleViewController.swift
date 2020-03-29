@@ -147,6 +147,7 @@ extension BattleViewController {
     // 防御
     private var goEnemyTurn: Binder<Int64> {
         return Binder(self) { me, damage in
+            guard damage > 0 else { self.view.isUserInteractionEnabled = true; return }
             if damage > 30 {
                 me.swing(views: [me.baseView], buffa: 8) { [weak self] in
                     self?.view.isUserInteractionEnabled = true
