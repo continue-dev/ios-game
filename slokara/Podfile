@@ -9,6 +9,7 @@ target 'slokara' do
   pod 'RxSwift', '~> 5'
   pod 'RxCocoa', '~> 5'
   pod 'RealmSwift'
+  pod "RxRealm"
 
   target 'slokaraTests' do
     inherit! :search_paths

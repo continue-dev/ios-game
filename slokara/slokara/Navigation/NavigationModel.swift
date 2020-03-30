@@ -1,37 +1,17 @@
 import Foundation
 import RxSwift
+import RealmSwift
+import RxRealm
 
 protocol NavigationModelProtocol {
-    var maxHp: Observable<Int> { get }
-    var currentHp: Observable<Int> { get }
-    var numberOfCoins: Observable<Int> { get }
-    var numberOfCredit: Observable<Int> { get }
-    var grade: Observable<Grade> { get }
-    var rankValue: Observable<Int>{ get }
+    var status: Observable<UserStatus> { get }
 }
 
 final class NavigationModelImpl: NavigationModelProtocol {
-    var maxHp: Observable<Int> {
-        return Observable.just(100)
-    }
+    private let realm = try! Realm()
+    private lazy var userStatus = self.realm.objects(UserStatus.self).first!
     
-    var currentHp: Observable<Int> {
-        return Observable.just(70)
-    }
-    
-    var numberOfCoins: Observable<Int> {
-        return Observable.just(567)
-    }
-    
-    var numberOfCredit: Observable<Int> {
-        return Observable.just(99)
-    }
-    
-    var grade: Observable<Grade> {
-        return Observable.just(.copper)
-    }
-    
-    var rankValue: Observable<Int> {
-        return Observable.just(2)
+    var status: Observable<UserStatus> {
+        return Observable.from(object: userStatus)
     }
 }

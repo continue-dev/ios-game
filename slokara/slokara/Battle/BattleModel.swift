@@ -1,8 +1,10 @@
 import RxSwift
+import RealmSwift
 
 protocol BattleModelProtocol {
     var currentStage: Observable<Stage> { get }
     var userParameter: Observable<UserParameter> { get }
+    func culcUserHp(_ value: Int64)
 }
 
 final class BattleModelImpl: BattleModelProtocol {
@@ -26,5 +28,14 @@ final class BattleModelImpl: BattleModelProtocol {
     
     var userParameter: Observable<UserParameter> {
         return Observable.just(UserParameter(fireAttack: 5, waterAttack: 5, windAttack: 5, soilAttack: 5, lightAttack: 5, darknessAttack: 10, defense: 20, maxHp: 100))
+    }
+    
+    func culcUserHp(_ value: Int64) {
+        guard let realm = try? Realm() else { assert(false, "Realmをインスタンス化できませんでした"); return }
+        guard let status = realm.objects(UserStatus.self).first else { assert(false, "UserStatusを読み込めませんでした"); return }
+        let newValue = status.currentHp + value >= status.maxHp ? status.maxHp : status.currentHp + value
+        try! realm.write {
+            status.currentHp = newValue > 0 ? newValue : 0
+        }
     }
 }

@@ -1,4 +1,5 @@
 import UIKit
+import RealmSwift
 
 class TitleViewController: UIViewController {
 
@@ -11,7 +12,19 @@ class TitleViewController: UIViewController {
         label.setFontSize(size: 32)
         label.numberOfLines = 2
         view.addSubview(label)
+        
+        fetchSaveData()
+    }
+    
+    private func fetchSaveData() {
+        let realm = try! Realm()
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
 
+        if realm.objects(UserStatus.self).isEmpty {
+            try! realm.write {
+                realm.add(UserStatus())
+            }
+        }
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {

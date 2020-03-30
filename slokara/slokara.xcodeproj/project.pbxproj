@@ -20,6 +20,7 @@
 		6A1C491923BA59B300261DF5 /* TaskCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A1C491823BA59B300261DF5 /* TaskCellView.xib */; };
 		6A1C491B23BA59BF00261DF5 /* TaskCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1C491A23BA59BF00261DF5 /* TaskCellView.swift */; };
 		6A1D5CA923C4C6D9005B8B48 /* BorderedButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A1D5CA823C4C6D9005B8B48 /* BorderedButton.xib */; };
+		6A5142AC2430729900791D9F /* UserStatusTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5142AB2430729900791D9F /* UserStatusTest.swift */; };
 		6A599E812426784C00067D7A /* Battle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A599E802426784C00067D7A /* Battle.storyboard */; };
 		6A599E832426785B00067D7A /* BattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A599E822426785B00067D7A /* BattleViewController.swift */; };
 		6A599E852426786800067D7A /* BattleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A599E842426786800067D7A /* BattleViewModel.swift */; };
@@ -35,6 +36,7 @@
 		6A68CA0C242A3CF50047F413 /* Stage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A68CA0B242A3CF50047F413 /* Stage.swift */; };
 		6A68CA0E242A3F4B0047F413 /* Probability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A68CA0D242A3F4B0047F413 /* Probability.swift */; };
 		6A68CA10242A49110047F413 /* ProbabilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A68CA0F242A49110047F413 /* ProbabilityTests.swift */; };
+		6A68CA13242F97900047F413 /* UserStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A68CA12242F97900047F413 /* UserStatus.swift */; };
 		6ABF318A23AF586A0014E0BD /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABF318923AF586A0014E0BD /* TaskListViewController.swift */; };
 		6ABF318C23AF58780014E0BD /* TaskList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6ABF318B23AF58780014E0BD /* TaskList.storyboard */; };
 		6ABF318E23AF59570014E0BD /* TaskListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABF318D23AF59570014E0BD /* TaskListViewModel.swift */; };
@@ -100,6 +102,7 @@
 		6A1C491823BA59B300261DF5 /* TaskCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskCellView.xib; sourceTree = "<group>"; };
 		6A1C491A23BA59BF00261DF5 /* TaskCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCellView.swift; sourceTree = "<group>"; };
 		6A1D5CA823C4C6D9005B8B48 /* BorderedButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BorderedButton.xib; sourceTree = "<group>"; };
+		6A5142AB2430729900791D9F /* UserStatusTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatusTest.swift; sourceTree = "<group>"; };
 		6A599E802426784C00067D7A /* Battle.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Battle.storyboard; sourceTree = "<group>"; };
 		6A599E822426785B00067D7A /* BattleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleViewController.swift; sourceTree = "<group>"; };
 		6A599E842426786800067D7A /* BattleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleViewModel.swift; sourceTree = "<group>"; };
@@ -115,6 +118,7 @@
 		6A68CA0B242A3CF50047F413 /* Stage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage.swift; sourceTree = "<group>"; };
 		6A68CA0D242A3F4B0047F413 /* Probability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Probability.swift; sourceTree = "<group>"; };
 		6A68CA0F242A49110047F413 /* ProbabilityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProbabilityTests.swift; sourceTree = "<group>"; };
+		6A68CA12242F97900047F413 /* UserStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatus.swift; sourceTree = "<group>"; };
 		6ABF318923AF586A0014E0BD /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		6ABF318B23AF58780014E0BD /* TaskList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TaskList.storyboard; sourceTree = "<group>"; };
 		6ABF318D23AF59570014E0BD /* TaskListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewModel.swift; sourceTree = "<group>"; };
@@ -276,6 +280,14 @@
 			path = BattleProgressView;
 			sourceTree = "<group>";
 		};
+		6A68CA11242F97440047F413 /* RealmObjects */ = {
+			isa = PBXGroup;
+			children = (
+				6A68CA12242F97900047F413 /* UserStatus.swift */,
+			);
+			path = RealmObjects;
+			sourceTree = "<group>";
+		};
 		6ABF318823AF584C0014E0BD /* TaskList */ = {
 			isa = PBXGroup;
 			children = (
@@ -345,6 +357,7 @@
 				98B652A5237DA9CE00C4A5B5 /* Title */,
 				98B652AA237DAC0E00C4A5B5 /* Home */,
 				987F28A92392BD2900131C27 /* CustomViews */,
+				6A68CA11242F97440047F413 /* RealmObjects */,
 				981D12DE23B4538A002A6B1E /* Models */,
 				9821B32D2378560300CF964D /* AppDelegate.swift */,
 				98D049792398166900CA868A /* Grade.swift */,
@@ -362,6 +375,7 @@
 				9821B3442378560400CF964D /* slokaraTests.swift */,
 				9821B3462378560400CF964D /* Info.plist */,
 				6A68CA0F242A49110047F413 /* ProbabilityTests.swift */,
+				6A5142AB2430729900791D9F /* UserStatusTest.swift */,
 			);
 			path = slokaraTests;
 			sourceTree = "<group>";
@@ -708,6 +722,7 @@
 				98B652A9237DA9F300C4A5B5 /* TitleViewController.swift in Sources */,
 				6A599E832426785B00067D7A /* BattleViewController.swift in Sources */,
 				98D0497A2398166900CA868A /* Grade.swift in Sources */,
+				6A68CA13242F97900047F413 /* UserStatus.swift in Sources */,
 				6A68CA0E242A3F4B0047F413 /* Probability.swift in Sources */,
 				6A599E902426966A00067D7A /* ReelCharacter.swift in Sources */,
 				987F28AB2392BD7F00131C27 /* CommonFontLabel.swift in Sources */,
@@ -730,6 +745,7 @@
 			files = (
 				9821B3452378560400CF964D /* slokaraTests.swift in Sources */,
 				6A68CA10242A49110047F413 /* ProbabilityTests.swift in Sources */,
+				6A5142AC2430729900791D9F /* UserStatusTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
