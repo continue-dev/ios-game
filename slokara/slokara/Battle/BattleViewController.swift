@@ -14,15 +14,16 @@ class BattleViewController: UIViewController, NavigationChildViewController {
     @IBOutlet private weak var enemyImageView: UIImageView!
     @IBOutlet private weak var autoButton: ToggleButton!
     @IBOutlet weak var reelHeader: UIImageView!
+    @IBOutlet weak var nextEnemyLabel: BorderedLabel!
     
     private let disposeBag = DisposeBag()
     private let screenTapped = PublishRelay<Bool>()
     private let reelStoped = PublishRelay<[AttributeType]>()
     private let playerAttacked = PublishRelay<Int64>()
-    private let requesrNextEnemy = PublishRelay<Void>()
+    private let requestNextEnemy = PublishRelay<Void>()
     var stageId: Int!
     
-    private lazy var viewModel = BattleViewModel(screenTaped: screenTapped.asObservable(), reelStoped: reelStoped.asObservable(), playerAttacked: playerAttacked.asObservable(), requestNextEnemy: requesrNextEnemy.asObservable(), battleModel: BattleModelImpl(stageId: stageId))
+    private lazy var viewModel = BattleViewModel(screenTaped: screenTapped.asObservable(), reelStoped: reelStoped.asObservable(), playerAttacked: playerAttacked.asObservable(), requestNextEnemy: requestNextEnemy.asObservable(), battleModel: BattleModelImpl(stageId: stageId))
 
     
     override func viewDidLoad() {
@@ -108,6 +109,62 @@ extension BattleViewController {
             completion?()
         }
     }
+    
+    private func setUpNextEnemyLabel() {
+        let attributedString = NSMutableAttributedString(string: "NEXT\nENEMY")
+        
+        attributedString.addAttribute(.kern, value: -2, range: NSRange(location: 0, length: attributedString.length))
+        self.nextEnemyLabel.attributedText = attributedString
+        self.nextEnemyLabel.textColor = .white
+        self.nextEnemyLabel.strokeColor = UIColor(red: 83 / 255, green: 65 / 255, blue: 35 / 255, alpha: 1)
+        self.nextEnemyLabel.numberOfLines = 0
+        
+        self.nextEnemyLabel.translatesAutoresizingMaskIntoConstraints = true
+        self.nextEnemyLabel.center = CGPoint(x: self.view.center.x, y: (self.view.bounds.height - self.reelHeader.bounds.height - self.reelView.bounds.height + 18) / 2 )
+    }
+    
+    private func setUpDangerLabel() {
+        let attributedString = NSMutableAttributedString(string: "DANGER")
+        
+        attributedString.addAttribute(.kern, value: -2, range: NSRange(location: 0, length: attributedString.length))
+        self.nextEnemyLabel.attributedText = attributedString
+        self.nextEnemyLabel.textColor = UIColor(red: 195 / 255, green: 34 / 255, blue: 10 / 255, alpha: 1)
+        self.nextEnemyLabel.strokeColor = .white
+        self.nextEnemyLabel.numberOfLines = 1
+        
+        self.nextEnemyLabel.translatesAutoresizingMaskIntoConstraints = true
+        self.nextEnemyLabel.center = CGPoint(x: self.view.center.x, y: (self.view.bounds.height - self.reelHeader.bounds.height - self.reelView.bounds.height + 18) / 2 )
+    }
+    
+    private func showDangerLabel(_ completion: (() -> ())? = nil) {
+        setUpDangerLabel()
+        self.nextEnemyLabel.transform = CGAffineTransform(scaleX: 0.2, y: 0.2)
+        UIView.animate(withDuration: 0.2, animations: { [weak self] in
+            self?.nextEnemyLabel.alpha = 1
+            self?.nextEnemyLabel.transform = .identity
+        }) { (_) in
+            UIView.animate(withDuration: 0.2, delay: 0.7, options: .curveEaseIn, animations: { [weak self] in
+                self?.nextEnemyLabel.alpha = 0
+                self?.nextEnemyLabel.transform = CGAffineTransform(scaleX: 3, y: 3)
+            }) { [weak self] (_) in
+                self?.nextEnemyLabel.transform = .identity
+                completion?()
+            }
+        }
+    }
+    
+    private func showNextEnemyLabel(_ completion: (() -> ())? = nil) {
+        setUpNextEnemyLabel()
+        UIView.animate(withDuration: 0.2, animations: {[weak self] in
+            self?.nextEnemyLabel.alpha = 1
+        }) { (_) in
+            UIView.animate(withDuration: 0.2, delay: 0.5, options: .curveEaseIn, animations: {[weak self] in
+                self?.nextEnemyLabel.alpha = 0
+            }) { (_) in
+                completion?()
+            }
+        }
+    }
 }
 
 
@@ -140,7 +197,9 @@ extension BattleViewController {
     // 次のステップへ
     private var goNextStep: Binder<Void> {
         return Binder(self) { me, _ in
-            me.hideEnemy(){ [weak self] in self?.requesrNextEnemy.accept(()) }
+            me.hideEnemy(){ [weak self] in
+                self?.requestNextEnemy.accept(())
+            }
         }
     }
     
@@ -161,11 +220,23 @@ extension BattleViewController {
     }
     
     // 新しい敵を表示
-    private var startNext: Binder<Void> {
-        return Binder(self) { me, _ in
-            me.progressView.nextStep()
-            me.showEnemy(delay: 0.5) { [weak self] in
-                self?.view.isUserInteractionEnabled = true
+    private var startNext: Binder<Enemy> {
+        return Binder(self) { me, enemy in
+            switch enemy.type {
+            case .small:
+                me.showNextEnemyLabel() { [weak self] in
+                    self?.progressView.nextStep()
+                    self?.showEnemy(delay: 0.5) { [weak self] in
+                        self?.view.isUserInteractionEnabled = true
+                    }
+                }
+            case .big:
+                me.showDangerLabel() { [weak self] in
+                    self?.progressView.nextStep()
+                    self?.showEnemy(delay: 0.5) { [weak self] in
+                        self?.view.isUserInteractionEnabled = true
+                    }
+                }
             }
         }
     }
