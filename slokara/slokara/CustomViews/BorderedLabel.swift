@@ -4,12 +4,25 @@ import RxCocoa
 class BorderedLabel: UILabel {
     @IBInspectable var strokeSize: CGFloat = 0
     @IBInspectable var strokeColor: UIColor = .clear
+    @IBInspectable var leftPadding: CGFloat = 0
+    @IBInspectable var rightPadding: CGFloat = 0
+    @IBInspectable var topPadding: CGFloat = 0
+    @IBInspectable var bottomPadding: CGFloat = 0
+
     
     func setFont(_ font: FontType) {
         self.font = UIFont(name: font.rawValue, size: self.font.pointSize)
     }
     
-    override func draw(_ rect: CGRect) {
+    var borderColor: Binder<UIColor> {
+        return Binder(self) { me, color in
+            me.strokeColor = color
+        }
+    }
+    
+    override func drawText(in rect: CGRect) {
+        let newRect = rect.inset(by: UIEdgeInsets(top: topPadding, left: leftPadding, bottom: bottomPadding, right: rightPadding))
+
         let context = UIGraphicsGetCurrentContext()!
         let textColor = self.textColor
         
@@ -17,17 +30,12 @@ class BorderedLabel: UILabel {
         context.setLineJoin(.round)
         context.setTextDrawingMode(.stroke)
         self.textColor = self.strokeColor
-        super.drawText(in: rect)
+        super.drawText(in: newRect)
         
         context.setTextDrawingMode(.fill)
         self.textColor = textColor
-        super.drawText(in: rect)
-    }
-    
-    var borderColor: Binder<UIColor> {
-        return Binder(self) { me, color in
-            me.strokeColor = color
-        }
+
+        super.drawText(in: newRect)
     }
 }
 
