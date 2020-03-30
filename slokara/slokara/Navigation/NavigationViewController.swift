@@ -65,7 +65,7 @@ class NavigationViewController: UIViewController {
             .bind(to: hpLabel.rx.text)
             .disposed(by: disposeBag)
         
-        viewModel.currentCions
+        viewModel.currentCoins
             .map{ String($0) }
             .bind(to: coinLabel.rx.text)
             .disposed(by: disposeBag)
