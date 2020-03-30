@@ -9,6 +9,12 @@ struct Enemy {
     let attackType: [AttributeType]
     let defenseType: [AttributeType]
     let image: UIImage
+    let type: EnemyType
     let probability: Probability
+    
+    enum EnemyType {
+        case small
+        case big
+    }
 }
 
