@@ -42,8 +42,8 @@ final class BattleViewModel {
     var damageFromEnemy: Observable<Int64> { return self.enemyAttackPowerRelay.asObservable() }
     
     // 次の敵を表示させる
-    private let startWithNewEnemyRelay = PublishRelay<Void>()
-    var startWithNewEnemy: Observable<Void> { return self.startWithNewEnemyRelay.asObservable() }
+    private let startWithNewEnemyRelay = PublishRelay<Enemy>()
+    var startWithNewEnemy: Observable<Enemy> { return self.startWithNewEnemyRelay.asObservable() }
     
     // ステージクリア
     private let stageClearRelay = PublishRelay<Void>()
@@ -76,7 +76,7 @@ final class BattleViewModel {
         
         requestNextEnemy.subscribe(onNext: { [unowned self] in
             self.enemy = self.stage.enemies[self.currentStep]
-            self.startWithNewEnemyRelay.accept(())
+            self.startWithNewEnemyRelay.accept(self.enemy)
         }).disposed(by: disposeBag)
     }
     
