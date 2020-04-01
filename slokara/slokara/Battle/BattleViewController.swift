@@ -21,9 +21,9 @@ class BattleViewController: UIViewController, NavigationChildViewController {
     private let reelStoped = PublishRelay<[AttributeType]>()
     private let playerAttacked = PublishRelay<Int64>()
     private let requestNextEnemy = PublishRelay<Void>()
-    var stageId: Int!
+    var task: Task!
     
-    private lazy var viewModel = BattleViewModel(screenTaped: screenTapped.asObservable(), reelStoped: reelStoped.asObservable(), playerAttacked: playerAttacked.asObservable(), requestNextEnemy: requestNextEnemy.asObservable(), battleModel: BattleModelImpl(stageId: stageId))
+    private lazy var viewModel = BattleViewModel(screenTaped: screenTapped.asObservable(), reelStoped: reelStoped.asObservable(), playerAttacked: playerAttacked.asObservable(), requestNextEnemy: requestNextEnemy.asObservable(), battleModel: BattleModelImpl(stageId: task.stageId))
 
     
     override func viewDidLoad() {
@@ -246,7 +246,10 @@ extension BattleViewController {
         return Binder(self) { me, _ in
             me.hideEnemy() { [weak self] in
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    self?.dismiss(animated: true, completion: nil)
+                    let navigation = me.parent as! NavigationViewController
+                    let clearedVC = UIStoryboard(name: "Cleared", bundle: nil).instantiateInitialViewController() as! ClearedViewController
+                    clearedVC.task = self?.task
+                    navigation.push(clearedVC, animate: true)
                 }
             }
         }
