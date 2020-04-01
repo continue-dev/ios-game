@@ -8,6 +8,7 @@ class ClearedViewController: UIViewController, NavigationChildViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        (self.parent as? NavigationViewController)?.backButtonIsHidden(true)
         if let task = self.task {
             self.taskCellView.setTask(task)
         }

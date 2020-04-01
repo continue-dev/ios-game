@@ -173,6 +173,10 @@ class NavigationViewController: UIViewController {
         }
     }
     
+    func backButtonIsHidden(_ isHidden: Bool) {
+        self.backButton.isHidden = isHidden
+    }
+    
     private func add(_ viewController: UIViewController) {
         addChild(viewController)
         viewController.view.frame = self.container.frame
