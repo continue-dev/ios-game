@@ -33,23 +33,33 @@
                                     <constraint firstAttribute="width" secondItem="uGZ-gq-CnW" secondAttribute="height" multiplier="528:161" id="wTD-Jb-aEu"/>
                                 </constraints>
                             </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="passed_effect" translatesAutoresizingMaskIntoConstraints="NO" id="MRj-OJ-zFi">
+                                <rect key="frame" x="0.0" y="241" width="414" height="414"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="MRj-OJ-zFi" secondAttribute="height" multiplier="1:1" id="DEe-hV-uFK"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="uGZ-gq-CnW" firstAttribute="bottom" secondItem="b2b-6v-sFN" secondAttribute="centerY" id="1mB-Kg-Nia"/>
                             <constraint firstItem="Cyt-At-ENQ" firstAttribute="trailing" secondItem="uGZ-gq-CnW" secondAttribute="trailing" id="ABf-IC-FBT"/>
+                            <constraint firstItem="MRj-OJ-zFi" firstAttribute="centerY" secondItem="b2b-6v-sFN" secondAttribute="centerY" id="ODS-Pf-g5Y"/>
                             <constraint firstItem="uGZ-gq-CnW" firstAttribute="leading" secondItem="Cyt-At-ENQ" secondAttribute="leading" id="Xjr-rd-bYj"/>
                             <constraint firstItem="Cyt-At-ENQ" firstAttribute="trailing" secondItem="yyE-GK-AVi" secondAttribute="trailing" id="ZrH-y2-utu"/>
+                            <constraint firstItem="MRj-OJ-zFi" firstAttribute="centerX" secondItem="b2b-6v-sFN" secondAttribute="centerX" id="cbi-Oa-Ixs"/>
                             <constraint firstItem="Cyt-At-ENQ" firstAttribute="trailing" secondItem="RFi-KV-hER" secondAttribute="trailing" id="ffw-RV-QIH"/>
                             <constraint firstItem="RFi-KV-hER" firstAttribute="top" secondItem="b2b-6v-sFN" secondAttribute="top" id="i5q-IU-2Tz"/>
                             <constraint firstItem="yyE-GK-AVi" firstAttribute="leading" secondItem="Cyt-At-ENQ" secondAttribute="leading" id="jQT-xc-ajb"/>
                             <constraint firstAttribute="bottom" secondItem="yyE-GK-AVi" secondAttribute="bottom" id="pim-z3-uI8"/>
                             <constraint firstItem="yyE-GK-AVi" firstAttribute="top" secondItem="b2b-6v-sFN" secondAttribute="top" id="xeP-69-81O"/>
+                            <constraint firstItem="MRj-OJ-zFi" firstAttribute="width" secondItem="b2b-6v-sFN" secondAttribute="width" id="y9V-9y-4LP"/>
                             <constraint firstItem="RFi-KV-hER" firstAttribute="leading" secondItem="Cyt-At-ENQ" secondAttribute="leading" id="ygj-40-mur"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Cyt-At-ENQ"/>
                     </view>
                     <connections>
+                        <outlet property="stampView" destination="MRj-OJ-zFi" id="iLD-DT-jvc"/>
                         <outlet property="taskCellView" destination="uGZ-gq-CnW" id="4fn-xg-UCH"/>
                         <outlet property="topSpacer" destination="RFi-KV-hER" id="UpX-r1-8zh"/>
                     </connections>
@@ -61,5 +71,6 @@
     </scenes>
     <resources>
         <image name="magic_background" width="540" height="1149"/>
+        <image name="passed_effect" width="531" height="535"/>
     </resources>
 </document>

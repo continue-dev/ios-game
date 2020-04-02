@@ -9,6 +9,6 @@ struct Task {
     let rewardCredits: Int
     let rewardCoins: Int
     let enemyTypes: [AttributeType]
-    let isPassed: Bool
+    var isPassed: Bool
     let stageId: Int
 }
