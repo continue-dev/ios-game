@@ -82,6 +82,6 @@ class ClearedViewController: UIViewController, NavigationChildViewController {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.isUserInteractionEnabled = false
-        self.parent?.dismiss(animated: true, completion: nil)
+        (self.parent as? NavigationViewController)?.popRootViewController(animate: true)
     }
 }

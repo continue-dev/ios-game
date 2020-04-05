@@ -173,6 +173,35 @@ class NavigationViewController: UIViewController {
         }
     }
     
+    func popRootViewController(animate: Bool) {
+        guard let current = currentViewController else { return }
+        guard navigationChildViewControllers.count >= 2 else { return }
+        guard let root = self.rootViewController else { return }
+        navigationChildViewControllers = [root]
+        
+        addChild(root)
+        root.view.frame = self.container.frame
+        self.container.addSubview(root.view)
+        
+        if animate {
+            transition(from: current,
+                       to: root,
+                       duration: 0.3,
+                       options: .transitionCrossDissolve,
+                       animations: nil) { [weak self] _ in
+                current.willMove(toParent: nil)
+                current.view.removeFromSuperview()
+                current.removeFromParent()
+                root.didMove(toParent: self)
+            }
+        } else {
+            current.willMove(toParent: nil)
+            current.view.removeFromSuperview()
+            current.removeFromParent()
+            root.didMove(toParent: self)
+        }
+    }
+    
     func backButtonIsHidden(_ isHidden: Bool) {
         self.backButton.isHidden = isHidden
     }

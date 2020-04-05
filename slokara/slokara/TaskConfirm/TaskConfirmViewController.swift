@@ -19,10 +19,12 @@ class TaskConfirmViewController: UIViewController, NavigationChildViewController
         let positive = AlertAction(title: "履修する", style: .positive) { [weak self] in
             guard let battleViewController = UIStoryboard(name: "Battle", bundle: nil).instantiateInitialViewController() as? BattleViewController else { return }
             battleViewController.task = task
-            let navigationController = NavigationViewController.instantiate(rootViewController: battleViewController)
-            navigationController.modalPresentationStyle = .fullScreen
-            navigationController.modalTransitionStyle = .crossDissolve
-            self?.present(navigationController, animated: true, completion: nil)
+            let navigationController = self?.parent as! NavigationViewController
+            navigationController.push(battleViewController, animate: true)
+//            navigationController.modalPresentationStyle = .fullScreen
+//            navigationController.modalTransitionStyle = .crossDissolve
+//            self?.present(navigationController, animated: true, completion: nil)
+            
         }
         let negative = AlertAction(title: "やめる", style: .negative) { [weak self] in
             let navigation = self?.parent as? NavigationViewController

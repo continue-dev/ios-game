@@ -28,6 +28,7 @@ class BattleViewController: UIViewController, NavigationChildViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        (self.parent as? NavigationViewController)?.backButtonIsHidden(true)
         self.view.isUserInteractionEnabled = false
         bind()
     }
