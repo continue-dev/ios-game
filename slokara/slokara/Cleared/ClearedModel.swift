@@ -43,7 +43,7 @@ final class ClearedModelImpl: ClearedModelProtocol {
         guard let realm = try? Realm() else { assert(false, "Realmをインスタンス化できませんでした"); return }
         guard let status = realm.objects(UserStatus.self).first else { assert(false, "UserStatusを読み込めませんでした"); return }
         try! realm.write {
-            status.numberOfCredit = credits
+            status.numberOfCredit += credits
         }
     }
     

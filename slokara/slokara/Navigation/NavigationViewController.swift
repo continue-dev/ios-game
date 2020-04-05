@@ -67,12 +67,12 @@ class NavigationViewController: UIViewController {
         
         viewModel.currentCoins
             .map{ String($0) }
-            .bind(to: coinLabel.rx.text)
+            .bind(to: setCoinsWithAnim)
             .disposed(by: disposeBag)
         
         viewModel.currentCredit
             .map{ String($0) }
-            .bind(to: creditLabel.rx.text)
+            .bind(to: setCreditsWithAnim)
             .disposed(by: disposeBag)
         
         viewModel.currentRank
@@ -218,6 +218,30 @@ extension NavigationViewController {
     private var progressWithAnim: Binder<Float> {
         return Binder(self) { me, progress in
             me.hpProgressView.setProgress(progress, animated: true)
+        }
+    }
+    
+    private var setCoinsWithAnim: Binder<String> {
+        return Binder(self) { me, coins in
+            guard me.coinLabel.text != coins else { return }
+            me.coinLabel.text = coins
+            UIView.animate(withDuration: 0.2, delay: 0, options: .autoreverse, animations: { [weak self] in
+                self?.coinLabel.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+            }) { [weak self] _ in
+                self?.coinLabel.transform = .identity
+            }
+        }
+    }
+    
+    private var setCreditsWithAnim: Binder<String> {
+           return Binder(self) { me, credits in
+            guard me.creditLabel.text != credits else { return }
+            me.creditLabel.text = credits
+            UIView.animate(withDuration: 0.2, delay: 0, options: .autoreverse, animations: { [weak self] in
+                self?.creditLabel.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+            }) { [weak self] _ in
+                self?.creditLabel.transform = .identity
+            }
         }
     }
 }
