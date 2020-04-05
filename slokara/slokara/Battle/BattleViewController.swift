@@ -21,13 +21,14 @@ class BattleViewController: UIViewController, NavigationChildViewController {
     private let reelStoped = PublishRelay<[AttributeType]>()
     private let playerAttacked = PublishRelay<Int64>()
     private let requestNextEnemy = PublishRelay<Void>()
-    var stageId: Int!
+    var task: Task!
     
-    private lazy var viewModel = BattleViewModel(screenTaped: screenTapped.asObservable(), reelStoped: reelStoped.asObservable(), playerAttacked: playerAttacked.asObservable(), requestNextEnemy: requestNextEnemy.asObservable(), battleModel: BattleModelImpl(stageId: stageId))
+    private lazy var viewModel = BattleViewModel(screenTaped: screenTapped.asObservable(), reelStoped: reelStoped.asObservable(), playerAttacked: playerAttacked.asObservable(), requestNextEnemy: requestNextEnemy.asObservable(), battleModel: BattleModelImpl(stageId: task.stageId))
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        (self.parent as? NavigationViewController)?.backButtonIsHidden(true)
         self.view.isUserInteractionEnabled = false
         bind()
     }
@@ -42,9 +43,9 @@ class BattleViewController: UIViewController, NavigationChildViewController {
         startGame()
     }
     
-    func inject(viewModel: BattleViewModel) {
-        self.viewModel = viewModel
-    }
+//    func inject(viewModel: BattleViewModel) {
+//        self.viewModel = viewModel
+//    }
     
     private func bind() {
         viewModel.backGround.bind(to: backGroundImageView.rx.image).disposed(by: disposeBag)
@@ -246,7 +247,10 @@ extension BattleViewController {
         return Binder(self) { me, _ in
             me.hideEnemy() { [weak self] in
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    self?.dismiss(animated: true, completion: nil)
+                    let navigation = me.parent as! NavigationViewController
+                    let clearedVC = UIStoryboard(name: "Cleared", bundle: nil).instantiateInitialViewController() as! ClearedViewController
+                    clearedVC.task = self?.task
+                    navigation.push(clearedVC, animate: true)
                 }
             }
         }

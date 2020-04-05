@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cjG-io-toK">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Cleared View Controller-->
+        <scene sceneID="5Ku-e1-rIQ">
+            <objects>
+                <viewController id="cjG-io-toK" customClass="ClearedViewController" customModule="slokara" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="b2b-6v-sFN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="magic_background" translatesAutoresizingMaskIntoConstraints="NO" id="yyE-GK-AVi">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RFi-KV-hER">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="Hu2-Gw-7qD"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uGZ-gq-CnW" customClass="TaskCellView" customModule="slokara" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="322" width="414" height="126"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="uGZ-gq-CnW" secondAttribute="height" multiplier="528:161" id="wTD-Jb-aEu"/>
+                                </constraints>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="passed_effect" translatesAutoresizingMaskIntoConstraints="NO" id="MRj-OJ-zFi">
+                                <rect key="frame" x="0.0" y="241" width="414" height="414"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="MRj-OJ-zFi" secondAttribute="height" multiplier="1:1" id="DEe-hV-uFK"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="uGZ-gq-CnW" firstAttribute="bottom" secondItem="b2b-6v-sFN" secondAttribute="centerY" id="1mB-Kg-Nia"/>
+                            <constraint firstItem="Cyt-At-ENQ" firstAttribute="trailing" secondItem="uGZ-gq-CnW" secondAttribute="trailing" id="ABf-IC-FBT"/>
+                            <constraint firstItem="MRj-OJ-zFi" firstAttribute="centerY" secondItem="b2b-6v-sFN" secondAttribute="centerY" id="ODS-Pf-g5Y"/>
+                            <constraint firstItem="uGZ-gq-CnW" firstAttribute="leading" secondItem="Cyt-At-ENQ" secondAttribute="leading" id="Xjr-rd-bYj"/>
+                            <constraint firstItem="Cyt-At-ENQ" firstAttribute="trailing" secondItem="yyE-GK-AVi" secondAttribute="trailing" id="ZrH-y2-utu"/>
+                            <constraint firstItem="MRj-OJ-zFi" firstAttribute="centerX" secondItem="b2b-6v-sFN" secondAttribute="centerX" id="cbi-Oa-Ixs"/>
+                            <constraint firstItem="Cyt-At-ENQ" firstAttribute="trailing" secondItem="RFi-KV-hER" secondAttribute="trailing" id="ffw-RV-QIH"/>
+                            <constraint firstItem="RFi-KV-hER" firstAttribute="top" secondItem="b2b-6v-sFN" secondAttribute="top" id="i5q-IU-2Tz"/>
+                            <constraint firstItem="yyE-GK-AVi" firstAttribute="leading" secondItem="Cyt-At-ENQ" secondAttribute="leading" id="jQT-xc-ajb"/>
+                            <constraint firstAttribute="bottom" secondItem="yyE-GK-AVi" secondAttribute="bottom" id="pim-z3-uI8"/>
+                            <constraint firstItem="yyE-GK-AVi" firstAttribute="top" secondItem="b2b-6v-sFN" secondAttribute="top" id="xeP-69-81O"/>
+                            <constraint firstItem="MRj-OJ-zFi" firstAttribute="width" secondItem="b2b-6v-sFN" secondAttribute="width" id="y9V-9y-4LP"/>
+                            <constraint firstItem="RFi-KV-hER" firstAttribute="leading" secondItem="Cyt-At-ENQ" secondAttribute="leading" id="ygj-40-mur"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Cyt-At-ENQ"/>
+                    </view>
+                    <connections>
+                        <outlet property="stampView" destination="MRj-OJ-zFi" id="iLD-DT-jvc"/>
+                        <outlet property="taskCellView" destination="uGZ-gq-CnW" id="4fn-xg-UCH"/>
+                        <outlet property="topSpacer" destination="RFi-KV-hER" id="UpX-r1-8zh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vj1-bn-RDo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-204" y="66"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="magic_background" width="540" height="1149"/>
+        <image name="passed_effect" width="531" height="535"/>
+    </resources>
+</document>

@@ -67,12 +67,12 @@ class NavigationViewController: UIViewController {
         
         viewModel.currentCoins
             .map{ String($0) }
-            .bind(to: coinLabel.rx.text)
+            .bind(to: setCoinsWithAnim)
             .disposed(by: disposeBag)
         
         viewModel.currentCredit
             .map{ String($0) }
-            .bind(to: creditLabel.rx.text)
+            .bind(to: setCreditsWithAnim)
             .disposed(by: disposeBag)
         
         viewModel.currentRank
@@ -173,6 +173,39 @@ class NavigationViewController: UIViewController {
         }
     }
     
+    func popRootViewController(animate: Bool) {
+        guard let current = currentViewController else { return }
+        guard navigationChildViewControllers.count >= 2 else { return }
+        guard let root = self.rootViewController else { return }
+        navigationChildViewControllers = [root]
+        
+        addChild(root)
+        root.view.frame = self.container.frame
+        self.container.addSubview(root.view)
+        
+        if animate {
+            transition(from: current,
+                       to: root,
+                       duration: 0.3,
+                       options: .transitionCrossDissolve,
+                       animations: nil) { [weak self] _ in
+                current.willMove(toParent: nil)
+                current.view.removeFromSuperview()
+                current.removeFromParent()
+                root.didMove(toParent: self)
+            }
+        } else {
+            current.willMove(toParent: nil)
+            current.view.removeFromSuperview()
+            current.removeFromParent()
+            root.didMove(toParent: self)
+        }
+    }
+    
+    func backButtonIsHidden(_ isHidden: Bool) {
+        self.backButton.isHidden = isHidden
+    }
+    
     private func add(_ viewController: UIViewController) {
         addChild(viewController)
         viewController.view.frame = self.container.frame
@@ -214,6 +247,30 @@ extension NavigationViewController {
     private var progressWithAnim: Binder<Float> {
         return Binder(self) { me, progress in
             me.hpProgressView.setProgress(progress, animated: true)
+        }
+    }
+    
+    private var setCoinsWithAnim: Binder<String> {
+        return Binder(self) { me, coins in
+            guard me.coinLabel.text != coins else { return }
+            me.coinLabel.text = coins
+            UIView.animate(withDuration: 0.2, delay: 0, options: .autoreverse, animations: { [weak self] in
+                self?.coinLabel.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+            }) { [weak self] _ in
+                self?.coinLabel.transform = .identity
+            }
+        }
+    }
+    
+    private var setCreditsWithAnim: Binder<String> {
+           return Binder(self) { me, credits in
+            guard me.creditLabel.text != credits else { return }
+            me.creditLabel.text = credits
+            UIView.animate(withDuration: 0.2, delay: 0, options: .autoreverse, animations: { [weak self] in
+                self?.creditLabel.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+            }) { [weak self] _ in
+                self?.creditLabel.transform = .identity
+            }
         }
     }
 }
