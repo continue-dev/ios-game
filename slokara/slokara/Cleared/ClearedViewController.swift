@@ -1,11 +1,20 @@
 import UIKit
+import RxSwift
+import RxCocoa
 
 class ClearedViewController: UIViewController, NavigationChildViewController {
     @IBOutlet weak var topSpacer: UIView!
     @IBOutlet private weak var taskCellView: TaskCellView!
     @IBOutlet weak var stampView: UIImageView!
     
+    private let disposeBag = DisposeBag()
     var task: Task?
+    
+    private let endStampRelay = PublishRelay<Void>()
+    private let addCoinsRelay = PublishRelay<Int>()
+    private let addCreditsRelay = PublishRelay<Int>()
+    
+    private lazy var viewModel = ClearedViewModel(endStampAnimation: self.endStampRelay.asObservable(), addCoins: self.addCoinsRelay.asObservable(), addCredits: self.addCreditsRelay.asObservable(), clearedModel: ClearedModelImpl(taskId: self.task!))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -14,11 +23,23 @@ class ClearedViewController: UIViewController, NavigationChildViewController {
         if let task = self.task {
             self.taskCellView.setTask(task)
         }
+        bind()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        animToAlfaMax()
+        guard let task = self.task else { return }
+        if task.isPassed {
+            updateStatus()
+        } else {
+            animToAlfaMax()
+        }
+    }
+    
+    private func bind() {
+        viewModel.task.subscribe(onNext: { _ in
+            
+        }).disposed(by: disposeBag)
     }
     
     private func animToAlfaMax() {
@@ -47,8 +68,20 @@ class ClearedViewController: UIViewController, NavigationChildViewController {
     private func animVibration() {
         UIView.animate(withDuration: 0.1, delay: 0, options: .autoreverse, animations: { [weak self] in
             self?.taskCellView.transform = CGAffineTransform(translationX: 1, y: 4)
-        }) { (_) in
-            
+        }) { [weak self] (_) in
+            self?.updateStatus()
         }
+    }
+    
+    private func updateStatus() {
+        self.endStampRelay.accept(())
+        self.addCoinsRelay.accept(self.task?.rewardCoins ?? 0)
+        self.addCreditsRelay.accept(self.task?.rewardCredits ?? 0)
+        self.view.isUserInteractionEnabled = true
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.isUserInteractionEnabled = false
+        self.parent?.dismiss(animated: true, completion: nil)
     }
 }

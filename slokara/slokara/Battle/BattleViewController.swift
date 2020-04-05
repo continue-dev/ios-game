@@ -42,9 +42,9 @@ class BattleViewController: UIViewController, NavigationChildViewController {
         startGame()
     }
     
-    func inject(viewModel: BattleViewModel) {
-        self.viewModel = viewModel
-    }
+//    func inject(viewModel: BattleViewModel) {
+//        self.viewModel = viewModel
+//    }
     
     private func bind() {
         viewModel.backGround.bind(to: backGroundImageView.rx.image).disposed(by: disposeBag)
