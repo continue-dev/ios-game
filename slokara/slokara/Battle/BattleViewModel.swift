@@ -81,15 +81,11 @@ final class BattleViewModel {
     }
     
     private func acceptAttack(results: [AttributeType]) {
-        // TODO: ダメージ計算ロジック
-        let attackPower = results.map{ [unowned self] result in
-            self.userParameter.attackPower(of: result)
-        }.reduce(0) { $0 + $1 }
-        self.playerAttackRelay.accept(attackPower)
+        let attackPower = calculateAttackPower(result: results, line: self.reelLine)
+        self.playerAttackRelay.accept(attackPower.player)
         
         // resultsを引き回さずに済むように、ここで敵の攻撃もacceptしておく。subscribe側でtoEnemyTurnをwithLatestFromする事で任意のタイミングで受け取れる
-        let damage = results.filter{ $0 == .enemy}.map{ [unowned self] _ in self.enemy.attack }.reduce(0){ $0 + $1 } - self.userParameter.defense
-        self.enemyAttackPowerRelay.accept(damage > 0 ? damage : 0)
+        self.enemyAttackPowerRelay.accept(attackPower.enemy)
     }
     
     private func checkEnemyLife(damage: Int64) {
@@ -102,5 +98,104 @@ final class BattleViewModel {
             self.currentStep += 1
             self.toNextEvent.accept(())
         }
+    }
+    
+    /*
+     シングルライン、ダブルラインは横ラインのみ有効
+     トリプルラインは縦横斜めのラインが有効
+     */
+    private func calculateAttackPower(result: [AttributeType], line: ReelLine) -> (player: Int64, enemy: Int64) {
+        switch line {
+        case .single:
+            let attacks = singleLineCalaulation(list: result)
+            let player = attacks.0 - self.enemy.defense
+            let enemyAttack = attacks.1 - self.userParameter.defense
+            return (player > 0 ? player : 0, enemyAttack > 0 ? enemyAttack : 0)
+
+        case .double:
+            guard result.count == 6 else { assert(false, "No match reel lines"); return (0, 0) }
+            let topAttack = singleLineCalaulation(list: Array(result[0...2]))
+            let bottomAttack = singleLineCalaulation(list: Array(result[3...5]))
+            let player = topAttack.0 + bottomAttack.0 - self.enemy.defense
+            let enemyAttack = topAttack.1 + bottomAttack.1 - self.userParameter.defense
+            return (player > 0 ? player : 0, enemyAttack > 0 ? enemyAttack : 0)
+
+        case .triple:
+            guard result.count == 9 else { assert(false, "No match reel lines"); return (0, 0) }
+            let topAttack = singleLineCalaulation(list: Array(result[0...2]))
+            let middleAttack = singleLineCalaulation(list: Array(result[3...5]))
+            let bottomAttack = singleLineCalaulation(list: Array(result[6...8]))
+            let leftAttack = singleLineCalaulation(list: [result[0], result[3], result[6]])
+            let centerAttack = singleLineCalaulation(list: [result[1], result[4], result[7]])
+            let rightAttack = singleLineCalaulation(list: [result[2], result[5], result[8]])
+            let leftDiagonalAttack = singleLineCalaulation(list: [result[0], result[4], result[8]])
+            let rightDiagonalAttack = singleLineCalaulation(list: [result[2], result[4], result[6]])
+            let attackList = [topAttack, middleAttack, bottomAttack, leftAttack, centerAttack, rightAttack, leftDiagonalAttack, rightDiagonalAttack]
+            let attacks = attackList.reduce((0, 0)) { ($0.0 + $1.0, $0.1 + $1.1) }
+            let player = attacks.0 - self.enemy.defense
+            let enemyAttack = attacks.1 - self.userParameter.defense
+            return (player > 0 ? player : 0, enemyAttack > 0 ? enemyAttack : 0)
+        }
+    }
+    
+    /*
+     有利属性は火>風>土>水>火 & 光,闇 > 火,風,土,水　有利属性に対しては攻撃力1.2倍
+     不利属性は有利属性の反対で、敵防御タイプに不利属性が一つでも含まれていれば不利属性判定となる　不利属性に対しては攻撃力0.8倍
+     */
+    private func calculateAttribute(attacks: [Int64]) -> [Int64] {
+        var attackList = attacks
+        attacks.enumerated().forEach {
+            guard let unfavorable = AttributeType(rawValue: $0.offset)!.unfavorable else { return }
+            guard let advantageous = AttributeType(rawValue: $0.offset)!.advantageous else { return }
+            if enemy.defenseType.contains(unfavorable) {
+                attackList[$0.offset] = Int64(Double($0.element) * 0.8)
+            } else if advantageous.filter(enemy.defenseType.contains).count > 0 {
+                attackList[$0.offset] = Int64(Double($0.element) * 1.2)
+            }
+        }
+        return attackList
+    }
+    
+    /*
+     有効ライン上に同一の絵柄が連続して2つ並んだら、該当の図柄の攻撃力がそれぞれ2倍
+     有効ライン上に同一の図柄が3つ揃ったら、該当の図柄の攻撃力がそれぞれ3倍
+     倍率計算後、属性計算を実行
+     最終的に各ライン上の攻撃力を足し合わせて、防御力を引いた数値がダメージとなる
+     例) 敵 属性:風 防御力:10
+        リールライン:シングルライン
+        プレイヤーの攻撃力:全属性が各5
+     　　停止図柄:火火土
+        攻撃:(5*2 + 5*2)*1.2 + 5*0.8 = 28
+        敵に与えるダメージ:28-10 = 18
+     */
+    private func singleLineCalaulation(list: [AttributeType]) -> (Int64, Int64) {
+        guard list.count == 3 else { assert(false, "No match reel chars"); return (0, 0) }
+        var attacks = AttributeType.allCases.map {_ in Int64(0) }
+        if list.isEqualOfIndex(0,1,2) {
+            if list[0] == .enemy {
+                return (0, self.enemy.attack * 9 - self.userParameter.defense)
+            } else {
+                attacks[AttributeType.allCases.firstIndex(of: list[0])!] = self.userParameter.attackPower(of: list[0]) * 9
+                let playerPower = calculateAttribute(attacks: attacks).reduce(0) { $0 + $1 }
+                return (playerPower, 0)
+            }
+        }
+        list.enumerated().forEach {
+            guard $0.offset > 0 else {
+                attacks[AttributeType.allCases.firstIndex(of: $0.element)!] +=
+                    $0.element == .enemy ? self.enemy.attack : self.userParameter.attackPower(of: $0.element)
+                return
+            }
+            if list.isEqualOfIndex($0.offset - 1, $0.offset) {
+                attacks[AttributeType.allCases.firstIndex(of: $0.element)!] +=
+                    $0.element == .enemy ? self.enemy.attack * 3 : self.userParameter.attackPower(of: $0.element) * 3
+            } else {
+                attacks[AttributeType.allCases.firstIndex(of: $0.element)!] +=
+                    $0.element == .enemy ? self.enemy.attack : self.userParameter.attackPower(of: $0.element)
+            }
+        }
+        let enemyAttack = attacks.last!
+        let playerPower = calculateAttribute(attacks: attacks.dropLast()).reduce(0) { $0 + $1 }
+        return (playerPower, enemyAttack)
     }
 }
