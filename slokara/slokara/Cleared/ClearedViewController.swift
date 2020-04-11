@@ -5,7 +5,8 @@ import RxCocoa
 class ClearedViewController: UIViewController, NavigationChildViewController {
     @IBOutlet weak var topSpacer: UIView!
     @IBOutlet private weak var taskCellView: TaskCellView!
-    @IBOutlet weak var stampView: UIImageView!
+    @IBOutlet weak var stampView: UIView!
+    @IBOutlet weak var stampRingView: UIImageView!
     
     private let disposeBag = DisposeBag()
     var task: Task?
@@ -32,6 +33,7 @@ class ClearedViewController: UIViewController, NavigationChildViewController {
         if task.isPassed {
             updateStatus()
         } else {
+            rotateRing()
             animToAlfaMax()
         }
     }
@@ -78,6 +80,15 @@ class ClearedViewController: UIViewController, NavigationChildViewController {
         self.addCoinsRelay.accept(self.task?.rewardCoins ?? 0)
         self.addCreditsRelay.accept(self.task?.rewardCredits ?? 0)
         self.view.isUserInteractionEnabled = true
+    }
+    
+    private func rotateRing() {
+        let animation = CABasicAnimation(keyPath: "transform.rotation")
+        animation.fromValue = 0.0
+        animation.toValue = CGFloat(.pi * 2.0)
+        animation.duration = 8.0
+        animation.repeatCount = .infinity
+        self.stampRingView.layer.add(animation, forKey: nil)
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
