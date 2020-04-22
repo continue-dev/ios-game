@@ -7,7 +7,6 @@ final class BattleViewModel {
     
     // ここはDBから取得する
     let reel = Reel(top: [true, true, true], center: [false, true, true], bottom: [true, false, true])
-    private let reelLine = ReelLine.triple
     private var userParameter: UserParameter!
     
     private var stage: Stage! {
@@ -82,7 +81,7 @@ final class BattleViewModel {
     }
     
     private func acceptAttack(results: [AttributeType?]) {
-        let attackPower = calculateAttackPower(result: results, line: self.reelLine)
+        let attackPower = calculateAttackPower(result: results, line: self.reel.lines)
         self.playerAttackRelay.accept(attackPower.player)
         
         // resultsを引き回さずに済むように、ここで敵の攻撃もacceptしておく。subscribe側でtoEnemyTurnをwithLatestFromする事で任意のタイミングで受け取れる

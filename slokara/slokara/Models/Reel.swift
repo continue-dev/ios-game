@@ -44,15 +44,4 @@ enum ReelLine {
             return UIImage(named: "reel_frame_triple")
         }
     }
-    
-    var numberOfCharacter: Int {
-        switch self {
-        case .single:
-            return 3
-        case .double:
-            return 6
-        case .triple:
-            return 9
-        }
-    }
 }
