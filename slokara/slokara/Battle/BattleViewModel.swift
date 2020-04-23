@@ -6,7 +6,7 @@ final class BattleViewModel {
     private let disposeBag = DisposeBag()
     
     // ここはDBから取得する
-    private let reelLine = ReelLine.triple
+    let reel = Reel(top: [true, true, true], center: [false, true, true], bottom: [true, false, true])
     private var userParameter: UserParameter!
     
     private var stage: Stage! {
@@ -23,7 +23,7 @@ final class BattleViewModel {
     var numberOfEnemy: Observable<Int>!
    
     let reelStart: Observable<Void>
-    var reelActionResults: Observable<[AttributeType]>!
+    var reelActionResults: Observable<[AttributeType?]>!
     
     // プレイヤーの攻撃
     private let playerAttackRelay = PublishRelay<Int64>()
@@ -49,13 +49,13 @@ final class BattleViewModel {
     private let stageClearRelay = PublishRelay<Void>()
     var stageClear: Observable<Void> { return self.stageClearRelay.asObservable() }
     
-    init(screenTaped: Observable<Bool>, reelStoped: Observable<[AttributeType]>, playerAttacked: Observable<Int64>, requestNextEnemy: Observable<Void>, battleModel: BattleModelProtocol) {
+    init(screenTaped: Observable<Bool>, reelStoped: Observable<[AttributeType?]>, playerAttacked: Observable<Int64>, requestNextEnemy: Observable<Void>, battleModel: BattleModelProtocol) {
         self.battleModel = battleModel
 
         self.reelStart = screenTaped.filter{ !$0 }.map{_ in }.throttle(RxTimeInterval.seconds(1), latest: false, scheduler: MainScheduler.instance)
         
         self.reelActionResults = screenTaped.filter{ $0 }.throttle(RxTimeInterval.seconds(1), latest: false, scheduler: MainScheduler.instance).map{ [unowned self] _ in
-            [Probability](repeating: self.enemy.probability, count: self.reelLine.numberOfCharacter).map{prob in prob.randomElement() }
+            self.reel.enableLines.flatMap{ $0 }.map{ $0 ? self.enemy.probability.randomElement() : nil }
         }
         
         self.battleModel.userParameter.subscribe(onNext: { [weak self] param in
@@ -80,8 +80,8 @@ final class BattleViewModel {
         }).disposed(by: disposeBag)
     }
     
-    private func acceptAttack(results: [AttributeType]) {
-        let attackPower = calculateAttackPower(result: results, line: self.reelLine)
+    private func acceptAttack(results: [AttributeType?]) {
+        let attackPower = calculateAttackPower(result: results, line: self.reel.lines)
         self.playerAttackRelay.accept(attackPower.player)
         
         // resultsを引き回さずに済むように、ここで敵の攻撃もacceptしておく。subscribe側でtoEnemyTurnをwithLatestFromする事で任意のタイミングで受け取れる
@@ -101,41 +101,33 @@ final class BattleViewModel {
     }
     
     /*
-     シングルライン、ダブルラインは横ラインのみ有効
-     トリプルラインは縦横斜めのラインが有効
+     縦、横、斜めの2つ以上連続して並んでいるラインが有効ライン
      */
-    private func calculateAttackPower(result: [AttributeType], line: ReelLine) -> (player: Int64, enemy: Int64) {
-        switch line {
-        case .single:
-            let attacks = singleLineCalaulation(list: result)
-            let player = attacks.0 - self.enemy.defense
-            let enemyAttack = attacks.1 - self.userParameter.defense
-            return (player > 0 ? player : 0, enemyAttack > 0 ? enemyAttack : 0)
-
-        case .double:
-            guard result.count == 6 else { assert(false, "No match reel lines"); return (0, 0) }
-            let topAttack = singleLineCalaulation(list: Array(result[0...2]))
-            let bottomAttack = singleLineCalaulation(list: Array(result[3...5]))
-            let player = topAttack.0 + bottomAttack.0 - self.enemy.defense
-            let enemyAttack = topAttack.1 + bottomAttack.1 - self.userParameter.defense
-            return (player > 0 ? player : 0, enemyAttack > 0 ? enemyAttack : 0)
-
-        case .triple:
-            guard result.count == 9 else { assert(false, "No match reel lines"); return (0, 0) }
-            let topAttack = singleLineCalaulation(list: Array(result[0...2]))
-            let middleAttack = singleLineCalaulation(list: Array(result[3...5]))
-            let bottomAttack = singleLineCalaulation(list: Array(result[6...8]))
-            let leftAttack = singleLineCalaulation(list: [result[0], result[3], result[6]])
-            let centerAttack = singleLineCalaulation(list: [result[1], result[4], result[7]])
-            let rightAttack = singleLineCalaulation(list: [result[2], result[5], result[8]])
-            let leftDiagonalAttack = singleLineCalaulation(list: [result[0], result[4], result[8]])
-            let rightDiagonalAttack = singleLineCalaulation(list: [result[2], result[4], result[6]])
-            let attackList = [topAttack, middleAttack, bottomAttack, leftAttack, centerAttack, rightAttack, leftDiagonalAttack, rightDiagonalAttack]
-            let attacks = attackList.reduce((0, 0)) { ($0.0 + $1.0, $0.1 + $1.1) }
-            let player = attacks.0 - self.enemy.defense
-            let enemyAttack = attacks.1 - self.userParameter.defense
-            return (player > 0 ? player : 0, enemyAttack > 0 ? enemyAttack : 0)
+    private func calculateAttackPower(result: [AttributeType?], line: ReelLine) -> (player: Int64, enemy: Int64) {
+        guard result.count.isMultiple(of: 3) else { assert(false, "No Match charactors."); return (0, 0) }
+        
+        // 計算メソッドでのOutOfIndexを避ける為、リールの不足分をnil埋めする
+        var result = result
+        while result.count < 9 {
+            result.append(nil)
         }
+        
+        let chars = result.separate(of: 3)
+
+        let topAttack = singleLineCalaulation(list: chars[0])
+        let middleAttack = singleLineCalaulation(list: chars[1])
+        let bottomAttack = singleLineCalaulation(list: chars[2])
+        let leftAttack = singleLineCalaulation(list: [chars[0][0], chars[1][0], chars[2][0]])
+        let centerAttack = singleLineCalaulation(list: [chars[0][1], chars[1][1], chars[2][1]])
+        let rightAttack = singleLineCalaulation(list: [chars[0][2], chars[1][2], chars[2][2]])
+        let leftDiagonalAttack = singleLineCalaulation(list: [chars[0][0], chars[1][1], chars[2][2]])
+        let rightDiagonalAttack = singleLineCalaulation(list: [chars[0][2], chars[1][1], chars[2][0]])
+        let attackList = [topAttack, middleAttack, bottomAttack, leftAttack, centerAttack, rightAttack, leftDiagonalAttack, rightDiagonalAttack]
+        let attacks = attackList.reduce((0, 0)) { ($0.0 + $1.0, $0.1 + $1.1) }
+        let player = attacks.0 - self.enemy.defense
+        let enemyAttack = attacks.1 - self.userParameter.defense
+
+        return (player > 0 ? player : 0, enemyAttack > 0 ? enemyAttack : 0)
     }
     
     /*
@@ -168,30 +160,34 @@ final class BattleViewModel {
         攻撃:(5*2 + 5*2)*1.2 + 5*0.8 = 28
         敵に与えるダメージ:28-10 = 18
      */
-    private func singleLineCalaulation(list: [AttributeType]) -> (Int64, Int64) {
+    private func singleLineCalaulation(list: [AttributeType?]) -> (Int64, Int64) {
         guard list.count == 3 else { assert(false, "No match reel chars"); return (0, 0) }
+        // ラインの真ん中がnil、または2つ以上がnilなら無効ライン
+        guard list.filter({ $0 == nil }).count < 2 , list[1] != nil else { return (0, 0) }
+        
         var attacks = AttributeType.allCases.map {_ in Int64(0) }
         if list.isEqualOfIndex(0,1,2) {
             if list[0] == .enemy {
                 return (0, self.enemy.attack * 9 - self.userParameter.defense)
             } else {
-                attacks[AttributeType.allCases.firstIndex(of: list[0])!] = self.userParameter.attackPower(of: list[0]) * 9
+                attacks[AttributeType.allCases.firstIndex(of: list[0]!)!] = self.userParameter.attackPower(of: list[0]!) * 9
                 let playerPower = calculateAttribute(attacks: attacks).reduce(0) { $0 + $1 }
                 return (playerPower, 0)
             }
         }
         list.enumerated().forEach {
+            guard let item = $0.element else { return }
             guard $0.offset > 0 else {
-                attacks[AttributeType.allCases.firstIndex(of: $0.element)!] +=
-                    $0.element == .enemy ? self.enemy.attack : self.userParameter.attackPower(of: $0.element)
+                attacks[AttributeType.allCases.firstIndex(of: item)!] +=
+                    $0.element == .enemy ? self.enemy.attack : self.userParameter.attackPower(of: item)
                 return
             }
             if list.isEqualOfIndex($0.offset - 1, $0.offset) {
-                attacks[AttributeType.allCases.firstIndex(of: $0.element)!] +=
-                    $0.element == .enemy ? self.enemy.attack * 3 : self.userParameter.attackPower(of: $0.element) * 3
+                attacks[AttributeType.allCases.firstIndex(of: item)!] +=
+                    $0.element == .enemy ? self.enemy.attack * 3 : self.userParameter.attackPower(of: item) * 3
             } else {
-                attacks[AttributeType.allCases.firstIndex(of: $0.element)!] +=
-                    $0.element == .enemy ? self.enemy.attack : self.userParameter.attackPower(of: $0.element)
+                attacks[AttributeType.allCases.firstIndex(of: item)!] +=
+                    $0.element == .enemy ? self.enemy.attack : self.userParameter.attackPower(of: item)
             }
         }
         let enemyAttack = attacks.last!

@@ -18,7 +18,7 @@ class BattleViewController: UIViewController, NavigationChildViewController {
     
     private let disposeBag = DisposeBag()
     private let screenTapped = PublishRelay<Bool>()
-    private let reelStoped = PublishRelay<[AttributeType]>()
+    private let reelStoped = PublishRelay<[AttributeType?]>()
     private let playerAttacked = PublishRelay<Int64>()
     private let requestNextEnemy = PublishRelay<Void>()
     var task: Task!
@@ -35,17 +35,13 @@ class BattleViewController: UIViewController, NavigationChildViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.reelView.line = .triple
+        self.reelView.reel = viewModel.reel //Reel(top: [true, true, true], center: [true, true, false], bottom: [false, false, false])
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         startGame()
     }
-    
-//    func inject(viewModel: BattleViewModel) {
-//        self.viewModel = viewModel
-//    }
     
     private func bind() {
         viewModel.backGround.bind(to: backGroundImageView.rx.image).disposed(by: disposeBag)
@@ -179,8 +175,9 @@ extension BattleViewController {
     }
     
     // リール停止
-    private var stopReelAction: Binder<[AttributeType]> {
+    private var stopReelAction: Binder<[AttributeType?]> {
         return Binder(self) { me, value in
+            me.view.isUserInteractionEnabled = false
             me.reelView.stopAnimation(results: value)
         }
     }
@@ -188,9 +185,12 @@ extension BattleViewController {
     // 攻撃
     private var playerAttack: Binder<Int64> {
         return Binder(self) { me, value in
-            me.view.isUserInteractionEnabled = false
-            me.swing(views: [me.enemyImageView], buffa: 4) { [weak self] in
-                self?.playerAttacked.accept(value)
+            if value > 0 {
+                me.swing(views: [me.enemyImageView], buffa: 4) { [weak self] in
+                    self?.playerAttacked.accept(value)
+                }
+            } else {
+                self.playerAttacked.accept(value)
             }
         }
     }

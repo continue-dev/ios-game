@@ -25,4 +25,10 @@ class Array_Test: XCTestCase {
         XCTAssertFalse(list.isEqualOfIndex(0, 1, 2))
     }
 
+    func testArraySeparate() {
+        let array = [1, 1, 1, 2, 2, 2, 3, 3, 3]
+        let result = [[1, 1, 1], [2, 2, 2], [3, 3, 3]]
+        
+        XCTAssertEqual(array.separate(of: 3), result)
+    }
 }
