@@ -7,7 +7,15 @@ class TitleViewController: UIViewController {
         super.viewDidLoad()
 
         let label = CommonFontLabel()
+        
+        #if DEV
+        label.text = "This is development version.";
+        #elseif ADHOC
+        label.text = "This is adhoc version.";
+        #else
         label.text = "あいう夏スロ異世界！！\n★123１２３";
+        #endif
+        
         label.frame = CGRect(x:10, y:10, width:400, height:200);
         label.setFontSize(size: 32)
         label.numberOfLines = 2
