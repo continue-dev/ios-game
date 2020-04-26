@@ -12,13 +12,23 @@ final class BattleModelImpl: BattleModelProtocol {
     private let stage: Stage
         
     init(stageId: Int) {
+        #if !PROD
+        
+        let ud = UserDefaults.standard
+        if ud.bool(forKey: "tuningMode") {
+            guard let stage =  try? JSONDecoder().decode(Stage.self, from: ud.data(forKey: "editedStage")!) else { assert(false, "Stage decode failed.") }
+            self.stage = stage
+            return
+        }
+        
+        #endif
         // TODO: 正規実装ではstageIdをもとにStageを取得する
-        self.stage = Stage(id: 0, backGround: UIImage(named: "background_sample")!, enemies: [
-            Enemy(id: 0, name: "small", hp: 100, attack: 10, defense: 20, attackType: [.wind], defenseType: [.wind], image: UIImage(named: "enemy_sample_small")!, type: .small, probability: Probability(fire: 5, water: 5, wind: 5, soil: 5, light: 5, darkness: 5, enemy: 10)),
-            Enemy(id: 0, name: "small", hp: 100, attack: 10, defense: 20, attackType: [.wind], defenseType: [.wind], image: UIImage(named: "enemy_sample_small")!, type: .small, probability: Probability(fire: 5, water: 5, wind: 5, soil: 5, light: 5, darkness: 5, enemy: 10)),
-            Enemy(id: 0, name: "small", hp: 100, attack: 10, defense: 20, attackType: [.wind], defenseType: [.wind], image: UIImage(named: "enemy_sample_small")!, type: .small, probability: Probability(fire: 5, water: 5, wind: 5, soil: 5, light: 5, darkness: 5, enemy: 15)),
-            Enemy(id: 0, name: "small", hp: 100, attack: 10, defense: 20, attackType: [.wind], defenseType: [.wind], image: UIImage(named: "enemy_sample_small")!, type: .small, probability: Probability(fire: 5, water: 5, wind: 5, soil: 5, light: 5, darkness: 5, enemy: 15)),
-            Enemy(id: 0, name: "big", hp: 300, attack: 30, defense: 50, attackType: [.wind], defenseType: [.wind], image: UIImage(named: "enemy_sample_big")!, type: .big, probability: Probability(fire: 5, water: 5, wind: 5, soil: 5, light: 5, darkness: 5, enemy: 30))
+        self.stage = Stage(id: 0, backGroundName: "background_sample", enemies: [
+            Enemy(id: 0, name: "small", hp: 100, attack: 10, defense: 20, attackType: [.wind], defenseType: [.wind], imageName: "enemy_sample_small", type: .small, probability: Probability(fire: 5, water: 5, wind: 5, soil: 5, light: 5, darkness: 5, enemy: 10)),
+            Enemy(id: 0, name: "small", hp: 100, attack: 10, defense: 20, attackType: [.wind], defenseType: [.wind], imageName: "enemy_sample_small", type: .small, probability: Probability(fire: 5, water: 5, wind: 5, soil: 5, light: 5, darkness: 5, enemy: 10)),
+            Enemy(id: 0, name: "small", hp: 100, attack: 10, defense: 20, attackType: [.wind], defenseType: [.wind], imageName: "enemy_sample_small", type: .small, probability: Probability(fire: 5, water: 5, wind: 5, soil: 5, light: 5, darkness: 5, enemy: 15)),
+            Enemy(id: 0, name: "small", hp: 100, attack: 10, defense: 20, attackType: [.wind], defenseType: [.wind], imageName: "enemy_sample_small", type: .small, probability: Probability(fire: 5, water: 5, wind: 5, soil: 5, light: 5, darkness: 5, enemy: 15)),
+            Enemy(id: 0, name: "big", hp: 300, attack: 30, defense: 50, attackType: [.wind], defenseType: [.wind], imageName:  "enemy_sample_big", type: .big, probability: Probability(fire: 5, water: 5, wind: 5, soil: 5, light: 5, darkness: 5, enemy: 30))
         ])
     }
     

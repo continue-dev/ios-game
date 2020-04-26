@@ -1,6 +1,6 @@
 import Foundation
 
-struct Probability {
+struct Probability: Codable {
     let fire: Int
     let water: Int
     let wind: Int
