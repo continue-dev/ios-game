@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ozh-Ke-fjT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ozh-Ke-fjT">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,7 +11,7 @@
         <!--Home View Controller-->
         <scene sceneID="rCf-CH-Yj5">
             <objects>
-                <viewController id="ozh-Ke-fjT" customClass="HomeViewController" customModule="slokara" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ozh-Ke-fjT" customClass="HomeViewController" customModule="slokara_dev" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HLl-PH-4oG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -87,6 +87,41 @@
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q7Y-i1-aUN">
+                                <rect key="frame" x="0.0" y="70" width="375" height="63"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="これはリリース版では表示されません" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MzZ-23-KFA">
+                                        <rect key="frame" x="0.0" y="5" width="375" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="チューニングモード" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AdZ-hA-a4y">
+                                        <rect key="frame" x="12" y="32" width="297" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="FeE-Wt-fwm">
+                                        <rect key="frame" x="314" y="27" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="tuningSwitchAction:" destination="ozh-Ke-fjT" eventType="valueChanged" id="PbX-PA-qlY"/>
+                                        </connections>
+                                    </switch>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="0.85174978595890416" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="FeE-Wt-fwm" firstAttribute="leading" secondItem="AdZ-hA-a4y" secondAttribute="trailing" constant="5" id="0nq-EB-UZn"/>
+                                    <constraint firstAttribute="trailing" secondItem="MzZ-23-KFA" secondAttribute="trailing" id="BUj-oB-pwP"/>
+                                    <constraint firstAttribute="trailing" secondItem="FeE-Wt-fwm" secondAttribute="trailing" constant="12" id="IBm-2m-4Ry"/>
+                                    <constraint firstItem="MzZ-23-KFA" firstAttribute="top" secondItem="Q7Y-i1-aUN" secondAttribute="top" constant="5" id="L7L-PL-kx6"/>
+                                    <constraint firstItem="FeE-Wt-fwm" firstAttribute="centerY" secondItem="AdZ-hA-a4y" secondAttribute="centerY" id="tE6-hm-I5a"/>
+                                    <constraint firstItem="FeE-Wt-fwm" firstAttribute="top" secondItem="MzZ-23-KFA" secondAttribute="bottom" constant="5" id="tRS-pa-GTT"/>
+                                    <constraint firstItem="MzZ-23-KFA" firstAttribute="leading" secondItem="Q7Y-i1-aUN" secondAttribute="leading" id="w1w-Yg-cgh"/>
+                                    <constraint firstAttribute="bottom" secondItem="FeE-Wt-fwm" secondAttribute="bottom" constant="5" id="wrp-ZR-kGe"/>
+                                    <constraint firstItem="AdZ-hA-a4y" firstAttribute="leading" secondItem="Q7Y-i1-aUN" secondAttribute="leading" constant="12" id="x58-gr-lWg"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -114,7 +149,10 @@
                             <constraint firstItem="uwR-Rl-Xnm" firstAttribute="height" secondItem="2Rp-7R-XfM" secondAttribute="height" id="UA9-J3-i78"/>
                             <constraint firstItem="fFH-FV-9In" firstAttribute="leading" secondItem="HLl-PH-4oG" secondAttribute="leading" id="Ye5-7H-j05"/>
                             <constraint firstItem="i6i-Di-WZj" firstAttribute="leading" secondItem="ONa-V0-476" secondAttribute="leading" constant="15" id="Zcw-gO-tl5"/>
+                            <constraint firstItem="ONa-V0-476" firstAttribute="trailing" secondItem="Q7Y-i1-aUN" secondAttribute="trailing" id="aef-IM-sLo"/>
+                            <constraint firstItem="Q7Y-i1-aUN" firstAttribute="top" secondItem="z77-0y-Zco" secondAttribute="bottom" id="bSo-uR-Vtk"/>
                             <constraint firstItem="pFQ-PP-NBm" firstAttribute="height" secondItem="ONa-V0-476" secondAttribute="height" multiplier="1:5" id="dRM-fr-yek"/>
+                            <constraint firstItem="Q7Y-i1-aUN" firstAttribute="leading" secondItem="ONa-V0-476" secondAttribute="leading" id="iEz-fO-XVC"/>
                             <constraint firstItem="z77-0y-Zco" firstAttribute="leading" secondItem="ONa-V0-476" secondAttribute="leading" id="ngH-ms-daD"/>
                             <constraint firstItem="2Rp-7R-XfM" firstAttribute="height" secondItem="i6i-Di-WZj" secondAttribute="height" multiplier="2:3" id="ogX-qk-CRi"/>
                             <constraint firstItem="i6i-Di-WZj" firstAttribute="centerY" secondItem="HLl-PH-4oG" secondAttribute="centerY" id="ozK-X9-440"/>
@@ -131,6 +169,8 @@
                         <outlet property="ryoButton" destination="2Rp-7R-XfM" id="vpx-ac-ZHn"/>
                         <outlet property="shopButton" destination="uwR-Rl-Xnm" id="dyx-S9-X1P"/>
                         <outlet property="topSpacer" destination="z77-0y-Zco" id="y8w-yO-ADg"/>
+                        <outlet property="tuningSwitch" destination="FeE-Wt-fwm" id="7wt-U9-E0i"/>
+                        <outlet property="tuningView" destination="Q7Y-i1-aUN" id="6Bf-gb-lBD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZ1-b3-6np" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

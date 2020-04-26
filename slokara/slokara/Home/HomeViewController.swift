@@ -11,6 +11,8 @@ class HomeViewController: UIViewController, NavigationChildViewController {
     @IBOutlet private weak var shopButton: UIButton!
     @IBOutlet private weak var lockerButton: UIButton!
     @IBOutlet private weak var roomButton: UIButton!
+    @IBOutlet private weak var tuningView: UIView!
+    @IBOutlet private weak var tuningSwitch: UISwitch!
     
     private lazy var viewModel = HomeViewModel(
         kochoButtonTapped: kochoButton.rx.tap.asObservable(),
@@ -48,7 +50,17 @@ class HomeViewController: UIViewController, NavigationChildViewController {
         viewModel.transitionToTask
             .bind(to: transitionToTask)
             .disposed(by: disposeBag)
+        
+        #if !PROD
+        tuningView.isHidden = false
+        #endif
     }
+    
+    @IBAction func tuningSwitchAction(_ sender: UISwitch) {
+        let ud = UserDefaults.standard
+        ud.set(sender.isOn, forKey: "tuningMode")
+    }
+    
 }
 
 extension HomeViewController {
