@@ -125,7 +125,7 @@ final class BattleViewModel {
         let attackList = [topAttack, middleAttack, bottomAttack, leftAttack, centerAttack, rightAttack, leftDiagonalAttack, rightDiagonalAttack]
         let attacks = attackList.reduce((0, 0)) { ($0.0 + $1.0, $0.1 + $1.1) }
         let player = attacks.0 - self.enemy.defense
-        let enemyAttack = attacks.1 - self.userParameter.defense
+        let enemyAttack = applyEnemyAttributeType(enemyAttack: attacks.1) - self.userParameter.defense
 
         return (player > 0 ? player : 0, enemyAttack > 0 ? enemyAttack : 0)
     }
@@ -146,6 +146,21 @@ final class BattleViewModel {
             }
         }
         return attackList
+    }
+    
+    /*
+     敵の攻撃に属性をつけ、プレイヤーの属性を参照して敵の攻撃を算出する
+     */
+    private func applyEnemyAttributeType(enemyAttack: Int64) -> Int64 {
+        guard let enemyAttackType = enemy.attackType.randomElement() else { return enemyAttack }
+        guard !userParameter.defenseType.isEmpty else { return enemyAttack }
+        
+        if userParameter.defenseType.contains(enemyAttackType.unfavorable!) {
+            return Int64(Double(enemyAttack) * 0.8)
+        } else if enemyAttackType.advantageous!.filter(userParameter.defenseType.contains).count > 0 {
+            return Int64(Double(enemyAttack) * 1.2)
+        }
+        return enemyAttack
     }
     
     /*
