@@ -171,6 +171,14 @@
 		6A8BEC0C2451B74A00142587 /* ReelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A599E892426807200067D7A /* ReelView.xib */; };
 		6A8BEC0D2451B74A00142587 /* Cleared.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A5A8A432434F40200F8A829 /* Cleared.storyboard */; };
 		6A8BEC0E2451B74A00142587 /* TaskConfirm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A1C491323B9DE1F00261DF5 /* TaskConfirm.storyboard */; };
+		6A8BEC182457186500142587 /* TuningStage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A8BEC172457186500142587 /* TuningStage.storyboard */; };
+		6A8BEC192457186500142587 /* TuningStage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A8BEC172457186500142587 /* TuningStage.storyboard */; };
+		6A8BEC1B24571A3700142587 /* TuningStageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8BEC1A24571A3700142587 /* TuningStageViewController.swift */; };
+		6A8BEC1C24571A3700142587 /* TuningStageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8BEC1A24571A3700142587 /* TuningStageViewController.swift */; };
+		6A8BEC1E24571C6500142587 /* TuningStageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A8BEC1D24571C6400142587 /* TuningStageTableViewCell.xib */; };
+		6A8BEC1F24571C6500142587 /* TuningStageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A8BEC1D24571C6400142587 /* TuningStageTableViewCell.xib */; };
+		6A8BEC21245725B000142587 /* TuningStageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8BEC20245725B000142587 /* TuningStageTableViewCell.swift */; };
+		6A8BEC22245725B000142587 /* TuningStageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8BEC20245725B000142587 /* TuningStageTableViewCell.swift */; };
 		6ABF318A23AF586A0014E0BD /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABF318923AF586A0014E0BD /* TaskListViewController.swift */; };
 		6ABF318C23AF58780014E0BD /* TaskList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6ABF318B23AF58780014E0BD /* TaskList.storyboard */; };
 		6ABF318E23AF59570014E0BD /* TaskListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABF318D23AF59570014E0BD /* TaskListViewModel.swift */; };
@@ -263,7 +271,10 @@
 		6A8BEB7F244DD67A00142587 /* Reel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reel.swift; sourceTree = "<group>"; };
 		6A8BEB81244DDA5900142587 /* ReelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReelTest.swift; sourceTree = "<group>"; };
 		6A8BEBCA2451AA6900142587 /* slokara_dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = slokara_dev.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		6A8BEC132451B74A00142587 /* スロから_adhoc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "スロから_adhoc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A8BEC172457186500142587 /* TuningStage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TuningStage.storyboard; sourceTree = "<group>"; };
+		6A8BEC1A24571A3700142587 /* TuningStageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuningStageViewController.swift; sourceTree = "<group>"; };
+		6A8BEC1D24571C6400142587 /* TuningStageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TuningStageTableViewCell.xib; sourceTree = "<group>"; };
+		6A8BEC20245725B000142587 /* TuningStageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuningStageTableViewCell.swift; sourceTree = "<group>"; };
 		6ABF318923AF586A0014E0BD /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		6ABF318B23AF58780014E0BD /* TaskList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TaskList.storyboard; sourceTree = "<group>"; };
 		6ABF318D23AF59570014E0BD /* TaskListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewModel.swift; sourceTree = "<group>"; };
@@ -469,6 +480,25 @@
 			path = RealmObjects;
 			sourceTree = "<group>";
 		};
+		6A8BEC1524570DD300142587 /* Tuning */ = {
+			isa = PBXGroup;
+			children = (
+				6A8BEC1624570DF800142587 /* TuningStage */,
+			);
+			path = Tuning;
+			sourceTree = "<group>";
+		};
+		6A8BEC1624570DF800142587 /* TuningStage */ = {
+			isa = PBXGroup;
+			children = (
+				6A8BEC172457186500142587 /* TuningStage.storyboard */,
+				6A8BEC1A24571A3700142587 /* TuningStageViewController.swift */,
+				6A8BEC1D24571C6400142587 /* TuningStageTableViewCell.xib */,
+				6A8BEC20245725B000142587 /* TuningStageTableViewCell.swift */,
+			);
+			path = TuningStage;
+			sourceTree = "<group>";
+		};
 		6ABF318823AF584C0014E0BD /* TaskList */ = {
 			isa = PBXGroup;
 			children = (
@@ -534,6 +564,7 @@
 		9821B32C2378560300CF964D /* slokara */ = {
 			isa = PBXGroup;
 			children = (
+				6A8BEC1524570DD300142587 /* Tuning */,
 				6A5A8A422434F3C400F8A829 /* Cleared */,
 				6A599E7F2426783500067D7A /* Battle */,
 				6A1C491223B9DC4400261DF5 /* TaskConfirm */,
@@ -787,8 +818,10 @@
 				6A8BEBB42451AA6900142587 /* TaskList.storyboard in Resources */,
 				6A8BEBB52451AA6900142587 /* BattleProgressView.xib in Resources */,
 				6A8BEBB62451AA6900142587 /* Title.storyboard in Resources */,
+				6A8BEC1E24571C6500142587 /* TuningStageTableViewCell.xib in Resources */,
 				6A8BEBB72451AA6900142587 /* TaskCellView.xib in Resources */,
 				6A8BEBB82451AA6900142587 /* Battle.storyboard in Resources */,
+				6A8BEC182457186500142587 /* TuningStage.storyboard in Resources */,
 				6A8BEBB92451AA6900142587 /* Oranienbaum.ttf in Resources */,
 				6A8BEBBA2451AA6900142587 /* TaskListCell.xib in Resources */,
 				6A8BEBBB2451AA6900142587 /* Assets.xcassets in Resources */,
@@ -813,8 +846,10 @@
 				6A8BEBFD2451B74A00142587 /* TaskList.storyboard in Resources */,
 				6A8BEBFE2451B74A00142587 /* BattleProgressView.xib in Resources */,
 				6A8BEBFF2451B74A00142587 /* Title.storyboard in Resources */,
+				6A8BEC1F24571C6500142587 /* TuningStageTableViewCell.xib in Resources */,
 				6A8BEC002451B74A00142587 /* TaskCellView.xib in Resources */,
 				6A8BEC012451B74A00142587 /* Battle.storyboard in Resources */,
+				6A8BEC192457186500142587 /* TuningStage.storyboard in Resources */,
 				6A8BEC022451B74A00142587 /* Oranienbaum.ttf in Resources */,
 				6A8BEC032451B74A00142587 /* TaskListCell.xib in Resources */,
 				6A8BEC042451B74A00142587 /* Assets.xcassets in Resources */,
@@ -1068,6 +1103,7 @@
 				6A8BEB8C2451AA6900142587 /* AlertView.swift in Sources */,
 				6A8BEB8D2451AA6900142587 /* TaskListTab.swift in Sources */,
 				6A8BEB8E2451AA6900142587 /* BattleModel.swift in Sources */,
+				6A8BEC21245725B000142587 /* TuningStageTableViewCell.swift in Sources */,
 				6A8BEB8F2451AA6900142587 /* TaskListViewController.swift in Sources */,
 				6A8BEB902451AA6900142587 /* Enemy.swift in Sources */,
 				6A8BEB912451AA6900142587 /* AppDelegate.swift in Sources */,
@@ -1093,6 +1129,7 @@
 				6A8BEBA52451AA6900142587 /* CommonFontLabel.swift in Sources */,
 				6A8BEBA62451AA6900142587 /* TaskListCell.swift in Sources */,
 				6A8BEBA72451AA6900142587 /* AttributeType.swift in Sources */,
+				6A8BEC1B24571A3700142587 /* TuningStageViewController.swift in Sources */,
 				6A8BEBA82451AA6900142587 /* TaskListViewModel.swift in Sources */,
 				6A8BEBA92451AA6900142587 /* HomeViewController.swift in Sources */,
 				6A8BEBAA2451AA6900142587 /* NavigationModel.swift in Sources */,
@@ -1117,6 +1154,7 @@
 				6A8BEBD52451B74A00142587 /* AlertView.swift in Sources */,
 				6A8BEBD62451B74A00142587 /* TaskListTab.swift in Sources */,
 				6A8BEBD72451B74A00142587 /* BattleModel.swift in Sources */,
+				6A8BEC22245725B000142587 /* TuningStageTableViewCell.swift in Sources */,
 				6A8BEBD82451B74A00142587 /* TaskListViewController.swift in Sources */,
 				6A8BEBD92451B74A00142587 /* Enemy.swift in Sources */,
 				6A8BEBDA2451B74A00142587 /* AppDelegate.swift in Sources */,
@@ -1142,6 +1180,7 @@
 				6A8BEBEE2451B74A00142587 /* CommonFontLabel.swift in Sources */,
 				6A8BEBEF2451B74A00142587 /* TaskListCell.swift in Sources */,
 				6A8BEBF02451B74A00142587 /* AttributeType.swift in Sources */,
+				6A8BEC1C24571A3700142587 /* TuningStageViewController.swift in Sources */,
 				6A8BEBF12451B74A00142587 /* TaskListViewModel.swift in Sources */,
 				6A8BEBF22451B74A00142587 /* HomeViewController.swift in Sources */,
 				6A8BEBF32451B74A00142587 /* NavigationModel.swift in Sources */,
