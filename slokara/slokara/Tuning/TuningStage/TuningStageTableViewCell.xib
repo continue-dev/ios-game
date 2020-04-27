@@ -102,7 +102,7 @@ Type</string>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="70" id="Md3-l3-NU9"/>
                                         </constraints>
-                                        <string key="text">Defence
+                                        <string key="text">Defense
 Type</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>
