@@ -52,6 +52,7 @@ class HomeViewController: UIViewController, NavigationChildViewController {
             .disposed(by: disposeBag)
         
         #if !PROD
+        tuningSwitch.isOn = UserDefaults.standard.bool(forKey: "tuningMode")
         tuningView.isHidden = false
         #endif
     }
