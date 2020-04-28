@@ -9,6 +9,7 @@ struct UserParameter {
     let darknessAttack: Int64
     let defense: Int64
     let maxHp: Int64
+    let defenseType: [AttributeType]
     
     func attackPower(of type: AttributeType) -> Int64 {
         switch type {

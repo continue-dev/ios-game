@@ -263,7 +263,7 @@
 		6A8BEB7F244DD67A00142587 /* Reel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reel.swift; sourceTree = "<group>"; };
 		6A8BEB81244DDA5900142587 /* ReelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReelTest.swift; sourceTree = "<group>"; };
 		6A8BEBCA2451AA6900142587 /* slokara_dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = slokara_dev.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		6A8BEC132451B74A00142587 /* スロから_DEV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "スロから_DEV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A8BEC132451B74A00142587 /* スロから_adhoc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "スロから_adhoc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ABF318923AF586A0014E0BD /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		6ABF318B23AF58780014E0BD /* TaskList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TaskList.storyboard; sourceTree = "<group>"; };
 		6ABF318D23AF59570014E0BD /* TaskListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewModel.swift; sourceTree = "<group>"; };
@@ -526,7 +526,7 @@
 				9821B3402378560400CF964D /* slokaraTests.xctest */,
 				9821B34B2378560400CF964D /* slokaraUITests.xctest */,
 				6A8BEBCA2451AA6900142587 /* slokara_dev.app */,
-				6A8BEC132451B74A00142587 /* スロから_DEV.app */,
+				6A8BEC132451B74A00142587 /* スロから_adhoc.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -672,7 +672,7 @@
 			);
 			name = slokara_adhoc;
 			productName = slokara;
-			productReference = 6A8BEC132451B74A00142587 /* スロから_DEV.app */;
+			productReference = 6A8BEC132451B74A00142587 /* スロから_adhoc.app */;
 			productType = "com.apple.product-type.application";
 		};
 		9821B3292378560300CF964D /* slokara */ = {
@@ -1325,7 +1325,7 @@
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.continue-dev.slokara-adhoc";
-				PRODUCT_NAME = "スロから_DEV";
+				PRODUCT_NAME = "スロから_adhoc";
 				PROVISIONING_PROFILE_SPECIFIER = workout.wildcard.adhoc;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = ADHOC;
 				SWIFT_VERSION = 5.0;
@@ -1354,7 +1354,7 @@
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.continue-dev.slokara-adhoc";
-				PRODUCT_NAME = "スロから_DEV";
+				PRODUCT_NAME = "スロから_adhoc";
 				PROVISIONING_PROFILE_SPECIFIER = workout.wildcard.adhoc;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = ADHOC;
 				SWIFT_VERSION = 5.0;
