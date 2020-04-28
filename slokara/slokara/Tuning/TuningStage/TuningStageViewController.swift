@@ -59,6 +59,10 @@ extension TuningStageViewController: UITableViewDataSource {
 extension TuningStageViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard indexPath.section == 1 else { return }
+        guard let createViewController = UIStoryboard(name: "CreateEnemy", bundle: nil).instantiateInitialViewController() as? CreateEnemyViewController else { return }
+        DispatchQueue.main.async {
+            self.present(createViewController, animated: true, completion: nil)
+        }
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
