@@ -179,6 +179,16 @@
 		6A8BEC1F24571C6500142587 /* TuningStageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A8BEC1D24571C6400142587 /* TuningStageTableViewCell.xib */; };
 		6A8BEC21245725B000142587 /* TuningStageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8BEC20245725B000142587 /* TuningStageTableViewCell.swift */; };
 		6A8BEC22245725B000142587 /* TuningStageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8BEC20245725B000142587 /* TuningStageTableViewCell.swift */; };
+		6A8BEC2724587F2D00142587 /* CreateEnemyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8BEC2624587F2D00142587 /* CreateEnemyViewController.swift */; };
+		6A8BEC2824587F2D00142587 /* CreateEnemyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8BEC2624587F2D00142587 /* CreateEnemyViewController.swift */; };
+		6A8BEC2A24587F5300142587 /* CreateEnemy.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A8BEC2924587F5300142587 /* CreateEnemy.storyboard */; };
+		6A8BEC2B24587F5300142587 /* CreateEnemy.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A8BEC2924587F5300142587 /* CreateEnemy.storyboard */; };
+		6A8BEC2D24589E2500142587 /* ToggleAttributeImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8BEC2C24589E2500142587 /* ToggleAttributeImageView.swift */; };
+		6A8BEC2E24589E2500142587 /* ToggleAttributeImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8BEC2C24589E2500142587 /* ToggleAttributeImageView.swift */; };
+		6A8BEC302458A06F00142587 /* AttributeSelectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A8BEC2F2458A06F00142587 /* AttributeSelectView.xib */; };
+		6A8BEC312458A06F00142587 /* AttributeSelectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A8BEC2F2458A06F00142587 /* AttributeSelectView.xib */; };
+		6A8BEC332458A0F800142587 /* AttributeSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8BEC322458A0F800142587 /* AttributeSelectView.swift */; };
+		6A8BEC342458A0F800142587 /* AttributeSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8BEC322458A0F800142587 /* AttributeSelectView.swift */; };
 		6ABF318A23AF586A0014E0BD /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABF318923AF586A0014E0BD /* TaskListViewController.swift */; };
 		6ABF318C23AF58780014E0BD /* TaskList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6ABF318B23AF58780014E0BD /* TaskList.storyboard */; };
 		6ABF318E23AF59570014E0BD /* TaskListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABF318D23AF59570014E0BD /* TaskListViewModel.swift */; };
@@ -275,6 +285,11 @@
 		6A8BEC1A24571A3700142587 /* TuningStageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuningStageViewController.swift; sourceTree = "<group>"; };
 		6A8BEC1D24571C6400142587 /* TuningStageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TuningStageTableViewCell.xib; sourceTree = "<group>"; };
 		6A8BEC20245725B000142587 /* TuningStageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuningStageTableViewCell.swift; sourceTree = "<group>"; };
+		6A8BEC2624587F2D00142587 /* CreateEnemyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEnemyViewController.swift; sourceTree = "<group>"; };
+		6A8BEC2924587F5300142587 /* CreateEnemy.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateEnemy.storyboard; sourceTree = "<group>"; };
+		6A8BEC2C24589E2500142587 /* ToggleAttributeImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleAttributeImageView.swift; sourceTree = "<group>"; };
+		6A8BEC2F2458A06F00142587 /* AttributeSelectView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AttributeSelectView.xib; sourceTree = "<group>"; };
+		6A8BEC322458A0F800142587 /* AttributeSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributeSelectView.swift; sourceTree = "<group>"; };
 		6ABF318923AF586A0014E0BD /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		6ABF318B23AF58780014E0BD /* TaskList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TaskList.storyboard; sourceTree = "<group>"; };
 		6ABF318D23AF59570014E0BD /* TaskListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewModel.swift; sourceTree = "<group>"; };
@@ -495,6 +510,11 @@
 				6A8BEC1A24571A3700142587 /* TuningStageViewController.swift */,
 				6A8BEC1D24571C6400142587 /* TuningStageTableViewCell.xib */,
 				6A8BEC20245725B000142587 /* TuningStageTableViewCell.swift */,
+				6A8BEC2924587F5300142587 /* CreateEnemy.storyboard */,
+				6A8BEC2624587F2D00142587 /* CreateEnemyViewController.swift */,
+				6A8BEC2C24589E2500142587 /* ToggleAttributeImageView.swift */,
+				6A8BEC2F2458A06F00142587 /* AttributeSelectView.xib */,
+				6A8BEC322458A0F800142587 /* AttributeSelectView.swift */,
 			);
 			path = TuningStage;
 			sourceTree = "<group>";
@@ -824,6 +844,7 @@
 				6A8BEC182457186500142587 /* TuningStage.storyboard in Resources */,
 				6A8BEBB92451AA6900142587 /* Oranienbaum.ttf in Resources */,
 				6A8BEBBA2451AA6900142587 /* TaskListCell.xib in Resources */,
+				6A8BEC302458A06F00142587 /* AttributeSelectView.xib in Resources */,
 				6A8BEBBB2451AA6900142587 /* Assets.xcassets in Resources */,
 				6A8BEBBC2451AA6900142587 /* 07LogoTypeGothic7.otf in Resources */,
 				6A8BEBBD2451AA6900142587 /* BorderedButton.xib in Resources */,
@@ -833,6 +854,7 @@
 				6A8BEBC12451AA6900142587 /* TaskListTab.xib in Resources */,
 				6A8BEBC22451AA6900142587 /* Navigation.storyboard in Resources */,
 				6A8BEBC32451AA6900142587 /* ReelView.xib in Resources */,
+				6A8BEC2A24587F5300142587 /* CreateEnemy.storyboard in Resources */,
 				6A8BEBC42451AA6900142587 /* Cleared.storyboard in Resources */,
 				6A8BEBC52451AA6900142587 /* TaskConfirm.storyboard in Resources */,
 			);
@@ -852,6 +874,7 @@
 				6A8BEC192457186500142587 /* TuningStage.storyboard in Resources */,
 				6A8BEC022451B74A00142587 /* Oranienbaum.ttf in Resources */,
 				6A8BEC032451B74A00142587 /* TaskListCell.xib in Resources */,
+				6A8BEC312458A06F00142587 /* AttributeSelectView.xib in Resources */,
 				6A8BEC042451B74A00142587 /* Assets.xcassets in Resources */,
 				6A8BEC052451B74A00142587 /* 07LogoTypeGothic7.otf in Resources */,
 				6A8BEC062451B74A00142587 /* BorderedButton.xib in Resources */,
@@ -861,6 +884,7 @@
 				6A8BEC0A2451B74A00142587 /* TaskListTab.xib in Resources */,
 				6A8BEC0B2451B74A00142587 /* Navigation.storyboard in Resources */,
 				6A8BEC0C2451B74A00142587 /* ReelView.xib in Resources */,
+				6A8BEC2B24587F5300142587 /* CreateEnemy.storyboard in Resources */,
 				6A8BEC0D2451B74A00142587 /* Cleared.storyboard in Resources */,
 				6A8BEC0E2451B74A00142587 /* TaskConfirm.storyboard in Resources */,
 			);
@@ -1098,6 +1122,7 @@
 				6A8BEB872451AA6900142587 /* Reel.swift in Sources */,
 				6A8BEB882451AA6900142587 /* BattleProgressView.swift in Sources */,
 				6A8BEB892451AA6900142587 /* TaskListModel.swift in Sources */,
+				6A8BEC2724587F2D00142587 /* CreateEnemyViewController.swift in Sources */,
 				6A8BEB8A2451AA6900142587 /* NavigationViewModel.swift in Sources */,
 				6A8BEB8B2451AA6900142587 /* TaskConfirmViewController.swift in Sources */,
 				6A8BEB8C2451AA6900142587 /* AlertView.swift in Sources */,
@@ -1108,6 +1133,7 @@
 				6A8BEB902451AA6900142587 /* Enemy.swift in Sources */,
 				6A8BEB912451AA6900142587 /* AppDelegate.swift in Sources */,
 				6A8BEB922451AA6900142587 /* ClearedViewController.swift in Sources */,
+				6A8BEC2D24589E2500142587 /* ToggleAttributeImageView.swift in Sources */,
 				6A8BEB932451AA6900142587 /* BattleViewModel.swift in Sources */,
 				6A8BEB942451AA6900142587 /* BorderedButton.swift in Sources */,
 				6A8BEB952451AA6900142587 /* TabButton.swift in Sources */,
@@ -1133,6 +1159,7 @@
 				6A8BEBA82451AA6900142587 /* TaskListViewModel.swift in Sources */,
 				6A8BEBA92451AA6900142587 /* HomeViewController.swift in Sources */,
 				6A8BEBAA2451AA6900142587 /* NavigationModel.swift in Sources */,
+				6A8BEC332458A0F800142587 /* AttributeSelectView.swift in Sources */,
 				6A8BEBAB2451AA6900142587 /* BorderedLabel.swift in Sources */,
 				6A8BEBAC2451AA6900142587 /* ToggleButton.swift in Sources */,
 				6A8BEBAD2451AA6900142587 /* HomeModel.swift in Sources */,
@@ -1149,6 +1176,7 @@
 				6A8BEBD02451B74A00142587 /* Reel.swift in Sources */,
 				6A8BEBD12451B74A00142587 /* BattleProgressView.swift in Sources */,
 				6A8BEBD22451B74A00142587 /* TaskListModel.swift in Sources */,
+				6A8BEC2824587F2D00142587 /* CreateEnemyViewController.swift in Sources */,
 				6A8BEBD32451B74A00142587 /* NavigationViewModel.swift in Sources */,
 				6A8BEBD42451B74A00142587 /* TaskConfirmViewController.swift in Sources */,
 				6A8BEBD52451B74A00142587 /* AlertView.swift in Sources */,
@@ -1159,6 +1187,7 @@
 				6A8BEBD92451B74A00142587 /* Enemy.swift in Sources */,
 				6A8BEBDA2451B74A00142587 /* AppDelegate.swift in Sources */,
 				6A8BEBDB2451B74A00142587 /* ClearedViewController.swift in Sources */,
+				6A8BEC2E24589E2500142587 /* ToggleAttributeImageView.swift in Sources */,
 				6A8BEBDC2451B74A00142587 /* BattleViewModel.swift in Sources */,
 				6A8BEBDD2451B74A00142587 /* BorderedButton.swift in Sources */,
 				6A8BEBDE2451B74A00142587 /* TabButton.swift in Sources */,
@@ -1184,6 +1213,7 @@
 				6A8BEBF12451B74A00142587 /* TaskListViewModel.swift in Sources */,
 				6A8BEBF22451B74A00142587 /* HomeViewController.swift in Sources */,
 				6A8BEBF32451B74A00142587 /* NavigationModel.swift in Sources */,
+				6A8BEC342458A0F800142587 /* AttributeSelectView.swift in Sources */,
 				6A8BEBF42451B74A00142587 /* BorderedLabel.swift in Sources */,
 				6A8BEBF52451B74A00142587 /* ToggleButton.swift in Sources */,
 				6A8BEBF62451B74A00142587 /* HomeModel.swift in Sources */,
