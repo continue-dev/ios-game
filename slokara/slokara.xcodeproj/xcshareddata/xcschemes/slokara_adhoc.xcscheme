@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6A8BEBCC2451B74A00142587"
+               BlueprintIdentifier = "6A8BEC3524597F3C00142587"
                BuildableName = "slokara_adhoc.app"
                BlueprintName = "slokara_adhoc"
                ReferencedContainer = "container:slokara.xcodeproj">
@@ -44,7 +44,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6A8BEBCC2451B74A00142587"
+            BlueprintIdentifier = "6A8BEC3524597F3C00142587"
             BuildableName = "slokara_adhoc.app"
             BlueprintName = "slokara_adhoc"
             ReferencedContainer = "container:slokara.xcodeproj">
@@ -61,7 +61,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6A8BEBCC2451B74A00142587"
+            BlueprintIdentifier = "6A8BEC3524597F3C00142587"
             BuildableName = "slokara_adhoc.app"
             BlueprintName = "slokara_adhoc"
             ReferencedContainer = "container:slokara.xcodeproj">

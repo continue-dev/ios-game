@@ -109,86 +109,86 @@
 		6A8BEBC32451AA6900142587 /* ReelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A599E892426807200067D7A /* ReelView.xib */; };
 		6A8BEBC42451AA6900142587 /* Cleared.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A5A8A432434F40200F8A829 /* Cleared.storyboard */; };
 		6A8BEBC52451AA6900142587 /* TaskConfirm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A1C491323B9DE1F00261DF5 /* TaskConfirm.storyboard */; };
-		6A8BEBCF2451B74A00142587 /* ClearedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5A8A492436228000F8A829 /* ClearedModel.swift */; };
-		6A8BEBD02451B74A00142587 /* Reel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8BEB7F244DD67A00142587 /* Reel.swift */; };
-		6A8BEBD12451B74A00142587 /* BattleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A599E982427D5C700067D7A /* BattleProgressView.swift */; };
-		6A8BEBD22451B74A00142587 /* TaskListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABF318F23AF59660014E0BD /* TaskListModel.swift */; };
-		6A8BEBD32451B74A00142587 /* NavigationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98367114239810F200F590ED /* NavigationViewModel.swift */; };
-		6A8BEBD42451B74A00142587 /* TaskConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1C491523B9DE2B00261DF5 /* TaskConfirmViewController.swift */; };
-		6A8BEBD52451B74A00142587 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1C490E23B8E8D400261DF5 /* AlertView.swift */; };
-		6A8BEBD62451B74A00142587 /* TaskListTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABF319423AF5A6C0014E0BD /* TaskListTab.swift */; };
-		6A8BEBD72451B74A00142587 /* BattleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A599E862426787300067D7A /* BattleModel.swift */; };
-		6A8BEBD82451B74A00142587 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABF318923AF586A0014E0BD /* TaskListViewController.swift */; };
-		6A8BEBD92451B74A00142587 /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A63B2792402AC2F00B8719D /* Enemy.swift */; };
-		6A8BEBDA2451B74A00142587 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9821B32D2378560300CF964D /* AppDelegate.swift */; };
-		6A8BEBDB2451B74A00142587 /* ClearedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5A8A452434F77400F8A829 /* ClearedViewController.swift */; };
-		6A8BEBDC2451B74A00142587 /* BattleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A599E842426786800067D7A /* BattleViewModel.swift */; };
-		6A8BEBDD2451B74A00142587 /* BorderedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1C491023B903D200261DF5 /* BorderedButton.swift */; };
-		6A8BEBDE2451B74A00142587 /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981D12DC23B0DDCA002A6B1E /* TabButton.swift */; };
-		6A8BEBDF2451B74A00142587 /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5A8A4E243C6AD300F8A829 /* Array+.swift */; };
-		6A8BEBE02451B74A00142587 /* ReelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A599E8B242682B500067D7A /* ReelView.swift */; };
-		6A8BEBE12451B74A00142587 /* ClearedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5A8A472436227300F8A829 /* ClearedViewModel.swift */; };
-		6A8BEBE22451B74A00142587 /* NavigationChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D0497B239953AF00CA868A /* NavigationChildViewController.swift */; };
-		6A8BEBE32451B74A00142587 /* TaskStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5A8A4B243A159B00F8A829 /* TaskStatus.swift */; };
-		6A8BEBE42451B74A00142587 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981D12DF23B453AA002A6B1E /* Task.swift */; };
-		6A8BEBE52451B74A00142587 /* Stage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A68CA0B242A3CF50047F413 /* Stage.swift */; };
-		6A8BEBE62451B74A00142587 /* UserParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A63B27B2402B2EB00B8719D /* UserParameter.swift */; };
-		6A8BEBE72451B74A00142587 /* TaskCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1C491A23BA59BF00261DF5 /* TaskCellView.swift */; };
-		6A8BEBE82451B74A00142587 /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B652A8237DA9F300C4A5B5 /* TitleViewController.swift */; };
-		6A8BEBE92451B74A00142587 /* BattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A599E822426785B00067D7A /* BattleViewController.swift */; };
-		6A8BEBEA2451B74A00142587 /* Grade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D049792398166900CA868A /* Grade.swift */; };
-		6A8BEBEB2451B74A00142587 /* UserStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A68CA12242F97900047F413 /* UserStatus.swift */; };
-		6A8BEBEC2451B74A00142587 /* Probability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A68CA0D242A3F4B0047F413 /* Probability.swift */; };
-		6A8BEBED2451B74A00142587 /* ReelCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A599E8F2426966A00067D7A /* ReelCharacter.swift */; };
-		6A8BEBEE2451B74A00142587 /* CommonFontLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987F28AA2392BD7F00131C27 /* CommonFontLabel.swift */; };
-		6A8BEBEF2451B74A00142587 /* TaskListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1C490723B26CCD00261DF5 /* TaskListCell.swift */; };
-		6A8BEBF02451B74A00142587 /* AttributeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981D12E123B45558002A6B1E /* AttributeType.swift */; };
-		6A8BEBF12451B74A00142587 /* TaskListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABF318D23AF59570014E0BD /* TaskListViewModel.swift */; };
-		6A8BEBF22451B74A00142587 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B652AD237DAC4900C4A5B5 /* HomeViewController.swift */; };
-		6A8BEBF32451B74A00142587 /* NavigationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D049772398161B00CA868A /* NavigationModel.swift */; };
-		6A8BEBF42451B74A00142587 /* BorderedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989F52F523AF2B0200009D14 /* BorderedLabel.swift */; };
-		6A8BEBF52451B74A00142587 /* ToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A599EA12428F77200067D7A /* ToggleButton.swift */; };
-		6A8BEBF62451B74A00142587 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B652B1237DACCA00C4A5B5 /* HomeModel.swift */; };
-		6A8BEBF72451B74A00142587 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98367110239810D100F590ED /* NavigationViewController.swift */; };
-		6A8BEBF82451B74A00142587 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B652AF237DAC6500C4A5B5 /* HomeViewModel.swift */; };
-		6A8BEBFA2451B74A00142587 /* Pods_slokara.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB3FE3407287E8AE2D0827B2 /* Pods_slokara.framework */; };
-		6A8BEBFC2451B74A00142587 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9821B3382378560400CF964D /* LaunchScreen.storyboard */; };
-		6A8BEBFD2451B74A00142587 /* TaskList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6ABF318B23AF58780014E0BD /* TaskList.storyboard */; };
-		6A8BEBFE2451B74A00142587 /* BattleProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A599E962427D2D600067D7A /* BattleProgressView.xib */; };
-		6A8BEBFF2451B74A00142587 /* Title.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98B652A6237DA9E200C4A5B5 /* Title.storyboard */; };
-		6A8BEC002451B74A00142587 /* TaskCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A1C491823BA59B300261DF5 /* TaskCellView.xib */; };
-		6A8BEC012451B74A00142587 /* Battle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A599E802426784C00067D7A /* Battle.storyboard */; };
-		6A8BEC022451B74A00142587 /* Oranienbaum.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 987F28A72392BCC800131C27 /* Oranienbaum.ttf */; };
-		6A8BEC032451B74A00142587 /* TaskListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A1C490523B26C8F00261DF5 /* TaskListCell.xib */; };
-		6A8BEC042451B74A00142587 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9821B3362378560400CF964D /* Assets.xcassets */; };
-		6A8BEC052451B74A00142587 /* 07LogoTypeGothic7.otf in Resources */ = {isa = PBXBuildFile; fileRef = F47D662E23926C88009BA0EA /* 07LogoTypeGothic7.otf */; };
-		6A8BEC062451B74A00142587 /* BorderedButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A1D5CA823C4C6D9005B8B48 /* BorderedButton.xib */; };
-		6A8BEC072451B74A00142587 /* LithosPro-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6A1C490923B2710B00261DF5 /* LithosPro-Black.otf */; };
-		6A8BEC082451B74A00142587 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98B652AB237DAC3200C4A5B5 /* Home.storyboard */; };
-		6A8BEC092451B74A00142587 /* AlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A1C490C23B8E8C500261DF5 /* AlertView.xib */; };
-		6A8BEC0A2451B74A00142587 /* TaskListTab.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6ABF319223AF5A5B0014E0BD /* TaskListTab.xib */; };
-		6A8BEC0B2451B74A00142587 /* Navigation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98367112239810E000F590ED /* Navigation.storyboard */; };
-		6A8BEC0C2451B74A00142587 /* ReelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A599E892426807200067D7A /* ReelView.xib */; };
-		6A8BEC0D2451B74A00142587 /* Cleared.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A5A8A432434F40200F8A829 /* Cleared.storyboard */; };
-		6A8BEC0E2451B74A00142587 /* TaskConfirm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A1C491323B9DE1F00261DF5 /* TaskConfirm.storyboard */; };
 		6A8BEC182457186500142587 /* TuningStage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A8BEC172457186500142587 /* TuningStage.storyboard */; };
-		6A8BEC192457186500142587 /* TuningStage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A8BEC172457186500142587 /* TuningStage.storyboard */; };
 		6A8BEC1B24571A3700142587 /* TuningStageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8BEC1A24571A3700142587 /* TuningStageViewController.swift */; };
-		6A8BEC1C24571A3700142587 /* TuningStageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8BEC1A24571A3700142587 /* TuningStageViewController.swift */; };
 		6A8BEC1E24571C6500142587 /* TuningStageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A8BEC1D24571C6400142587 /* TuningStageTableViewCell.xib */; };
-		6A8BEC1F24571C6500142587 /* TuningStageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A8BEC1D24571C6400142587 /* TuningStageTableViewCell.xib */; };
 		6A8BEC21245725B000142587 /* TuningStageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8BEC20245725B000142587 /* TuningStageTableViewCell.swift */; };
-		6A8BEC22245725B000142587 /* TuningStageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8BEC20245725B000142587 /* TuningStageTableViewCell.swift */; };
 		6A8BEC2724587F2D00142587 /* CreateEnemyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8BEC2624587F2D00142587 /* CreateEnemyViewController.swift */; };
-		6A8BEC2824587F2D00142587 /* CreateEnemyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8BEC2624587F2D00142587 /* CreateEnemyViewController.swift */; };
 		6A8BEC2A24587F5300142587 /* CreateEnemy.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A8BEC2924587F5300142587 /* CreateEnemy.storyboard */; };
-		6A8BEC2B24587F5300142587 /* CreateEnemy.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A8BEC2924587F5300142587 /* CreateEnemy.storyboard */; };
 		6A8BEC2D24589E2500142587 /* ToggleAttributeImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8BEC2C24589E2500142587 /* ToggleAttributeImageView.swift */; };
-		6A8BEC2E24589E2500142587 /* ToggleAttributeImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8BEC2C24589E2500142587 /* ToggleAttributeImageView.swift */; };
 		6A8BEC302458A06F00142587 /* AttributeSelectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A8BEC2F2458A06F00142587 /* AttributeSelectView.xib */; };
-		6A8BEC312458A06F00142587 /* AttributeSelectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A8BEC2F2458A06F00142587 /* AttributeSelectView.xib */; };
 		6A8BEC332458A0F800142587 /* AttributeSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8BEC322458A0F800142587 /* AttributeSelectView.swift */; };
-		6A8BEC342458A0F800142587 /* AttributeSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8BEC322458A0F800142587 /* AttributeSelectView.swift */; };
+		6A8BEC3824597F3C00142587 /* ClearedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5A8A492436228000F8A829 /* ClearedModel.swift */; };
+		6A8BEC3924597F3C00142587 /* Reel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8BEB7F244DD67A00142587 /* Reel.swift */; };
+		6A8BEC3A24597F3C00142587 /* BattleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A599E982427D5C700067D7A /* BattleProgressView.swift */; };
+		6A8BEC3B24597F3C00142587 /* TaskListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABF318F23AF59660014E0BD /* TaskListModel.swift */; };
+		6A8BEC3C24597F3C00142587 /* CreateEnemyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8BEC2624587F2D00142587 /* CreateEnemyViewController.swift */; };
+		6A8BEC3D24597F3C00142587 /* NavigationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98367114239810F200F590ED /* NavigationViewModel.swift */; };
+		6A8BEC3E24597F3C00142587 /* TaskConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1C491523B9DE2B00261DF5 /* TaskConfirmViewController.swift */; };
+		6A8BEC3F24597F3C00142587 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1C490E23B8E8D400261DF5 /* AlertView.swift */; };
+		6A8BEC4024597F3C00142587 /* TaskListTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABF319423AF5A6C0014E0BD /* TaskListTab.swift */; };
+		6A8BEC4124597F3C00142587 /* BattleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A599E862426787300067D7A /* BattleModel.swift */; };
+		6A8BEC4224597F3C00142587 /* TuningStageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8BEC20245725B000142587 /* TuningStageTableViewCell.swift */; };
+		6A8BEC4324597F3C00142587 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABF318923AF586A0014E0BD /* TaskListViewController.swift */; };
+		6A8BEC4424597F3C00142587 /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A63B2792402AC2F00B8719D /* Enemy.swift */; };
+		6A8BEC4524597F3C00142587 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9821B32D2378560300CF964D /* AppDelegate.swift */; };
+		6A8BEC4624597F3C00142587 /* ClearedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5A8A452434F77400F8A829 /* ClearedViewController.swift */; };
+		6A8BEC4724597F3C00142587 /* ToggleAttributeImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8BEC2C24589E2500142587 /* ToggleAttributeImageView.swift */; };
+		6A8BEC4824597F3C00142587 /* BattleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A599E842426786800067D7A /* BattleViewModel.swift */; };
+		6A8BEC4924597F3C00142587 /* BorderedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1C491023B903D200261DF5 /* BorderedButton.swift */; };
+		6A8BEC4A24597F3C00142587 /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981D12DC23B0DDCA002A6B1E /* TabButton.swift */; };
+		6A8BEC4B24597F3C00142587 /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5A8A4E243C6AD300F8A829 /* Array+.swift */; };
+		6A8BEC4C24597F3C00142587 /* ReelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A599E8B242682B500067D7A /* ReelView.swift */; };
+		6A8BEC4D24597F3C00142587 /* ClearedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5A8A472436227300F8A829 /* ClearedViewModel.swift */; };
+		6A8BEC4E24597F3C00142587 /* NavigationChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D0497B239953AF00CA868A /* NavigationChildViewController.swift */; };
+		6A8BEC4F24597F3C00142587 /* TaskStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5A8A4B243A159B00F8A829 /* TaskStatus.swift */; };
+		6A8BEC5024597F3C00142587 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981D12DF23B453AA002A6B1E /* Task.swift */; };
+		6A8BEC5124597F3C00142587 /* Stage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A68CA0B242A3CF50047F413 /* Stage.swift */; };
+		6A8BEC5224597F3C00142587 /* UserParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A63B27B2402B2EB00B8719D /* UserParameter.swift */; };
+		6A8BEC5324597F3C00142587 /* TaskCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1C491A23BA59BF00261DF5 /* TaskCellView.swift */; };
+		6A8BEC5424597F3C00142587 /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B652A8237DA9F300C4A5B5 /* TitleViewController.swift */; };
+		6A8BEC5524597F3C00142587 /* BattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A599E822426785B00067D7A /* BattleViewController.swift */; };
+		6A8BEC5624597F3C00142587 /* Grade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D049792398166900CA868A /* Grade.swift */; };
+		6A8BEC5724597F3C00142587 /* UserStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A68CA12242F97900047F413 /* UserStatus.swift */; };
+		6A8BEC5824597F3C00142587 /* Probability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A68CA0D242A3F4B0047F413 /* Probability.swift */; };
+		6A8BEC5924597F3C00142587 /* ReelCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A599E8F2426966A00067D7A /* ReelCharacter.swift */; };
+		6A8BEC5A24597F3C00142587 /* CommonFontLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987F28AA2392BD7F00131C27 /* CommonFontLabel.swift */; };
+		6A8BEC5B24597F3C00142587 /* TaskListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1C490723B26CCD00261DF5 /* TaskListCell.swift */; };
+		6A8BEC5C24597F3C00142587 /* AttributeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981D12E123B45558002A6B1E /* AttributeType.swift */; };
+		6A8BEC5D24597F3C00142587 /* TuningStageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8BEC1A24571A3700142587 /* TuningStageViewController.swift */; };
+		6A8BEC5E24597F3C00142587 /* TaskListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABF318D23AF59570014E0BD /* TaskListViewModel.swift */; };
+		6A8BEC5F24597F3C00142587 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B652AD237DAC4900C4A5B5 /* HomeViewController.swift */; };
+		6A8BEC6024597F3C00142587 /* NavigationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D049772398161B00CA868A /* NavigationModel.swift */; };
+		6A8BEC6124597F3C00142587 /* AttributeSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8BEC322458A0F800142587 /* AttributeSelectView.swift */; };
+		6A8BEC6224597F3C00142587 /* BorderedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989F52F523AF2B0200009D14 /* BorderedLabel.swift */; };
+		6A8BEC6324597F3C00142587 /* ToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A599EA12428F77200067D7A /* ToggleButton.swift */; };
+		6A8BEC6424597F3C00142587 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B652B1237DACCA00C4A5B5 /* HomeModel.swift */; };
+		6A8BEC6524597F3C00142587 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98367110239810D100F590ED /* NavigationViewController.swift */; };
+		6A8BEC6624597F3C00142587 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B652AF237DAC6500C4A5B5 /* HomeViewModel.swift */; };
+		6A8BEC6824597F3C00142587 /* Pods_slokara.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB3FE3407287E8AE2D0827B2 /* Pods_slokara.framework */; };
+		6A8BEC6A24597F3C00142587 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9821B3382378560400CF964D /* LaunchScreen.storyboard */; };
+		6A8BEC6B24597F3C00142587 /* TaskList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6ABF318B23AF58780014E0BD /* TaskList.storyboard */; };
+		6A8BEC6C24597F3C00142587 /* BattleProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A599E962427D2D600067D7A /* BattleProgressView.xib */; };
+		6A8BEC6D24597F3C00142587 /* Title.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98B652A6237DA9E200C4A5B5 /* Title.storyboard */; };
+		6A8BEC6E24597F3C00142587 /* TuningStageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A8BEC1D24571C6400142587 /* TuningStageTableViewCell.xib */; };
+		6A8BEC6F24597F3C00142587 /* TaskCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A1C491823BA59B300261DF5 /* TaskCellView.xib */; };
+		6A8BEC7024597F3C00142587 /* Battle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A599E802426784C00067D7A /* Battle.storyboard */; };
+		6A8BEC7124597F3C00142587 /* TuningStage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A8BEC172457186500142587 /* TuningStage.storyboard */; };
+		6A8BEC7224597F3C00142587 /* Oranienbaum.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 987F28A72392BCC800131C27 /* Oranienbaum.ttf */; };
+		6A8BEC7324597F3C00142587 /* TaskListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A1C490523B26C8F00261DF5 /* TaskListCell.xib */; };
+		6A8BEC7424597F3C00142587 /* AttributeSelectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A8BEC2F2458A06F00142587 /* AttributeSelectView.xib */; };
+		6A8BEC7524597F3C00142587 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9821B3362378560400CF964D /* Assets.xcassets */; };
+		6A8BEC7624597F3C00142587 /* 07LogoTypeGothic7.otf in Resources */ = {isa = PBXBuildFile; fileRef = F47D662E23926C88009BA0EA /* 07LogoTypeGothic7.otf */; };
+		6A8BEC7724597F3C00142587 /* BorderedButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A1D5CA823C4C6D9005B8B48 /* BorderedButton.xib */; };
+		6A8BEC7824597F3C00142587 /* LithosPro-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6A1C490923B2710B00261DF5 /* LithosPro-Black.otf */; };
+		6A8BEC7924597F3C00142587 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98B652AB237DAC3200C4A5B5 /* Home.storyboard */; };
+		6A8BEC7A24597F3C00142587 /* AlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A1C490C23B8E8C500261DF5 /* AlertView.xib */; };
+		6A8BEC7B24597F3C00142587 /* TaskListTab.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6ABF319223AF5A5B0014E0BD /* TaskListTab.xib */; };
+		6A8BEC7C24597F3C00142587 /* Navigation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98367112239810E000F590ED /* Navigation.storyboard */; };
+		6A8BEC7D24597F3C00142587 /* ReelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A599E892426807200067D7A /* ReelView.xib */; };
+		6A8BEC7E24597F3C00142587 /* CreateEnemy.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A8BEC2924587F5300142587 /* CreateEnemy.storyboard */; };
+		6A8BEC7F24597F3C00142587 /* Cleared.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A5A8A432434F40200F8A829 /* Cleared.storyboard */; };
+		6A8BEC8024597F3C00142587 /* TaskConfirm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A1C491323B9DE1F00261DF5 /* TaskConfirm.storyboard */; };
 		6ABF318A23AF586A0014E0BD /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABF318923AF586A0014E0BD /* TaskListViewController.swift */; };
 		6ABF318C23AF58780014E0BD /* TaskList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6ABF318B23AF58780014E0BD /* TaskList.storyboard */; };
 		6ABF318E23AF59570014E0BD /* TaskListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABF318D23AF59570014E0BD /* TaskListViewModel.swift */; };
@@ -290,6 +290,8 @@
 		6A8BEC2C24589E2500142587 /* ToggleAttributeImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleAttributeImageView.swift; sourceTree = "<group>"; };
 		6A8BEC2F2458A06F00142587 /* AttributeSelectView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AttributeSelectView.xib; sourceTree = "<group>"; };
 		6A8BEC322458A0F800142587 /* AttributeSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributeSelectView.swift; sourceTree = "<group>"; };
+		6A8BEC8524597F3C00142587 /* スロから_adhoc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "スロから_adhoc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A8BEC8624597F3D00142587 /* slokara_dev copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "slokara_dev copy-Info.plist"; path = "/Users/sab_swiftlin/Desktop/Swift/ios-game/slokara/slokara_dev copy-Info.plist"; sourceTree = "<absolute>"; };
 		6ABF318923AF586A0014E0BD /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		6ABF318B23AF58780014E0BD /* TaskList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TaskList.storyboard; sourceTree = "<group>"; };
 		6ABF318D23AF59570014E0BD /* TaskListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewModel.swift; sourceTree = "<group>"; };
@@ -343,11 +345,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6A8BEBF92451B74A00142587 /* Frameworks */ = {
+		6A8BEC6724597F3C00142587 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A8BEBFA2451B74A00142587 /* Pods_slokara.framework in Frameworks */,
+				6A8BEC6824597F3C00142587 /* Pods_slokara.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -566,6 +568,7 @@
 				9821B32B2378560300CF964D /* Products */,
 				2B68C37C493F11AF43BD99F2 /* Pods */,
 				2083A412C3820F37BB09349D /* Frameworks */,
+				6A8BEC8624597F3D00142587 /* slokara_dev copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -576,7 +579,7 @@
 				9821B3402378560400CF964D /* slokaraTests.xctest */,
 				9821B34B2378560400CF964D /* slokaraUITests.xctest */,
 				6A8BEBCA2451AA6900142587 /* slokara_dev.app */,
-				6A8BEC132451B74A00142587 /* スロから_adhoc.app */,
+				6A8BEC8524597F3C00142587 /* スロから_adhoc.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -707,15 +710,15 @@
 			productReference = 6A8BEBCA2451AA6900142587 /* slokara_dev.app */;
 			productType = "com.apple.product-type.application";
 		};
-		6A8BEBCC2451B74A00142587 /* slokara_adhoc */ = {
+		6A8BEC3524597F3C00142587 /* slokara_adhoc */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6A8BEC102451B74A00142587 /* Build configuration list for PBXNativeTarget "slokara_adhoc" */;
+			buildConfigurationList = 6A8BEC8224597F3C00142587 /* Build configuration list for PBXNativeTarget "slokara_adhoc" */;
 			buildPhases = (
-				6A8BEBCD2451B74A00142587 /* [CP] Check Pods Manifest.lock */,
-				6A8BEBCE2451B74A00142587 /* Sources */,
-				6A8BEBF92451B74A00142587 /* Frameworks */,
-				6A8BEBFB2451B74A00142587 /* Resources */,
-				6A8BEC0F2451B74A00142587 /* [CP] Embed Pods Frameworks */,
+				6A8BEC3624597F3C00142587 /* [CP] Check Pods Manifest.lock */,
+				6A8BEC3724597F3C00142587 /* Sources */,
+				6A8BEC6724597F3C00142587 /* Frameworks */,
+				6A8BEC6924597F3C00142587 /* Resources */,
+				6A8BEC8124597F3C00142587 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -723,7 +726,7 @@
 			);
 			name = slokara_adhoc;
 			productName = slokara;
-			productReference = 6A8BEC132451B74A00142587 /* スロから_adhoc.app */;
+			productReference = 6A8BEC8524597F3C00142587 /* スロから_adhoc.app */;
 			productType = "com.apple.product-type.application";
 		};
 		9821B3292378560300CF964D /* slokara */ = {
@@ -824,7 +827,7 @@
 				9821B33F2378560400CF964D /* slokaraTests */,
 				9821B34A2378560400CF964D /* slokaraUITests */,
 				6A8BEB832451AA6900142587 /* slokara_dev */,
-				6A8BEBCC2451B74A00142587 /* slokara_adhoc */,
+				6A8BEC3524597F3C00142587 /* slokara_adhoc */,
 			);
 		};
 /* End PBXProject section */
@@ -860,33 +863,33 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6A8BEBFB2451B74A00142587 /* Resources */ = {
+		6A8BEC6924597F3C00142587 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A8BEBFC2451B74A00142587 /* LaunchScreen.storyboard in Resources */,
-				6A8BEBFD2451B74A00142587 /* TaskList.storyboard in Resources */,
-				6A8BEBFE2451B74A00142587 /* BattleProgressView.xib in Resources */,
-				6A8BEBFF2451B74A00142587 /* Title.storyboard in Resources */,
-				6A8BEC1F24571C6500142587 /* TuningStageTableViewCell.xib in Resources */,
-				6A8BEC002451B74A00142587 /* TaskCellView.xib in Resources */,
-				6A8BEC012451B74A00142587 /* Battle.storyboard in Resources */,
-				6A8BEC192457186500142587 /* TuningStage.storyboard in Resources */,
-				6A8BEC022451B74A00142587 /* Oranienbaum.ttf in Resources */,
-				6A8BEC032451B74A00142587 /* TaskListCell.xib in Resources */,
-				6A8BEC312458A06F00142587 /* AttributeSelectView.xib in Resources */,
-				6A8BEC042451B74A00142587 /* Assets.xcassets in Resources */,
-				6A8BEC052451B74A00142587 /* 07LogoTypeGothic7.otf in Resources */,
-				6A8BEC062451B74A00142587 /* BorderedButton.xib in Resources */,
-				6A8BEC072451B74A00142587 /* LithosPro-Black.otf in Resources */,
-				6A8BEC082451B74A00142587 /* Home.storyboard in Resources */,
-				6A8BEC092451B74A00142587 /* AlertView.xib in Resources */,
-				6A8BEC0A2451B74A00142587 /* TaskListTab.xib in Resources */,
-				6A8BEC0B2451B74A00142587 /* Navigation.storyboard in Resources */,
-				6A8BEC0C2451B74A00142587 /* ReelView.xib in Resources */,
-				6A8BEC2B24587F5300142587 /* CreateEnemy.storyboard in Resources */,
-				6A8BEC0D2451B74A00142587 /* Cleared.storyboard in Resources */,
-				6A8BEC0E2451B74A00142587 /* TaskConfirm.storyboard in Resources */,
+				6A8BEC6A24597F3C00142587 /* LaunchScreen.storyboard in Resources */,
+				6A8BEC6B24597F3C00142587 /* TaskList.storyboard in Resources */,
+				6A8BEC6C24597F3C00142587 /* BattleProgressView.xib in Resources */,
+				6A8BEC6D24597F3C00142587 /* Title.storyboard in Resources */,
+				6A8BEC6E24597F3C00142587 /* TuningStageTableViewCell.xib in Resources */,
+				6A8BEC6F24597F3C00142587 /* TaskCellView.xib in Resources */,
+				6A8BEC7024597F3C00142587 /* Battle.storyboard in Resources */,
+				6A8BEC7124597F3C00142587 /* TuningStage.storyboard in Resources */,
+				6A8BEC7224597F3C00142587 /* Oranienbaum.ttf in Resources */,
+				6A8BEC7324597F3C00142587 /* TaskListCell.xib in Resources */,
+				6A8BEC7424597F3C00142587 /* AttributeSelectView.xib in Resources */,
+				6A8BEC7524597F3C00142587 /* Assets.xcassets in Resources */,
+				6A8BEC7624597F3C00142587 /* 07LogoTypeGothic7.otf in Resources */,
+				6A8BEC7724597F3C00142587 /* BorderedButton.xib in Resources */,
+				6A8BEC7824597F3C00142587 /* LithosPro-Black.otf in Resources */,
+				6A8BEC7924597F3C00142587 /* Home.storyboard in Resources */,
+				6A8BEC7A24597F3C00142587 /* AlertView.xib in Resources */,
+				6A8BEC7B24597F3C00142587 /* TaskListTab.xib in Resources */,
+				6A8BEC7C24597F3C00142587 /* Navigation.storyboard in Resources */,
+				6A8BEC7D24597F3C00142587 /* ReelView.xib in Resources */,
+				6A8BEC7E24597F3C00142587 /* CreateEnemy.storyboard in Resources */,
+				6A8BEC7F24597F3C00142587 /* Cleared.storyboard in Resources */,
+				6A8BEC8024597F3C00142587 /* TaskConfirm.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1011,7 +1014,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-slokara/Pods-slokara-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6A8BEBCD2451B74A00142587 /* [CP] Check Pods Manifest.lock */ = {
+		6A8BEC3624597F3C00142587 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1033,7 +1036,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6A8BEC0F2451B74A00142587 /* [CP] Embed Pods Frameworks */ = {
+		6A8BEC8124597F3C00142587 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1168,57 +1171,57 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6A8BEBCE2451B74A00142587 /* Sources */ = {
+		6A8BEC3724597F3C00142587 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A8BEBCF2451B74A00142587 /* ClearedModel.swift in Sources */,
-				6A8BEBD02451B74A00142587 /* Reel.swift in Sources */,
-				6A8BEBD12451B74A00142587 /* BattleProgressView.swift in Sources */,
-				6A8BEBD22451B74A00142587 /* TaskListModel.swift in Sources */,
-				6A8BEC2824587F2D00142587 /* CreateEnemyViewController.swift in Sources */,
-				6A8BEBD32451B74A00142587 /* NavigationViewModel.swift in Sources */,
-				6A8BEBD42451B74A00142587 /* TaskConfirmViewController.swift in Sources */,
-				6A8BEBD52451B74A00142587 /* AlertView.swift in Sources */,
-				6A8BEBD62451B74A00142587 /* TaskListTab.swift in Sources */,
-				6A8BEBD72451B74A00142587 /* BattleModel.swift in Sources */,
-				6A8BEC22245725B000142587 /* TuningStageTableViewCell.swift in Sources */,
-				6A8BEBD82451B74A00142587 /* TaskListViewController.swift in Sources */,
-				6A8BEBD92451B74A00142587 /* Enemy.swift in Sources */,
-				6A8BEBDA2451B74A00142587 /* AppDelegate.swift in Sources */,
-				6A8BEBDB2451B74A00142587 /* ClearedViewController.swift in Sources */,
-				6A8BEC2E24589E2500142587 /* ToggleAttributeImageView.swift in Sources */,
-				6A8BEBDC2451B74A00142587 /* BattleViewModel.swift in Sources */,
-				6A8BEBDD2451B74A00142587 /* BorderedButton.swift in Sources */,
-				6A8BEBDE2451B74A00142587 /* TabButton.swift in Sources */,
-				6A8BEBDF2451B74A00142587 /* Array+.swift in Sources */,
-				6A8BEBE02451B74A00142587 /* ReelView.swift in Sources */,
-				6A8BEBE12451B74A00142587 /* ClearedViewModel.swift in Sources */,
-				6A8BEBE22451B74A00142587 /* NavigationChildViewController.swift in Sources */,
-				6A8BEBE32451B74A00142587 /* TaskStatus.swift in Sources */,
-				6A8BEBE42451B74A00142587 /* Task.swift in Sources */,
-				6A8BEBE52451B74A00142587 /* Stage.swift in Sources */,
-				6A8BEBE62451B74A00142587 /* UserParameter.swift in Sources */,
-				6A8BEBE72451B74A00142587 /* TaskCellView.swift in Sources */,
-				6A8BEBE82451B74A00142587 /* TitleViewController.swift in Sources */,
-				6A8BEBE92451B74A00142587 /* BattleViewController.swift in Sources */,
-				6A8BEBEA2451B74A00142587 /* Grade.swift in Sources */,
-				6A8BEBEB2451B74A00142587 /* UserStatus.swift in Sources */,
-				6A8BEBEC2451B74A00142587 /* Probability.swift in Sources */,
-				6A8BEBED2451B74A00142587 /* ReelCharacter.swift in Sources */,
-				6A8BEBEE2451B74A00142587 /* CommonFontLabel.swift in Sources */,
-				6A8BEBEF2451B74A00142587 /* TaskListCell.swift in Sources */,
-				6A8BEBF02451B74A00142587 /* AttributeType.swift in Sources */,
-				6A8BEC1C24571A3700142587 /* TuningStageViewController.swift in Sources */,
-				6A8BEBF12451B74A00142587 /* TaskListViewModel.swift in Sources */,
-				6A8BEBF22451B74A00142587 /* HomeViewController.swift in Sources */,
-				6A8BEBF32451B74A00142587 /* NavigationModel.swift in Sources */,
-				6A8BEC342458A0F800142587 /* AttributeSelectView.swift in Sources */,
-				6A8BEBF42451B74A00142587 /* BorderedLabel.swift in Sources */,
-				6A8BEBF52451B74A00142587 /* ToggleButton.swift in Sources */,
-				6A8BEBF62451B74A00142587 /* HomeModel.swift in Sources */,
-				6A8BEBF72451B74A00142587 /* NavigationViewController.swift in Sources */,
-				6A8BEBF82451B74A00142587 /* HomeViewModel.swift in Sources */,
+				6A8BEC3824597F3C00142587 /* ClearedModel.swift in Sources */,
+				6A8BEC3924597F3C00142587 /* Reel.swift in Sources */,
+				6A8BEC3A24597F3C00142587 /* BattleProgressView.swift in Sources */,
+				6A8BEC3B24597F3C00142587 /* TaskListModel.swift in Sources */,
+				6A8BEC3C24597F3C00142587 /* CreateEnemyViewController.swift in Sources */,
+				6A8BEC3D24597F3C00142587 /* NavigationViewModel.swift in Sources */,
+				6A8BEC3E24597F3C00142587 /* TaskConfirmViewController.swift in Sources */,
+				6A8BEC3F24597F3C00142587 /* AlertView.swift in Sources */,
+				6A8BEC4024597F3C00142587 /* TaskListTab.swift in Sources */,
+				6A8BEC4124597F3C00142587 /* BattleModel.swift in Sources */,
+				6A8BEC4224597F3C00142587 /* TuningStageTableViewCell.swift in Sources */,
+				6A8BEC4324597F3C00142587 /* TaskListViewController.swift in Sources */,
+				6A8BEC4424597F3C00142587 /* Enemy.swift in Sources */,
+				6A8BEC4524597F3C00142587 /* AppDelegate.swift in Sources */,
+				6A8BEC4624597F3C00142587 /* ClearedViewController.swift in Sources */,
+				6A8BEC4724597F3C00142587 /* ToggleAttributeImageView.swift in Sources */,
+				6A8BEC4824597F3C00142587 /* BattleViewModel.swift in Sources */,
+				6A8BEC4924597F3C00142587 /* BorderedButton.swift in Sources */,
+				6A8BEC4A24597F3C00142587 /* TabButton.swift in Sources */,
+				6A8BEC4B24597F3C00142587 /* Array+.swift in Sources */,
+				6A8BEC4C24597F3C00142587 /* ReelView.swift in Sources */,
+				6A8BEC4D24597F3C00142587 /* ClearedViewModel.swift in Sources */,
+				6A8BEC4E24597F3C00142587 /* NavigationChildViewController.swift in Sources */,
+				6A8BEC4F24597F3C00142587 /* TaskStatus.swift in Sources */,
+				6A8BEC5024597F3C00142587 /* Task.swift in Sources */,
+				6A8BEC5124597F3C00142587 /* Stage.swift in Sources */,
+				6A8BEC5224597F3C00142587 /* UserParameter.swift in Sources */,
+				6A8BEC5324597F3C00142587 /* TaskCellView.swift in Sources */,
+				6A8BEC5424597F3C00142587 /* TitleViewController.swift in Sources */,
+				6A8BEC5524597F3C00142587 /* BattleViewController.swift in Sources */,
+				6A8BEC5624597F3C00142587 /* Grade.swift in Sources */,
+				6A8BEC5724597F3C00142587 /* UserStatus.swift in Sources */,
+				6A8BEC5824597F3C00142587 /* Probability.swift in Sources */,
+				6A8BEC5924597F3C00142587 /* ReelCharacter.swift in Sources */,
+				6A8BEC5A24597F3C00142587 /* CommonFontLabel.swift in Sources */,
+				6A8BEC5B24597F3C00142587 /* TaskListCell.swift in Sources */,
+				6A8BEC5C24597F3C00142587 /* AttributeType.swift in Sources */,
+				6A8BEC5D24597F3C00142587 /* TuningStageViewController.swift in Sources */,
+				6A8BEC5E24597F3C00142587 /* TaskListViewModel.swift in Sources */,
+				6A8BEC5F24597F3C00142587 /* HomeViewController.swift in Sources */,
+				6A8BEC6024597F3C00142587 /* NavigationModel.swift in Sources */,
+				6A8BEC6124597F3C00142587 /* AttributeSelectView.swift in Sources */,
+				6A8BEC6224597F3C00142587 /* BorderedLabel.swift in Sources */,
+				6A8BEC6324597F3C00142587 /* ToggleButton.swift in Sources */,
+				6A8BEC6424597F3C00142587 /* HomeModel.swift in Sources */,
+				6A8BEC6524597F3C00142587 /* NavigationViewController.swift in Sources */,
+				6A8BEC6624597F3C00142587 /* HomeViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1373,7 +1376,7 @@
 			};
 			name = Release;
 		};
-		6A8BEC112451B74A00142587 /* Debug */ = {
+		6A8BEC8324597F3C00142587 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9B5C144CA3C74AF3E8B91662 /* Pods-slokara.debug.xcconfig */;
 			buildSettings = {
@@ -1384,25 +1387,23 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"COCOAPODS=1",
-					PROD,
 				);
-				INFOPLIST_FILE = slokara/Info.plist;
+				INFOPLIST_FILE = "slokara_dev copy-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.continue-dev.slokara-adhoc";
 				PRODUCT_NAME = "スロから_adhoc";
 				PROVISIONING_PROFILE_SPECIFIER = workout.wildcard.adhoc;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = ADHOC;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG ADHOC";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
-		6A8BEC122451B74A00142587 /* Release */ = {
+		6A8BEC8424597F3C00142587 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EDD5E91303E38F5B9B9DEDE4 /* Pods-slokara.release.xcconfig */;
 			buildSettings = {
@@ -1413,19 +1414,17 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"COCOAPODS=1",
-					PROD,
 				);
-				INFOPLIST_FILE = slokara/Info.plist;
+				INFOPLIST_FILE = "slokara_dev copy-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.continue-dev.slokara-adhoc";
 				PRODUCT_NAME = "スロから_adhoc";
 				PROVISIONING_PROFILE_SPECIFIER = workout.wildcard.adhoc;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = ADHOC;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG ADHOC";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1693,11 +1692,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6A8BEC102451B74A00142587 /* Build configuration list for PBXNativeTarget "slokara_adhoc" */ = {
+		6A8BEC8224597F3C00142587 /* Build configuration list for PBXNativeTarget "slokara_adhoc" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6A8BEC112451B74A00142587 /* Debug */,
-				6A8BEC122451B74A00142587 /* Release */,
+				6A8BEC8324597F3C00142587 /* Debug */,
+				6A8BEC8424597F3C00142587 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
