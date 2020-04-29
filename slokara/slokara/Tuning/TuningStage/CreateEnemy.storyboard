@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -45,6 +44,9 @@
                                 <state key="disabled">
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="enterAction:" destination="8tB-9i-twZ" eventType="touchUpInside" id="17J-0a-Tt3"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fyr-3Q-i1B">
                                 <rect key="frame" x="0.0" y="43.5" width="375" height="578.5"/>
@@ -52,13 +54,13 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZHN-zp-zJO">
                                         <rect key="frame" x="0.0" y="40" width="375" height="96.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="攻撃" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EVo-e9-zay">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="攻撃" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EVo-e9-zay">
                                                 <rect key="frame" x="4" y="4" width="35" height="32"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R5Q-aB-MBz">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="10" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R5Q-aB-MBz">
                                                 <rect key="frame" x="43" y="4" width="328" height="32"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
@@ -85,13 +87,13 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IQv-m1-inL">
                                         <rect key="frame" x="0.0" y="136.5" width="375" height="96.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="防御" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xmq-WL-5AI">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="防御" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xmq-WL-5AI">
                                                 <rect key="frame" x="4" y="4" width="35" height="32"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yXo-7S-HTQ">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="10" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yXo-7S-HTQ">
                                                 <rect key="frame" x="43" y="4" width="328" height="32"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
@@ -116,24 +118,24 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fnk-ff-tsY">
-                                        <rect key="frame" x="4" y="4" width="23" height="32"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="4" y="4" width="24" height="32"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pCi-e8-5x3">
-                                        <rect key="frame" x="31" y="4" width="340" height="32"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="100" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pCi-e8-5x3">
+                                        <rect key="frame" x="32" y="4" width="339" height="32"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0O3-vD-Gqd">
                                         <rect key="frame" x="0.0" y="237" width="375" height="96.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yQ4-hZ-shV">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="yQ4-hZ-shV">
                                                 <rect key="frame" x="4" y="2" width="89" height="46"/>
                                                 <string key="text">リール図柄
 出現比率</string>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -146,12 +148,12 @@
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="soil" translatesAutoresizingMaskIntoConstraints="NO" id="t5z-0Y-rvb">
                                                 <rect key="frame" x="97" y="50" width="42" height="42.5"/>
                                             </imageView>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="bezel" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="aTt-uy-3vv">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="1" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="aTt-uy-3vv">
                                                 <rect key="frame" x="50" y="54.5" width="43" height="33.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="bezel" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="oqF-o7-VTt">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="1" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="oqF-o7-VTt">
                                                 <rect key="frame" x="143" y="54.5" width="42.5" height="33.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
@@ -162,7 +164,7 @@
                                                     <constraint firstAttribute="width" secondItem="zaP-Hs-FVn" secondAttribute="height" multiplier="1:1" id="yCY-Tv-4PJ"/>
                                                 </constraints>
                                             </imageView>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="bezel" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="IsW-iP-FPh">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="1" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="IsW-iP-FPh">
                                                 <rect key="frame" x="235.5" y="54.5" width="43" height="33.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
@@ -170,7 +172,7 @@
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="darkness" translatesAutoresizingMaskIntoConstraints="NO" id="3KF-0n-6JQ">
                                                 <rect key="frame" x="282.5" y="50" width="42" height="42.5"/>
                                             </imageView>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="bezel" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="ESc-xo-4r8">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="1" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="ESc-xo-4r8">
                                                 <rect key="frame" x="328.5" y="54.5" width="42.5" height="33.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
@@ -178,7 +180,7 @@
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fire" translatesAutoresizingMaskIntoConstraints="NO" id="0BZ-6t-7LP">
                                                 <rect key="frame" x="97" y="4" width="42" height="42"/>
                                             </imageView>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="bezel" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="n8h-9K-ndh">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="1" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="n8h-9K-ndh">
                                                 <rect key="frame" x="143" y="8" width="42.5" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
@@ -186,7 +188,7 @@
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="water" translatesAutoresizingMaskIntoConstraints="NO" id="MSP-B8-Jvl">
                                                 <rect key="frame" x="189.5" y="4" width="42" height="42"/>
                                             </imageView>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="bezel" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Zzu-tZ-5ZQ">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="1" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Zzu-tZ-5ZQ">
                                                 <rect key="frame" x="235.5" y="8" width="43" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
@@ -194,7 +196,7 @@
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wind" translatesAutoresizingMaskIntoConstraints="NO" id="LuX-g3-GdN">
                                                 <rect key="frame" x="282.5" y="4" width="42" height="42"/>
                                             </imageView>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="bezel" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="xxk-Xa-r2e">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="1" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="xxk-Xa-r2e">
                                                 <rect key="frame" x="328.5" y="8" width="42.5" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
@@ -271,14 +273,14 @@
                                             <constraint firstItem="xxk-Xa-r2e" firstAttribute="centerY" secondItem="LuX-g3-GdN" secondAttribute="centerY" id="yKD-hp-CAp"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8hd-ca-mXi">
-                                        <rect key="frame" x="4" y="366.5" width="47" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="画像" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8hd-ca-mXi">
+                                        <rect key="frame" x="4" y="366.5" width="35" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QiO-Lc-XHi">
-                                        <rect key="frame" x="0.0" y="391" width="375" height="115.5"/>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QiO-Lc-XHi">
+                                        <rect key="frame" x="0.0" y="391" width="375" height="183.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ZEO-ko-lGo">
                                             <size key="itemSize" width="128" height="128"/>
@@ -286,27 +288,11 @@
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
-                                        <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="bDM-mz-2UR">
-                                                <rect key="frame" x="0.0" y="-6.5" width="128" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="eYR-mT-SeP">
-                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u7f-mD-Gv3">
-                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                                        </imageView>
-                                                    </subviews>
-                                                    <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="u7f-mD-Gv3" secondAttribute="trailing" id="7V0-9f-vYu"/>
-                                                        <constraint firstItem="u7f-mD-Gv3" firstAttribute="leading" secondItem="eYR-mT-SeP" secondAttribute="leading" id="J3C-E2-bIh"/>
-                                                        <constraint firstAttribute="bottom" secondItem="u7f-mD-Gv3" secondAttribute="bottom" id="NSP-WO-udv"/>
-                                                        <constraint firstItem="u7f-mD-Gv3" firstAttribute="top" secondItem="eYR-mT-SeP" secondAttribute="top" id="wpt-9s-535"/>
-                                                    </constraints>
-                                                </collectionViewCellContentView>
-                                            </collectionViewCell>
-                                        </cells>
+                                        <cells/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="8tB-9i-twZ" id="vTl-4m-zK8"/>
+                                            <outlet property="delegate" destination="8tB-9i-twZ" id="IdK-OB-wMz"/>
+                                        </connections>
                                     </collectionView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="＊出現比率は、各図柄に対して設定した数値を分子、全ての数値の合計を分母として計算します" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k3X-Mr-LQs">
                                         <rect key="frame" x="0.0" y="333.5" width="375" height="29"/>
@@ -321,7 +307,6 @@
                                     <constraint firstItem="Fnk-ff-tsY" firstAttribute="leading" secondItem="fyr-3Q-i1B" secondAttribute="leading" constant="4" id="5OS-St-kw7"/>
                                     <constraint firstItem="QiO-Lc-XHi" firstAttribute="leading" secondItem="fyr-3Q-i1B" secondAttribute="leading" id="75H-6p-0Y6"/>
                                     <constraint firstItem="Fnk-ff-tsY" firstAttribute="top" secondItem="fyr-3Q-i1B" secondAttribute="top" constant="4" id="8qe-DY-af9"/>
-                                    <constraint firstItem="QiO-Lc-XHi" firstAttribute="height" secondItem="fyr-3Q-i1B" secondAttribute="height" multiplier="1:5" priority="750" id="AWB-Cr-1ap"/>
                                     <constraint firstAttribute="trailing" secondItem="ZHN-zp-zJO" secondAttribute="trailing" id="CjX-Ls-R6K"/>
                                     <constraint firstItem="0O3-vD-Gqd" firstAttribute="leading" secondItem="fyr-3Q-i1B" secondAttribute="leading" id="Dd5-nf-Zzg"/>
                                     <constraint firstItem="pCi-e8-5x3" firstAttribute="leading" secondItem="Fnk-ff-tsY" secondAttribute="trailing" constant="4" id="E9R-wb-3A9"/>
@@ -340,7 +325,7 @@
                                     <constraint firstAttribute="trailing" secondItem="QiO-Lc-XHi" secondAttribute="trailing" id="n8g-84-I8h"/>
                                     <constraint firstItem="0O3-vD-Gqd" firstAttribute="height" secondItem="fyr-3Q-i1B" secondAttribute="height" multiplier="1:6" id="nF5-Kf-N5v"/>
                                     <constraint firstItem="k3X-Mr-LQs" firstAttribute="top" secondItem="0O3-vD-Gqd" secondAttribute="bottom" id="qgI-fs-b9Y"/>
-                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="QiO-Lc-XHi" secondAttribute="bottom" constant="4" id="s4S-La-xlH"/>
+                                    <constraint firstAttribute="bottom" secondItem="QiO-Lc-XHi" secondAttribute="bottom" constant="4" id="s4S-La-xlH"/>
                                     <constraint firstItem="8hd-ca-mXi" firstAttribute="top" secondItem="k3X-Mr-LQs" secondAttribute="bottom" constant="4" id="ua4-Al-dcU"/>
                                     <constraint firstItem="IQv-m1-inL" firstAttribute="top" secondItem="ZHN-zp-zJO" secondAttribute="bottom" id="ui0-oj-Zlc"/>
                                     <constraint firstItem="8hd-ca-mXi" firstAttribute="leading" secondItem="fyr-3Q-i1B" secondAttribute="leading" constant="4" id="w10-IP-a8m"/>
@@ -367,6 +352,22 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WnX-6V-V1E"/>
                     </view>
+                    <connections>
+                        <outlet property="attackField" destination="R5Q-aB-MBz" id="Sdc-xn-A3Y"/>
+                        <outlet property="attackTypeView" destination="DS6-wL-pgr" id="W5E-4j-Wb8"/>
+                        <outlet property="collectionView" destination="QiO-Lc-XHi" id="rBf-YZ-90f"/>
+                        <outlet property="darknessProportionField" destination="ESc-xo-4r8" id="PIt-DZ-DV9"/>
+                        <outlet property="defenseField" destination="yXo-7S-HTQ" id="Ynt-Dl-PPW"/>
+                        <outlet property="defenseTypeView" destination="G0f-YC-du5" id="Vmd-V7-CY4"/>
+                        <outlet property="enemyProportionField" destination="aTt-uy-3vv" id="5XI-AA-4V4"/>
+                        <outlet property="enterButton" destination="bts-dh-8c7" id="C6h-71-ziq"/>
+                        <outlet property="fireProportionField" destination="n8h-9K-ndh" id="ePy-NZ-Wcq"/>
+                        <outlet property="hpField" destination="pCi-e8-5x3" id="zZh-ij-Ljo"/>
+                        <outlet property="lightProportionField" destination="IsW-iP-FPh" id="9Wb-bR-vCh"/>
+                        <outlet property="soilProportionField" destination="oqF-o7-VTt" id="zsv-P7-oZw"/>
+                        <outlet property="waterProportionField" destination="Zzu-tZ-5ZQ" id="JF9-Yx-hw8"/>
+                        <outlet property="windProportionField" destination="xxk-Xa-r2e" id="DHo-Da-StV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hjA-Cr-tkU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

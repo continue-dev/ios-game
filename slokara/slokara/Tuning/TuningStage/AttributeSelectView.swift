@@ -49,6 +49,30 @@ class AttributeSelectView: UIView {
         darknessImage.setAttribute(attribute: .darkness)
     }
     
+    func setSelected(attributes: [AttributeType]) {
+        selectAttributes = attributes
+        attributes.forEach{ [weak self] attr in self?.applySelectDisplay(attribute: attr) }
+    }
+    
+    private func applySelectDisplay(attribute: AttributeType) {
+        switch attribute {
+        case .fire:
+            fireImage.isSelected = true
+        case .water:
+            waterImage.isSelected = true
+        case .wind:
+            windImage.isSelected = true
+        case .soil:
+            soilImage.isSelected = true
+        case .light:
+            lightImage.isSelected = true
+        case .darkness:
+            darknessImage.isSelected = true
+        default:
+            break
+        }
+    }
+    
     private func bind() {
         fireImage.didTap.subscribe(onNext: { [weak self] isSelect in
             if let index = self?.selectAttributes.firstIndex(of: .fire) {

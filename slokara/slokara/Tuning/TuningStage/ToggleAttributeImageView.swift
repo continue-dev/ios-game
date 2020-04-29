@@ -7,7 +7,7 @@ class ToggleAttributeImageView: UIImageView {
         didSet{ self.image = attribute.image }
     }
     
-    private var isSelected: Bool = false {
+    var isSelected: Bool = false {
         didSet{ self.alpha = isSelected ? 1 : 0.3 }
     }
     

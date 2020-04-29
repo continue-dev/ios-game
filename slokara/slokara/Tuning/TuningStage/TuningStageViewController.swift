@@ -7,14 +7,23 @@ class TuningStageViewController: UIViewController, NavigationChildViewController
     
     var task: Task!
     
-    private var enemies = [Enemy]() {
-        didSet { self.enterButton.isEnabled = enemies.count > 0 }
+    var enemies = [Enemy]() {
+        didSet {
+            self.enterButton.isEnabled = enemies.count > 0
+            tableView.reloadData()
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.register(UINib(nibName: "TuningStageTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
         self.tableView.tableFooterView = UIView()
+        loadStage()
+    }
+    
+    private func loadStage() {
+        guard let stage =  try? JSONDecoder().decode(Stage.self, from: UserDefaults.standard.data(forKey: "editedStage")!) else { assert(false, "Stage decode failed.") }
+        enemies = stage.enemies
     }
     
     @IBAction func enterAction(_ sender: Any) {
@@ -58,11 +67,17 @@ extension TuningStageViewController: UITableViewDataSource {
 
 extension TuningStageViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard indexPath.section == 1 else { return }
         guard let createViewController = UIStoryboard(name: "CreateEnemy", bundle: nil).instantiateInitialViewController() as? CreateEnemyViewController else { return }
+        if indexPath.section == 0 {
+            createViewController.editingEnemy = (indexPath.row, self.enemies[indexPath.row])
+        }
         DispatchQueue.main.async {
             self.present(createViewController, animated: true, completion: nil)
         }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return indexPath.section == 0 ? 174 : 45
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

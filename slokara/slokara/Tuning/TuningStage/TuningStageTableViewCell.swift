@@ -16,12 +16,16 @@ class TuningStageTableViewCell: UITableViewCell {
     
     func setEnemy(enemy: Enemy) {
         self.enemyImage.image = enemy.image
-        self.attackTypeStack.subviews.filter{ $0 is UIImageView }.enumerated().forEach { offset, element in
-            guard offset < enemy.attackType.count, let imageView = element as? UIImageView else { return }
+        self.attackTypeStack.arrangedSubviews.filter{ $0 is UIImageView }.enumerated().forEach { offset, element in
+            guard let imageView = element as? UIImageView else { return }
+            imageView.image = nil
+            guard offset < enemy.attackType.count else { return }
             imageView.image = enemy.attackType[offset].image
         }
-        self.defenceTypeStack.subviews.filter{ $0 is UIImageView }.enumerated().forEach { offset, element in
-            guard offset < enemy.defenseType.count, let imageView = element as? UIImageView else { return }
+        self.defenceTypeStack.arrangedSubviews.filter{ $0 is UIImageView }.enumerated().forEach { offset, element in
+            guard let imageView = element as? UIImageView else { return }
+            imageView.image = nil
+            guard offset < enemy.defenseType.count else { return }
             imageView.image = enemy.defenseType[offset].image
         }
         self.attackPowerLabel.text = "\(enemy.attack)"
