@@ -18,6 +18,9 @@ class TuningStageViewController: UIViewController, NavigationChildViewController
         super.viewDidLoad()
         self.tableView.register(UINib(nibName: "TuningStageTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
         self.tableView.tableFooterView = UIView()
+        self.tableView.dragDelegate = self
+        self.tableView.dropDelegate = self
+        self.tableView.dragInteractionEnabled = true
         loadStage()
     }
     
@@ -94,5 +97,31 @@ extension TuningStageViewController: UITableViewDelegate {
             self.enemies.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
+    }
+}
+
+extension TuningStageViewController: UITableViewDragDelegate {
+    func tableView(_ tableView: UITableView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
+        return [UIDragItem(itemProvider: NSItemProvider())]
+    }
+}
+
+extension TuningStageViewController: UITableViewDropDelegate {
+    func tableView(_ tableView: UITableView, dropSessionDidUpdate session: UIDropSession, withDestinationIndexPath destinationIndexPath: IndexPath?) -> UITableViewDropProposal {
+        return UITableViewDropProposal(operation: .move, intent: .insertAtDestinationIndexPath)
+    }
+    
+    func tableView(_ tableView: UITableView, performDropWith coordinator: UITableViewDropCoordinator) {
+        guard let item = coordinator.items.first,
+            let destinationIndexPath = coordinator.destinationIndexPath,
+            let sourceIndexPath = item.sourceIndexPath else { return }
+
+        tableView.performBatchUpdates({ [unowned self] in
+            let moveItem = self.enemies.remove(at: sourceIndexPath.row)
+            self.enemies.insert(moveItem, at: destinationIndexPath.row)
+            tableView.deleteRows(at: [sourceIndexPath], with: .automatic)
+            tableView.insertRows(at: [destinationIndexPath], with: .automatic)
+            }, completion: nil)
+        coordinator.drop(item.dragItem, toRowAt: destinationIndexPath)
     }
 }
