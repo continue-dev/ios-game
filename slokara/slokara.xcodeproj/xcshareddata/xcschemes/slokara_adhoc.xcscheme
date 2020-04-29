@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6A8BEC3524597F3C00142587"
-               BuildableName = "slokara_adhoc.app"
+               BuildableName = "&#x30b9;&#x30ed;&#x304b;&#x3089;_adhoc.app"
                BlueprintName = "slokara_adhoc"
                ReferencedContainer = "container:slokara.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6A8BEC3524597F3C00142587"
-            BuildableName = "slokara_adhoc.app"
+            BuildableName = "&#x30b9;&#x30ed;&#x304b;&#x3089;_adhoc.app"
             BlueprintName = "slokara_adhoc"
             ReferencedContainer = "container:slokara.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6A8BEC3524597F3C00142587"
-            BuildableName = "slokara_adhoc.app"
+            BuildableName = "&#x30b9;&#x30ed;&#x304b;&#x3089;_adhoc.app"
             BlueprintName = "slokara_adhoc"
             ReferencedContainer = "container:slokara.xcodeproj">
          </BuildableReference>
