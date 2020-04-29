@@ -97,6 +97,7 @@ class AttributeSelectView: UIView {
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch = touches.first!
         let location = touch.location(in: self)
-        self.stackView.arrangedSubviews.filter{ $0.frame.contains(location) }.first?.touchesEnded(touches, with: event)
+        guard let togglrAttribute = self.stackView.arrangedSubviews.filter({ $0.frame.contains(location) }).first as? ToggleAttributeImageView else { return }
+        togglrAttribute.touchesEnded(touches, with: event)
     }
 }
