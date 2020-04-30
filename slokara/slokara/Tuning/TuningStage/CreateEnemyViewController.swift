@@ -36,6 +36,7 @@ class CreateEnemyViewController: UIViewController {
     private func setUp() {
         hpField.becomeFirstResponder()
         collectionView.register(EnemyImageCollectionCell.self, forCellWithReuseIdentifier: "cell")
+        editingEnemy != nil ? enterButton.setTitle("この敵を上書きする", for: .normal) : enterButton.setTitle("この敵を追加する", for: .normal)
         
         attackTypeView.selectAttributesObserver.subscribe(onNext:{ [weak self] attrs in
             self?.attackTypes = attrs
