@@ -17,14 +17,21 @@ class TaskConfirmViewController: UIViewController, NavigationChildViewController
         taskCellView.setTask(task)
         alertView.setMessage("この課題を履修しますか？")
         let positive = AlertAction(title: "履修する", style: .positive) { [weak self] in
+            #if !PROD
+            if UserDefaults.standard.bool(forKey: "tuningMode") {
+                guard let tuningViewController = UIStoryboard(name: "TuningStage", bundle: nil).instantiateInitialViewController() as? TuningStageViewController else { return }
+                tuningViewController.task = task
+                let navigationController = self?.parent as! NavigationViewController
+                navigationController.push(tuningViewController, animate: true)
+                return
+            }
+            #endif
+            
             guard let battleViewController = UIStoryboard(name: "Battle", bundle: nil).instantiateInitialViewController() as? BattleViewController else { return }
             battleViewController.task = task
             let navigationController = self?.parent as! NavigationViewController
             navigationController.push(battleViewController, animate: true)
-//            navigationController.modalPresentationStyle = .fullScreen
-//            navigationController.modalTransitionStyle = .crossDissolve
-//            self?.present(navigationController, animated: true, completion: nil)
-            
+
         }
         let negative = AlertAction(title: "やめる", style: .negative) { [weak self] in
             let navigation = self?.parent as? NavigationViewController

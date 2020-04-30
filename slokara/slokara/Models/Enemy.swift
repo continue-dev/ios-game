@@ -1,6 +1,6 @@
 import UIKit
 
-struct Enemy {
+struct Enemy: Codable {
     let id: Int
     let name: String
     var hp: Int64
@@ -8,11 +8,15 @@ struct Enemy {
     let defense: Int64
     let attackType: [AttributeType]
     let defenseType: [AttributeType]
-    let image: UIImage
+    let imageName: String
     let type: EnemyType
     let probability: Probability
     
-    enum EnemyType {
+    var image: UIImage {
+        return UIImage(named: imageName)!
+    }
+    
+    enum EnemyType: Int, Codable {
         case small
         case big
     }

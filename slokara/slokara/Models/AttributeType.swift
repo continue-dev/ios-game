@@ -1,6 +1,6 @@
 import UIKit
 
-enum AttributeType: Int, CaseIterable, Hashable {
+enum AttributeType: Int, CaseIterable, Hashable, Codable {
     case fire
     case water
     case wind

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lzO-AE-zpa">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tuning Stage View Controller-->
+        <scene sceneID="n1B-BM-fr0">
+            <objects>
+                <viewController id="lzO-AE-zpa" customClass="TuningStageViewController" customModule="slokara_dev" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zsW-ER-ddy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dkq-S3-gku">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="uRt-e9-QVl"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="173" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="YMa-PP-TdF">
+                                <rect key="frame" x="0.0" y="105.5" width="375" height="516.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="lzO-AE-zpa" id="zrD-Vo-Kjc"/>
+                                    <outlet property="delegate" destination="lzO-AE-zpa" id="Df4-mT-XLa"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NsL-Y6-olD">
+                                <rect key="frame" x="0.0" y="622" width="375" height="45"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="4YH-gu-snC"/>
+                                </constraints>
+                                <state key="normal" title="決定してバトルへ">
+                                    <color key="titleColor" red="0.23921568630000001" green="0.56470588239999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <state key="disabled">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="enterAction:" destination="lzO-AE-zpa" eventType="touchUpInside" id="lJR-0B-Dhu"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B9E-Rg-5oo">
+                                <rect key="frame" x="0.0" y="50" width="375" height="41"/>
+                                <string key="text">この後のバトルで出現する
+敵を構成してください</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="この画面はリリース版では表示されません" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LWl-L1-KfO">
+                                <rect key="frame" x="0.0" y="91" width="375" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Dkq-S3-gku" firstAttribute="top" secondItem="Q4V-N4-PTT" secondAttribute="top" id="4KI-3i-A5m"/>
+                            <constraint firstItem="Q4V-N4-PTT" firstAttribute="trailing" secondItem="B9E-Rg-5oo" secondAttribute="trailing" id="8h4-QP-ssr"/>
+                            <constraint firstItem="Q4V-N4-PTT" firstAttribute="bottom" secondItem="NsL-Y6-olD" secondAttribute="bottom" id="BU7-DQ-btw"/>
+                            <constraint firstItem="B9E-Rg-5oo" firstAttribute="top" secondItem="Dkq-S3-gku" secondAttribute="bottom" id="Brv-Gq-l5C"/>
+                            <constraint firstItem="Q4V-N4-PTT" firstAttribute="trailing" secondItem="LWl-L1-KfO" secondAttribute="trailing" id="HEi-GN-BDZ"/>
+                            <constraint firstItem="NsL-Y6-olD" firstAttribute="top" secondItem="YMa-PP-TdF" secondAttribute="bottom" id="SBB-OI-MG9"/>
+                            <constraint firstItem="B9E-Rg-5oo" firstAttribute="leading" secondItem="Q4V-N4-PTT" secondAttribute="leading" id="VCT-Lh-vDL"/>
+                            <constraint firstItem="Dkq-S3-gku" firstAttribute="leading" secondItem="Q4V-N4-PTT" secondAttribute="leading" id="WKu-rB-CHk"/>
+                            <constraint firstItem="LWl-L1-KfO" firstAttribute="top" secondItem="B9E-Rg-5oo" secondAttribute="bottom" id="gae-eo-gZ8"/>
+                            <constraint firstItem="YMa-PP-TdF" firstAttribute="leading" secondItem="Q4V-N4-PTT" secondAttribute="leading" id="m0p-FV-K6b"/>
+                            <constraint firstItem="Q4V-N4-PTT" firstAttribute="trailing" secondItem="NsL-Y6-olD" secondAttribute="trailing" id="pKn-nl-0TY"/>
+                            <constraint firstItem="NsL-Y6-olD" firstAttribute="leading" secondItem="Q4V-N4-PTT" secondAttribute="leading" id="qyR-H3-xpz"/>
+                            <constraint firstItem="Q4V-N4-PTT" firstAttribute="trailing" secondItem="Dkq-S3-gku" secondAttribute="trailing" id="uAk-hr-2vd"/>
+                            <constraint firstItem="YMa-PP-TdF" firstAttribute="top" secondItem="LWl-L1-KfO" secondAttribute="bottom" id="xrV-ex-XOt"/>
+                            <constraint firstItem="LWl-L1-KfO" firstAttribute="leading" secondItem="Q4V-N4-PTT" secondAttribute="leading" id="yv8-n1-uDU"/>
+                            <constraint firstItem="Q4V-N4-PTT" firstAttribute="trailing" secondItem="YMa-PP-TdF" secondAttribute="trailing" id="ywm-H1-NhR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Q4V-N4-PTT"/>
+                    </view>
+                    <connections>
+                        <outlet property="enterButton" destination="NsL-Y6-olD" id="erg-rQ-Tsa"/>
+                        <outlet property="tableView" destination="YMa-PP-TdF" id="1F5-Zh-5oY"/>
+                        <outlet property="topSpacer" destination="Dkq-S3-gku" id="Lpm-7m-tlq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sVm-mc-um2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="15.199999999999999" y="89.505247376311857"/>
+        </scene>
+    </scenes>
+</document>
