@@ -71,7 +71,7 @@ extension HomeViewController {
             print("FinalButtle")
             
             // 仮の画面遷移（遷移先がわかりやすい様にTOPのマージン部分を赤にしている）
-            let navigation = self.parent as! NavigationViewController
+            let navigation = me.parent as! NavigationViewController
             let homeVC = UIStoryboard(name: "Home", bundle: nil).instantiateInitialViewController() as! NavigationChildViewController
             homeVC.title = "ホーム"
             navigation.push(homeVC, animate: true)
@@ -84,7 +84,7 @@ extension HomeViewController {
             print("BossButtle")
             
             // 仮の画面遷移（前の画面に戻る）
-            let navigation = self.parent as! NavigationViewController
+            let navigation = me.parent as! NavigationViewController
             navigation.popViewController(animate: true)
         }
     }
@@ -98,6 +98,14 @@ extension HomeViewController {
     
     private var transitionToShop: Binder<Void> {
         return Binder(self) { me, _ in
+            #if !PROD
+            if UserDefaults.standard.bool(forKey: "tuningMode") {
+                let navigation = me.parent as! NavigationViewController
+                let tuningReelVC = UIStoryboard(name: "TuningReel", bundle: nil).instantiateInitialViewController() as! TuningReelViewController
+                navigation.push(tuningReelVC, animate: true)
+                return
+            }
+            #endif
             // TODO: TransitionToNextScreen
             print("Shop")
         }
@@ -112,7 +120,7 @@ extension HomeViewController {
     
     private var transitionToTask: Binder<Void> {
         return Binder(self) { me, _ in
-            let navigation = self.parent as! NavigationViewController
+            let navigation = me.parent as! NavigationViewController
             let taskListVC = UIStoryboard(name: "TaskList", bundle: nil).instantiateInitialViewController() as! NavigationChildViewController
             taskListVC.title = "課題リスト"
             navigation.push(taskListVC, animate: true)
