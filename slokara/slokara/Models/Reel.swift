@@ -1,6 +1,6 @@
 import UIKit
 
-struct Reel {
+struct Reel: Codable {
     var top = [false, false, false]
     var center = [false, false, false]
     var bottom = [true, true, true]

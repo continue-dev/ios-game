@@ -13,7 +13,7 @@ class ToggleButton: UIButton {
     
     private let fontName = "07LogoTypeGothic7"
 
-    private var isOn: Bool = false {
+    var isOn: Bool = false {
         didSet {
             let image = isOn ? self.selectedImage : self.normalImage
             self.setBackgroundImage(image, for: .normal)
