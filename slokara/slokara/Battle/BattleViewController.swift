@@ -35,7 +35,7 @@ class BattleViewController: UIViewController, NavigationChildViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.reelView.reel = viewModel.reel //Reel(top: [true, true, true], center: [true, true, false], bottom: [false, false, false])
+        self.reelView.reel = viewModel.reel
     }
     
     override func viewDidAppear(_ animated: Bool) {

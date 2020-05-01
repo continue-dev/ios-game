@@ -5,8 +5,7 @@ final class BattleViewModel {
     private let battleModel: BattleModelProtocol
     private let disposeBag = DisposeBag()
     
-    // ここはDBから取得する
-    let reel = Reel(top: [true, true, true], center: [false, true, true], bottom: [true, false, true])
+    var reel: Reel!
     private var userParameter: UserParameter!
     
     private var stage: Stage! {
@@ -64,6 +63,10 @@ final class BattleViewModel {
         
         self.battleModel.currentStage.subscribe(onNext: { [weak self] stage in
             self?.stage = stage
+        }).disposed(by: disposeBag)
+        
+        self.battleModel.reelStatus.subscribe(onNext: { [weak self] reel in
+            self?.reel = reel
         }).disposed(by: disposeBag)
         
         reelStoped.subscribe(onNext: { [weak self] results in
