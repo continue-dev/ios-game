@@ -18,7 +18,10 @@ class DormitoryViewController: UIViewController, NavigationChildViewController {
     }
     
     @IBAction func statusButtonTapped(_ sender: Any) {
-        
+        let navigation = self.parent as! NavigationViewController
+        let parameterVC = UIStoryboard(name: "Parameter", bundle: nil).instantiateInitialViewController() as! NavigationChildViewController
+        parameterVC.title = "ステータス"
+        navigation.push(parameterVC, animate: true)
     }
     
     @IBAction func itemButtonTapped(_ sender: Any) {
