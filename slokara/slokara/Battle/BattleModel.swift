@@ -38,7 +38,7 @@ final class BattleModelImpl: BattleModelProtocol {
     }
     
     var userParameter: Observable<UserParameter> {
-        return Observable.just(UserParameter(fireAttack: 5, waterAttack: 5, windAttack: 5, soilAttack: 5, lightAttack: 5, darknessAttack: 10, defense: 20, maxHp: 100, defenseType: []))
+        return Observable.just(UserParameter(fireAttack: 5, waterAttack: 5, windAttack: 5, soilAttack: 5, lightAttack: 5, darknessAttack: 10, maxHp: 100, defenseType: []))
     }
     
     var reelStatus: Observable<Reel> {
