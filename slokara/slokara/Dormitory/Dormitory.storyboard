@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5Lx-Cr-EiR">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Dormitory View Controller-->
+        <scene sceneID="cLC-dc-dti">
+            <objects>
+                <viewController id="5Lx-Cr-EiR" customClass="DormitoryViewController" customModule="slokara_dev" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wf7-iB-1Zp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dormitory_daytime" translatesAutoresizingMaskIntoConstraints="NO" id="Kaz-Ia-AmW">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Twh-HU-fdV">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="4fj-JJ-q7g"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bp3-0a-2p5">
+                                <rect key="frame" x="62.5" y="226.5" width="250" height="87"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="bp3-0a-2p5" secondAttribute="height" multiplier="689:240" id="m1c-lx-JXI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
+                                <state key="normal" title="ステイタス" backgroundImage="button_frame_dark">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="statusButtonTapped:" destination="5Lx-Cr-EiR" eventType="touchUpInside" id="glV-Si-um0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lMI-lE-Zpd">
+                                <rect key="frame" x="62.5" y="353.5" width="250" height="87"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="アイテム" backgroundImage="button_frame_dark">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="itemButtonTapped:" destination="5Lx-Cr-EiR" eventType="touchUpInside" id="yzl-QD-nrN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="bp3-0a-2p5" firstAttribute="bottom" secondItem="wf7-iB-1Zp" secondAttribute="centerY" constant="-20" id="9fb-cb-WK8"/>
+                            <constraint firstItem="lMI-lE-Zpd" firstAttribute="top" secondItem="wf7-iB-1Zp" secondAttribute="centerY" constant="20" id="AeY-M0-78m"/>
+                            <constraint firstAttribute="bottom" secondItem="Kaz-Ia-AmW" secondAttribute="bottom" id="E9P-Ce-fGE"/>
+                            <constraint firstItem="Kaz-Ia-AmW" firstAttribute="top" secondItem="wf7-iB-1Zp" secondAttribute="top" id="Egm-ap-utn"/>
+                            <constraint firstItem="Twh-HU-fdV" firstAttribute="top" secondItem="nfY-Hv-Fux" secondAttribute="top" id="RW8-zG-o5L"/>
+                            <constraint firstItem="bp3-0a-2p5" firstAttribute="centerX" secondItem="wf7-iB-1Zp" secondAttribute="centerX" id="TVl-ez-vEg"/>
+                            <constraint firstAttribute="trailing" secondItem="Kaz-Ia-AmW" secondAttribute="trailing" id="UgC-X4-i6S"/>
+                            <constraint firstItem="Kaz-Ia-AmW" firstAttribute="leading" secondItem="wf7-iB-1Zp" secondAttribute="leading" id="VYd-Zd-v7V"/>
+                            <constraint firstItem="nfY-Hv-Fux" firstAttribute="trailing" secondItem="Twh-HU-fdV" secondAttribute="trailing" id="VrI-ko-BX6"/>
+                            <constraint firstItem="lMI-lE-Zpd" firstAttribute="centerX" secondItem="wf7-iB-1Zp" secondAttribute="centerX" id="YcQ-mX-hhV"/>
+                            <constraint firstItem="Twh-HU-fdV" firstAttribute="leading" secondItem="nfY-Hv-Fux" secondAttribute="leading" id="YyX-M3-88W"/>
+                            <constraint firstItem="bp3-0a-2p5" firstAttribute="width" secondItem="wf7-iB-1Zp" secondAttribute="width" multiplier="2:3" id="lzF-Pr-3po"/>
+                            <constraint firstItem="lMI-lE-Zpd" firstAttribute="width" secondItem="lMI-lE-Zpd" secondAttribute="height" multiplier="689:240" id="nSy-IR-ElJ"/>
+                            <constraint firstItem="lMI-lE-Zpd" firstAttribute="width" secondItem="bp3-0a-2p5" secondAttribute="width" id="wq6-WC-QBN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nfY-Hv-Fux"/>
+                    </view>
+                    <connections>
+                        <outlet property="itemButton" destination="lMI-lE-Zpd" id="qKI-HO-prm"/>
+                        <outlet property="statusButton" destination="bp3-0a-2p5" id="7mr-UY-2TT"/>
+                        <outlet property="topSpacer" destination="Twh-HU-fdV" id="piL-kd-gQM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VsT-8b-blh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="36" y="47.226386806596707"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="button_frame_dark" width="344.5" height="120"/>
+        <image name="dormitory_daytime" width="540" height="1140"/>
+    </resources>
+</document>

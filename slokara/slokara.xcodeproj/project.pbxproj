@@ -195,6 +195,12 @@
 		6A8BEC8D245BB9C600142587 /* TuningReel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A8BEC8B245BB9C500142587 /* TuningReel.storyboard */; };
 		6A8BEC8F245BB9E400142587 /* TuningReelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8BEC8E245BB9E400142587 /* TuningReelViewController.swift */; };
 		6A8BEC90245BB9E400142587 /* TuningReelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8BEC8E245BB9E400142587 /* TuningReelViewController.swift */; };
+		6AA5AE52245F0543003BCBD9 /* Dormitory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AA5AE51245F0543003BCBD9 /* Dormitory.storyboard */; };
+		6AA5AE53245F0543003BCBD9 /* Dormitory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AA5AE51245F0543003BCBD9 /* Dormitory.storyboard */; };
+		6AA5AE54245F0543003BCBD9 /* Dormitory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AA5AE51245F0543003BCBD9 /* Dormitory.storyboard */; };
+		6AA5AE56245F0565003BCBD9 /* DormitoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA5AE55245F0565003BCBD9 /* DormitoryViewController.swift */; };
+		6AA5AE57245F0565003BCBD9 /* DormitoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA5AE55245F0565003BCBD9 /* DormitoryViewController.swift */; };
+		6AA5AE58245F0565003BCBD9 /* DormitoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA5AE55245F0565003BCBD9 /* DormitoryViewController.swift */; };
 		6ABF318A23AF586A0014E0BD /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABF318923AF586A0014E0BD /* TaskListViewController.swift */; };
 		6ABF318C23AF58780014E0BD /* TaskList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6ABF318B23AF58780014E0BD /* TaskList.storyboard */; };
 		6ABF318E23AF59570014E0BD /* TaskListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABF318D23AF59570014E0BD /* TaskListViewModel.swift */; };
@@ -301,6 +307,8 @@
 		6A8BEC872459CF6500142587 /* EnemyImageCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyImageCollectionCell.swift; sourceTree = "<group>"; };
 		6A8BEC8B245BB9C500142587 /* TuningReel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TuningReel.storyboard; sourceTree = "<group>"; };
 		6A8BEC8E245BB9E400142587 /* TuningReelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuningReelViewController.swift; sourceTree = "<group>"; };
+		6AA5AE51245F0543003BCBD9 /* Dormitory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dormitory.storyboard; sourceTree = "<group>"; };
+		6AA5AE55245F0565003BCBD9 /* DormitoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DormitoryViewController.swift; sourceTree = "<group>"; };
 		6ABF318923AF586A0014E0BD /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		6ABF318B23AF58780014E0BD /* TaskList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TaskList.storyboard; sourceTree = "<group>"; };
 		6ABF318D23AF59570014E0BD /* TaskListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewModel.swift; sourceTree = "<group>"; };
@@ -541,6 +549,15 @@
 			path = TuningReel;
 			sourceTree = "<group>";
 		};
+		6AA5AE50245F04E3003BCBD9 /* Dormitory */ = {
+			isa = PBXGroup;
+			children = (
+				6AA5AE51245F0543003BCBD9 /* Dormitory.storyboard */,
+				6AA5AE55245F0565003BCBD9 /* DormitoryViewController.swift */,
+			);
+			path = Dormitory;
+			sourceTree = "<group>";
+		};
 		6ABF318823AF584C0014E0BD /* TaskList */ = {
 			isa = PBXGroup;
 			children = (
@@ -614,6 +631,7 @@
 				6ABF318823AF584C0014E0BD /* TaskList */,
 				98D049762398105200CA868A /* Navigation */,
 				98B652A5237DA9CE00C4A5B5 /* Title */,
+				6AA5AE50245F04E3003BCBD9 /* Dormitory */,
 				98B652AA237DAC0E00C4A5B5 /* Home */,
 				987F28A92392BD2900131C27 /* CustomViews */,
 				6A68CA11242F97440047F413 /* RealmObjects */,
@@ -874,6 +892,7 @@
 				6A8BEBBD2451AA6900142587 /* BorderedButton.xib in Resources */,
 				6A8BEBBE2451AA6900142587 /* LithosPro-Black.otf in Resources */,
 				6A8BEBBF2451AA6900142587 /* Home.storyboard in Resources */,
+				6AA5AE53245F0543003BCBD9 /* Dormitory.storyboard in Resources */,
 				6A8BEBC02451AA6900142587 /* AlertView.xib in Resources */,
 				6A8BEBC12451AA6900142587 /* TaskListTab.xib in Resources */,
 				6A8BEBC22451AA6900142587 /* Navigation.storyboard in Resources */,
@@ -905,6 +924,7 @@
 				6A8BEC7724597F3C00142587 /* BorderedButton.xib in Resources */,
 				6A8BEC7824597F3C00142587 /* LithosPro-Black.otf in Resources */,
 				6A8BEC7924597F3C00142587 /* Home.storyboard in Resources */,
+				6AA5AE54245F0543003BCBD9 /* Dormitory.storyboard in Resources */,
 				6A8BEC7A24597F3C00142587 /* AlertView.xib in Resources */,
 				6A8BEC7B24597F3C00142587 /* TaskListTab.xib in Resources */,
 				6A8BEC7C24597F3C00142587 /* Navigation.storyboard in Resources */,
@@ -931,6 +951,7 @@
 				F47D662F23926C88009BA0EA /* 07LogoTypeGothic7.otf in Resources */,
 				6A1D5CA923C4C6D9005B8B48 /* BorderedButton.xib in Resources */,
 				6A1C490A23B2710B00261DF5 /* LithosPro-Black.otf in Resources */,
+				6AA5AE52245F0543003BCBD9 /* Dormitory.storyboard in Resources */,
 				98B652AC237DAC3200C4A5B5 /* Home.storyboard in Resources */,
 				6A1C490D23B8E8C500261DF5 /* AlertView.xib in Resources */,
 				6ABF319323AF5A5B0014E0BD /* TaskListTab.xib in Resources */,
@@ -1181,6 +1202,7 @@
 				6A8BEBA52451AA6900142587 /* CommonFontLabel.swift in Sources */,
 				6A8BEBA62451AA6900142587 /* TaskListCell.swift in Sources */,
 				6A8BEBA72451AA6900142587 /* AttributeType.swift in Sources */,
+				6AA5AE57245F0565003BCBD9 /* DormitoryViewController.swift in Sources */,
 				6A8BEC1B24571A3700142587 /* TuningStageViewController.swift in Sources */,
 				6A8BEBA82451AA6900142587 /* TaskListViewModel.swift in Sources */,
 				6A8BEBA92451AA6900142587 /* HomeViewController.swift in Sources */,
@@ -1237,6 +1259,7 @@
 				6A8BEC5A24597F3C00142587 /* CommonFontLabel.swift in Sources */,
 				6A8BEC5B24597F3C00142587 /* TaskListCell.swift in Sources */,
 				6A8BEC5C24597F3C00142587 /* AttributeType.swift in Sources */,
+				6AA5AE58245F0565003BCBD9 /* DormitoryViewController.swift in Sources */,
 				6A8BEC5D24597F3C00142587 /* TuningStageViewController.swift in Sources */,
 				6A8BEC5E24597F3C00142587 /* TaskListViewModel.swift in Sources */,
 				6A8BEC5F24597F3C00142587 /* HomeViewController.swift in Sources */,
@@ -1261,6 +1284,7 @@
 				6ABF319023AF59660014E0BD /* TaskListModel.swift in Sources */,
 				98367115239810F200F590ED /* NavigationViewModel.swift in Sources */,
 				6A1C491623B9DE2B00261DF5 /* TaskConfirmViewController.swift in Sources */,
+				6AA5AE56245F0565003BCBD9 /* DormitoryViewController.swift in Sources */,
 				6A1C490F23B8E8D400261DF5 /* AlertView.swift in Sources */,
 				6ABF319523AF5A6C0014E0BD /* TaskListTab.swift in Sources */,
 				6A599E872426787300067D7A /* BattleModel.swift in Sources */,
