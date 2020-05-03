@@ -27,56 +27,114 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M4F-EC-pZF">
-                                <rect key="frame" x="0.0" y="50" width="375" height="66.5"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <rect key="frame" x="0.0" y="50" width="375" height="60"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="puC-Yh-hQI">
+                                        <rect key="frame" x="15" y="59" width="345" height="1"/>
+                                        <color key="backgroundColor" red="0.23921568627450979" green="0.56470588235294117" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="jds-4N-mAB"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="／TOTAL EXP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="iAy-Wk-NU9" customClass="CommonFontLabel" customModule="slokara_dev" customModuleProvider="target">
+                                        <rect key="frame" x="187.5" y="28" width="110.5" height="26"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <size key="shadowOffset" width="2" height="2"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EXP" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="gq8-He-Fdq" customClass="CommonFontLabel" customModule="slokara_dev" customModuleProvider="target">
+                                        <rect key="frame" x="25" y="28" width="38.5" height="26"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <size key="shadowOffset" width="2" height="2"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="0Aj-Zx-YDF" customClass="CommonFontLabel" customModule="slokara_dev" customModuleProvider="target">
+                                        <rect key="frame" x="65.5" y="9" width="117" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <size key="shadowOffset" width="2" height="2"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="4X9-dP-JPS" customClass="CommonFontLabel" customModule="slokara_dev" customModuleProvider="target">
+                                        <rect key="frame" x="300" y="28" width="50" height="26"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <size key="shadowOffset" width="2" height="2"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="4X9-dP-JPS" firstAttribute="trailing" secondItem="puC-Yh-hQI" secondAttribute="trailing" constant="-10" id="66c-da-Wsm"/>
+                                    <constraint firstItem="0Aj-Zx-YDF" firstAttribute="baseline" secondItem="gq8-He-Fdq" secondAttribute="baseline" id="B0T-vD-YUT"/>
+                                    <constraint firstItem="puC-Yh-hQI" firstAttribute="top" secondItem="0Aj-Zx-YDF" secondAttribute="bottom" id="Ew2-Xi-P1Q"/>
+                                    <constraint firstItem="iAy-Wk-NU9" firstAttribute="baseline" secondItem="gq8-He-Fdq" secondAttribute="baseline" id="HN7-ce-fRB"/>
+                                    <constraint firstItem="0Aj-Zx-YDF" firstAttribute="height" relation="greaterThanOrEqual" secondItem="gq8-He-Fdq" secondAttribute="height" id="HXW-oD-98z"/>
+                                    <constraint firstItem="puC-Yh-hQI" firstAttribute="leading" secondItem="gq8-He-Fdq" secondAttribute="leading" constant="-10" id="OlJ-rn-7eR"/>
+                                    <constraint firstItem="4X9-dP-JPS" firstAttribute="baseline" secondItem="iAy-Wk-NU9" secondAttribute="baseline" id="P4W-qo-Wsg"/>
+                                    <constraint firstAttribute="trailing" secondItem="puC-Yh-hQI" secondAttribute="trailing" constant="15" id="TaU-SC-osK"/>
+                                    <constraint firstItem="4X9-dP-JPS" firstAttribute="leading" secondItem="iAy-Wk-NU9" secondAttribute="trailing" constant="2" id="VZw-x4-gv6"/>
+                                    <constraint firstAttribute="bottom" secondItem="puC-Yh-hQI" secondAttribute="bottom" id="a1l-T5-PFh"/>
+                                    <constraint firstItem="iAy-Wk-NU9" firstAttribute="leading" secondItem="0Aj-Zx-YDF" secondAttribute="trailing" constant="5" id="aLG-x6-eX1"/>
+                                    <constraint firstItem="0Aj-Zx-YDF" firstAttribute="leading" secondItem="gq8-He-Fdq" secondAttribute="trailing" constant="2" id="bd5-oR-awB"/>
+                                    <constraint firstItem="puC-Yh-hQI" firstAttribute="leading" secondItem="M4F-EC-pZF" secondAttribute="leading" constant="15" id="h7u-OQ-AbN"/>
+                                    <constraint firstItem="iAy-Wk-NU9" firstAttribute="leading" secondItem="M4F-EC-pZF" secondAttribute="centerX" id="yml-jg-Mmt"/>
+                                    <constraint firstItem="0Aj-Zx-YDF" firstAttribute="top" relation="greaterThanOrEqual" secondItem="M4F-EC-pZF" secondAttribute="top" id="z7k-28-0ox"/>
+                                </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="mdj-ve-ifp">
-                                <rect key="frame" x="10" y="121.5" width="355" height="428"/>
+                                <rect key="frame" x="10" y="115" width="355" height="427.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HVT-vc-Ych" customClass="ParameterBarView" customModule="slokara_dev" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="355" height="57"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="56.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="HVT-vc-Ych" secondAttribute="height" multiplier="1025:164" id="FuN-DB-dzt"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="urE-fE-xcf" customClass="ParameterBarView" customModule="slokara_dev" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="62" width="355" height="57"/>
+                                        <rect key="frame" x="0.0" y="61.5" width="355" height="57"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="urE-fE-xcf" secondAttribute="height" multiplier="1025:164" id="e1c-mN-hxb"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ftQ-59-iex" customClass="ParameterBarView" customModule="slokara_dev" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="124" width="355" height="56.5"/>
+                                        <rect key="frame" x="0.0" y="123.5" width="355" height="56.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="ftQ-59-iex" secondAttribute="height" multiplier="1025:164" id="iqc-GE-k41"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y9y-ZV-C5X" customClass="ParameterBarView" customModule="slokara_dev" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="185.5" width="355" height="57"/>
+                                        <rect key="frame" x="0.0" y="185" width="355" height="57"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="y9y-ZV-C5X" secondAttribute="height" multiplier="1025:164" id="Pyn-7z-gnj"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qL3-fH-WdE" customClass="ParameterBarView" customModule="slokara_dev" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="247.5" width="355" height="56.5"/>
+                                        <rect key="frame" x="0.0" y="247" width="355" height="57"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="qL3-fH-WdE" secondAttribute="height" multiplier="1025:164" id="QaV-em-6dZ"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rcE-GM-Dcr" customClass="ParameterBarView" customModule="slokara_dev" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="309" width="355" height="57"/>
+                                        <rect key="frame" x="0.0" y="309" width="355" height="56.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="rcE-GM-Dcr" secondAttribute="height" multiplier="1025:164" id="MON-UE-FWX"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f57-Af-lvq" customClass="ParameterBarView" customModule="slokara_dev" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="371" width="355" height="57"/>
+                                        <rect key="frame" x="0.0" y="370.5" width="355" height="57"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="f57-Af-lvq" secondAttribute="height" multiplier="1025:164" id="kNf-rY-n2t"/>
@@ -93,7 +151,7 @@
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="18g-g8-ZhL">
-                                <rect key="frame" x="0.0" y="554.5" width="375" height="112.5"/>
+                                <rect key="frame" x="0.0" y="547.5" width="375" height="119.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                         </subviews>
@@ -113,8 +171,8 @@
                             <constraint firstItem="mdj-ve-ifp" firstAttribute="top" secondItem="M4F-EC-pZF" secondAttribute="bottom" constant="5" id="ibf-ib-zMF"/>
                             <constraint firstItem="ar9-OT-kJv" firstAttribute="trailing" secondItem="mdj-ve-ifp" secondAttribute="trailing" constant="10" id="jkP-30-in2"/>
                             <constraint firstItem="mdj-ve-ifp" firstAttribute="leading" secondItem="ar9-OT-kJv" secondAttribute="leading" constant="10" id="jqk-TS-nfz"/>
-                            <constraint firstItem="M4F-EC-pZF" firstAttribute="height" secondItem="lVg-sG-NX4" secondAttribute="height" multiplier="1:10" id="qq1-Yw-mNP"/>
                             <constraint firstItem="85e-Yx-3aj" firstAttribute="leading" secondItem="lVg-sG-NX4" secondAttribute="leading" id="tVm-dH-lCh"/>
+                            <constraint firstItem="18g-g8-ZhL" firstAttribute="height" secondItem="M4F-EC-pZF" secondAttribute="height" multiplier="2:1" id="ucy-YM-8jU"/>
                             <constraint firstItem="ar9-OT-kJv" firstAttribute="trailing" secondItem="18g-g8-ZhL" secondAttribute="trailing" id="vw1-dz-0UQ"/>
                             <constraint firstItem="Qqu-Cp-JHx" firstAttribute="leading" secondItem="ar9-OT-kJv" secondAttribute="leading" id="zEL-Im-Pjc"/>
                         </constraints>
@@ -122,7 +180,9 @@
                     </view>
                     <connections>
                         <outlet property="barStackView" destination="mdj-ve-ifp" id="LCJ-ak-sL2"/>
+                        <outlet property="distributeExpLabel" destination="0Aj-Zx-YDF" id="M35-nf-KIw"/>
                         <outlet property="topSpacer" destination="Qqu-Cp-JHx" id="SJl-W1-cPo"/>
+                        <outlet property="totalExpLabel" destination="4X9-dP-JPS" id="IgE-3B-2hc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="50r-1w-mwD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

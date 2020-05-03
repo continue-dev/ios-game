@@ -5,10 +5,8 @@ final class ParameterViewModel {
     private let model: ParameterModelProtocol
     private let disposeBag = DisposeBag()
     
-//    private let parameterRelay = PublishRelay<[(type: ParameterType, value: Int64)]>()
-    let parametrts: Observable<[(type: ParameterType, value: Int64)]> //{
-//        return parameterRelay.asObservable()
-//    }
+    let parametrts: Observable<[(type: ParameterType, value: Int64)]>
+    let distributeExp: Observable<Int>
     
     init(parameterModel: ParameterModelProtocol = ParameterModelImpl()) {
         self.model = parameterModel
@@ -22,17 +20,7 @@ final class ParameterViewModel {
              (ParameterType.attribute(type: .light), param.lightAttack),
              (ParameterType.attribute(type: .darkness), param.darknessAttack)]
         }
-//        self.model.userParameter.subscribe(onNext: { [weak self] param in
-//            print("これだよ:\(param)")
-//            let parameters: [(ParameterType, Int64)] = [(.hp, param.maxHp),
-//                                                        (.attribute(type: .fire), param.fireAttack),
-//                                                        (.attribute(type: .water), param.waterAttack),
-//                                                        (.attribute(type: .wind), param.windAttack),
-//                                                        (.attribute(type: .soil), param.soilAttack),
-//                                                        (.attribute(type: .light), param.lightAttack),
-//                                                        (.attribute(type: .darkness), param.darknessAttack)]
-//            print("これかな:\(parameters)")
-//            self!.parameterRelay.accept(parameters)
-//        }).disposed(by: disposeBag)
+        
+        self.distributeExp = self.model.gainedExp
     }
 }
