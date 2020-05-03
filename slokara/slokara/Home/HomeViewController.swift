@@ -91,8 +91,10 @@ extension HomeViewController {
     
     private var transitionToStatus: Binder<Void> {
         return Binder(self) { me, _ in
-            // TODO: TransitionToNextScreen
-            print("Status")
+            let navigation = me.parent as! NavigationViewController
+            let dormitoryVC = UIStoryboard(name: "Dormitory", bundle: nil).instantiateInitialViewController() as! NavigationChildViewController
+            dormitoryVC.title = "寮"
+            navigation.push(dormitoryVC, animate: true)
         }
     }
     
