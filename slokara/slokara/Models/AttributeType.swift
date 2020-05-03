@@ -63,4 +63,23 @@ enum AttributeType: Int, CaseIterable, Hashable, Codable {
             return nil
         }
     }
+    
+    var color: UIColor {
+        switch self {
+        case .fire:
+            return UIColor(named: "fireBarColor")!
+        case .water:
+            return UIColor(named: "waterBarColor")!
+        case .wind:
+            return UIColor(named: "windBarColor")!
+        case .soil:
+            return UIColor(named: "soilBarColor")!
+        case .light:
+            return UIColor(named: "lightBarColor")!
+        case .darkness:
+            return UIColor(named: "darknessBarColor")!
+        case .enemy:
+            return .black
+        }
+    }
 }
