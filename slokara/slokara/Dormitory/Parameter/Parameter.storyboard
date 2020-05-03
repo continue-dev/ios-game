@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Parameter View Controller-->
+        <scene sceneID="roW-xm-wAS">
+            <objects>
+                <viewController id="dxJ-9v-Vst" customClass="ParameterViewController" customModule="slokara_dev" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lVg-sG-NX4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="magic_background" translatesAutoresizingMaskIntoConstraints="NO" id="85e-Yx-3aj">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qqu-Cp-JHx">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="KsN-T4-3HH"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ar9-OT-kJv" firstAttribute="trailing" secondItem="Qqu-Cp-JHx" secondAttribute="trailing" id="4rs-Uz-CCG"/>
+                            <constraint firstAttribute="bottom" secondItem="85e-Yx-3aj" secondAttribute="bottom" id="HM8-FS-hvC"/>
+                            <constraint firstAttribute="trailing" secondItem="85e-Yx-3aj" secondAttribute="trailing" id="M4J-xC-Ghz"/>
+                            <constraint firstItem="Qqu-Cp-JHx" firstAttribute="top" secondItem="ar9-OT-kJv" secondAttribute="top" id="Prb-Zd-pYr"/>
+                            <constraint firstItem="85e-Yx-3aj" firstAttribute="top" secondItem="lVg-sG-NX4" secondAttribute="top" id="X14-gJ-bCa"/>
+                            <constraint firstItem="85e-Yx-3aj" firstAttribute="leading" secondItem="lVg-sG-NX4" secondAttribute="leading" id="tVm-dH-lCh"/>
+                            <constraint firstItem="Qqu-Cp-JHx" firstAttribute="leading" secondItem="ar9-OT-kJv" secondAttribute="leading" id="zEL-Im-Pjc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ar9-OT-kJv"/>
+                    </view>
+                    <connections>
+                        <outlet property="topSpacer" destination="Qqu-Cp-JHx" id="SJl-W1-cPo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="50r-1w-mwD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-65" y="113"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="magic_background" width="540" height="1149"/>
+    </resources>
+</document>
