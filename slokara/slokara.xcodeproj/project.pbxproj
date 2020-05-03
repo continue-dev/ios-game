@@ -210,9 +210,9 @@
 		6AA5AE6B245F10ED003BCBD9 /* ParameterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA5AE6A245F10ED003BCBD9 /* ParameterViewModel.swift */; };
 		6AA5AE6C245F10ED003BCBD9 /* ParameterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA5AE6A245F10ED003BCBD9 /* ParameterViewModel.swift */; };
 		6AA5AE6D245F10ED003BCBD9 /* ParameterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA5AE6A245F10ED003BCBD9 /* ParameterViewModel.swift */; };
-		6AA5AE6F245F10F6003BCBD9 /* ParameterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA5AE6E245F10F6003BCBD9 /* ParameterModel.swift */; };
-		6AA5AE70245F10F6003BCBD9 /* ParameterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA5AE6E245F10F6003BCBD9 /* ParameterModel.swift */; };
-		6AA5AE71245F10F6003BCBD9 /* ParameterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA5AE6E245F10F6003BCBD9 /* ParameterModel.swift */; };
+		6AA5AE6F245F10F6003BCBD9 /* ParameterModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA5AE6E245F10F6003BCBD9 /* ParameterModelImpl.swift */; };
+		6AA5AE70245F10F6003BCBD9 /* ParameterModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA5AE6E245F10F6003BCBD9 /* ParameterModelImpl.swift */; };
+		6AA5AE71245F10F6003BCBD9 /* ParameterModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA5AE6E245F10F6003BCBD9 /* ParameterModelImpl.swift */; };
 		6AA5AE74245F1394003BCBD9 /* ParameterBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AA5AE73245F1394003BCBD9 /* ParameterBarView.xib */; };
 		6AA5AE75245F1394003BCBD9 /* ParameterBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AA5AE73245F1394003BCBD9 /* ParameterBarView.xib */; };
 		6AA5AE76245F1394003BCBD9 /* ParameterBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AA5AE73245F1394003BCBD9 /* ParameterBarView.xib */; };
@@ -330,7 +330,7 @@
 		6AA5AE62245F10CF003BCBD9 /* Parameter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Parameter.storyboard; sourceTree = "<group>"; };
 		6AA5AE66245F10DE003BCBD9 /* ParameterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterViewController.swift; sourceTree = "<group>"; };
 		6AA5AE6A245F10ED003BCBD9 /* ParameterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterViewModel.swift; sourceTree = "<group>"; };
-		6AA5AE6E245F10F6003BCBD9 /* ParameterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterModel.swift; sourceTree = "<group>"; };
+		6AA5AE6E245F10F6003BCBD9 /* ParameterModelImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterModelImpl.swift; sourceTree = "<group>"; };
 		6AA5AE73245F1394003BCBD9 /* ParameterBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParameterBarView.xib; sourceTree = "<group>"; };
 		6AA5AE77245F13A4003BCBD9 /* ParameterBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterBarView.swift; sourceTree = "<group>"; };
 		6ABF318923AF586A0014E0BD /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
@@ -590,7 +590,7 @@
 				6AA5AE62245F10CF003BCBD9 /* Parameter.storyboard */,
 				6AA5AE66245F10DE003BCBD9 /* ParameterViewController.swift */,
 				6AA5AE6A245F10ED003BCBD9 /* ParameterViewModel.swift */,
-				6AA5AE6E245F10F6003BCBD9 /* ParameterModel.swift */,
+				6AA5AE6E245F10F6003BCBD9 /* ParameterModelImpl.swift */,
 			);
 			path = Parameter;
 			sourceTree = "<group>";
@@ -1242,7 +1242,7 @@
 				6A8BEB992451AA6900142587 /* NavigationChildViewController.swift in Sources */,
 				6A8BEB9A2451AA6900142587 /* TaskStatus.swift in Sources */,
 				6A8BEB9B2451AA6900142587 /* Task.swift in Sources */,
-				6AA5AE70245F10F6003BCBD9 /* ParameterModel.swift in Sources */,
+				6AA5AE70245F10F6003BCBD9 /* ParameterModelImpl.swift in Sources */,
 				6A8BEB9C2451AA6900142587 /* Stage.swift in Sources */,
 				6A8BEB9D2451AA6900142587 /* UserParameter.swift in Sources */,
 				6A8BEB9E2451AA6900142587 /* TaskCellView.swift in Sources */,
@@ -1303,7 +1303,7 @@
 				6A8BEC4E24597F3C00142587 /* NavigationChildViewController.swift in Sources */,
 				6A8BEC4F24597F3C00142587 /* TaskStatus.swift in Sources */,
 				6A8BEC5024597F3C00142587 /* Task.swift in Sources */,
-				6AA5AE71245F10F6003BCBD9 /* ParameterModel.swift in Sources */,
+				6AA5AE71245F10F6003BCBD9 /* ParameterModelImpl.swift in Sources */,
 				6A8BEC5124597F3C00142587 /* Stage.swift in Sources */,
 				6A8BEC5224597F3C00142587 /* UserParameter.swift in Sources */,
 				6A8BEC5324597F3C00142587 /* TaskCellView.swift in Sources */,
@@ -1363,7 +1363,7 @@
 				6A5A8A4C243A159B00F8A829 /* TaskStatus.swift in Sources */,
 				981D12E023B453AA002A6B1E /* Task.swift in Sources */,
 				6A68CA0C242A3CF50047F413 /* Stage.swift in Sources */,
-				6AA5AE6F245F10F6003BCBD9 /* ParameterModel.swift in Sources */,
+				6AA5AE6F245F10F6003BCBD9 /* ParameterModelImpl.swift in Sources */,
 				6A63B27C2402B2EB00B8719D /* UserParameter.swift in Sources */,
 				6A1C491B23BA59BF00261DF5 /* TaskCellView.swift in Sources */,
 				98B652A9237DA9F300C4A5B5 /* TitleViewController.swift in Sources */,

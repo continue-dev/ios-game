@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dxJ-9v-Vst">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -26,20 +26,102 @@
                                     <constraint firstAttribute="height" constant="50" id="KsN-T4-3HH"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M4F-EC-pZF">
+                                <rect key="frame" x="0.0" y="50" width="375" height="66.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="mdj-ve-ifp">
+                                <rect key="frame" x="10" y="121.5" width="355" height="428"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HVT-vc-Ych" customClass="ParameterBarView" customModule="slokara_dev" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="57"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="HVT-vc-Ych" secondAttribute="height" multiplier="1025:164" id="FuN-DB-dzt"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="urE-fE-xcf" customClass="ParameterBarView" customModule="slokara_dev" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="62" width="355" height="57"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="urE-fE-xcf" secondAttribute="height" multiplier="1025:164" id="e1c-mN-hxb"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ftQ-59-iex" customClass="ParameterBarView" customModule="slokara_dev" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="124" width="355" height="56.5"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="ftQ-59-iex" secondAttribute="height" multiplier="1025:164" id="iqc-GE-k41"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y9y-ZV-C5X" customClass="ParameterBarView" customModule="slokara_dev" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="185.5" width="355" height="57"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="y9y-ZV-C5X" secondAttribute="height" multiplier="1025:164" id="Pyn-7z-gnj"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qL3-fH-WdE" customClass="ParameterBarView" customModule="slokara_dev" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="247.5" width="355" height="56.5"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="qL3-fH-WdE" secondAttribute="height" multiplier="1025:164" id="QaV-em-6dZ"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rcE-GM-Dcr" customClass="ParameterBarView" customModule="slokara_dev" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="309" width="355" height="57"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="rcE-GM-Dcr" secondAttribute="height" multiplier="1025:164" id="MON-UE-FWX"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f57-Af-lvq" customClass="ParameterBarView" customModule="slokara_dev" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="371" width="355" height="57"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="f57-Af-lvq" secondAttribute="height" multiplier="1025:164" id="kNf-rY-n2t"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="f57-Af-lvq" firstAttribute="width" secondItem="f57-Af-lvq" secondAttribute="height" multiplier="1025:164" id="1ov-Ri-hxL"/>
+                                    <constraint firstItem="qL3-fH-WdE" firstAttribute="width" secondItem="qL3-fH-WdE" secondAttribute="height" multiplier="1025:164" id="44m-LZ-zLw"/>
+                                    <constraint firstItem="y9y-ZV-C5X" firstAttribute="width" secondItem="y9y-ZV-C5X" secondAttribute="height" multiplier="1025:164" id="UqD-IV-6Yu"/>
+                                    <constraint firstItem="urE-fE-xcf" firstAttribute="width" secondItem="urE-fE-xcf" secondAttribute="height" multiplier="1025:164" id="iUN-ly-Oqn"/>
+                                    <constraint firstItem="rcE-GM-Dcr" firstAttribute="width" secondItem="rcE-GM-Dcr" secondAttribute="height" multiplier="1025:164" id="xJO-SL-bhW"/>
+                                    <constraint firstItem="ftQ-59-iex" firstAttribute="width" secondItem="ftQ-59-iex" secondAttribute="height" multiplier="1025:164" id="yMG-yY-tWS"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="18g-g8-ZhL">
+                                <rect key="frame" x="0.0" y="554.5" width="375" height="112.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="ar9-OT-kJv" firstAttribute="trailing" secondItem="Qqu-Cp-JHx" secondAttribute="trailing" id="4rs-Uz-CCG"/>
+                            <constraint firstItem="18g-g8-ZhL" firstAttribute="top" secondItem="mdj-ve-ifp" secondAttribute="bottom" constant="5" id="8Be-nb-Qam"/>
+                            <constraint firstItem="18g-g8-ZhL" firstAttribute="leading" secondItem="ar9-OT-kJv" secondAttribute="leading" id="ASo-1j-hsc"/>
                             <constraint firstAttribute="bottom" secondItem="85e-Yx-3aj" secondAttribute="bottom" id="HM8-FS-hvC"/>
+                            <constraint firstItem="ar9-OT-kJv" firstAttribute="trailing" secondItem="M4F-EC-pZF" secondAttribute="trailing" id="JTx-jY-jXg"/>
+                            <constraint firstItem="M4F-EC-pZF" firstAttribute="leading" secondItem="ar9-OT-kJv" secondAttribute="leading" id="L55-5s-BvO"/>
                             <constraint firstAttribute="trailing" secondItem="85e-Yx-3aj" secondAttribute="trailing" id="M4J-xC-Ghz"/>
                             <constraint firstItem="Qqu-Cp-JHx" firstAttribute="top" secondItem="ar9-OT-kJv" secondAttribute="top" id="Prb-Zd-pYr"/>
+                            <constraint firstItem="M4F-EC-pZF" firstAttribute="top" secondItem="Qqu-Cp-JHx" secondAttribute="bottom" id="Qz5-tX-thk"/>
                             <constraint firstItem="85e-Yx-3aj" firstAttribute="top" secondItem="lVg-sG-NX4" secondAttribute="top" id="X14-gJ-bCa"/>
+                            <constraint firstItem="ar9-OT-kJv" firstAttribute="bottom" secondItem="18g-g8-ZhL" secondAttribute="bottom" id="h4J-B1-AxB"/>
+                            <constraint firstItem="mdj-ve-ifp" firstAttribute="top" secondItem="M4F-EC-pZF" secondAttribute="bottom" constant="5" id="ibf-ib-zMF"/>
+                            <constraint firstItem="ar9-OT-kJv" firstAttribute="trailing" secondItem="mdj-ve-ifp" secondAttribute="trailing" constant="10" id="jkP-30-in2"/>
+                            <constraint firstItem="mdj-ve-ifp" firstAttribute="leading" secondItem="ar9-OT-kJv" secondAttribute="leading" constant="10" id="jqk-TS-nfz"/>
+                            <constraint firstItem="M4F-EC-pZF" firstAttribute="height" secondItem="lVg-sG-NX4" secondAttribute="height" multiplier="1:10" id="qq1-Yw-mNP"/>
                             <constraint firstItem="85e-Yx-3aj" firstAttribute="leading" secondItem="lVg-sG-NX4" secondAttribute="leading" id="tVm-dH-lCh"/>
+                            <constraint firstItem="ar9-OT-kJv" firstAttribute="trailing" secondItem="18g-g8-ZhL" secondAttribute="trailing" id="vw1-dz-0UQ"/>
                             <constraint firstItem="Qqu-Cp-JHx" firstAttribute="leading" secondItem="ar9-OT-kJv" secondAttribute="leading" id="zEL-Im-Pjc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ar9-OT-kJv"/>
                     </view>
                     <connections>
+                        <outlet property="barStackView" destination="mdj-ve-ifp" id="LCJ-ak-sL2"/>
                         <outlet property="topSpacer" destination="Qqu-Cp-JHx" id="SJl-W1-cPo"/>
                     </connections>
                 </viewController>
