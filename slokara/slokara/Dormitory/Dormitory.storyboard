@@ -32,7 +32,7 @@
                                     <constraint firstAttribute="width" secondItem="bp3-0a-2p5" secondAttribute="height" multiplier="689:240" id="m1c-lx-JXI"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
-                                <state key="normal" title="ステイタス" backgroundImage="button_frame_dark">
+                                <state key="normal" title="ステータス" backgroundImage="button_frame_dark">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
