@@ -1,4 +1,6 @@
 import UIKit
+import RxSwift
+import RxCocoa
 
 class ParameterBarView: UIView {
     @IBOutlet weak var progressView: UIProgressView!
@@ -22,6 +24,10 @@ class ParameterBarView: UIView {
             guard addValue > 0 else { self.addValueLabel.text = nil; return }
             self.addValueLabel.text = "+\(addValue)"
         }
+    }
+    private let typeRelay = PublishRelay<ParameterType>()
+    var typeObserver: Observable<ParameterType> {
+        return typeRelay.asObservable()
     }
     
     override init(frame: CGRect) {
@@ -56,6 +62,10 @@ class ParameterBarView: UIView {
     func decrement() {
         guard self.addValue > 0 else { return }
         self.addValue -= 1
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.typeRelay.accept(self.type)
     }
 }
 

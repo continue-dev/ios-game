@@ -7,10 +7,12 @@ final class ParameterViewModel {
     
     let parametrts: Observable<[(type: ParameterType, value: Int64)]>
     let distributeExp: Observable<Int>
+    let editingType: Observable<EditingType>
     
-    init(parameterModel: ParameterModelProtocol = ParameterModelImpl()) {
+    init(operationScrolled: Observable<Int>, parameterModel: ParameterModelProtocol = ParameterModelImpl()) {
         self.model = parameterModel
         
+        self.editingType = operationScrolled.map { EditingType.allCases[$0] }
         self.parametrts = self.model.userParameter.map { param in
             [(ParameterType.hp, param.maxHp),
              (ParameterType.attribute(type: .fire), param.fireAttack),
@@ -22,5 +24,40 @@ final class ParameterViewModel {
         }
         
         self.distributeExp = self.model.gainedExp
+    }
+}
+
+enum EditingType: Int, CaseIterable {
+    case enter
+    case hp
+    case fire
+    case water
+    case wind
+    case soil
+    case light
+    case darkness
+    
+    init(parameterType: ParameterType) {
+        switch parameterType {
+        case .hp:
+            self = .hp
+        case .attribute(let type):
+            switch type {
+            case .fire:
+                self = .fire
+            case .water:
+                self = .water
+            case .wind:
+                self = .wind
+            case .soil:
+                self = .soil
+            case .light:
+                self = .light
+            case .darkness:
+                self = .darkness
+            default:
+                self = .enter
+            }
+        }
     }
 }
