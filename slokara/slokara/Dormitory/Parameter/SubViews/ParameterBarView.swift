@@ -49,10 +49,11 @@ class ParameterBarView: UIView {
         self.addValueLabel.text = nil
     }
     
-    func configure(type: ParameterType, value: Int64) {
+    func configure(type: ParameterType, baseValue: Int64, addValue: Int64) {
         self.type = type
-        self.currentValue = value
-        self.progressView.progress = Float(value) / self.maxProgerss
+        self.currentValue = baseValue
+        self.addValue = addValue
+        self.progressView.progress = Float(baseValue + addValue) / self.maxProgerss
     }
     
     func increment() {
@@ -62,6 +63,10 @@ class ParameterBarView: UIView {
     func decrement() {
         guard self.addValue > 0 else { return }
         self.addValue -= 1
+    }
+    
+    func setAddValue(_ value: Int64) {
+        self.addValue = value
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {

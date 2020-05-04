@@ -6,7 +6,7 @@ struct EditParameter {
     var addValur: Int64
 }
 
-enum EditParamType {
+enum EditParamType: Int {
     case hp
     case fire
     case water
@@ -31,6 +31,27 @@ enum EditParamType {
             return .attribute(type: .light)
         case .darkness:
             return .attribute(type: .darkness)
+        }
+    }
+    
+    init(editingType: EditingType) {
+        switch editingType {
+        case .hp:
+            self = .hp
+        case .fire:
+            self = .fire
+        case .water:
+            self = .water
+        case .wind:
+            self = .wind
+        case .soil:
+            self = .soil
+        case .light:
+            self = .light
+        case .darkness:
+            self = .darkness
+        default:
+            fatalError("Can not initialize EditParamType from \(editingType)")
         }
     }
 }

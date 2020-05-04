@@ -36,22 +36,22 @@ final class ParameterViewModel {
     }
     
     private var editParameters: [EditParameter]! {
-        didSet { self.parametersRelay.accept(editParameters) }
-    }
-    
-    private var totalExp: Int64 = 0 {
-        didSet { self.totalExpRelay.accept(totalExp) }
+        didSet {
+            self.parametersRelay.accept(editParameters)
+            let totalExp = editParameters.map{ $0.baseValue + $0.addValur }.reduce(0){ $0 + $1 }
+            self.totalExpRelay.accept(totalExp)
+        }
     }
     
     private var distributeExp: Int64 = 0 {
         didSet { self.distributeExpRelay.accept(distributeExp) }
     }
         
-    init(operationScrolled: Observable<Int>, operationTapped: Observable<EditingType>, parameterModel: ParameterModelProtocol = ParameterModelImpl()) {
+    init(operationScrolled: Observable<Int>, operationTapped: Observable<EditingType>, plusButtonTapped: Observable<Void>, parameterModel: ParameterModelProtocol = ParameterModelImpl()) {
         self.model = parameterModel
         
         self.model.gainedExp.subscribe(onNext: { [weak self] value in
-            self?.distributeExp = value
+            self?.distributeExp = Int64(value)
         }).disposed(by: disposeBag)
         
         self.model.userParameter.map { param in
@@ -75,6 +75,18 @@ final class ParameterViewModel {
             self?.editingType = current
             self?.scrollOffsetRelay.accept(current.rawValue)
         }).disposed(by: disposeBag)
+        
+        plusButtonTapped.subscribe(onNext: { [weak self] _ in
+            self?.parameterPlus(type: self?.editingType)
+        }).disposed(by: disposeBag)
+    }
+    
+    private func parameterPlus(type: EditingType?) {
+        guard let type = type else { return }
+        guard self.distributeExp > 0 else { return }
+        self.distributeExp -= 1
+        self.editParameters[EditParamType(editingType: type).rawValue].addValur += 1
+        
     }
 }
 

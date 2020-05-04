@@ -66,12 +66,12 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="kag-UY-VIH" customClass="CommonFontLabel" customModule="slokara_dev" customModuleProvider="target">
-                    <rect key="frame" x="786" y="4" width="153.5" height="82"/>
+                    <rect key="frame" x="787" y="2" width="152.5" height="82"/>
                     <fontDescription key="fontDescription" type="system" pointSize="65"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                     <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <size key="shadowOffset" width="3" height="3"/>
+                    <size key="shadowOffset" width="2" height="2"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VPc-3z-UlT" userLabel="bottomSpacer">
                     <rect key="frame" x="939.5" y="0.0" width="85.5" height="82"/>
@@ -94,7 +94,6 @@
                 <constraint firstItem="nPE-Jo-4E7" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="EZf-ZM-Z0M"/>
                 <constraint firstItem="KHQ-WY-C29" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="centerY" id="HFM-vh-ZON"/>
                 <constraint firstItem="9ou-q7-CEe" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="JFP-UF-cSk"/>
-                <constraint firstItem="kag-UY-VIH" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="4" id="Lfz-wx-CTB"/>
                 <constraint firstAttribute="bottom" secondItem="ljA-Ji-01G" secondAttribute="bottom" id="M4T-u5-s8z"/>
                 <constraint firstItem="VPc-3z-UlT" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="OBO-eH-SEY"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="nPE-Jo-4E7" secondAttribute="bottom" id="OCH-oj-Sbu"/>
@@ -117,6 +116,7 @@
                 <constraint firstItem="KHQ-WY-C29" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="4:9" id="uWm-Xq-LOq"/>
                 <constraint firstItem="ljA-Ji-01G" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="xBN-LZ-5HY"/>
                 <constraint firstItem="esr-TL-fmJ" firstAttribute="leading" secondItem="9ou-q7-CEe" secondAttribute="trailing" id="xv9-xL-PgX"/>
+                <constraint firstItem="kag-UY-VIH" firstAttribute="centerY" secondItem="8En-Fe-pPr" secondAttribute="centerY" id="yW8-JM-QHp"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

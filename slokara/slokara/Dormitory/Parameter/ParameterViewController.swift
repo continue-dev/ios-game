@@ -18,7 +18,7 @@ class ParameterViewController: UIViewController, NavigationChildViewController {
         .withLatestFrom(self.operationScrollView.rx.contentOffset)
         .throttle(RxTimeInterval.milliseconds(300), latest: true, scheduler: MainScheduler.instance)
         .map{ Int(round($0.y / self.operationScrollView.bounds.height))}
-    private lazy var viewModel = ParameterViewModel(operationScrolled: self.didScroll, operationTapped: self.operationTappedRelay.asObservable())
+    private lazy var viewModel = ParameterViewModel(operationScrolled: self.didScroll, operationTapped: self.operationTappedRelay.asObservable(), plusButtonTapped: self.plusButton.rx.tap.asObservable())
     
     private let operationTappedRelay = PublishRelay<EditingType>()
     
@@ -65,7 +65,7 @@ extension ParameterViewController {
             me.barStackView.arrangedSubviews.enumerated().forEach { offset, element in
                 guard offset < params.count else { return }
                 guard let barView = element as? ParameterBarView else { return }
-                barView.configure(type: params[offset].type.asParameterType(), value: params[offset].baseValue)
+                barView.configure(type: params[offset].type.asParameterType(), baseValue: params[offset].baseValue, addValue: params[offset].addValur)
             }
             me.scrollContentStackView.arrangedSubviews.enumerated().forEach { offset, element in
                 guard offset > 0, offset - 1 < params.count else { return }
