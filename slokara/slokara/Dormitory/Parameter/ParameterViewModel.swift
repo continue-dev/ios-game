@@ -47,7 +47,7 @@ final class ParameterViewModel {
         didSet { self.distributeExpRelay.accept(distributeExp) }
     }
         
-    init(operationScrolled: Observable<Int>, operationTapped: Observable<EditingType>, plusButtonTapped: Observable<Void>, parameterModel: ParameterModelProtocol = ParameterModelImpl()) {
+    init(operationScrolled: Observable<Int>, operationTapped: Observable<EditingType>, plusButtonTapped: Observable<Void>, minusButtonTapped: Observable<Void>, parameterModel: ParameterModelProtocol = ParameterModelImpl()) {
         self.model = parameterModel
         
         self.model.gainedExp.subscribe(onNext: { [weak self] value in
@@ -79,6 +79,10 @@ final class ParameterViewModel {
         plusButtonTapped.subscribe(onNext: { [weak self] _ in
             self?.parameterPlus(type: self?.editingType)
         }).disposed(by: disposeBag)
+        
+        minusButtonTapped.subscribe(onNext: { [weak self] _ in
+            self?.parameterMinus(type: self?.editingType)
+        }).disposed(by: disposeBag)
     }
     
     private func parameterPlus(type: EditingType?) {
@@ -86,6 +90,13 @@ final class ParameterViewModel {
         guard self.distributeExp > 0 else { return }
         self.distributeExp -= 1
         self.editParameters[EditParamType(editingType: type).rawValue].addValue += 1
+    }
+    
+    private func parameterMinus(type: EditingType?) {
+        guard let type = type else { return }
+        guard self.editParameters[EditParamType(editingType: type).rawValue].addValue > 0 else { return }
+        self.distributeExp += 1
+        self.editParameters[EditParamType(editingType: type).rawValue].addValue -= 1
     }
 }
 

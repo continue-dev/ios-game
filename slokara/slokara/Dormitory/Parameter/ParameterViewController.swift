@@ -18,7 +18,7 @@ class ParameterViewController: UIViewController, NavigationChildViewController {
         .withLatestFrom(self.operationScrollView.rx.contentOffset)
         .throttle(RxTimeInterval.milliseconds(300), latest: true, scheduler: MainScheduler.instance)
         .map{ Int(round($0.y / self.operationScrollView.bounds.height))}
-    private lazy var viewModel = ParameterViewModel(operationScrolled: self.didScroll, operationTapped: self.operationTappedRelay.asObservable(), plusButtonTapped: self.plusButton.rx.tap.asObservable())
+    private lazy var viewModel = ParameterViewModel(operationScrolled: self.didScroll, operationTapped: self.operationTappedRelay.asObservable(), plusButtonTapped: self.plusButton.rx.tap.asObservable(), minusButtonTapped: self.minusButton.rx.tap.asObservable())
     
     private let operationTappedRelay = PublishRelay<EditingType>()
     
