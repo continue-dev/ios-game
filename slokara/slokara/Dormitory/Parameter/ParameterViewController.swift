@@ -45,7 +45,7 @@ class ParameterViewController: UIViewController, NavigationChildViewController {
         
         self.barStackView.arrangedSubviews.forEach { [unowned self] view in
             guard let barView = view as? ParameterBarView else { return }
-            barView.typeObserver.map{ EditingType(parameterType: $0) }.subscribe(onNext: { [weak self] type in
+            barView.typeObserver.map{ EditingType(editParamType: $0) }.subscribe(onNext: { [weak self] type in
                 self?.operationTappedRelay.accept(type)
             }).disposed(by: disposeBag)
         }
@@ -65,12 +65,12 @@ extension ParameterViewController {
             me.barStackView.arrangedSubviews.enumerated().forEach { offset, element in
                 guard offset < params.count else { return }
                 guard let barView = element as? ParameterBarView else { return }
-                barView.configure(type: params[offset].type.asParameterType(), baseValue: params[offset].baseValue, addValue: params[offset].addValur)
+                barView.configure(editParmeter: params[offset])
             }
             me.scrollContentStackView.arrangedSubviews.enumerated().forEach { offset, element in
                 guard offset > 0, offset - 1 < params.count else { return }
                 guard let imageView = element.subviews.first as? UIImageView else { return }
-                imageView.image = params[offset - 1].type.asParameterType().image
+                imageView.image = params[offset - 1].type.image
             }
         }
     }

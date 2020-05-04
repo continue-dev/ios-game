@@ -1,9 +1,9 @@
-import Foundation
+import UIKit
 
 struct EditParameter {
     let type: EditParamType
     let baseValue: Int64
-    var addValur: Int64
+    var addValue: Int64
 }
 
 enum EditParamType: Int {
@@ -15,22 +15,41 @@ enum EditParamType: Int {
     case light
     case darkness
     
-    func asParameterType() -> ParameterType {
+    var color: UIColor {
         switch self {
         case .hp:
-            return .hp
+            return UIColor(named: "hpBarColor")!
         case .fire:
-            return .attribute(type: .fire)
+            return AttributeType.fire.color
         case .water:
-            return .attribute(type: .water)
+            return AttributeType.water.color
         case .wind:
-            return .attribute(type: .wind)
+            return AttributeType.wind.color
         case .soil:
-            return .attribute(type: .soil)
+            return AttributeType.soil.color
         case .light:
-            return .attribute(type: .light)
+            return AttributeType.light.color
         case .darkness:
-            return .attribute(type: .darkness)
+            return AttributeType.darkness.color
+        }
+    }
+    
+    var image: UIImage {
+        switch self {
+        case .hp:
+            return UIImage(named: "heart_with_hp")!
+        case .fire:
+            return AttributeType.fire.image
+        case .water:
+            return AttributeType.water.image
+        case .wind:
+            return AttributeType.wind.image
+        case .soil:
+            return AttributeType.soil.image
+        case .light:
+            return AttributeType.light.image
+        case .darkness:
+            return AttributeType.darkness.image
         }
     }
     

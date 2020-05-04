@@ -38,7 +38,7 @@ final class ParameterViewModel {
     private var editParameters: [EditParameter]! {
         didSet {
             self.parametersRelay.accept(editParameters)
-            let totalExp = editParameters.map{ $0.baseValue + $0.addValur }.reduce(0){ $0 + $1 }
+            let totalExp = editParameters.map{ $0.baseValue + $0.addValue }.reduce(0){ $0 + $1 }
             self.totalExpRelay.accept(totalExp)
         }
     }
@@ -55,13 +55,13 @@ final class ParameterViewModel {
         }).disposed(by: disposeBag)
         
         self.model.userParameter.map { param in
-                    [EditParameter(type: .hp, baseValue: param.maxHp, addValur: 0),
-                     EditParameter(type: .fire, baseValue: param.fireAttack, addValur: 0),
-                     EditParameter(type: .water, baseValue: param.waterAttack, addValur: 0),
-                     EditParameter(type: .wind, baseValue: param.windAttack, addValur: 0),
-                     EditParameter(type: .soil, baseValue: param.soilAttack, addValur: 0),
-                     EditParameter(type: .light, baseValue: param.lightAttack, addValur: 0),
-                     EditParameter(type: .darkness, baseValue: param.darknessAttack, addValur: 0)]
+                    [EditParameter(type: .hp, baseValue: param.maxHp, addValue: 0),
+                     EditParameter(type: .fire, baseValue: param.fireAttack, addValue: 0),
+                     EditParameter(type: .water, baseValue: param.waterAttack, addValue: 0),
+                     EditParameter(type: .wind, baseValue: param.windAttack, addValue: 0),
+                     EditParameter(type: .soil, baseValue: param.soilAttack, addValue: 0),
+                     EditParameter(type: .light, baseValue: param.lightAttack, addValue: 0),
+                     EditParameter(type: .darkness, baseValue: param.darknessAttack, addValue: 0)]
         }.subscribe(onNext: { [weak self] editParams in
             self?.editParameters = editParams
         }).disposed(by: disposeBag)
@@ -85,8 +85,7 @@ final class ParameterViewModel {
         guard let type = type else { return }
         guard self.distributeExp > 0 else { return }
         self.distributeExp -= 1
-        self.editParameters[EditParamType(editingType: type).rawValue].addValur += 1
-        
+        self.editParameters[EditParamType(editingType: type).rawValue].addValue += 1
     }
 }
 
@@ -100,27 +99,22 @@ enum EditingType: Int, CaseIterable {
     case light
     case darkness
     
-    init(parameterType: ParameterType) {
-        switch parameterType {
+    init(editParamType: EditParamType) {
+        switch editParamType {
         case .hp:
             self = .hp
-        case .attribute(let type):
-            switch type {
-            case .fire:
-                self = .fire
-            case .water:
-                self = .water
-            case .wind:
-                self = .wind
-            case .soil:
-                self = .soil
-            case .light:
-                self = .light
-            case .darkness:
-                self = .darkness
-            default:
-                self = .enter
-            }
+        case .fire:
+            self = .fire
+        case .water:
+            self = .water
+        case .wind:
+            self = .wind
+        case .soil:
+            self = .soil
+        case .light:
+            self = .light
+        case .darkness:
+            self = .darkness
         }
     }
 }

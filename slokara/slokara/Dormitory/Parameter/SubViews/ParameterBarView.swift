@@ -9,7 +9,7 @@ class ParameterBarView: UIView {
     @IBOutlet weak var synbolImageView: UIImageView!
     
     private let maxProgerss: Float = 999
-    private var type: ParameterType! {
+    private var type: EditParamType! {
         didSet {
             self.progressView.tintColor = type.color
             self.synbolImageView.image = type.image
@@ -25,8 +25,8 @@ class ParameterBarView: UIView {
             self.addValueLabel.text = "+\(addValue)"
         }
     }
-    private let typeRelay = PublishRelay<ParameterType>()
-    var typeObserver: Observable<ParameterType> {
+    private let typeRelay = PublishRelay<EditParamType>()
+    var typeObserver: Observable<EditParamType> {
         return typeRelay.asObservable()
     }
     
@@ -49,50 +49,14 @@ class ParameterBarView: UIView {
         self.addValueLabel.text = nil
     }
     
-    func configure(type: ParameterType, baseValue: Int64, addValue: Int64) {
-        self.type = type
-        self.currentValue = baseValue
-        self.addValue = addValue
-        self.progressView.progress = Float(baseValue + addValue) / self.maxProgerss
-    }
-    
-    func increment() {
-        self.addValue += 1
-    }
-    
-    func decrement() {
-        guard self.addValue > 0 else { return }
-        self.addValue -= 1
-    }
-    
-    func setAddValue(_ value: Int64) {
-        self.addValue = value
+    func configure(editParmeter: EditParameter) {
+        self.type = editParmeter.type
+        self.currentValue = editParmeter.baseValue
+        self.addValue = editParmeter.addValue
+        self.progressView.progress = Float(currentValue + addValue) / self.maxProgerss
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.typeRelay.accept(self.type)
-    }
-}
-
-enum ParameterType {
-    case hp
-    case attribute(type: AttributeType)
-    
-    var color: UIColor {
-        switch self {
-        case .hp:
-            return UIColor(named: "hpBarColor")!
-        case .attribute(let type):
-            return type.color
-        }
-    }
-    
-    var image: UIImage {
-        switch self {
-        case .hp:
-            return UIImage(named: "heart_with_hp")!
-        case .attribute(let type):
-            return type.image
-        }
     }
 }
