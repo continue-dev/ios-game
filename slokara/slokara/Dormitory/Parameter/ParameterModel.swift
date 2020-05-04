@@ -12,10 +12,22 @@ final class ParameterModelImpl: ParameterModelProtocol {
     
     var userParameter: Observable<UserParameter> {
         self.baseParam = UserParameter(fireAttack: 5, waterAttack: 5, windAttack: 5, soilAttack: 5, lightAttack: 5, darknessAttack: 10, maxHp: 100, defenseType: [])
+        
+        #if !PROD
+        if UserDefaults.standard.bool(forKey: "tuningMode"), let data = UserDefaults.standard.data(forKey: "userParameter") {
+            guard let param =  try? JSONDecoder().decode(UserParameter.self, from: data) else { assert(false, "UserParameter decode failed.") }
+            self.baseParam = param
+        }
+        #endif
         return Observable.just(self.baseParam!)
     }
     
     var gainedExp: Observable<Int64> {
+        #if !PROD
+        if UserDefaults.standard.bool(forKey: "tuningMode") {
+            return Observable.just(9999)
+        }
+        #endif
         return Observable.just(100)
     }
     
@@ -31,5 +43,11 @@ final class ParameterModelImpl: ParameterModelProtocol {
                                   defenseType: difenseTypes)
         // TODO: セーブ処理
         print("newParam:\(editedParam)")
+        #if !PROD
+        if UserDefaults.standard.bool(forKey: "tuningMode") {
+            guard let json = try? JSONEncoder().encode(editedParam) else { assert(false, "UserParameter encode failed.") }
+            UserDefaults.standard.set(json, forKey: "userParameter")
+        }
+        #endif
     }
 }

@@ -102,6 +102,16 @@ final class ParameterViewModel {
     
     private func parameterMinus(type: EditingType?) {
         guard let type = type else { return }
+        
+        #if !PROD
+        if UserDefaults.standard.bool(forKey: "tuningMode") {
+            guard self.editParameters[EditParamType(editingType: type).rawValue].totalValue > 0 else { return }
+            self.distributeExp += 1
+            self.editParameters[EditParamType(editingType: type).rawValue].addValue -= 1
+            return
+        }
+        #endif
+        
         guard self.editParameters[EditParamType(editingType: type).rawValue].addValue > 0 else { return }
         self.distributeExp += 1
         self.editParameters[EditParamType(editingType: type).rawValue].addValue -= 1

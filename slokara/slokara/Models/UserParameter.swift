@@ -1,6 +1,6 @@
 import Foundation
 
-struct UserParameter {
+struct UserParameter: Codable {
     let fireAttack: Int64
     let waterAttack: Int64
     let windAttack: Int64

@@ -21,8 +21,13 @@ class ParameterBarView: UIView {
     private var addValue: Int64 = 0 {
         didSet {
             self.progressView.progress = Float(self.currentValue + addValue) / self.maxProgerss
-            guard addValue > 0 else { self.addValueLabel.text = nil; return }
-            self.addValueLabel.text = "+\(addValue)"
+            self.addValueLabel.text = addValue >= 0 ? "+\(addValue)" : "\(addValue)"
+            
+            #if !PROD
+            if UserDefaults.standard.bool(forKey: "tuningMode") { return }
+            #endif
+            
+            self.addValueLabel.isHidden = addValue <= 0
         }
     }
     private let typeRelay = PublishRelay<EditParamType>()
