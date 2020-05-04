@@ -407,6 +407,7 @@
                     <connections>
                         <outlet property="barStackView" destination="mdj-ve-ifp" id="LCJ-ak-sL2"/>
                         <outlet property="distributeExpLabel" destination="0Aj-Zx-YDF" id="M35-nf-KIw"/>
+                        <outlet property="enterButton" destination="JE3-tn-ihO" id="3Lb-ej-YiD"/>
                         <outlet property="minusButton" destination="Udt-P5-XOF" id="Ac0-yx-p3l"/>
                         <outlet property="operationScrollView" destination="Xmq-1T-W8i" id="v3o-eA-1Rb"/>
                         <outlet property="plusButton" destination="pQS-wP-n8g" id="Pqc-2d-kBl"/>

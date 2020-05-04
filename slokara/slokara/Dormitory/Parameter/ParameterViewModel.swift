@@ -46,9 +46,13 @@ final class ParameterViewModel {
     private var distributeExp: Int64 = 0 {
         didSet { self.distributeExpRelay.accept(distributeExp) }
     }
+    
+    let popScreen: Observable<Void>!
         
-    init(operationScrolled: Observable<Int>, operationTapped: Observable<EditingType>, plusButtonTapped: Observable<Void>, minusButtonTapped: Observable<Void>, parameterModel: ParameterModelProtocol = ParameterModelImpl()) {
+    init(operationScrolled: Observable<Int>, operationTapped: Observable<EditingType>, plusButtonTapped: Observable<Void>, minusButtonTapped: Observable<Void>, enterButtonTapped: Observable<Void>, parameterModel: ParameterModelProtocol = ParameterModelImpl()) {
         self.model = parameterModel
+        
+        self.popScreen = enterButtonTapped
         
         self.model.gainedExp.subscribe(onNext: { [weak self] value in
             self?.distributeExp = Int64(value)
@@ -82,6 +86,10 @@ final class ParameterViewModel {
         
         minusButtonTapped.subscribe(onNext: { [weak self] _ in
             self?.parameterMinus(type: self?.editingType)
+        }).disposed(by: disposeBag)
+        
+        enterButtonTapped.subscribe(onNext: { [unowned self] _ in
+            self.model.saveParameter(params: self.editParameters)
         }).disposed(by: disposeBag)
     }
     

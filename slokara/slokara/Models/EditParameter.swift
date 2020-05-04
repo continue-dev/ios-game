@@ -4,6 +4,10 @@ struct EditParameter {
     let type: EditParamType
     let baseValue: Int64
     var addValue: Int64
+    
+    var totalValue: Int64 {
+        return baseValue + addValue
+    }
 }
 
 enum EditParamType: Int {
