@@ -219,6 +219,9 @@
 		6AA5AE78245F13A4003BCBD9 /* ParameterBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA5AE77245F13A4003BCBD9 /* ParameterBarView.swift */; };
 		6AA5AE79245F13A4003BCBD9 /* ParameterBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA5AE77245F13A4003BCBD9 /* ParameterBarView.swift */; };
 		6AA5AE7A245F13A4003BCBD9 /* ParameterBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA5AE77245F13A4003BCBD9 /* ParameterBarView.swift */; };
+		6AA5AE8024603EB6003BCBD9 /* EditParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA5AE7F24603EB6003BCBD9 /* EditParameter.swift */; };
+		6AA5AE8124603EB6003BCBD9 /* EditParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA5AE7F24603EB6003BCBD9 /* EditParameter.swift */; };
+		6AA5AE8224603EB6003BCBD9 /* EditParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA5AE7F24603EB6003BCBD9 /* EditParameter.swift */; };
 		6ABF318A23AF586A0014E0BD /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABF318923AF586A0014E0BD /* TaskListViewController.swift */; };
 		6ABF318C23AF58780014E0BD /* TaskList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6ABF318B23AF58780014E0BD /* TaskList.storyboard */; };
 		6ABF318E23AF59570014E0BD /* TaskListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABF318D23AF59570014E0BD /* TaskListViewModel.swift */; };
@@ -333,6 +336,7 @@
 		6AA5AE6E245F10F6003BCBD9 /* ParameterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterModel.swift; sourceTree = "<group>"; };
 		6AA5AE73245F1394003BCBD9 /* ParameterBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParameterBarView.xib; sourceTree = "<group>"; };
 		6AA5AE77245F13A4003BCBD9 /* ParameterBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterBarView.swift; sourceTree = "<group>"; };
+		6AA5AE7F24603EB6003BCBD9 /* EditParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditParameter.swift; sourceTree = "<group>"; };
 		6ABF318923AF586A0014E0BD /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		6ABF318B23AF58780014E0BD /* TaskList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TaskList.storyboard; sourceTree = "<group>"; };
 		6ABF318D23AF59570014E0BD /* TaskListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewModel.swift; sourceTree = "<group>"; };
@@ -638,6 +642,7 @@
 				6A68CA0B242A3CF50047F413 /* Stage.swift */,
 				6A68CA0D242A3F4B0047F413 /* Probability.swift */,
 				6A8BEB7F244DD67A00142587 /* Reel.swift */,
+				6AA5AE7F24603EB6003BCBD9 /* EditParameter.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1222,6 +1227,7 @@
 				6A8BEB892451AA6900142587 /* TaskListModel.swift in Sources */,
 				6A8BEC2724587F2D00142587 /* CreateEnemyViewController.swift in Sources */,
 				6A8BEB8A2451AA6900142587 /* NavigationViewModel.swift in Sources */,
+				6AA5AE8124603EB6003BCBD9 /* EditParameter.swift in Sources */,
 				6A8BEB8B2451AA6900142587 /* TaskConfirmViewController.swift in Sources */,
 				6A8BEB8C2451AA6900142587 /* AlertView.swift in Sources */,
 				6A8BEB8D2451AA6900142587 /* TaskListTab.swift in Sources */,
@@ -1283,6 +1289,7 @@
 				6A8BEC3B24597F3C00142587 /* TaskListModel.swift in Sources */,
 				6A8BEC3C24597F3C00142587 /* CreateEnemyViewController.swift in Sources */,
 				6A8BEC3D24597F3C00142587 /* NavigationViewModel.swift in Sources */,
+				6AA5AE8224603EB6003BCBD9 /* EditParameter.swift in Sources */,
 				6A8BEC3E24597F3C00142587 /* TaskConfirmViewController.swift in Sources */,
 				6A8BEC3F24597F3C00142587 /* AlertView.swift in Sources */,
 				6A8BEC4024597F3C00142587 /* TaskListTab.swift in Sources */,
@@ -1343,6 +1350,7 @@
 				6A599E992427D5C700067D7A /* BattleProgressView.swift in Sources */,
 				6ABF319023AF59660014E0BD /* TaskListModel.swift in Sources */,
 				98367115239810F200F590ED /* NavigationViewModel.swift in Sources */,
+				6AA5AE8024603EB6003BCBD9 /* EditParameter.swift in Sources */,
 				6A1C491623B9DE2B00261DF5 /* TaskConfirmViewController.swift in Sources */,
 				6AA5AE56245F0565003BCBD9 /* DormitoryViewController.swift in Sources */,
 				6A1C490F23B8E8D400261DF5 /* AlertView.swift in Sources */,

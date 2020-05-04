@@ -14,14 +14,14 @@ class ParameterViewController: UIViewController, NavigationChildViewController {
     
     
     private let disposeBag = DisposeBag()
-    private lazy var viewModel = ParameterViewModel(operationScrolled: self.operationScrollView.rx.didScroll.withLatestFrom(self.operationScrollView.rx.contentOffset).throttle(RxTimeInterval.milliseconds(300), latest: true, scheduler: MainScheduler.instance).map{ Int(round($0.y / self.operationScrollView.bounds.height))})
+    private lazy var didScroll = self.operationScrollView.rx.didScroll
+        .withLatestFrom(self.operationScrollView.rx.contentOffset)
+        .throttle(RxTimeInterval.milliseconds(300), latest: true, scheduler: MainScheduler.instance)
+        .map{ Int(round($0.y / self.operationScrollView.bounds.height))}
+    private lazy var viewModel = ParameterViewModel(operationScrolled: self.didScroll, operationTapped: self.operationTappedRelay.asObservable())
     
-    private var totalExp = 0 {
-        didSet { self.totalExpLabel.text = String(totalExp) }
-    }
-    private var distributeExp = 0 {
-        didSet { self.distributeExpLabel.text = String(distributeExp) }
-    }
+    private let operationTappedRelay = PublishRelay<EditingType>()
+    
     private var editingType: EditingType! {
         didSet {
             self.minusButton.isHidden = editingType == .enter
@@ -31,23 +31,23 @@ class ParameterViewController: UIViewController, NavigationChildViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUp()
         bind()
     }
     
-    private func setUp() {
-        self.editingType = .enter
-    }
-    
     private func bind() {
-        self.viewModel.parametrts.bind(to: setUpParams).disposed(by: disposeBag)
-        self.viewModel.distributeExp.subscribe(onNext: { [weak self] exp in
-            self?.distributeExp = exp
-        }).disposed(by: disposeBag)
-        self.viewModel.editingType.bind(to: editingSelected).disposed(by: disposeBag)
+        self.viewModel.parameterObserver.bind(to: setUpParams).disposed(by: disposeBag)
+        self.viewModel.distributeExpObserver.map{ String($0) }.bind(to: self.distributeExpLabel.rx.text).disposed(by: disposeBag)
+        self.viewModel.editingTypeObserver.bind(to: editingSelected).disposed(by: disposeBag)
+        self.viewModel.editingTypeObserver.map{ $0 == .enter }.bind(to: self.plusButton.rx.isHidden).disposed(by: disposeBag)
+        self.viewModel.editingTypeObserver.map{ $0 == .enter }.bind(to: self.minusButton.rx.isHidden).disposed(by: disposeBag)
+        self.viewModel.scrollOffset.bind(to: operationScroll).disposed(by: disposeBag)
+        self.viewModel.totalExpObserver.map{ String($0) }.bind(to: self.totalExpLabel.rx.text).disposed(by: disposeBag)
+        
         self.barStackView.arrangedSubviews.forEach { [unowned self] view in
             guard let barView = view as? ParameterBarView else { return }
-            barView.typeObserver.map{ EditingType(parameterType: $0) }.bind(to: self.barViewTapped).disposed(by: disposeBag)
+            barView.typeObserver.map{ EditingType(parameterType: $0) }.subscribe(onNext: { [weak self] type in
+                self?.operationTappedRelay.accept(type)
+            }).disposed(by: disposeBag)
         }
     }
     
@@ -60,35 +60,30 @@ class ParameterViewController: UIViewController, NavigationChildViewController {
 }
 
 extension ParameterViewController {
-    private var setUpParams: Binder<[(type: ParameterType, value: Int64)]> {
+    private var setUpParams: Binder<[EditParameter]> {
         return Binder(self) { me, params in
-            me.totalExp = params.map{Int($0.value)}.reduce(0){ $0 + $1 }
             me.barStackView.arrangedSubviews.enumerated().forEach { offset, element in
                 guard offset < params.count else { return }
                 guard let barView = element as? ParameterBarView else { return }
-                barView.configure(type: params[offset].type, value: params[offset].value)
+                barView.configure(type: params[offset].type.asParameterType(), value: params[offset].baseValue)
             }
             me.scrollContentStackView.arrangedSubviews.enumerated().forEach { offset, element in
                 guard offset > 0, offset - 1 < params.count else { return }
                 guard let imageView = element.subviews.first as? UIImageView else { return }
-                imageView.image = params[offset - 1].type.image
+                imageView.image = params[offset - 1].type.asParameterType().image
             }
         }
     }
     
     private var editingSelected: Binder<EditingType> {
         return Binder(self) { me, type in
-            me.editingType = type
             me.applyEditingType(type: type)
         }
     }
     
-    private var barViewTapped: Binder<EditingType> {
-        return Binder(self) { me, type in
-            let currentType = me.editingType == type ? .enter : type
-            me.editingType = currentType
-            me.applyEditingType(type: currentType)
-            me.operationScrollView.contentOffset = CGPoint(x: 0, y: me.operationScrollView.bounds.height * CGFloat(Float(currentType.rawValue)))
+    private var operationScroll: Binder<Int> {
+        return Binder(self) { me, offset in
+            me.operationScrollView.contentOffset = CGPoint(x: 0, y: me.operationScrollView.bounds.height * CGFloat(offset))
         }
     }
 }

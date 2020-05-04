@@ -5,25 +5,76 @@ final class ParameterViewModel {
     private let model: ParameterModelProtocol
     private let disposeBag = DisposeBag()
     
-    let parametrts: Observable<[(type: ParameterType, value: Int64)]>
-    let distributeExp: Observable<Int>
-    let editingType: Observable<EditingType>
+    private lazy var totalExpRelay = BehaviorRelay<Int64>(value: self.editParameters.map{ $0.baseValue }.reduce(0){ $0 + $1 })
+    var totalExpObserver: Observable<Int64> {
+        return totalExpRelay.asObservable()
+    }
     
-    init(operationScrolled: Observable<Int>, parameterModel: ParameterModelProtocol = ParameterModelImpl()) {
+    private lazy var distributeExpRelay = BehaviorRelay<Int64>(value: self.distributeExp)
+    var distributeExpObserver: Observable<Int64> {
+        return distributeExpRelay.asObservable()
+    }
+
+    
+    private lazy var parametersRelay = BehaviorRelay<[EditParameter]>(value: self.editParameters)
+    var parameterObserver: Observable<[EditParameter]> {
+        return parametersRelay.asObservable()
+    }
+
+    private lazy var editingTypeRelay = BehaviorRelay<EditingType>(value: .enter)
+    var editingTypeObserver: Observable<EditingType> {
+        return editingTypeRelay.asObservable()
+    }
+    
+    private lazy var scrollOffsetRelay = PublishRelay<Int>()
+    var scrollOffset: Observable<Int> {
+        return scrollOffsetRelay.asObservable()
+    }
+    
+    private var editingType: EditingType = .enter {
+        didSet { self.editingTypeRelay.accept(editingType) }
+    }
+    
+    private var editParameters: [EditParameter]! {
+        didSet { self.parametersRelay.accept(editParameters) }
+    }
+    
+    private var totalExp: Int64 = 0 {
+        didSet { self.totalExpRelay.accept(totalExp) }
+    }
+    
+    private var distributeExp: Int64 = 0 {
+        didSet { self.distributeExpRelay.accept(distributeExp) }
+    }
+        
+    init(operationScrolled: Observable<Int>, operationTapped: Observable<EditingType>, parameterModel: ParameterModelProtocol = ParameterModelImpl()) {
         self.model = parameterModel
         
-        self.editingType = operationScrolled.map { EditingType.allCases[$0] }
-        self.parametrts = self.model.userParameter.map { param in
-            [(ParameterType.hp, param.maxHp),
-             (ParameterType.attribute(type: .fire), param.fireAttack),
-             (ParameterType.attribute(type: .water), param.waterAttack),
-             (ParameterType.attribute(type: .wind), param.windAttack),
-             (ParameterType.attribute(type: .soil), param.soilAttack),
-             (ParameterType.attribute(type: .light), param.lightAttack),
-             (ParameterType.attribute(type: .darkness), param.darknessAttack)]
-        }
+        self.model.gainedExp.subscribe(onNext: { [weak self] value in
+            self?.distributeExp = value
+        }).disposed(by: disposeBag)
         
-        self.distributeExp = self.model.gainedExp
+        self.model.userParameter.map { param in
+                    [EditParameter(type: .hp, baseValue: param.maxHp, addValur: 0),
+                     EditParameter(type: .fire, baseValue: param.fireAttack, addValur: 0),
+                     EditParameter(type: .water, baseValue: param.waterAttack, addValur: 0),
+                     EditParameter(type: .wind, baseValue: param.windAttack, addValur: 0),
+                     EditParameter(type: .soil, baseValue: param.soilAttack, addValur: 0),
+                     EditParameter(type: .light, baseValue: param.lightAttack, addValur: 0),
+                     EditParameter(type: .darkness, baseValue: param.darknessAttack, addValur: 0)]
+        }.subscribe(onNext: { [weak self] editParams in
+            self?.editParameters = editParams
+        }).disposed(by: disposeBag)
+                
+        operationScrolled.map{ EditingType.allCases[$0] }.subscribe(onNext: { [weak self] type in
+            self?.editingType = type
+        }).disposed(by: disposeBag)
+        
+        operationTapped.subscribe(onNext: { [weak self] type in
+            let current = self?.editingType == type ? .enter : type
+            self?.editingType = current
+            self?.scrollOffsetRelay.accept(current.rawValue)
+        }).disposed(by: disposeBag)
     }
 }
 
