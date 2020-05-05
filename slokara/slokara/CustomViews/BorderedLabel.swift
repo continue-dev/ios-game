@@ -9,6 +9,19 @@ class BorderedLabel: UILabel {
     @IBInspectable var topPadding: CGFloat = 0
     @IBInspectable var bottomPadding: CGFloat = 0
 
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setUp()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setUp()
+    }
+    
+    private func setUp() {
+        self.setFont(.logoTypeGothic)
+    }
     
     func setFont(_ font: FontType) {
         self.font = UIFont(name: font.rawValue, size: self.font.pointSize)
