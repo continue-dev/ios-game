@@ -15,7 +15,7 @@ final class ParameterModelImpl: ParameterModelProtocol {
         
         #if !PROD
         if UserDefaults.standard.bool(forKey: "tuningMode"), let data = UserDefaults.standard.data(forKey: "userParameter") {
-            guard let param =  try? JSONDecoder().decode(UserParameter.self, from: data) else { assert(false, "UserParameter decode failed.") }
+            guard let param =  try? JSONDecoder().decode(UserParameter.self, from: data) else { fatalError("UserParameter decode failed.") }
             self.baseParam = param
         }
         #endif
@@ -45,7 +45,7 @@ final class ParameterModelImpl: ParameterModelProtocol {
         print("newParam:\(editedParam)")
         #if !PROD
         if UserDefaults.standard.bool(forKey: "tuningMode") {
-            guard let json = try? JSONEncoder().encode(editedParam) else { assert(false, "UserParameter encode failed.") }
+            guard let json = try? JSONEncoder().encode(editedParam) else { fatalError("UserParameter encode failed.") }
             UserDefaults.standard.set(json, forKey: "userParameter")
         }
         #endif

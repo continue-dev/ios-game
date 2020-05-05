@@ -16,7 +16,7 @@ final class BattleModelImpl: BattleModelProtocol {
         #if !PROD
         let ud = UserDefaults.standard
         if ud.bool(forKey: "tuningMode"), let data = ud.data(forKey: "editedStage") {
-            guard let stage =  try? JSONDecoder().decode(Stage.self, from: data) else { assert(false, "Stage decode failed.") }
+            guard let stage =  try? JSONDecoder().decode(Stage.self, from: data) else { fatalError("Stage decode failed.") }
             self.stage = stage
             return
         }
@@ -39,7 +39,7 @@ final class BattleModelImpl: BattleModelProtocol {
     var userParameter: Observable<UserParameter> {
         #if !PROD
         if UserDefaults.standard.bool(forKey: "tuningMode"), let data = UserDefaults.standard.data(forKey: "userParameter") {
-            guard let param = try? JSONDecoder().decode(UserParameter.self, from: data) else { assert(false, "UserParameter decode failed.")}
+            guard let param = try? JSONDecoder().decode(UserParameter.self, from: data) else { fatalError("UserParameter decode failed.") }
             return Observable.just(param)
         }
         #endif
@@ -51,7 +51,7 @@ final class BattleModelImpl: BattleModelProtocol {
         #if !PROD
         if UserDefaults.standard.bool(forKey: "tuningMode") {
             if let json = UserDefaults.standard.data(forKey: "reel") {
-                guard let reel = try? JSONDecoder().decode(Reel.self, from: json) else { assert(false, "Reel decode failed.") }
+                guard let reel = try? JSONDecoder().decode(Reel.self, from: json) else { fatalError("Reel decode failed.") }
                 return Observable.just(reel)
             }
         }

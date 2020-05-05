@@ -26,7 +26,7 @@ class TuningStageViewController: UIViewController, NavigationChildViewController
     
     private func loadStage() {
         guard let json = UserDefaults.standard.data(forKey: "editedStage") else { return }
-        guard let stage =  try? JSONDecoder().decode(Stage.self, from: json) else { assert(false, "Stage decode failed.") }
+        guard let stage =  try? JSONDecoder().decode(Stage.self, from: json) else { fatalError("Stage decode failed.") }
         enemies = stage.enemies
     }
     

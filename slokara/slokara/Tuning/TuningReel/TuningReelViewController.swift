@@ -37,7 +37,7 @@ class TuningReelViewController: UIViewController, NavigationChildViewController 
             bottom.forEach{ $0.isOn = false }
             return
         }
-        guard let reel = try? JSONDecoder().decode(Reel.self, from: json) else { assert(false, "Reel decode failed.") }
+        guard let reel = try? JSONDecoder().decode(Reel.self, from: json) else { fatalError("Reel decode failed.") }
         reel.top.enumerated().forEach{offset, element in top[offset].isOn = element }
         reel.center.enumerated().forEach{offset, element in middle[offset].isOn = element }
         reel.bottom.enumerated().forEach{offset, element in bottom[offset].isOn = element }
@@ -45,7 +45,7 @@ class TuningReelViewController: UIViewController, NavigationChildViewController 
     
     @IBAction func enterAction(_ sender: Any) {
         let reel = Reel(top: top.map{ $0.isOn }, center: middle.map{ $0.isOn }, bottom: bottom.map{ $0.isOn })
-        guard let json = try? JSONEncoder().encode(reel) else { assert(false, "Reel encode failed.") }
+        guard let json = try? JSONEncoder().encode(reel) else { fatalError("Reel encode failed.") }
         UserDefaults.standard.set(json, forKey: "reel")
         
         let navigation = self.parent as? NavigationViewController

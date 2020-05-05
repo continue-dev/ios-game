@@ -10,7 +10,7 @@ struct Stage: Codable {
     }
     
     func toJson() -> Data {
-        guard let json = try? JSONEncoder().encode(self) else { assert(false, "Stage encode failed.") }
+        guard let json = try? JSONEncoder().encode(self) else { fatalError("Stage encode failed.") }
         return json
     }
 }
