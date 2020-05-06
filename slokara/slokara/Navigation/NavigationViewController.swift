@@ -52,7 +52,6 @@ class NavigationViewController: UIViewController {
     private func setUp() {
         topSpacer.translatesAutoresizingMaskIntoConstraints = true
         add(rootViewController)
-        gradeLabel.setFont(.logoTypeGothic)
     }
     
     private func bind() {

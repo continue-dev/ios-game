@@ -69,12 +69,6 @@ extension HomeViewController {
         return Binder(self) { me, _ in
             // TODO: TransitionToNextScreen
             print("FinalButtle")
-            
-            // 仮の画面遷移（遷移先がわかりやすい様にTOPのマージン部分を赤にしている）
-            let navigation = me.parent as! NavigationViewController
-            let homeVC = UIStoryboard(name: "Home", bundle: nil).instantiateInitialViewController() as! NavigationChildViewController
-            homeVC.title = "ホーム"
-            navigation.push(homeVC, animate: true)
         }
     }
     
@@ -91,8 +85,10 @@ extension HomeViewController {
     
     private var transitionToStatus: Binder<Void> {
         return Binder(self) { me, _ in
-            // TODO: TransitionToNextScreen
-            print("Status")
+            let navigation = me.parent as! NavigationViewController
+            let dormitoryVC = UIStoryboard(name: "Dormitory", bundle: nil).instantiateInitialViewController() as! NavigationChildViewController
+            dormitoryVC.title = "学生寮"
+            navigation.push(dormitoryVC, animate: true)
         }
     }
     

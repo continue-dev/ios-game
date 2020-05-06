@@ -19,7 +19,7 @@ struct Reel: Codable {
         case 3:
             return .triple
         default:
-            assert(false, "Out of index from reel lines.")
+            fatalError("Out of index from reel lines.")
         }
     }
     

@@ -14,15 +14,14 @@ final class BattleModelImpl: BattleModelProtocol {
         
     init(stageId: Int) {
         #if !PROD
-        
         let ud = UserDefaults.standard
-        if ud.bool(forKey: "tuningMode") {
-            guard let stage =  try? JSONDecoder().decode(Stage.self, from: ud.data(forKey: "editedStage")!) else { assert(false, "Stage decode failed.") }
+        if ud.bool(forKey: "tuningMode"), let data = ud.data(forKey: "editedStage") {
+            guard let stage =  try? JSONDecoder().decode(Stage.self, from: data) else { fatalError("Stage decode failed.") }
             self.stage = stage
             return
         }
-        
         #endif
+        
         // TODO: 正規実装ではstageIdをもとにStageを取得する
         self.stage = Stage(id: 0, backGroundName: "background_sample", enemies: [
             Enemy(id: 0, name: "small", hp: 100, attack: 10, defense: 20, attackType: [.wind], defenseType: [.wind], imageName: "enemy_sample_small", type: .small, probability: Probability(fire: 5, water: 5, wind: 5, soil: 5, light: 5, darkness: 5, enemy: 10)),
@@ -38,14 +37,21 @@ final class BattleModelImpl: BattleModelProtocol {
     }
     
     var userParameter: Observable<UserParameter> {
-        return Observable.just(UserParameter(fireAttack: 5, waterAttack: 5, windAttack: 5, soilAttack: 5, lightAttack: 5, darknessAttack: 10, defense: 20, maxHp: 100, defenseType: []))
+        #if !PROD
+        if UserDefaults.standard.bool(forKey: "tuningMode"), let data = UserDefaults.standard.data(forKey: "userParameter") {
+            guard let param = try? JSONDecoder().decode(UserParameter.self, from: data) else { fatalError("UserParameter decode failed.") }
+            return Observable.just(param)
+        }
+        #endif
+        
+        return Observable.just(UserParameter(fireAttack: 5, waterAttack: 5, windAttack: 5, soilAttack: 5, lightAttack: 5, darknessAttack: 10, maxHp: 100, defenseType: []))
     }
     
     var reelStatus: Observable<Reel> {
         #if !PROD
         if UserDefaults.standard.bool(forKey: "tuningMode") {
             if let json = UserDefaults.standard.data(forKey: "reel") {
-                guard let reel = try? JSONDecoder().decode(Reel.self, from: json) else { assert(false, "Reel decode failed.") }
+                guard let reel = try? JSONDecoder().decode(Reel.self, from: json) else { fatalError("Reel decode failed.") }
                 return Observable.just(reel)
             }
         }
