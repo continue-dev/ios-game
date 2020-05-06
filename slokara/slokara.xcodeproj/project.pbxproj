@@ -324,7 +324,6 @@
 		6A8BEC2F2458A06F00142587 /* AttributeSelectView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AttributeSelectView.xib; sourceTree = "<group>"; };
 		6A8BEC322458A0F800142587 /* AttributeSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributeSelectView.swift; sourceTree = "<group>"; };
 		6A8BEC8524597F3C00142587 /* スロから_adhoc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "スロから_adhoc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6A8BEC8624597F3D00142587 /* slokara_dev copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "slokara_dev copy-Info.plist"; path = "/Users/sab_swiftlin/Desktop/Swift/ios-game/slokara/slokara_dev copy-Info.plist"; sourceTree = "<absolute>"; };
 		6A8BEC872459CF6500142587 /* EnemyImageCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyImageCollectionCell.swift; sourceTree = "<group>"; };
 		6A8BEC8B245BB9C500142587 /* TuningReel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TuningReel.storyboard; sourceTree = "<group>"; };
 		6A8BEC8E245BB9E400142587 /* TuningReelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuningReelViewController.swift; sourceTree = "<group>"; };
@@ -656,7 +655,6 @@
 				9821B32B2378560300CF964D /* Products */,
 				2B68C37C493F11AF43BD99F2 /* Pods */,
 				2083A412C3820F37BB09349D /* Frameworks */,
-				6A8BEC8624597F3D00142587 /* slokara_dev copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1510,7 +1508,7 @@
 					"$(inherited)",
 					"COCOAPODS=1",
 				);
-				INFOPLIST_FILE = "slokara_dev copy-Info.plist";
+				INFOPLIST_FILE = slokara/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1537,7 +1535,7 @@
 					"$(inherited)",
 					"COCOAPODS=1",
 				);
-				INFOPLIST_FILE = "slokara_dev copy-Info.plist";
+				INFOPLIST_FILE = slokara/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
