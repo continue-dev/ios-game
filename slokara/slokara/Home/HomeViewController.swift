@@ -93,7 +93,7 @@ extension HomeViewController {
         return Binder(self) { me, _ in
             let navigation = me.parent as! NavigationViewController
             let dormitoryVC = UIStoryboard(name: "Dormitory", bundle: nil).instantiateInitialViewController() as! NavigationChildViewController
-            dormitoryVC.title = "寮"
+            dormitoryVC.title = "学生寮"
             navigation.push(dormitoryVC, animate: true)
         }
     }
