@@ -3,10 +3,11 @@ import RxSwift
 import RxCocoa
 
 class ParameterBarView: UIView {
-    @IBOutlet weak var progressView: UIProgressView!
-    @IBOutlet weak var currentValueLabel: BorderedLabel!
-    @IBOutlet weak var addValueLabel: CommonFontLabel!
-    @IBOutlet weak var synbolImageView: UIImageView!
+    @IBOutlet private weak var progressView: UIProgressView!
+    @IBOutlet private weak var currentValueLabel: BorderedLabel!
+    @IBOutlet private weak var addValueLabel: CommonFontLabel!
+    @IBOutlet private weak var synbolImageView: UIImageView!
+    @IBOutlet private weak var layerImageView: UIImageView!
     
     private let maxProgerss: Float = 999
     private var type: EditParamType! {
@@ -33,6 +34,13 @@ class ParameterBarView: UIView {
     private let typeRelay = PublishRelay<EditParamType>()
     var typeObserver: Observable<EditParamType> {
         return typeRelay.asObservable()
+    }
+    
+    var isHighlighted = true {
+        didSet {
+            self.layerImageView.isHidden = isHighlighted
+            self.addValueLabel.textColor = isHighlighted ? .white : UIColor(named: "disableTextColor")
+        }
     }
     
     override init(frame: CGRect) {

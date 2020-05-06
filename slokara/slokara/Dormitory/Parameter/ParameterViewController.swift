@@ -55,8 +55,9 @@ class ParameterViewController: UIViewController, NavigationChildViewController {
     
     private func applyEditingType(type: EditingType) {
         self.barStackView.arrangedSubviews.enumerated().forEach { offset, element in
-            guard type.rawValue > 0 else { element.alpha = 1; return }
-            element.alpha = offset == type.rawValue - 1 ? 1 : 0.3
+            guard let barView = element as? ParameterBarView else { return }
+            guard type.rawValue > 0 else { barView.isHighlighted = true; return }
+            barView.isHighlighted = offset == type.rawValue - 1
         }
     }
 }
