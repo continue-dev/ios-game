@@ -10,7 +10,7 @@ class NavigationViewController: UIViewController {
     @IBOutlet private weak var rankNumberLabel: BorderedLabel!
     @IBOutlet private weak var titleView: UIView!
     @IBOutlet private weak var gradeLabel: BorderedLabel!
-    @IBOutlet private weak var titleLabel: CommonFontLabel!
+    @IBOutlet private weak var titleLabel: BorderedLabel!
     @IBOutlet private weak var creditLabel: CommonFontLabel!
     @IBOutlet private weak var coinLabel: CommonFontLabel!
     @IBOutlet private weak var hpLabel: CommonFontLabel!
@@ -52,6 +52,8 @@ class NavigationViewController: UIViewController {
     private func setUp() {
         topSpacer.translatesAutoresizingMaskIntoConstraints = true
         add(rootViewController)
+        gradeLabel.setFont(.logoTypeGothic)
+        titleLabel.setFont(.logoTypeGothic)
     }
     
     private func bind() {
