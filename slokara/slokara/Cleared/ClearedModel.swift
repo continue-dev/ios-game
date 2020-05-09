@@ -25,7 +25,13 @@ final class ClearedModelImpl: ClearedModelProtocol {
     
     func fullRecoveryHP() {
         guard let realm = try? Realm() else { assert(false, "Realmをインスタンス化できませんでした"); return }
-        guard let status = realm.objects(UserStatus.self).first else { assert(false, "UserStatusを読み込めませんでした"); return }
+        var index = 0
+        #if !PROD
+        if UserDefaults.standard.bool(forKey: "tuningMode") {
+            index = 1
+        }
+        #endif
+        let status = realm.objects(UserStatus.self)[index]
         try! realm.write {
             status.currentHp = status.maxHp
         }
