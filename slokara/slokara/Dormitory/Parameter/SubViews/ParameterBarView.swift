@@ -60,6 +60,7 @@ class ParameterBarView: UIView {
         self.addSubview(customView)
         self.backgroundColor = .clear
         self.addValueLabel.text = nil
+        self.currentValueLabel.setFont(.logoTypeGothic)
     }
     
     func configure(editParmeter: EditParameter) {
