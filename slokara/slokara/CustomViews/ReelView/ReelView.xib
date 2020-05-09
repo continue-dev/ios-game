@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReelView" customModule="slokara" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReelView" customModule="slokara_dev" customModuleProvider="target">
             <connections>
                 <outlet property="bottomBackStackView" destination="Kwf-ZC-XLh" id="0R7-Ei-kLl"/>
                 <outlet property="centerBackStackView" destination="naJ-OC-zdD" id="DAh-ei-CmI"/>
@@ -57,8 +57,15 @@
                     <rect key="frame" x="0.0" y="158.5" width="72.5" height="50"/>
                     <color key="backgroundColor" red="0.20000000000000001" green="0.53333333333333333" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5No-la-VE1" userLabel="buttomSpacer">
+                    <rect key="frame" x="0.0" y="288" width="580" height="20"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="5No-la-VE1" secondAttribute="height" multiplier="29:1" id="t0Z-2H-5QK"/>
+                    </constraints>
+                </view>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="GmS-ET-TfF">
-                    <rect key="frame" x="77.5" y="0.0" width="425" height="288"/>
+                    <rect key="frame" x="77.5" y="4" width="425" height="284"/>
                     <subviews>
                         <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Bnb-2f-LBG">
                             <rect key="frame" x="0.0" y="0.0" width="425" height="0.0"/>
@@ -78,35 +85,35 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="naJ-OC-zdD">
-                            <rect key="frame" x="0.0" y="0.0" width="425" height="144"/>
+                            <rect key="frame" x="0.0" y="0.0" width="425" height="142"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FJV-Dg-SJ4">
-                                    <rect key="frame" x="0.0" y="0.0" width="141.5" height="144"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="141.5" height="142"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yqm-Us-ceN">
-                                    <rect key="frame" x="141.5" y="0.0" width="142" height="144"/>
+                                    <rect key="frame" x="141.5" y="0.0" width="142" height="142"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d8w-q2-ype">
-                                    <rect key="frame" x="283.5" y="0.0" width="141.5" height="144"/>
+                                    <rect key="frame" x="283.5" y="0.0" width="141.5" height="142"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 </view>
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Kwf-ZC-XLh">
-                            <rect key="frame" x="0.0" y="144" width="425" height="144"/>
+                            <rect key="frame" x="0.0" y="142" width="425" height="142"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="06r-HO-eru">
-                                    <rect key="frame" x="0.0" y="0.0" width="141.5" height="144"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="141.5" height="142"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bdg-18-dey">
-                                    <rect key="frame" x="141.5" y="0.0" width="142" height="144"/>
+                                    <rect key="frame" x="141.5" y="0.0" width="142" height="142"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gk9-7l-ePy">
-                                    <rect key="frame" x="283.5" y="0.0" width="141.5" height="144"/>
+                                    <rect key="frame" x="283.5" y="0.0" width="141.5" height="142"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 </view>
                             </subviews>
@@ -123,8 +130,9 @@
                 <constraint firstItem="6Ha-8x-jke" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="1:8" id="1k9-Hf-3mq"/>
                 <constraint firstItem="6Ha-8x-jke" firstAttribute="centerX" secondItem="t8H-lT-Jow" secondAttribute="centerX" id="2jX-ed-lt5"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="57c-Wu-pZC" secondAttribute="trailing" id="3e8-FU-mnZ"/>
-                <constraint firstAttribute="bottom" secondItem="GmS-ET-TfF" secondAttribute="bottom" constant="20" id="4lh-sT-MF9"/>
+                <constraint firstItem="5No-la-VE1" firstAttribute="top" secondItem="GmS-ET-TfF" secondAttribute="bottom" id="4lh-sT-MF9"/>
                 <constraint firstItem="57c-Wu-pZC" firstAttribute="width" secondItem="qe1-Yr-6cU" secondAttribute="width" id="7ve-hs-x5q"/>
+                <constraint firstAttribute="bottom" secondItem="5No-la-VE1" secondAttribute="bottom" id="8eh-aN-7hd"/>
                 <constraint firstItem="XOL-1r-CC9" firstAttribute="height" secondItem="57c-Wu-pZC" secondAttribute="height" multiplier="2:1" priority="750" id="Acp-rL-6i3"/>
                 <constraint firstItem="6Ha-8x-jke" firstAttribute="height" secondItem="t8H-lT-Jow" secondAttribute="height" multiplier="1:2" priority="750" id="Bd1-rd-9NV"/>
                 <constraint firstItem="57c-Wu-pZC" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-8" id="DeD-gI-6TI"/>
@@ -140,16 +148,18 @@
                 <constraint firstItem="57c-Wu-pZC" firstAttribute="height" secondItem="qe1-Yr-6cU" secondAttribute="height" multiplier="1:2" priority="750" id="XpB-2V-28f"/>
                 <constraint firstItem="57c-Wu-pZC" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="1:8" id="YKN-zF-yYw"/>
                 <constraint firstItem="57c-Wu-pZC" firstAttribute="leading" secondItem="GmS-ET-TfF" secondAttribute="trailing" constant="5" id="bID-3J-ew4"/>
+                <constraint firstItem="5No-la-VE1" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="bJX-gg-rNe"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Sxy-SR-8o9" secondAttribute="trailing" id="c4u-JL-E5S"/>
                 <constraint firstItem="6Ha-8x-jke" firstAttribute="top" secondItem="t8H-lT-Jow" secondAttribute="bottom" id="fPq-5u-TGb"/>
                 <constraint firstItem="uD0-5p-UFG" firstAttribute="height" secondItem="6Ha-8x-jke" secondAttribute="height" multiplier="2:1" priority="750" id="kST-BC-R6C"/>
-                <constraint firstItem="GmS-ET-TfF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="kqB-rJ-LBq"/>
+                <constraint firstItem="GmS-ET-TfF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="4" id="kqB-rJ-LBq"/>
                 <constraint firstItem="uD0-5p-UFG" firstAttribute="top" secondItem="6Ha-8x-jke" secondAttribute="bottom" id="lOG-lf-FXg"/>
                 <constraint firstItem="uD0-5p-UFG" firstAttribute="width" secondItem="6Ha-8x-jke" secondAttribute="width" id="m4f-Q1-hEu"/>
                 <constraint firstItem="t8H-lT-Jow" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" id="mXq-gp-Djf"/>
                 <constraint firstItem="qe1-Yr-6cU" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" id="ouy-zP-n5o"/>
                 <constraint firstItem="XOL-1r-CC9" firstAttribute="top" secondItem="57c-Wu-pZC" secondAttribute="bottom" id="qmW-1Y-8uH"/>
                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="uD0-5p-UFG" secondAttribute="bottom" id="wWx-ho-S4H"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="5No-la-VE1" secondAttribute="trailing" id="wpy-C4-aZu"/>
                 <constraint firstItem="6Ha-8x-jke" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-8" id="yCg-9Q-OSh"/>
                 <constraint firstItem="Sxy-SR-8o9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="zWk-GJ-kJb"/>
                 <constraint firstItem="uD0-5p-UFG" firstAttribute="centerX" secondItem="6Ha-8x-jke" secondAttribute="centerX" id="zWk-Ya-m20"/>
