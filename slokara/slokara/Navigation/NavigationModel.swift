@@ -4,14 +4,14 @@ import RealmSwift
 import RxRealm
 
 protocol NavigationModelProtocol {
-    var status: Observable<UserStatus> { get }
+    var status: Observable<([UserStatus], RealmChangeset?)> { get }
 }
 
 final class NavigationModelImpl: NavigationModelProtocol {
     private let realm = try! Realm()
-    private lazy var userStatus = self.realm.objects(UserStatus.self).first!
+    private lazy var userStatus = self.realm.objects(UserStatus.self)
     
-    var status: Observable<UserStatus> {
-        return Observable.from(object: userStatus)
+    var status: Observable<([UserStatus], RealmChangeset?)> {
+        return Observable.arrayWithChangeset(from: userStatus)
     }
 }

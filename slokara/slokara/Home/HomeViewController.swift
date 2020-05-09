@@ -60,6 +60,8 @@ class HomeViewController: UIViewController, NavigationChildViewController {
     @IBAction func tuningSwitchAction(_ sender: UISwitch) {
         let ud = UserDefaults.standard
         ud.set(sender.isOn, forKey: "tuningMode")
+        let navigation = self.parent as! NavigationViewController
+        navigation.changeTuningMode(isOn: sender.isOn)
     }
     
 }

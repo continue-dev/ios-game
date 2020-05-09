@@ -31,10 +31,11 @@ class NavigationViewController: UIViewController {
         }
     }
     
-    private lazy var viewModel = NavigationViewModel(backButtonTapped: backButton.rx.tap.asObservable())
+    private lazy var viewModel = NavigationViewModel(backButtonTapped: backButton.rx.tap.asObservable(), changeTuningMode: self.tuningModeRelay.asObservable())
     private lazy var _navigationChildViewControllers = BehaviorRelay(value: navigationChildViewControllers)
     private let disposeBag = DisposeBag()
-
+    
+    private let tuningModeRelay = BehaviorRelay<Bool>(value: UserDefaults.standard.bool(forKey: "tuningMode"))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -212,6 +213,10 @@ class NavigationViewController: UIViewController {
         viewController.view.frame = self.container.frame
         self.container.addSubview(viewController.view)
         viewController.didMove(toParent: self)
+    }
+    
+    func changeTuningMode(isOn: Bool) {
+        self.tuningModeRelay.accept(isOn)
     }
 }
 
