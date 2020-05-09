@@ -1,4 +1,5 @@
 import RxSwift
+import RealmSwift
 
 protocol ParameterModelProtocol {
     var userParameter: Observable<UserParameter> { get }
@@ -47,6 +48,13 @@ final class ParameterModelImpl: ParameterModelProtocol {
         if UserDefaults.standard.bool(forKey: "tuningMode") {
             guard let json = try? JSONEncoder().encode(editedParam) else { fatalError("UserParameter encode failed.") }
             UserDefaults.standard.set(json, forKey: "userParameter")
+            
+            guard let realm = try? Realm() else { assert(false, "Realmをインスタンス化できませんでした"); return }
+            let status = realm.objects(UserStatus.self)[1]
+            try! realm.write {
+                status.maxHp = editedParam.maxHp
+                status.currentHp = editedParam.maxHp
+            }
         }
         #endif
     }
