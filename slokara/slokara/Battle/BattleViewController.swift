@@ -15,6 +15,9 @@ class BattleViewController: UIViewController, NavigationChildViewController {
     @IBOutlet private weak var autoButton: ToggleButton!
     @IBOutlet weak var reelHeader: UIImageView!
     @IBOutlet weak var nextEnemyLabel: BorderedLabel!
+    @IBOutlet weak var attackDamageLabel: UILabel!
+    @IBOutlet weak var defenseDamageLabel: UILabel!
+    @IBOutlet weak var tuningView: UIView!
     
     private let disposeBag = DisposeBag()
     private let screenTapped = PublishRelay<Bool>()
@@ -31,6 +34,10 @@ class BattleViewController: UIViewController, NavigationChildViewController {
         (self.parent as? NavigationViewController)?.backButtonIsHidden(true)
         self.view.isUserInteractionEnabled = false
         bind()
+        
+        #if !PROD
+        self.tuningView.isHidden = !UserDefaults.standard.bool(forKey: "tuningMode")
+        #endif
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -171,6 +178,9 @@ extension BattleViewController {
     private var startReelAction: Binder<Void> {
         return Binder(self) { me, _ in
             me.reelView.startAnimation()
+            // For tuning mode.
+            me.attackDamageLabel.isHidden = true
+            me.defenseDamageLabel.isHidden = true
         }
     }
     
@@ -185,6 +195,10 @@ extension BattleViewController {
     // 攻撃
     private var playerAttack: Binder<Int64> {
         return Binder(self) { me, value in
+            // For tuning mode.
+            me.attackDamageLabel.text = "\(value)"
+            me.attackDamageLabel.isHidden = false
+            
             if value > 0 {
                 me.swing(views: [me.enemyImageView], buffa: 4) { [weak self] in
                     self?.playerAttacked.accept(value)
@@ -207,6 +221,10 @@ extension BattleViewController {
     // 防御
     private var goEnemyTurn: Binder<Int64> {
         return Binder(self) { me, damage in
+            // For tuning mode.
+            me.defenseDamageLabel.text = "\(damage)"
+            me.defenseDamageLabel.isHidden = false
+            
             guard damage > 0 else { self.view.isUserInteractionEnabled = true; return }
             if damage > 30 {
                 me.swing(views: [me.baseView], buffa: 8) { [weak self] in

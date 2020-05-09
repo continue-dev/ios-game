@@ -152,6 +152,58 @@ ENEMY</string>
                                 <rect key="frame" x="0.0" y="862" width="414" height="34"/>
                                 <color key="backgroundColor" red="0.070588235294117646" green="0.058823529411764705" blue="0.039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g5O-Ga-9Nw">
+                                <rect key="frame" x="103" y="50" width="208.5" height="65.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="これはリリース版では表示されません" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="y4b-Xq-ZXc">
+                                        <rect key="frame" x="0.0" y="0.0" width="208.5" height="14.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="与ダメ：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TOB-3i-dfu">
+                                        <rect key="frame" x="2" y="19.5" width="61.5" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1Oy-ey-eeB">
+                                        <rect key="frame" x="63.5" y="19.5" width="9.5" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="被ダメ：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vWi-PT-TY3">
+                                        <rect key="frame" x="2" y="42.5" width="61.5" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="DPl-Gk-FmZ">
+                                        <rect key="frame" x="63.5" y="42.5" width="9.5" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="0.69758668664383561" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="TOB-3i-dfu" firstAttribute="leading" secondItem="g5O-Ga-9Nw" secondAttribute="leading" constant="2" id="72P-xD-sP6"/>
+                                    <constraint firstItem="vWi-PT-TY3" firstAttribute="top" secondItem="TOB-3i-dfu" secondAttribute="bottom" constant="5" id="8Vs-WR-D3C"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1Oy-ey-eeB" secondAttribute="trailing" id="AMD-W6-RxB"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="DPl-Gk-FmZ" secondAttribute="trailing" id="CCf-C3-Wcj"/>
+                                    <constraint firstItem="TOB-3i-dfu" firstAttribute="top" secondItem="y4b-Xq-ZXc" secondAttribute="bottom" constant="5" id="Db0-Hv-FIv"/>
+                                    <constraint firstAttribute="bottom" secondItem="vWi-PT-TY3" secondAttribute="bottom" constant="5" id="EFb-U0-xBk"/>
+                                    <constraint firstItem="DPl-Gk-FmZ" firstAttribute="leading" secondItem="vWi-PT-TY3" secondAttribute="trailing" id="MtQ-5f-nSK"/>
+                                    <constraint firstItem="y4b-Xq-ZXc" firstAttribute="leading" secondItem="g5O-Ga-9Nw" secondAttribute="leading" id="adS-ok-bwl"/>
+                                    <constraint firstItem="DPl-Gk-FmZ" firstAttribute="centerY" secondItem="vWi-PT-TY3" secondAttribute="centerY" id="cQb-p7-NNy"/>
+                                    <constraint firstItem="y4b-Xq-ZXc" firstAttribute="top" secondItem="g5O-Ga-9Nw" secondAttribute="top" id="cjW-Gb-1Th"/>
+                                    <constraint firstItem="1Oy-ey-eeB" firstAttribute="centerY" secondItem="TOB-3i-dfu" secondAttribute="centerY" id="iDa-3b-c2M"/>
+                                    <constraint firstItem="1Oy-ey-eeB" firstAttribute="leading" secondItem="TOB-3i-dfu" secondAttribute="trailing" id="sGl-ui-hgM"/>
+                                    <constraint firstItem="vWi-PT-TY3" firstAttribute="leading" secondItem="g5O-Ga-9Nw" secondAttribute="leading" constant="2" id="vlF-sH-sPe"/>
+                                    <constraint firstAttribute="trailing" secondItem="y4b-Xq-ZXc" secondAttribute="trailing" id="xLF-sS-plG"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -168,9 +220,11 @@ ENEMY</string>
                             <constraint firstItem="frd-bq-knu" firstAttribute="leading" secondItem="beP-C9-vnq" secondAttribute="leading" constant="-20" id="GGL-Lg-Lmg"/>
                             <constraint firstItem="fXv-y5-3I4" firstAttribute="width" secondItem="RQ4-7i-iQ1" secondAttribute="width" id="NKS-yL-Ldy"/>
                             <constraint firstItem="frd-bq-knu" firstAttribute="bottom" secondItem="6ir-Uy-gqj" secondAttribute="bottom" id="UFE-36-7Hs"/>
+                            <constraint firstItem="g5O-Ga-9Nw" firstAttribute="top" secondItem="2CB-DN-t4u" secondAttribute="bottom" id="XBR-P1-TMh"/>
                             <constraint firstItem="oD3-v8-3Rj" firstAttribute="leading" secondItem="BlA-f4-NVb" secondAttribute="leading" id="Z9K-8j-9oX"/>
                             <constraint firstItem="fXv-y5-3I4" firstAttribute="width" secondItem="fXv-y5-3I4" secondAttribute="height" multiplier="1:1" id="Zpm-Q0-NZw"/>
                             <constraint firstItem="beP-C9-vnq" firstAttribute="trailing" secondItem="KSg-qx-4iC" secondAttribute="trailing" id="bfx-PA-9YK"/>
+                            <constraint firstItem="g5O-Ga-9Nw" firstAttribute="centerX" secondItem="BlA-f4-NVb" secondAttribute="centerX" id="c4B-0D-ZCx"/>
                             <constraint firstItem="KSg-qx-4iC" firstAttribute="top" secondItem="beP-C9-vnq" secondAttribute="top" id="dsf-Da-u1y"/>
                             <constraint firstItem="beP-C9-vnq" firstAttribute="bottom" secondItem="KSg-qx-4iC" secondAttribute="bottom" id="kZv-2j-eyd"/>
                             <constraint firstItem="6es-fn-r9Y" firstAttribute="leading" secondItem="beP-C9-vnq" secondAttribute="leading" constant="15" id="mtt-DH-YM2"/>
@@ -188,9 +242,11 @@ ENEMY</string>
                         <viewLayoutGuide key="safeArea" id="beP-C9-vnq"/>
                     </view>
                     <connections>
+                        <outlet property="attackDamageLabel" destination="1Oy-ey-eeB" id="MDw-tD-JBS"/>
                         <outlet property="autoButton" destination="Lsx-ll-Oc2" id="COF-le-u3d"/>
                         <outlet property="backGroundImageView" destination="VyW-N0-1p0" id="PVh-fe-fiv"/>
                         <outlet property="baseView" destination="KSg-qx-4iC" id="hhl-5S-MnQ"/>
+                        <outlet property="defenseDamageLabel" destination="DPl-Gk-FmZ" id="44s-tu-6hw"/>
                         <outlet property="enemyImageView" destination="bg7-dl-2LQ" id="iKs-FK-R3d"/>
                         <outlet property="firstItemButton" destination="RQ4-7i-iQ1" id="7Q1-lw-Am2"/>
                         <outlet property="nextEnemyLabel" destination="a4S-ez-Yof" id="s9o-p8-hLB"/>
@@ -200,6 +256,7 @@ ENEMY</string>
                         <outlet property="secondItemButton" destination="J2K-pY-TlY" id="s28-9m-Xt8"/>
                         <outlet property="thirdItemButton" destination="fXv-y5-3I4" id="Ras-WD-WFB"/>
                         <outlet property="topSpacer" destination="2CB-DN-t4u" id="bCk-mZ-tDt"/>
+                        <outlet property="tuningView" destination="g5O-Ga-9Nw" id="qLP-lx-1vK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R7u-uY-q0l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
