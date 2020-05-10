@@ -33,6 +33,14 @@ class TitleViewController: UIViewController {
                 realm.add(UserStatus())
             }
         }
+        
+        #if !PROD
+        if realm.objects(UserStatus.self).count < 2 {
+            try! realm.write {
+                realm.add(UserStatus())
+            }
+        }
+        #endif
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {

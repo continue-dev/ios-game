@@ -15,12 +15,20 @@ final class NavigationViewModel {
     
     let transtionBack: Observable<Void>
     
-    init(backButtonTapped: Observable<Void>, navigationModel: NavigationModelProtocol = NavigationModelImpl()) {
+    init(backButtonTapped: Observable<Void>, changeTuningMode: Observable<Bool>, navigationModel: NavigationModelProtocol = NavigationModelImpl()) {
         self.navigationModel = navigationModel
         self.transtionBack = backButtonTapped
             .throttle(RxTimeInterval.seconds(1), latest: false, scheduler: MainScheduler.instance)
         
-        self.navigationModel.status.subscribe(onNext: { [weak self] status in
+        Observable<UserStatus>.combineLatest(self.navigationModel.status, changeTuningMode) { (arg0, isTuning) in
+            let (status, _) = arg0
+            #if !PROD
+            if isTuning {
+                return status[1]
+            }
+            #endif
+            return status.first!
+        }.subscribe(onNext: { [weak self] status in
             self?.hpProgress.accept(Float(status.currentHp) / Float(status.maxHp))
             self?.currentHp.accept(status.currentHp)
             self?.maxHp.accept(status.maxHp)
