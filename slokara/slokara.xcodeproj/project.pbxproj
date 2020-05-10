@@ -1516,7 +1516,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.1;
+				MARKETING_VERSION = 0.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.continue-dev.slokara-adhoc";
 				PRODUCT_NAME = "スロから_adhoc";
 				PROVISIONING_PROFILE_SPECIFIER = workout.wildcard.adhoc;
@@ -1544,7 +1544,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.1;
+				MARKETING_VERSION = 0.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.continue-dev.slokara-adhoc";
 				PRODUCT_NAME = "スロから_adhoc";
 				PROVISIONING_PROFILE_SPECIFIER = workout.wildcard.adhoc;
