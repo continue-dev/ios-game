@@ -48,7 +48,11 @@ final class BattleViewModel {
     private let stageClearRelay = PublishRelay<Void>()
     var stageClear: Observable<Void> { return self.stageClearRelay.asObservable() }
     
-    init(screenTaped: Observable<Bool>, reelStoped: Observable<[AttributeType?]>, playerAttacked: Observable<Int64>, requestNextEnemy: Observable<Void>, battleModel: BattleModelProtocol) {
+    // オートプレイ
+    private let autoPlayRelay = PublishRelay<Bool>()
+    var isAutoPlay: Observable<Bool> { return self.autoPlayRelay.asObservable() }
+    
+    init(screenTaped: Observable<Bool>, reelStoped: Observable<[AttributeType?]>, setAutoPlay: Observable<Bool>, playerAttacked: Observable<Int64>, requestNextEnemy: Observable<Void>, battleModel: BattleModelProtocol) {
         self.battleModel = battleModel
 
         self.reelStart = screenTaped.filter{ !$0 }.map{_ in }.throttle(RxTimeInterval.seconds(1), latest: false, scheduler: MainScheduler.instance)
@@ -81,6 +85,8 @@ final class BattleViewModel {
             self.enemy = self.stage.enemies[self.currentStep]
             self.startWithNewEnemyRelay.accept(self.enemy)
         }).disposed(by: disposeBag)
+        
+        setAutoPlay.bind(to: self.autoPlayRelay).disposed(by: disposeBag)
     }
     
     private func acceptAttack(results: [AttributeType?]) {

@@ -26,7 +26,7 @@ class BattleViewController: UIViewController, NavigationChildViewController {
     private let requestNextEnemy = PublishRelay<Void>()
     var task: Task!
     
-    private lazy var viewModel = BattleViewModel(screenTaped: screenTapped.asObservable(), reelStoped: reelStoped.asObservable(), playerAttacked: playerAttacked.asObservable(), requestNextEnemy: requestNextEnemy.asObservable(), battleModel: BattleModelImpl(stageId: task.stageId))
+    private lazy var viewModel = BattleViewModel(screenTaped: screenTapped.asObservable(), reelStoped: reelStoped.asObservable(), setAutoPlay: autoButton.rx.tap.map {[unowned self] _ in self.autoButton.isOn }, playerAttacked: playerAttacked.asObservable(), requestNextEnemy: requestNextEnemy.asObservable(), battleModel: BattleModelImpl(stageId: task.stageId))
 
     
     override func viewDidLoad() {
@@ -63,6 +63,7 @@ class BattleViewController: UIViewController, NavigationChildViewController {
         viewModel.toEnemyTurn.withLatestFrom(viewModel.damageFromEnemy).bind(to: goEnemyTurn).disposed(by: disposeBag)
         viewModel.startWithNewEnemy.bind(to: startNext).disposed(by: disposeBag)
         viewModel.stageClear.bind(to: stageCleared).disposed(by: disposeBag)
+        viewModel.isAutoPlay.bind(to: setAutoPlay).disposed(by: disposeBag)
         
         self.reelView.reelStopped.subscribe(onNext: { [weak self] results in
             self?.reelStoped.accept(results)
@@ -70,6 +71,7 @@ class BattleViewController: UIViewController, NavigationChildViewController {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard !self.autoButton.isOn else { return }
         self.screenTapped.accept(self.reelView.isAnimating)
     }
 }
@@ -77,7 +79,7 @@ class BattleViewController: UIViewController, NavigationChildViewController {
 // Private method
 extension BattleViewController {
     private func startGame() {
-        self.showEnemy { self.view.isUserInteractionEnabled = true }
+        self.showEnemy { self.waitingForInputIfNeeded() }
     }
     
     private func swing(views: [UIView], buffa: CGFloat, _ completion: (() -> ())? = nil) {
@@ -169,6 +171,20 @@ extension BattleViewController {
             }
         }
     }
+    
+    private func setItemButtonsInteraction(isEnable: Bool) {
+        self.firstItemButton.isUserInteractionEnabled = isEnable
+        self.secondItemButton.isUserInteractionEnabled = isEnable
+        self.thirdItemButton.isUserInteractionEnabled = isEnable
+    }
+    
+    private func waitingForInputIfNeeded() {
+        if self.autoButton.isOn {
+            self.screenTapped.accept(self.reelView.isAnimating)
+        } else {
+            self.view.isUserInteractionEnabled = true
+        }
+    }
 }
 
 
@@ -189,6 +205,15 @@ extension BattleViewController {
         return Binder(self) { me, value in
             me.view.isUserInteractionEnabled = false
             me.reelView.stopAnimation(results: value)
+        }
+    }
+    
+    private var setAutoPlay: Binder<Bool> {
+        return Binder(self) { me, isOn in
+            me.setItemButtonsInteraction(isEnable: !isOn)
+            
+            guard isOn else { return }
+            me.screenTapped.accept(me.reelView.isAnimating)
         }
     }
     
@@ -225,14 +250,14 @@ extension BattleViewController {
             me.defenseDamageLabel.text = "\(damage)"
             me.defenseDamageLabel.isHidden = false
             
-            guard damage > 0 else { self.view.isUserInteractionEnabled = true; return }
+            guard damage > 0 else { self.waitingForInputIfNeeded(); return }
             if damage > 30 {
                 me.swing(views: [me.baseView], buffa: 8) { [weak self] in
-                    self?.view.isUserInteractionEnabled = true
+                    self?.waitingForInputIfNeeded()
                 }
             } else {
                 me.swing(views: [me.reelView, me.reelHeader, me.autoButton], buffa: 4) { [weak self] in
-                    self?.view.isUserInteractionEnabled = true
+                    self?.waitingForInputIfNeeded()
                 }
             }
         }
@@ -246,14 +271,14 @@ extension BattleViewController {
                 me.showNextEnemyLabel() { [weak self] in
                     self?.progressView.nextStep()
                     self?.showEnemy(delay: 0.5) { [weak self] in
-                        self?.view.isUserInteractionEnabled = true
+                        self?.waitingForInputIfNeeded()
                     }
                 }
             case .big:
                 me.showDangerLabel() { [weak self] in
                     self?.progressView.nextStep()
                     self?.showEnemy(delay: 0.5) { [weak self] in
-                        self?.view.isUserInteractionEnabled = true
+                        self?.waitingForInputIfNeeded()
                     }
                 }
             }
