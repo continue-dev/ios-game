@@ -24,6 +24,7 @@ class BattleViewController: UIViewController, NavigationChildViewController {
     private let reelStoped = PublishRelay<[AttributeType?]>()
     private let playerAttacked = PublishRelay<Int64>()
     private let requestNextEnemy = PublishRelay<Void>()
+    private var isReelInteractionEnabled = true
     var task: Task!
     
     private lazy var viewModel = BattleViewModel(screenTaped: screenTapped.asObservable(), reelStoped: reelStoped.asObservable(), setAutoPlay: autoButton.rx.tap.map {[unowned self] _ in self.autoButton.isOn }, playerAttacked: playerAttacked.asObservable(), requestNextEnemy: requestNextEnemy.asObservable(), battleModel: BattleModelImpl(stageId: task.stageId))
@@ -32,7 +33,7 @@ class BattleViewController: UIViewController, NavigationChildViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         (self.parent as? NavigationViewController)?.backButtonIsHidden(true)
-        self.view.isUserInteractionEnabled = false
+        self.isReelInteractionEnabled = false
         bind()
         
         #if !PROD
@@ -71,7 +72,7 @@ class BattleViewController: UIViewController, NavigationChildViewController {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard !self.autoButton.isOn else { return }
+        guard !self.autoButton.isOn, isReelInteractionEnabled else { return }
         self.screenTapped.accept(self.reelView.isAnimating)
     }
 }
@@ -182,7 +183,7 @@ extension BattleViewController {
         if self.autoButton.isOn {
             self.screenTapped.accept(self.reelView.isAnimating)
         } else {
-            self.view.isUserInteractionEnabled = true
+            self.isReelInteractionEnabled = true
         }
     }
 }
@@ -197,13 +198,19 @@ extension BattleViewController {
             // For tuning mode.
             me.attackDamageLabel.isHidden = true
             me.defenseDamageLabel.isHidden = true
+            
+            guard me.autoButton.isOn else { return }
+            let delay = Double(me.reelView.reel?.enableLines.compactMap{$0}.count ?? 0) / 20
+            DispatchQueue.main.asyncAfter(deadline: .now() + delay) { [unowned self] in
+                self.screenTapped.accept(self.reelView.isAnimating)
+            }
         }
     }
     
     // リール停止
     private var stopReelAction: Binder<[AttributeType?]> {
         return Binder(self) { me, value in
-            me.view.isUserInteractionEnabled = false
+            me.isReelInteractionEnabled = false
             me.reelView.stopAnimation(results: value)
         }
     }
