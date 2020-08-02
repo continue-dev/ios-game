@@ -104,8 +104,11 @@ extension HomeViewController {
                 return
             }
             #endif
-            // TODO: TransitionToNextScreen
-            print("Shop")
+            
+            let navigation = me.parent as! NavigationViewController
+            let shopVC = UIStoryboard(name: "Shop", bundle: nil).instantiateInitialViewController() as! ShopViewController
+            shopVC.title = "購買部"
+            navigation.push(shopVC, animate: true)
         }
     }
     
