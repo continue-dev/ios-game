@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="z1D-1V-riT">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Shop View Controller-->
+        <scene sceneID="Xe2-R3-Wz4">
+            <objects>
+                <viewController id="z1D-1V-riT" customClass="ShopViewController" customModule="slokara_dev" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0eD-eJ-ng0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shop_background" translatesAutoresizingMaskIntoConstraints="NO" id="hIm-jl-jHA">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="luZ-ir-2hF">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="l2J-HP-Ss9"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="IZi-NZ-uI1">
+                                <rect key="frame" x="0.0" y="90" width="375" height="497"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oAW-rq-XvU" userLabel="itemShopButtonLayoutGuide">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="124.5"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BYf-Rk-ZXb" customClass="BorderedButton" customModule="slokara_dev" customModuleProvider="target">
+                                                <rect key="frame" x="62.5" y="18.5" width="250" height="87"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="BYf-Rk-ZXb" secondAttribute="height" multiplier="689:240" id="eXf-E9-B2K"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="strokeSize">
+                                                        <real key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="backGroundImageForNormal" value="button_frame_dark"/>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="backGroundImageForHighlighted" value="button_frame_dark_highlighted"/>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                        <real key="value" value="30"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="アイテムを買う"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="BYf-Rk-ZXb" firstAttribute="width" relation="lessThanOrEqual" secondItem="oAW-rq-XvU" secondAttribute="width" multiplier="2:3" id="Evl-2O-eSh"/>
+                                            <constraint firstItem="BYf-Rk-ZXb" firstAttribute="height" secondItem="oAW-rq-XvU" secondAttribute="height" multiplier="4:5" priority="750" id="UBN-Or-vdY"/>
+                                            <constraint firstItem="BYf-Rk-ZXb" firstAttribute="centerX" secondItem="oAW-rq-XvU" secondAttribute="centerX" id="ULI-Lk-sMn"/>
+                                            <constraint firstItem="BYf-Rk-ZXb" firstAttribute="height" relation="lessThanOrEqual" secondItem="oAW-rq-XvU" secondAttribute="height" multiplier="4:5" id="aCv-uN-5EN"/>
+                                            <constraint firstItem="BYf-Rk-ZXb" firstAttribute="centerY" secondItem="oAW-rq-XvU" secondAttribute="centerY" id="fwM-Fr-SLW"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8C7-6n-9JW" userLabel="reelShopButtonLayoutGuide">
+                                        <rect key="frame" x="0.0" y="124.5" width="375" height="124"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qfc-a4-n1r" customClass="BorderedButton" customModule="slokara_dev" customModuleProvider="target">
+                                                <rect key="frame" x="62.5" y="18.5" width="250" height="87"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="qfc-a4-n1r" secondAttribute="height" multiplier="689:240" id="BMC-6U-Fx9"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="strokeSize">
+                                                        <real key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="backGroundImageForNormal" value="button_frame_dark"/>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="backGroundImageForHighlighted" value="button_frame_dark_highlighted"/>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                        <real key="value" value="30"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="リールを買う"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="qfc-a4-n1r" firstAttribute="centerX" secondItem="8C7-6n-9JW" secondAttribute="centerX" id="CQP-WV-jSm"/>
+                                            <constraint firstItem="qfc-a4-n1r" firstAttribute="height" relation="lessThanOrEqual" secondItem="8C7-6n-9JW" secondAttribute="height" multiplier="4:5" id="Fbl-IR-3x7"/>
+                                            <constraint firstItem="qfc-a4-n1r" firstAttribute="width" relation="lessThanOrEqual" secondItem="8C7-6n-9JW" secondAttribute="width" multiplier="2:3" id="M3u-rJ-KCi"/>
+                                            <constraint firstItem="qfc-a4-n1r" firstAttribute="height" secondItem="8C7-6n-9JW" secondAttribute="height" multiplier="4:5" priority="750" id="V74-w4-lCn"/>
+                                            <constraint firstItem="qfc-a4-n1r" firstAttribute="centerY" secondItem="8C7-6n-9JW" secondAttribute="centerY" id="lo3-oo-fTm"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DRH-bg-5pT" userLabel="adButtonLayoutGuide">
+                                        <rect key="frame" x="0.0" y="248.5" width="375" height="124.5"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qua-FW-jdb" customClass="BorderedButton" customModule="slokara_dev" customModuleProvider="target">
+                                                <rect key="frame" x="62.5" y="18.5" width="250" height="87"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="qua-FW-jdb" secondAttribute="height" multiplier="689:240" id="1UT-FH-Epe"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="strokeSize">
+                                                        <real key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="backGroundImageForNormal" value="button_frame_dark"/>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="backGroundImageForHighlighted" value="button_frame_dark_highlighted"/>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                        <real key="value" value="30"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="バイト"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="qua-FW-jdb" firstAttribute="height" secondItem="DRH-bg-5pT" secondAttribute="height" multiplier="4:5" priority="750" id="GPX-5U-BgS"/>
+                                            <constraint firstItem="qua-FW-jdb" firstAttribute="centerY" secondItem="DRH-bg-5pT" secondAttribute="centerY" id="JLx-Zf-Shz"/>
+                                            <constraint firstItem="qua-FW-jdb" firstAttribute="centerX" secondItem="DRH-bg-5pT" secondAttribute="centerX" id="YgZ-YF-Kq1"/>
+                                            <constraint firstItem="qua-FW-jdb" firstAttribute="height" relation="lessThanOrEqual" secondItem="DRH-bg-5pT" secondAttribute="height" multiplier="4:5" id="Ztb-QT-xR8"/>
+                                            <constraint firstItem="qua-FW-jdb" firstAttribute="width" relation="lessThanOrEqual" secondItem="DRH-bg-5pT" secondAttribute="width" multiplier="2:3" id="ipJ-g2-22V"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aTH-KN-TQ7" userLabel="talkButtonLayoutGuide">
+                                        <rect key="frame" x="0.0" y="373" width="375" height="124"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rW0-fq-YPU" customClass="BorderedButton" customModule="slokara_dev" customModuleProvider="target">
+                                                <rect key="frame" x="62.5" y="18.5" width="250" height="87"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="rW0-fq-YPU" secondAttribute="height" multiplier="689:240" id="VMS-nL-PGo"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="strokeSize">
+                                                        <real key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="backGroundImageForNormal" value="button_frame_dark"/>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="backGroundImageForHighlighted" value="button_frame_dark_highlighted"/>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                        <real key="value" value="30"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="お姉さんと話す"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="rW0-fq-YPU" firstAttribute="height" secondItem="aTH-KN-TQ7" secondAttribute="height" multiplier="4:5" priority="750" id="A8G-TH-k7y"/>
+                                            <constraint firstItem="rW0-fq-YPU" firstAttribute="centerY" secondItem="aTH-KN-TQ7" secondAttribute="centerY" id="FF3-eb-3XT"/>
+                                            <constraint firstItem="rW0-fq-YPU" firstAttribute="centerX" secondItem="aTH-KN-TQ7" secondAttribute="centerX" id="I5A-Fw-Hme"/>
+                                            <constraint firstItem="rW0-fq-YPU" firstAttribute="height" relation="lessThanOrEqual" secondItem="aTH-KN-TQ7" secondAttribute="height" multiplier="4:5" id="Wd2-4R-v9I"/>
+                                            <constraint firstItem="rW0-fq-YPU" firstAttribute="width" relation="lessThanOrEqual" secondItem="aTH-KN-TQ7" secondAttribute="width" multiplier="2:3" id="wxR-pD-xmq"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="hIm-jl-jHA" secondAttribute="bottom" id="0xY-ze-eau"/>
+                            <constraint firstItem="ht2-Sc-Hpn" firstAttribute="trailing" secondItem="luZ-ir-2hF" secondAttribute="trailing" id="4B9-Xn-Pbp"/>
+                            <constraint firstItem="hIm-jl-jHA" firstAttribute="leading" secondItem="0eD-eJ-ng0" secondAttribute="leading" id="7Ql-QM-RbX"/>
+                            <constraint firstItem="hIm-jl-jHA" firstAttribute="top" secondItem="0eD-eJ-ng0" secondAttribute="top" id="G0n-Cq-jXz"/>
+                            <constraint firstAttribute="trailing" secondItem="hIm-jl-jHA" secondAttribute="trailing" id="H18-Ak-Hxl"/>
+                            <constraint firstItem="IZi-NZ-uI1" firstAttribute="leading" secondItem="ht2-Sc-Hpn" secondAttribute="leading" id="JEq-RG-kM5"/>
+                            <constraint firstItem="IZi-NZ-uI1" firstAttribute="centerX" secondItem="0eD-eJ-ng0" secondAttribute="centerX" id="JRM-tM-zIa"/>
+                            <constraint firstItem="luZ-ir-2hF" firstAttribute="top" secondItem="ht2-Sc-Hpn" secondAttribute="top" id="XR4-Ky-PIU"/>
+                            <constraint firstItem="IZi-NZ-uI1" firstAttribute="top" secondItem="luZ-ir-2hF" secondAttribute="bottom" constant="40" id="f29-nR-2U2"/>
+                            <constraint firstItem="ht2-Sc-Hpn" firstAttribute="trailing" secondItem="IZi-NZ-uI1" secondAttribute="trailing" id="lM2-u0-Pxj"/>
+                            <constraint firstItem="ht2-Sc-Hpn" firstAttribute="bottom" secondItem="IZi-NZ-uI1" secondAttribute="bottom" constant="80" id="qFl-SU-DWg"/>
+                            <constraint firstItem="luZ-ir-2hF" firstAttribute="leading" secondItem="ht2-Sc-Hpn" secondAttribute="leading" id="qQd-Yt-3de"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ht2-Sc-Hpn"/>
+                    </view>
+                    <connections>
+                        <outlet property="adButton" destination="qua-FW-jdb" id="Vbj-Fs-5u7"/>
+                        <outlet property="itemShopButton" destination="BYf-Rk-ZXb" id="UTN-ud-IBL"/>
+                        <outlet property="reelShopButton" destination="qfc-a4-n1r" id="SDt-o9-VcU"/>
+                        <outlet property="talkButton" destination="rW0-fq-YPU" id="MkG-Nk-AfI"/>
+                        <outlet property="topSpacer" destination="luZ-ir-2hF" id="Iay-H3-3VD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8wL-cd-kuT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-526" y="-119"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="button_frame_dark" width="344.5" height="120"/>
+        <image name="button_frame_dark_highlighted" width="344.5" height="120"/>
+        <image name="shop_background" width="540" height="1140"/>
+    </resources>
+</document>
