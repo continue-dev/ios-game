@@ -669,7 +669,6 @@
 			children = (
 				6ABF319223AF5A5B0014E0BD /* TaskListTab.xib */,
 				6ABF319423AF5A6C0014E0BD /* TaskListTab.swift */,
-				981D12DC23B0DDCA002A6B1E /* TabButton.swift */,
 				6A1C490523B26C8F00261DF5 /* TaskListCell.xib */,
 				6A1C490723B26CCD00261DF5 /* TaskListCell.swift */,
 			);
@@ -784,6 +783,7 @@
 				6A1C490B23B8E81800261DF5 /* AlertView */,
 				987F28AA2392BD7F00131C27 /* CommonFontLabel.swift */,
 				6A599EA12428F77200067D7A /* ToggleButton.swift */,
+				981D12DC23B0DDCA002A6B1E /* TabButton.swift */,
 				98D0497B239953AF00CA868A /* NavigationChildViewController.swift */,
 				989F52F523AF2B0200009D14 /* BorderedLabel.swift */,
 			);
