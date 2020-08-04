@@ -45,6 +45,18 @@
 		6A5E310724D6FD3900FDBBEE /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5E310624D6FD3900FDBBEE /* ShopViewController.swift */; };
 		6A5E310824D6FD3900FDBBEE /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5E310624D6FD3900FDBBEE /* ShopViewController.swift */; };
 		6A5E310924D6FD3900FDBBEE /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5E310624D6FD3900FDBBEE /* ShopViewController.swift */; };
+		6A5E310C24D9D28400FDBBEE /* ItemShop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A5E310B24D9D28400FDBBEE /* ItemShop.storyboard */; };
+		6A5E310D24D9D28400FDBBEE /* ItemShop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A5E310B24D9D28400FDBBEE /* ItemShop.storyboard */; };
+		6A5E310E24D9D28400FDBBEE /* ItemShop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A5E310B24D9D28400FDBBEE /* ItemShop.storyboard */; };
+		6A5E311024D9D29400FDBBEE /* ItemShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5E310F24D9D29400FDBBEE /* ItemShopViewController.swift */; };
+		6A5E311124D9D29400FDBBEE /* ItemShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5E310F24D9D29400FDBBEE /* ItemShopViewController.swift */; };
+		6A5E311224D9D29400FDBBEE /* ItemShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5E310F24D9D29400FDBBEE /* ItemShopViewController.swift */; };
+		6A5E311424D9D2AA00FDBBEE /* ItemShopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5E311324D9D2AA00FDBBEE /* ItemShopViewModel.swift */; };
+		6A5E311524D9D2AA00FDBBEE /* ItemShopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5E311324D9D2AA00FDBBEE /* ItemShopViewModel.swift */; };
+		6A5E311624D9D2AA00FDBBEE /* ItemShopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5E311324D9D2AA00FDBBEE /* ItemShopViewModel.swift */; };
+		6A5E311824D9D2BD00FDBBEE /* ItemShopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5E311724D9D2BD00FDBBEE /* ItemShopModel.swift */; };
+		6A5E311924D9D2BD00FDBBEE /* ItemShopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5E311724D9D2BD00FDBBEE /* ItemShopModel.swift */; };
+		6A5E311A24D9D2BD00FDBBEE /* ItemShopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5E311724D9D2BD00FDBBEE /* ItemShopModel.swift */; };
 		6A63B27A2402AC2F00B8719D /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A63B2792402AC2F00B8719D /* Enemy.swift */; };
 		6A63B27C2402B2EB00B8719D /* UserParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A63B27B2402B2EB00B8719D /* UserParameter.swift */; };
 		6A68CA0C242A3CF50047F413 /* Stage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A68CA0B242A3CF50047F413 /* Stage.swift */; };
@@ -313,6 +325,10 @@
 		6A5A8A50243CCD6000F8A829 /* Array+Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Test.swift"; sourceTree = "<group>"; };
 		6A5E310224D6FD2200FDBBEE /* Shop.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Shop.storyboard; sourceTree = "<group>"; };
 		6A5E310624D6FD3900FDBBEE /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
+		6A5E310B24D9D28400FDBBEE /* ItemShop.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ItemShop.storyboard; sourceTree = "<group>"; };
+		6A5E310F24D9D29400FDBBEE /* ItemShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemShopViewController.swift; sourceTree = "<group>"; };
+		6A5E311324D9D2AA00FDBBEE /* ItemShopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemShopViewModel.swift; sourceTree = "<group>"; };
+		6A5E311724D9D2BD00FDBBEE /* ItemShopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemShopModel.swift; sourceTree = "<group>"; };
 		6A63B2792402AC2F00B8719D /* Enemy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
 		6A63B27B2402B2EB00B8719D /* UserParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserParameter.swift; sourceTree = "<group>"; };
 		6A68CA0B242A3CF50047F413 /* Stage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage.swift; sourceTree = "<group>"; };
@@ -543,10 +559,22 @@
 		6A5E310124D6FCDB00FDBBEE /* Shop */ = {
 			isa = PBXGroup;
 			children = (
+				6A5E310A24D9D26600FDBBEE /* ItemShop */,
 				6A5E310224D6FD2200FDBBEE /* Shop.storyboard */,
 				6A5E310624D6FD3900FDBBEE /* ShopViewController.swift */,
 			);
 			path = Shop;
+			sourceTree = "<group>";
+		};
+		6A5E310A24D9D26600FDBBEE /* ItemShop */ = {
+			isa = PBXGroup;
+			children = (
+				6A5E310B24D9D28400FDBBEE /* ItemShop.storyboard */,
+				6A5E310F24D9D29400FDBBEE /* ItemShopViewController.swift */,
+				6A5E311324D9D2AA00FDBBEE /* ItemShopViewModel.swift */,
+				6A5E311724D9D2BD00FDBBEE /* ItemShopModel.swift */,
+			);
+			path = ItemShop;
 			sourceTree = "<group>";
 		};
 		6A68CA11242F97440047F413 /* RealmObjects */ = {
@@ -946,6 +974,7 @@
 				6A8BEBB42451AA6900142587 /* TaskList.storyboard in Resources */,
 				6A8BEBB52451AA6900142587 /* BattleProgressView.xib in Resources */,
 				6A8BEBB62451AA6900142587 /* Title.storyboard in Resources */,
+				6A5E310D24D9D28400FDBBEE /* ItemShop.storyboard in Resources */,
 				6A5E310424D6FD2200FDBBEE /* Shop.storyboard in Resources */,
 				6A8BEC1E24571C6500142587 /* TuningStageTableViewCell.xib in Resources */,
 				6A8BEBB72451AA6900142587 /* TaskCellView.xib in Resources */,
@@ -981,6 +1010,7 @@
 				6A8BEC6B24597F3C00142587 /* TaskList.storyboard in Resources */,
 				6A8BEC6C24597F3C00142587 /* BattleProgressView.xib in Resources */,
 				6A8BEC6D24597F3C00142587 /* Title.storyboard in Resources */,
+				6A5E310E24D9D28400FDBBEE /* ItemShop.storyboard in Resources */,
 				6A5E310524D6FD2200FDBBEE /* Shop.storyboard in Resources */,
 				6A8BEC6E24597F3C00142587 /* TuningStageTableViewCell.xib in Resources */,
 				6A8BEC6F24597F3C00142587 /* TaskCellView.xib in Resources */,
@@ -1023,6 +1053,7 @@
 				6AA5AE63245F10CF003BCBD9 /* Parameter.storyboard in Resources */,
 				6A1C490623B26C8F00261DF5 /* TaskListCell.xib in Resources */,
 				9821B3372378560400CF964D /* Assets.xcassets in Resources */,
+				6A5E310C24D9D28400FDBBEE /* ItemShop.storyboard in Resources */,
 				F47D662F23926C88009BA0EA /* 07LogoTypeGothic7.otf in Resources */,
 				6A1D5CA923C4C6D9005B8B48 /* BorderedButton.xib in Resources */,
 				6A1C490A23B2710B00261DF5 /* LithosPro-Black.otf in Resources */,
@@ -1251,6 +1282,7 @@
 				6A8BEB8C2451AA6900142587 /* AlertView.swift in Sources */,
 				6A8BEB8D2451AA6900142587 /* TaskListTab.swift in Sources */,
 				6A8BEB8E2451AA6900142587 /* BattleModel.swift in Sources */,
+				6A5E311124D9D29400FDBBEE /* ItemShopViewController.swift in Sources */,
 				6A8BEC21245725B000142587 /* TuningStageTableViewCell.swift in Sources */,
 				6A5E310824D6FD3900FDBBEE /* ShopViewController.swift in Sources */,
 				6A8BEB8F2451AA6900142587 /* TaskListViewController.swift in Sources */,
@@ -1269,6 +1301,7 @@
 				6A8BEB9A2451AA6900142587 /* TaskStatus.swift in Sources */,
 				6A8BEB9B2451AA6900142587 /* Task.swift in Sources */,
 				6AA5AE70245F10F6003BCBD9 /* ParameterModel.swift in Sources */,
+				6A5E311924D9D2BD00FDBBEE /* ItemShopModel.swift in Sources */,
 				6A8BEB9C2451AA6900142587 /* Stage.swift in Sources */,
 				6A8BEB9D2451AA6900142587 /* UserParameter.swift in Sources */,
 				6A8BEB9E2451AA6900142587 /* TaskCellView.swift in Sources */,
@@ -1292,6 +1325,7 @@
 				6A8BEC332458A0F800142587 /* AttributeSelectView.swift in Sources */,
 				6A8BEBAB2451AA6900142587 /* BorderedLabel.swift in Sources */,
 				6A8BEBAC2451AA6900142587 /* ToggleButton.swift in Sources */,
+				6A5E311524D9D2AA00FDBBEE /* ItemShopViewModel.swift in Sources */,
 				6A8BEBAD2451AA6900142587 /* HomeModel.swift in Sources */,
 				6A8BEBAE2451AA6900142587 /* NavigationViewController.swift in Sources */,
 				6A8BEBAF2451AA6900142587 /* HomeViewModel.swift in Sources */,
@@ -1314,6 +1348,7 @@
 				6A8BEC3F24597F3C00142587 /* AlertView.swift in Sources */,
 				6A8BEC4024597F3C00142587 /* TaskListTab.swift in Sources */,
 				6A8BEC4124597F3C00142587 /* BattleModel.swift in Sources */,
+				6A5E311224D9D29400FDBBEE /* ItemShopViewController.swift in Sources */,
 				6A8BEC4224597F3C00142587 /* TuningStageTableViewCell.swift in Sources */,
 				6A5E310924D6FD3900FDBBEE /* ShopViewController.swift in Sources */,
 				6A8BEC4324597F3C00142587 /* TaskListViewController.swift in Sources */,
@@ -1332,6 +1367,7 @@
 				6A8BEC4F24597F3C00142587 /* TaskStatus.swift in Sources */,
 				6A8BEC5024597F3C00142587 /* Task.swift in Sources */,
 				6AA5AE71245F10F6003BCBD9 /* ParameterModel.swift in Sources */,
+				6A5E311A24D9D2BD00FDBBEE /* ItemShopModel.swift in Sources */,
 				6A8BEC5124597F3C00142587 /* Stage.swift in Sources */,
 				6A8BEC5224597F3C00142587 /* UserParameter.swift in Sources */,
 				6A8BEC5324597F3C00142587 /* TaskCellView.swift in Sources */,
@@ -1355,6 +1391,7 @@
 				6A8BEC6124597F3C00142587 /* AttributeSelectView.swift in Sources */,
 				6A8BEC6224597F3C00142587 /* BorderedLabel.swift in Sources */,
 				6A8BEC6324597F3C00142587 /* ToggleButton.swift in Sources */,
+				6A5E311624D9D2AA00FDBBEE /* ItemShopViewModel.swift in Sources */,
 				6A8BEC6424597F3C00142587 /* HomeModel.swift in Sources */,
 				6A8BEC6524597F3C00142587 /* NavigationViewController.swift in Sources */,
 				6A8BEC6624597F3C00142587 /* HomeViewModel.swift in Sources */,
@@ -1375,8 +1412,10 @@
 				6AA5AE8024603EB6003BCBD9 /* EditParameter.swift in Sources */,
 				6A1C491623B9DE2B00261DF5 /* TaskConfirmViewController.swift in Sources */,
 				6AA5AE56245F0565003BCBD9 /* DormitoryViewController.swift in Sources */,
+				6A5E311424D9D2AA00FDBBEE /* ItemShopViewModel.swift in Sources */,
 				6A1C490F23B8E8D400261DF5 /* AlertView.swift in Sources */,
 				6ABF319523AF5A6C0014E0BD /* TaskListTab.swift in Sources */,
+				6A5E311824D9D2BD00FDBBEE /* ItemShopModel.swift in Sources */,
 				6A599E872426787300067D7A /* BattleModel.swift in Sources */,
 				6ABF318A23AF586A0014E0BD /* TaskListViewController.swift in Sources */,
 				6A63B27A2402AC2F00B8719D /* Enemy.swift in Sources */,
@@ -1405,6 +1444,7 @@
 				987F28AB2392BD7F00131C27 /* CommonFontLabel.swift in Sources */,
 				6A1C490823B26CCD00261DF5 /* TaskListCell.swift in Sources */,
 				6AA5AE6B245F10ED003BCBD9 /* ParameterViewModel.swift in Sources */,
+				6A5E311024D9D29400FDBBEE /* ItemShopViewController.swift in Sources */,
 				981D12E223B45558002A6B1E /* AttributeType.swift in Sources */,
 				6ABF318E23AF59570014E0BD /* TaskListViewModel.swift in Sources */,
 				98B652AE237DAC4900C4A5B5 /* HomeViewController.swift in Sources */,
