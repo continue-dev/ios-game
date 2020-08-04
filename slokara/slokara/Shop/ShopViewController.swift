@@ -27,7 +27,10 @@ class ShopViewController: UIViewController, NavigationChildViewController {
 extension ShopViewController {
     private var transitionItemShop: Binder<Void> {
         return Binder(self) { me, _ in
-            // アイテムショップ画面へ遷移
+            let navigation = me.parent as! NavigationViewController
+            let itemShopVC = UIStoryboard(name: "ItemShop", bundle: nil).instantiateInitialViewController() as! ItemShopViewController
+            itemShopVC.title = "アイテム一覧"
+            navigation.push(itemShopVC, animate: true)
         }
     }
     

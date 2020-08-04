@@ -9,19 +9,21 @@ class CartButton: UIView {
             switch state {
             case .animatingToNormal:
                 UIView.animate(withDuration: 0.2, animations: { [unowned self] in
-                    self.bounds.size = CGSize(width: self.bounds.height, height: self.bounds.height)
+                    self.frame = CGRect(x: self.frame.minX + self.bounds.height * 2, y: self.frame.minY, width: self.bounds.height, height: self.bounds.height)
                     self.purchaseLabel.alpha = 0
                 }) { [unowned self] (_) in
                     self.state = .normal
                     self.purchaseLabel.isHidden = true
+                    self.layoutIfNeeded()
                 }
             case .animatingToHighlighted:
                 self.purchaseLabel.isHidden = false
                 UIView.animate(withDuration: 0.2, animations: { [unowned self] in
-                    self.bounds.size = CGSize(width: self.bounds.height * 3, height: self.bounds.height)
+                    self.frame = CGRect(x: self.frame.minX - self.bounds.height * 2, y: self.frame.minY, width: self.bounds.height * 3, height: self.bounds.height)
                     self.purchaseLabel.alpha = 1
                 }) { [unowned self] (_) in
                     self.state = .highlighted
+                    self.layoutIfNeeded()
                 }
             default:
                 return
@@ -54,22 +56,24 @@ class CartButton: UIView {
         view.frame = self.bounds
         view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         addSubview(view)
+        self.translatesAutoresizingMaskIntoConstraints = true
     }
 
     private func applyDesign() {
+        self.clipsToBounds = true
         self.layer.cornerRadius = self.bounds.height / 2
         self.layer.borderWidth = 4
         self.layer.borderColor = UIColor(red: 116/255, green: 95/255, blue: 62/255, alpha: 1).cgColor
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.backgroundColor = .darkGray
-        self.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+        self.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
+        self.layer.borderWidth = 6
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.backgroundColor = .black
         self.transform = .identity
+        self.layer.borderWidth = 4
         switch state {
         case .normal:
             state = .animatingToHighlighted

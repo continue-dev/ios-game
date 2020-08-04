@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Shop View Controller-->
+        <!--Item Shop View Controller-->
         <scene sceneID="63K-Cx-6K0">
             <objects>
-                <viewController id="3ER-wr-T5M" customClass="ShopViewController" customModule="slokara_dev" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="3ER-wr-T5M" customClass="ItemShopViewController" customModule="slokara_dev" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="x0i-MG-Eew">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -97,8 +97,8 @@
                             <constraint firstItem="MPx-Ni-ktR" firstAttribute="leading" secondItem="QIv-Tb-ydh" secondAttribute="leading" id="CAl-p0-df4"/>
                             <constraint firstItem="QIv-Tb-ydh" firstAttribute="trailing" secondItem="9BP-iZ-OiZ" secondAttribute="trailing" id="Eda-nV-x6X"/>
                             <constraint firstItem="aBc-6X-edS" firstAttribute="top" secondItem="9BP-iZ-OiZ" secondAttribute="bottom" id="GoY-O2-6US"/>
-                            <constraint firstItem="rcA-m4-4IB" firstAttribute="width" secondItem="x0i-MG-Eew" secondAttribute="width" multiplier="1:5" id="NHU-o5-fGW"/>
-                            <constraint firstItem="QIv-Tb-ydh" firstAttribute="bottom" secondItem="rcA-m4-4IB" secondAttribute="bottom" constant="40" id="ODd-pg-mN4"/>
+                            <constraint firstItem="rcA-m4-4IB" firstAttribute="width" secondItem="x0i-MG-Eew" secondAttribute="width" multiplier="1:5" priority="250" id="NHU-o5-fGW"/>
+                            <constraint firstItem="QIv-Tb-ydh" firstAttribute="bottom" secondItem="rcA-m4-4IB" secondAttribute="bottom" priority="250" constant="40" id="ODd-pg-mN4"/>
                             <constraint firstItem="aBc-6X-edS" firstAttribute="height" secondItem="x0i-MG-Eew" secondAttribute="height" multiplier="1:14" id="RCb-5Y-vFw"/>
                             <constraint firstItem="9BP-iZ-OiZ" firstAttribute="top" secondItem="QIv-Tb-ydh" secondAttribute="top" id="Sg5-GS-ygE"/>
                             <constraint firstItem="AfO-3M-OVc" firstAttribute="leading" secondItem="x0i-MG-Eew" secondAttribute="leading" id="TkQ-17-0Fx"/>
@@ -111,11 +111,14 @@
                             <constraint firstItem="9BP-iZ-OiZ" firstAttribute="leading" secondItem="QIv-Tb-ydh" secondAttribute="leading" id="n2G-6L-74Z"/>
                             <constraint firstAttribute="bottom" secondItem="MPx-Ni-ktR" secondAttribute="bottom" id="onb-Xz-48g"/>
                             <constraint firstAttribute="trailing" secondItem="AfO-3M-OVc" secondAttribute="trailing" id="qMf-eH-IuQ"/>
-                            <constraint firstItem="QIv-Tb-ydh" firstAttribute="trailing" secondItem="rcA-m4-4IB" secondAttribute="trailing" constant="20" id="qbc-8v-2hY"/>
+                            <constraint firstItem="QIv-Tb-ydh" firstAttribute="trailing" secondItem="rcA-m4-4IB" secondAttribute="trailing" priority="250" constant="20" id="qbc-8v-2hY"/>
                             <constraint firstItem="aBc-6X-edS" firstAttribute="leading" secondItem="QIv-Tb-ydh" secondAttribute="leading" id="wwt-mQ-Cc7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QIv-Tb-ydh"/>
                     </view>
+                    <connections>
+                        <outlet property="topSpacer" destination="9BP-iZ-OiZ" id="Ezx-WC-ZzB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zsL-bK-yza" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
