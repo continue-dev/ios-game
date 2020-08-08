@@ -63,6 +63,12 @@
 		6A5E312124D9D93400FDBBEE /* CartButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A5E312024D9D93400FDBBEE /* CartButton.xib */; };
 		6A5E312224D9D93400FDBBEE /* CartButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A5E312024D9D93400FDBBEE /* CartButton.xib */; };
 		6A5E312324D9D93400FDBBEE /* CartButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A5E312024D9D93400FDBBEE /* CartButton.xib */; };
+		6A5E312D24DEE8A700FDBBEE /* ItemCategoryTab.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A5E312C24DEE8A700FDBBEE /* ItemCategoryTab.xib */; };
+		6A5E312E24DEE8A700FDBBEE /* ItemCategoryTab.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A5E312C24DEE8A700FDBBEE /* ItemCategoryTab.xib */; };
+		6A5E312F24DEE8A700FDBBEE /* ItemCategoryTab.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A5E312C24DEE8A700FDBBEE /* ItemCategoryTab.xib */; };
+		6A5E313124DEE8B700FDBBEE /* ItemCategoryTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5E313024DEE8B700FDBBEE /* ItemCategoryTab.swift */; };
+		6A5E313224DEE8B700FDBBEE /* ItemCategoryTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5E313024DEE8B700FDBBEE /* ItemCategoryTab.swift */; };
+		6A5E313324DEE8B700FDBBEE /* ItemCategoryTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5E313024DEE8B700FDBBEE /* ItemCategoryTab.swift */; };
 		6A63B27A2402AC2F00B8719D /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A63B2792402AC2F00B8719D /* Enemy.swift */; };
 		6A63B27C2402B2EB00B8719D /* UserParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A63B27B2402B2EB00B8719D /* UserParameter.swift */; };
 		6A68CA0C242A3CF50047F413 /* Stage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A68CA0B242A3CF50047F413 /* Stage.swift */; };
@@ -337,6 +343,8 @@
 		6A5E311724D9D2BD00FDBBEE /* ItemShopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemShopModel.swift; sourceTree = "<group>"; };
 		6A5E311C24D9D91B00FDBBEE /* CartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartButton.swift; sourceTree = "<group>"; };
 		6A5E312024D9D93400FDBBEE /* CartButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartButton.xib; sourceTree = "<group>"; };
+		6A5E312C24DEE8A700FDBBEE /* ItemCategoryTab.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCategoryTab.xib; sourceTree = "<group>"; };
+		6A5E313024DEE8B700FDBBEE /* ItemCategoryTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCategoryTab.swift; sourceTree = "<group>"; };
 		6A63B2792402AC2F00B8719D /* Enemy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
 		6A63B27B2402B2EB00B8719D /* UserParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserParameter.swift; sourceTree = "<group>"; };
 		6A68CA0B242A3CF50047F413 /* Stage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage.swift; sourceTree = "<group>"; };
@@ -591,6 +599,8 @@
 			children = (
 				6A5E312024D9D93400FDBBEE /* CartButton.xib */,
 				6A5E311C24D9D91B00FDBBEE /* CartButton.swift */,
+				6A5E312C24DEE8A700FDBBEE /* ItemCategoryTab.xib */,
+				6A5E313024DEE8B700FDBBEE /* ItemCategoryTab.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -1015,6 +1025,7 @@
 				6A8BEBC12451AA6900142587 /* TaskListTab.xib in Resources */,
 				6A8BEBC22451AA6900142587 /* Navigation.storyboard in Resources */,
 				6A8BEBC32451AA6900142587 /* ReelView.xib in Resources */,
+				6A5E312E24DEE8A700FDBBEE /* ItemCategoryTab.xib in Resources */,
 				6A8BEC2A24587F5300142587 /* CreateEnemy.storyboard in Resources */,
 				6A8BEBC42451AA6900142587 /* Cleared.storyboard in Resources */,
 				6A8BEBC52451AA6900142587 /* TaskConfirm.storyboard in Resources */,
@@ -1052,6 +1063,7 @@
 				6A8BEC7B24597F3C00142587 /* TaskListTab.xib in Resources */,
 				6A8BEC7C24597F3C00142587 /* Navigation.storyboard in Resources */,
 				6A8BEC7D24597F3C00142587 /* ReelView.xib in Resources */,
+				6A5E312F24DEE8A700FDBBEE /* ItemCategoryTab.xib in Resources */,
 				6A8BEC7E24597F3C00142587 /* CreateEnemy.storyboard in Resources */,
 				6A8BEC7F24597F3C00142587 /* Cleared.storyboard in Resources */,
 				6A8BEC8024597F3C00142587 /* TaskConfirm.storyboard in Resources */,
@@ -1076,6 +1088,7 @@
 				9821B3372378560400CF964D /* Assets.xcassets in Resources */,
 				6A5E310C24D9D28400FDBBEE /* ItemShop.storyboard in Resources */,
 				F47D662F23926C88009BA0EA /* 07LogoTypeGothic7.otf in Resources */,
+				6A5E312D24DEE8A700FDBBEE /* ItemCategoryTab.xib in Resources */,
 				6A1D5CA923C4C6D9005B8B48 /* BorderedButton.xib in Resources */,
 				6A1C490A23B2710B00261DF5 /* LithosPro-Black.otf in Resources */,
 				6AA5AE52245F0543003BCBD9 /* Dormitory.storyboard in Resources */,
@@ -1342,6 +1355,7 @@
 				6AA5AE79245F13A4003BCBD9 /* ParameterBarView.swift in Sources */,
 				6AA5AE68245F10DE003BCBD9 /* ParameterViewController.swift in Sources */,
 				6A8BEBA82451AA6900142587 /* TaskListViewModel.swift in Sources */,
+				6A5E313224DEE8B700FDBBEE /* ItemCategoryTab.swift in Sources */,
 				6A8BEBA92451AA6900142587 /* HomeViewController.swift in Sources */,
 				6A8BEBAA2451AA6900142587 /* NavigationModel.swift in Sources */,
 				6A8BEC332458A0F800142587 /* AttributeSelectView.swift in Sources */,
@@ -1409,6 +1423,7 @@
 				6AA5AE7A245F13A4003BCBD9 /* ParameterBarView.swift in Sources */,
 				6AA5AE69245F10DE003BCBD9 /* ParameterViewController.swift in Sources */,
 				6A8BEC5E24597F3C00142587 /* TaskListViewModel.swift in Sources */,
+				6A5E313324DEE8B700FDBBEE /* ItemCategoryTab.swift in Sources */,
 				6A8BEC5F24597F3C00142587 /* HomeViewController.swift in Sources */,
 				6A8BEC6024597F3C00142587 /* NavigationModel.swift in Sources */,
 				6A8BEC6124597F3C00142587 /* AttributeSelectView.swift in Sources */,
@@ -1460,6 +1475,7 @@
 				6A63B27C2402B2EB00B8719D /* UserParameter.swift in Sources */,
 				6A1C491B23BA59BF00261DF5 /* TaskCellView.swift in Sources */,
 				98B652A9237DA9F300C4A5B5 /* TitleViewController.swift in Sources */,
+				6A5E313124DEE8B700FDBBEE /* ItemCategoryTab.swift in Sources */,
 				6A599E832426785B00067D7A /* BattleViewController.swift in Sources */,
 				98D0497A2398166900CA868A /* Grade.swift in Sources */,
 				6A68CA13242F97900047F413 /* UserStatus.swift in Sources */,
