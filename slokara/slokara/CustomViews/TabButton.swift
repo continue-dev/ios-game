@@ -2,7 +2,7 @@ import UIKit
 
 class TabButton: UIButton {
     
-    private let hilightedColor = UIColor(red: 34/256, green: 91/256, blue: 166/256, alpha: 1)
+    @IBInspectable var hilightedColor: UIColor = .white
     
     var tabState: TabState = .normal {
         didSet {
