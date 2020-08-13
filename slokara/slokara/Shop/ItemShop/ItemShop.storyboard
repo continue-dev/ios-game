@@ -35,7 +35,7 @@
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MPx-Ni-ktR">
                                 <rect key="frame" x="0.0" y="142.5" width="375" height="524.5"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aBc-6X-edS">
                                 <rect key="frame" x="0.0" y="50" width="375" height="47.5"/>
@@ -116,6 +116,8 @@
                         <viewLayoutGuide key="safeArea" id="QIv-Tb-ydh"/>
                     </view>
                     <connections>
+                        <outlet property="categoryTabView" destination="Pub-YH-tcN" id="A6Q-yD-OId"/>
+                        <outlet property="itemListTableView" destination="MPx-Ni-ktR" id="pEE-4F-GBq"/>
                         <outlet property="topSpacer" destination="9BP-iZ-OiZ" id="Ezx-WC-ZzB"/>
                     </connections>
                 </viewController>

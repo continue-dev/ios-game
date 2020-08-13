@@ -5,7 +5,7 @@ class ItemCategoryTab: UIView {
     @IBOutlet weak var tabView: UIStackView!
     
     private var currentTab: TabKind?
-    private let selectedTabSubject = PublishSubject<TabKind>()
+    private let selectedTabSubject = BehaviorSubject<TabKind>(value: .all)
     var tabSelected: Observable<TabKind> { return selectedTabSubject }
     
     override init(frame: CGRect) {
