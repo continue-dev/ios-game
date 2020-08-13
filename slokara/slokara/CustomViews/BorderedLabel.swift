@@ -3,7 +3,9 @@ import RxCocoa
 
 class BorderedLabel: UILabel {
     @IBInspectable var strokeSize: CGFloat = 0
-    @IBInspectable var strokeColor: UIColor = .clear
+    @IBInspectable var strokeColor: UIColor = .clear {
+        didSet { setNeedsDisplay() }
+    }
     @IBInspectable var leftPadding: CGFloat = 0
     @IBInspectable var rightPadding: CGFloat = 0
     @IBInspectable var topPadding: CGFloat = 0
