@@ -264,6 +264,9 @@
 		6AEC140024E2D2D600E33682 /* ItemShopListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AEC13FC24E2D2D600E33682 /* ItemShopListCell.xib */; };
 		6AEC140124E2D2D600E33682 /* ItemShopListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AEC13FC24E2D2D600E33682 /* ItemShopListCell.xib */; };
 		6AEC140224E2D2D600E33682 /* ItemShopListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AEC13FC24E2D2D600E33682 /* ItemShopListCell.xib */; };
+		6AEC144424E5165D00E33682 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEC144324E5165D00E33682 /* Item.swift */; };
+		6AEC144524E5165D00E33682 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEC144324E5165D00E33682 /* Item.swift */; };
+		6AEC144624E5165D00E33682 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEC144324E5165D00E33682 /* Item.swift */; };
 		981D12DD23B0DDCA002A6B1E /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981D12DC23B0DDCA002A6B1E /* TabButton.swift */; };
 		981D12E023B453AA002A6B1E /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981D12DF23B453AA002A6B1E /* Task.swift */; };
 		981D12E223B45558002A6B1E /* AttributeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981D12E123B45558002A6B1E /* AttributeType.swift */; };
@@ -390,6 +393,7 @@
 		6ABF319423AF5A6C0014E0BD /* TaskListTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListTab.swift; sourceTree = "<group>"; };
 		6AEC13FB24E2D2D600E33682 /* ItemShopListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemShopListCell.swift; sourceTree = "<group>"; };
 		6AEC13FC24E2D2D600E33682 /* ItemShopListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemShopListCell.xib; sourceTree = "<group>"; };
+		6AEC144324E5165D00E33682 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		981D12DC23B0DDCA002A6B1E /* TabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButton.swift; sourceTree = "<group>"; };
 		981D12DF23B453AA002A6B1E /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		981D12E123B45558002A6B1E /* AttributeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributeType.swift; sourceTree = "<group>"; };
@@ -724,6 +728,7 @@
 				6A68CA0D242A3F4B0047F413 /* Probability.swift */,
 				6A8BEB7F244DD67A00142587 /* Reel.swift */,
 				6AA5AE7F24603EB6003BCBD9 /* EditParameter.swift */,
+				6AEC144324E5165D00E33682 /* Item.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1364,6 +1369,7 @@
 				6A8BEBA52451AA6900142587 /* CommonFontLabel.swift in Sources */,
 				6A8BEBA62451AA6900142587 /* TaskListCell.swift in Sources */,
 				6A8BEBA72451AA6900142587 /* AttributeType.swift in Sources */,
+				6AEC144524E5165D00E33682 /* Item.swift in Sources */,
 				6AA5AE57245F0565003BCBD9 /* DormitoryViewController.swift in Sources */,
 				6A8BEC1B24571A3700142587 /* TuningStageViewController.swift in Sources */,
 				6AA5AE79245F13A4003BCBD9 /* ParameterBarView.swift in Sources */,
@@ -1433,6 +1439,7 @@
 				6A8BEC5A24597F3C00142587 /* CommonFontLabel.swift in Sources */,
 				6A8BEC5B24597F3C00142587 /* TaskListCell.swift in Sources */,
 				6A8BEC5C24597F3C00142587 /* AttributeType.swift in Sources */,
+				6AEC144624E5165D00E33682 /* Item.swift in Sources */,
 				6AA5AE58245F0565003BCBD9 /* DormitoryViewController.swift in Sources */,
 				6A8BEC5D24597F3C00142587 /* TuningStageViewController.swift in Sources */,
 				6AA5AE7A245F13A4003BCBD9 /* ParameterBarView.swift in Sources */,
@@ -1460,6 +1467,7 @@
 				6A8BEB80244DD67A00142587 /* Reel.swift in Sources */,
 				6A599E992427D5C700067D7A /* BattleProgressView.swift in Sources */,
 				6ABF319023AF59660014E0BD /* TaskListModel.swift in Sources */,
+				6AEC144424E5165D00E33682 /* Item.swift in Sources */,
 				98367115239810F200F590ED /* NavigationViewModel.swift in Sources */,
 				6A5E310724D6FD3900FDBBEE /* ShopViewController.swift in Sources */,
 				6AA5AE8024603EB6003BCBD9 /* EditParameter.swift in Sources */,
