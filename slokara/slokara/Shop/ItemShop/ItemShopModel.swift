@@ -3,11 +3,15 @@ import RxSwift
 
 protocol ItemShopModelProtocol {
     var itemList: Observable<[Item]> { get }
+    var possessionItemList: Observable<[Int: Int]> { get }
 }
 
 final class ItemShopModelImpl: ItemShopModelProtocol {
     var itemList: Observable<[Item]> {
         return Observable.just(getItems())
+    }
+    var possessionItemList: Observable<[Int : Int]> {
+        return Observable.just([1: 1])
     }
 }
 

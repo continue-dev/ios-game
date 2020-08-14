@@ -17,8 +17,9 @@ class ItemShopViewController: UIViewController, NavigationChildViewController {
     }
     
     private func bind() {
-        viewModel.itemList.bind(to: itemListTableView.rx.items(cellIdentifier: "Cell", cellType: ItemShopListCell.self)) {index, item, cell in
-            cell.setItem(item: item)
+        viewModel.itemList.bind(to: itemListTableView.rx.items(cellIdentifier: "Cell", cellType: ItemShopListCell.self)) {index, itemModel, cell in
+            cell.setItem(item: itemModel.item)
+            cell.setPossession(number: itemModel.possessionNumber)
         }.disposed(by: disposeBag)
     }
 }

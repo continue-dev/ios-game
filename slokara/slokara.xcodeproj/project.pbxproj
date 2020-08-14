@@ -267,6 +267,9 @@
 		6AEC144424E5165D00E33682 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEC144324E5165D00E33682 /* Item.swift */; };
 		6AEC144524E5165D00E33682 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEC144324E5165D00E33682 /* Item.swift */; };
 		6AEC144624E5165D00E33682 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEC144324E5165D00E33682 /* Item.swift */; };
+		6AEC144824E6908300E33682 /* ItemListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEC144724E6908300E33682 /* ItemListModel.swift */; };
+		6AEC144924E6908300E33682 /* ItemListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEC144724E6908300E33682 /* ItemListModel.swift */; };
+		6AEC144A24E6908300E33682 /* ItemListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEC144724E6908300E33682 /* ItemListModel.swift */; };
 		981D12DD23B0DDCA002A6B1E /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981D12DC23B0DDCA002A6B1E /* TabButton.swift */; };
 		981D12E023B453AA002A6B1E /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981D12DF23B453AA002A6B1E /* Task.swift */; };
 		981D12E223B45558002A6B1E /* AttributeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981D12E123B45558002A6B1E /* AttributeType.swift */; };
@@ -394,6 +397,7 @@
 		6AEC13FB24E2D2D600E33682 /* ItemShopListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemShopListCell.swift; sourceTree = "<group>"; };
 		6AEC13FC24E2D2D600E33682 /* ItemShopListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemShopListCell.xib; sourceTree = "<group>"; };
 		6AEC144324E5165D00E33682 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		6AEC144724E6908300E33682 /* ItemListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListModel.swift; sourceTree = "<group>"; };
 		981D12DC23B0DDCA002A6B1E /* TabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButton.swift; sourceTree = "<group>"; };
 		981D12DF23B453AA002A6B1E /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		981D12E123B45558002A6B1E /* AttributeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributeType.swift; sourceTree = "<group>"; };
@@ -602,6 +606,7 @@
 				6A5E310F24D9D29400FDBBEE /* ItemShopViewController.swift */,
 				6A5E311324D9D2AA00FDBBEE /* ItemShopViewModel.swift */,
 				6A5E311724D9D2BD00FDBBEE /* ItemShopModel.swift */,
+				6AEC144724E6908300E33682 /* ItemListModel.swift */,
 			);
 			path = ItemShop;
 			sourceTree = "<group>";
@@ -1333,6 +1338,7 @@
 				6A8BEB8B2451AA6900142587 /* TaskConfirmViewController.swift in Sources */,
 				6A8BEB8C2451AA6900142587 /* AlertView.swift in Sources */,
 				6A8BEB8D2451AA6900142587 /* TaskListTab.swift in Sources */,
+				6AEC144924E6908300E33682 /* ItemListModel.swift in Sources */,
 				6A8BEB8E2451AA6900142587 /* BattleModel.swift in Sources */,
 				6A5E311124D9D29400FDBBEE /* ItemShopViewController.swift in Sources */,
 				6AEC13FE24E2D2D600E33682 /* ItemShopListCell.swift in Sources */,
@@ -1403,6 +1409,7 @@
 				6A8BEC3E24597F3C00142587 /* TaskConfirmViewController.swift in Sources */,
 				6A8BEC3F24597F3C00142587 /* AlertView.swift in Sources */,
 				6A8BEC4024597F3C00142587 /* TaskListTab.swift in Sources */,
+				6AEC144A24E6908300E33682 /* ItemListModel.swift in Sources */,
 				6A8BEC4124597F3C00142587 /* BattleModel.swift in Sources */,
 				6A5E311224D9D29400FDBBEE /* ItemShopViewController.swift in Sources */,
 				6AEC13FF24E2D2D600E33682 /* ItemShopListCell.swift in Sources */,
@@ -1467,6 +1474,7 @@
 				6A8BEB80244DD67A00142587 /* Reel.swift in Sources */,
 				6A599E992427D5C700067D7A /* BattleProgressView.swift in Sources */,
 				6ABF319023AF59660014E0BD /* TaskListModel.swift in Sources */,
+				6AEC144824E6908300E33682 /* ItemListModel.swift in Sources */,
 				6AEC144424E5165D00E33682 /* Item.swift in Sources */,
 				98367115239810F200F590ED /* NavigationViewModel.swift in Sources */,
 				6A5E310724D6FD3900FDBBEE /* ShopViewController.swift in Sources */,
