@@ -1,6 +1,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import RxDataSources
 
 class ItemShopViewController: UIViewController, NavigationChildViewController {
     @IBOutlet weak var topSpacer: UIView!
@@ -9,7 +10,16 @@ class ItemShopViewController: UIViewController, NavigationChildViewController {
     @IBOutlet private weak var purchaseControlView: PurchaseControlView!
     
     private let disposeBag = DisposeBag()
-    private lazy var viewModel = ItemShopViewModel(tabSelected: categoryTabView.tabSelected)
+    private lazy var viewModel = ItemShopViewModel(tabSelected: categoryTabView.tabSelected, selectCell: itemListTableView.rx.modelSelected(ItemListModel.self).asObservable(), purchaseNumberChanged: purchaseControlView.purchaseNumber)
+    
+    let dataSource = RxTableViewSectionedReloadDataSource<SectionObItemList>(
+      configureCell: { dataSource, tableView, indexPath, item in
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? ItemShopListCell else { return UITableViewCell() }
+        cell.setItem(item: item.item)
+        cell.setPossession(number: item.possessionNumber)
+        cell.setPurchase(number: item.purchaseNumber)
+        return cell
+    })
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,9 +34,19 @@ class ItemShopViewController: UIViewController, NavigationChildViewController {
     }
     
     private func bind() {
-        viewModel.itemList.bind(to: itemListTableView.rx.items(cellIdentifier: "Cell", cellType: ItemShopListCell.self)) {index, itemModel, cell in
-            cell.setItem(item: itemModel.item)
-            cell.setPossession(number: itemModel.possessionNumber)
-        }.disposed(by: disposeBag)
+        viewModel.itemList.bind(to: itemListTableView.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
+        itemListTableView.rx.modelSelected(ItemListModel.self).bind(to: showPurchaseControlView).disposed(by: disposeBag)
+    }
+}
+
+extension ItemShopViewController {
+    private var showPurchaseControlView: Binder<ItemListModel> {
+        return Binder(self) { me, item in
+            me.purchaseControlView.isHidden = false
+            me.purchaseControlView.setItemListModel(model: item)
+            UIView.animate(withDuration: 0.2) {
+                me.purchaseControlView.transform = .identity
+            }
+        }
     }
 }

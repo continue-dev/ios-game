@@ -19,6 +19,13 @@ class PurchaseControlView: UIView {
         return downSwipeRelay.asObservable()
     }
     
+    private var currentPurchaseNumber = 0 {
+        didSet {
+            purchaseNumberLabel.text = "\(currentPurchaseNumber)"
+            purchaseNumberRelay.accept(currentPurchaseNumber)
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadNib()
@@ -39,20 +46,16 @@ class PurchaseControlView: UIView {
     func setItemListModel(model: ItemListModel) {
         itemImageView.image = model.item.image
         itemInfoLabel.text = model.item.info
-        purchaseNumberRelay.accept(model.possessionNumber)
+        currentPurchaseNumber = model.purchaseNumber
     }
     
     @IBAction private func plusButtonTapped(_ sender: Any) {
-        let purchaseNumber = purchaseNumberRelay.value
-        purchaseNumberLabel.text = "\(purchaseNumber + 1)"
-        purchaseNumberRelay.accept(purchaseNumber + 1)
+        currentPurchaseNumber += 1
     }
     
     @IBAction private func minusButtonTapped(_ sender: Any) {
-        let purchaseNumber = purchaseNumberRelay.value
-        guard purchaseNumber > 0 else { return }
-        purchaseNumberLabel.text = "\(purchaseNumber - 1)"
-        purchaseNumberRelay.accept(purchaseNumber - 1)
+        guard currentPurchaseNumber > 0 else { return }
+        currentPurchaseNumber -= 1
     }
     
     @IBAction private func swipeAction(_ sender: Any) {

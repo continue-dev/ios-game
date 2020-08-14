@@ -40,13 +40,8 @@ class ItemShopListCell: UITableViewCell {
         possessionNumberLabel.text = "\(number)"
     }
     
-    func incrementPurchaseNumber() {
-        purchaseNumber += 1
-    }
-    
-    func decrementPurchaseNumber() {
-        guard purchaseNumber > 0 else { return }
-        purchaseNumber -= 1
+    func setPurchase(number: Int) {
+        purchaseNumber = number
     }
     
     private func applyPurchaseBorderColor() {
