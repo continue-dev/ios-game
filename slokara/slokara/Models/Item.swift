@@ -6,6 +6,7 @@ struct Item {
     let price: Int
     let icon: UIImage
     let image: UIImage
+    let info: String
     let itemType: ItemType
     let attributeTypes: [AttributeType]
     
