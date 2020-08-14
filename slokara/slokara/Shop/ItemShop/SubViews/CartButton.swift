@@ -56,10 +56,10 @@ class CartButton: UIView {
         view.frame = self.bounds
         view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         addSubview(view)
-        self.translatesAutoresizingMaskIntoConstraints = true
     }
 
     private func applyDesign() {
+        self.translatesAutoresizingMaskIntoConstraints = true
         self.clipsToBounds = true
         self.layer.cornerRadius = self.bounds.height / 2
         self.layer.borderWidth = 4

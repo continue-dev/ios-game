@@ -82,10 +82,17 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rcA-m4-4IB" customClass="CartButton" customModule="slokara_dev" customModuleProvider="target">
-                                <rect key="frame" x="280" y="552" width="75" height="75"/>
+                                <rect key="frame" x="280" y="562" width="75" height="75"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="rcA-m4-4IB" secondAttribute="height" multiplier="1:1" id="f9a-zd-cQw"/>
+                                </constraints>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hz5-PN-ykV" customClass="PurchaseControlView" customModule="slokara_dev" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="479.5" width="375" height="187.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="hz5-PN-ykV" secondAttribute="height" multiplier="2:1" priority="750" id="a78-lQ-E1B"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -93,11 +100,14 @@
                         <constraints>
                             <constraint firstItem="AfO-3M-OVc" firstAttribute="top" secondItem="x0i-MG-Eew" secondAttribute="top" id="0AO-mM-dBD"/>
                             <constraint firstItem="QIv-Tb-ydh" firstAttribute="trailing" secondItem="aBc-6X-edS" secondAttribute="trailing" id="4eI-CL-g4Q"/>
+                            <constraint firstItem="hz5-PN-ykV" firstAttribute="leading" secondItem="QIv-Tb-ydh" secondAttribute="leading" id="8DB-Dg-smC"/>
                             <constraint firstItem="MPx-Ni-ktR" firstAttribute="leading" secondItem="QIv-Tb-ydh" secondAttribute="leading" id="CAl-p0-df4"/>
                             <constraint firstItem="QIv-Tb-ydh" firstAttribute="trailing" secondItem="9BP-iZ-OiZ" secondAttribute="trailing" id="Eda-nV-x6X"/>
                             <constraint firstItem="aBc-6X-edS" firstAttribute="top" secondItem="9BP-iZ-OiZ" secondAttribute="bottom" id="GoY-O2-6US"/>
-                            <constraint firstItem="rcA-m4-4IB" firstAttribute="width" secondItem="x0i-MG-Eew" secondAttribute="width" multiplier="1:5" priority="250" id="NHU-o5-fGW"/>
-                            <constraint firstItem="QIv-Tb-ydh" firstAttribute="bottom" secondItem="rcA-m4-4IB" secondAttribute="bottom" priority="250" constant="40" id="ODd-pg-mN4"/>
+                            <constraint firstItem="QIv-Tb-ydh" firstAttribute="trailing" secondItem="hz5-PN-ykV" secondAttribute="trailing" id="I9b-OU-Dcj"/>
+                            <constraint firstAttribute="bottom" secondItem="hz5-PN-ykV" secondAttribute="bottom" id="IuK-kn-Msf"/>
+                            <constraint firstItem="rcA-m4-4IB" firstAttribute="width" secondItem="x0i-MG-Eew" secondAttribute="width" multiplier="1:5" priority="750" id="NHU-o5-fGW"/>
+                            <constraint firstItem="QIv-Tb-ydh" firstAttribute="bottom" secondItem="rcA-m4-4IB" secondAttribute="bottom" constant="30" id="ODd-pg-mN4"/>
                             <constraint firstItem="aBc-6X-edS" firstAttribute="height" secondItem="x0i-MG-Eew" secondAttribute="height" multiplier="1:14" id="RCb-5Y-vFw"/>
                             <constraint firstItem="9BP-iZ-OiZ" firstAttribute="top" secondItem="QIv-Tb-ydh" secondAttribute="top" id="Sg5-GS-ygE"/>
                             <constraint firstItem="AfO-3M-OVc" firstAttribute="leading" secondItem="x0i-MG-Eew" secondAttribute="leading" id="TkQ-17-0Fx"/>
@@ -109,7 +119,7 @@
                             <constraint firstAttribute="bottom" secondItem="MPx-Ni-ktR" secondAttribute="bottom" id="onb-Xz-48g"/>
                             <constraint firstItem="Pub-YH-tcN" firstAttribute="leading" secondItem="QIv-Tb-ydh" secondAttribute="leading" id="pJ0-zB-XQr"/>
                             <constraint firstAttribute="trailing" secondItem="AfO-3M-OVc" secondAttribute="trailing" id="qMf-eH-IuQ"/>
-                            <constraint firstItem="QIv-Tb-ydh" firstAttribute="trailing" secondItem="rcA-m4-4IB" secondAttribute="trailing" priority="250" constant="20" id="qbc-8v-2hY"/>
+                            <constraint firstItem="QIv-Tb-ydh" firstAttribute="trailing" secondItem="rcA-m4-4IB" secondAttribute="trailing" constant="20" id="qbc-8v-2hY"/>
                             <constraint firstItem="QIv-Tb-ydh" firstAttribute="trailing" secondItem="Pub-YH-tcN" secondAttribute="trailing" id="s1B-d2-t1q"/>
                             <constraint firstItem="aBc-6X-edS" firstAttribute="leading" secondItem="QIv-Tb-ydh" secondAttribute="leading" id="wwt-mQ-Cc7"/>
                         </constraints>
@@ -118,6 +128,7 @@
                     <connections>
                         <outlet property="categoryTabView" destination="Pub-YH-tcN" id="A6Q-yD-OId"/>
                         <outlet property="itemListTableView" destination="MPx-Ni-ktR" id="pEE-4F-GBq"/>
+                        <outlet property="purchaseControlView" destination="hz5-PN-ykV" id="vAj-s4-qjY"/>
                         <outlet property="topSpacer" destination="9BP-iZ-OiZ" id="Ezx-WC-ZzB"/>
                     </connections>
                 </viewController>
