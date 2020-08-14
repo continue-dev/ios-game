@@ -270,6 +270,12 @@
 		6AEC144824E6908300E33682 /* ItemListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEC144724E6908300E33682 /* ItemListModel.swift */; };
 		6AEC144924E6908300E33682 /* ItemListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEC144724E6908300E33682 /* ItemListModel.swift */; };
 		6AEC144A24E6908300E33682 /* ItemListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEC144724E6908300E33682 /* ItemListModel.swift */; };
+		6AEC144C24E6A28000E33682 /* PurchaseControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AEC144B24E6A28000E33682 /* PurchaseControlView.xib */; };
+		6AEC144D24E6A28000E33682 /* PurchaseControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AEC144B24E6A28000E33682 /* PurchaseControlView.xib */; };
+		6AEC144E24E6A28000E33682 /* PurchaseControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AEC144B24E6A28000E33682 /* PurchaseControlView.xib */; };
+		6AEC145024E6A28F00E33682 /* PurchaseControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEC144F24E6A28F00E33682 /* PurchaseControlView.swift */; };
+		6AEC145124E6A28F00E33682 /* PurchaseControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEC144F24E6A28F00E33682 /* PurchaseControlView.swift */; };
+		6AEC145224E6A28F00E33682 /* PurchaseControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEC144F24E6A28F00E33682 /* PurchaseControlView.swift */; };
 		981D12DD23B0DDCA002A6B1E /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981D12DC23B0DDCA002A6B1E /* TabButton.swift */; };
 		981D12E023B453AA002A6B1E /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981D12DF23B453AA002A6B1E /* Task.swift */; };
 		981D12E223B45558002A6B1E /* AttributeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981D12E123B45558002A6B1E /* AttributeType.swift */; };
@@ -398,6 +404,8 @@
 		6AEC13FC24E2D2D600E33682 /* ItemShopListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemShopListCell.xib; sourceTree = "<group>"; };
 		6AEC144324E5165D00E33682 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		6AEC144724E6908300E33682 /* ItemListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListModel.swift; sourceTree = "<group>"; };
+		6AEC144B24E6A28000E33682 /* PurchaseControlView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PurchaseControlView.xib; sourceTree = "<group>"; };
+		6AEC144F24E6A28F00E33682 /* PurchaseControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseControlView.swift; sourceTree = "<group>"; };
 		981D12DC23B0DDCA002A6B1E /* TabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButton.swift; sourceTree = "<group>"; };
 		981D12DF23B453AA002A6B1E /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		981D12E123B45558002A6B1E /* AttributeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributeType.swift; sourceTree = "<group>"; };
@@ -620,6 +628,8 @@
 				6A5E313024DEE8B700FDBBEE /* ItemCategoryTab.swift */,
 				6AEC13FC24E2D2D600E33682 /* ItemShopListCell.xib */,
 				6AEC13FB24E2D2D600E33682 /* ItemShopListCell.swift */,
+				6AEC144B24E6A28000E33682 /* PurchaseControlView.xib */,
+				6AEC144F24E6A28F00E33682 /* PurchaseControlView.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -1040,6 +1050,7 @@
 				6A8BEBBC2451AA6900142587 /* 07LogoTypeGothic7.otf in Resources */,
 				6A8BEBBD2451AA6900142587 /* BorderedButton.xib in Resources */,
 				6A8BEBBE2451AA6900142587 /* LithosPro-Black.otf in Resources */,
+				6AEC144D24E6A28000E33682 /* PurchaseControlView.xib in Resources */,
 				6A8BEBBF2451AA6900142587 /* Home.storyboard in Resources */,
 				6AA5AE53245F0543003BCBD9 /* Dormitory.storyboard in Resources */,
 				6A8BEBC02451AA6900142587 /* AlertView.xib in Resources */,
@@ -1079,6 +1090,7 @@
 				6A8BEC7624597F3C00142587 /* 07LogoTypeGothic7.otf in Resources */,
 				6A8BEC7724597F3C00142587 /* BorderedButton.xib in Resources */,
 				6A8BEC7824597F3C00142587 /* LithosPro-Black.otf in Resources */,
+				6AEC144E24E6A28000E33682 /* PurchaseControlView.xib in Resources */,
 				6A8BEC7924597F3C00142587 /* Home.storyboard in Resources */,
 				6AA5AE54245F0543003BCBD9 /* Dormitory.storyboard in Resources */,
 				6A8BEC7A24597F3C00142587 /* AlertView.xib in Resources */,
@@ -1123,6 +1135,7 @@
 				6A5A8A442434F40200F8A829 /* Cleared.storyboard in Resources */,
 				6A1C491423B9DE1F00261DF5 /* TaskConfirm.storyboard in Resources */,
 				6AEC140024E2D2D600E33682 /* ItemShopListCell.xib in Resources */,
+				6AEC144C24E6A28000E33682 /* PurchaseControlView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1371,6 +1384,7 @@
 				6AA5AE6C245F10ED003BCBD9 /* ParameterViewModel.swift in Sources */,
 				6A8BEBA22451AA6900142587 /* UserStatus.swift in Sources */,
 				6A8BEBA32451AA6900142587 /* Probability.swift in Sources */,
+				6AEC145124E6A28F00E33682 /* PurchaseControlView.swift in Sources */,
 				6A8BEBA42451AA6900142587 /* ReelCharacter.swift in Sources */,
 				6A8BEBA52451AA6900142587 /* CommonFontLabel.swift in Sources */,
 				6A8BEBA62451AA6900142587 /* TaskListCell.swift in Sources */,
@@ -1442,6 +1456,7 @@
 				6AA5AE6D245F10ED003BCBD9 /* ParameterViewModel.swift in Sources */,
 				6A8BEC5724597F3C00142587 /* UserStatus.swift in Sources */,
 				6A8BEC5824597F3C00142587 /* Probability.swift in Sources */,
+				6AEC145224E6A28F00E33682 /* PurchaseControlView.swift in Sources */,
 				6A8BEC5924597F3C00142587 /* ReelCharacter.swift in Sources */,
 				6A8BEC5A24597F3C00142587 /* CommonFontLabel.swift in Sources */,
 				6A8BEC5B24597F3C00142587 /* TaskListCell.swift in Sources */,
@@ -1527,6 +1542,7 @@
 				98B652B2237DACCA00C4A5B5 /* HomeModel.swift in Sources */,
 				98367111239810D100F590ED /* NavigationViewController.swift in Sources */,
 				98B652B0237DAC6500C4A5B5 /* HomeViewModel.swift in Sources */,
+				6AEC145024E6A28F00E33682 /* PurchaseControlView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
