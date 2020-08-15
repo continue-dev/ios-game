@@ -35,7 +35,7 @@
                         <constraint firstAttribute="width" secondItem="eRU-90-Ip7" secondAttribute="height" multiplier="1:1" id="KuI-kC-ANQ"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="Ht2-KW-h8I" customClass="CommonFontLabel" customModule="slokara_dev" customModuleProvider="target">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="Ht2-KW-h8I" customClass="CommonFontLabel" customModule="slokara_dev" customModuleProvider="target">
                     <rect key="frame" x="10" y="105" width="394" height="45"/>
                     <string key="text">Label
 Lable</string>

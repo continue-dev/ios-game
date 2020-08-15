@@ -25,6 +25,7 @@ class PurchaseControlView: UIView {
             purchaseNumberRelay.accept(currentPurchaseNumber)
         }
     }
+    private var currentPossessionNum = 0
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -47,9 +48,11 @@ class PurchaseControlView: UIView {
         itemImageView.image = model.item.image
         itemInfoLabel.text = model.item.info
         currentPurchaseNumber = model.purchaseNumber
+        currentPossessionNum = model.possessionNumber
     }
     
     @IBAction private func plusButtonTapped(_ sender: Any) {
+        guard currentPurchaseNumber + currentPossessionNum < 99 else { return }
         currentPurchaseNumber += 1
     }
     
