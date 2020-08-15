@@ -12,7 +12,7 @@ final class ItemShopViewModel {
     private var purchaseList = [Int: Int]()
     
 
-    init(tabSelected: Observable<ItemCategoryTab.TabKind>, selectCell: Observable<ItemListModel>, purchaseNumberChanged: Observable<Int>, itemShopModel: ItemShopModelProtocol = ItemShopModelImpl()) {
+    init(tabSelected: Observable<ItemCategoryTab.TabKind>, selectCell: Observable<ItemListModel>, purchaseNumberChanged: Observable<Int>, hidePurchaseControl: Observable<Void>, itemShopModel: ItemShopModelProtocol = ItemShopModelImpl()) {
         self.itemShopModel = itemShopModel
         
         let oldItemList = BehaviorSubject<[ItemListModel]>(value: [])
@@ -49,7 +49,18 @@ final class ItemShopViewModel {
             return newList
         }
         
-        let itemListStream = Observable.merge(initialItemList, newItemList)
+        let noSelectionList = hidePurchaseControl.withLatestFrom(oldItemList) { $1 }.map { list -> [ItemListModel] in
+            var newList = list
+
+            if var deSelectItem = list.first(where: { $0.isSelected }),
+               let index = list.firstIndex(where: { $0.item.id == deSelectItem.item.id}) {
+                deSelectItem.isSelected = false
+                newList[index] = deSelectItem
+            }
+            return newList
+        }
+        
+        let itemListStream = Observable.merge(initialItemList, newItemList, noSelectionList)
         itemListStream.bind(to: oldItemList).disposed(by: disposeBag)
         
         itemListStream.map { [SectionObItemList(items: $0)] }.bind(to: itemListSubject).disposed(by: disposeBag)

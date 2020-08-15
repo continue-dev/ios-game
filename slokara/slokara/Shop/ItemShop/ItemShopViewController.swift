@@ -10,7 +10,8 @@ class ItemShopViewController: UIViewController, NavigationChildViewController {
     @IBOutlet private weak var purchaseControlView: PurchaseControlView!
     
     private let disposeBag = DisposeBag()
-    private lazy var viewModel = ItemShopViewModel(tabSelected: categoryTabView.tabSelected, selectCell: itemListTableView.rx.modelSelected(ItemListModel.self).asObservable(), purchaseNumberChanged: purchaseControlView.purchaseNumber)
+    private lazy var viewModel = ItemShopViewModel(tabSelected: categoryTabView.tabSelected, selectCell: itemListTableView.rx.modelSelected(ItemListModel.self).asObservable(), purchaseNumberChanged: purchaseControlView.purchaseNumber, hidePurchaseControl: hidePurchaseControlViewEvent)
+    private lazy var hidePurchaseControlViewEvent = Observable.merge(purchaseControlView.hideViewEvent, itemListTableView.rx.didScroll.asObservable()).throttle(.seconds(1), scheduler: MainScheduler())
     
     let dataSource = RxTableViewSectionedReloadDataSource<SectionObItemList>(
       configureCell: { dataSource, tableView, indexPath, item in
@@ -37,6 +38,7 @@ class ItemShopViewController: UIViewController, NavigationChildViewController {
     private func bind() {
         viewModel.itemList.bind(to: itemListTableView.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
         itemListTableView.rx.modelSelected(ItemListModel.self).bind(to: showPurchaseControlView).disposed(by: disposeBag)
+        hidePurchaseControlViewEvent.bind(to: hidePurchaseControlView).disposed(by: disposeBag)
     }
 }
 
@@ -47,6 +49,17 @@ extension ItemShopViewController {
             me.purchaseControlView.setItemListModel(model: item)
             UIView.animate(withDuration: 0.2) {
                 me.purchaseControlView.transform = .identity
+            }
+        }
+    }
+    
+    private var hidePurchaseControlView: Binder<Void> {
+        return Binder(self) { me, _ in
+            guard !me.purchaseControlView.isHidden else { return }
+            UIView.animate(withDuration: 0.2, animations: {
+                me.purchaseControlView.transform = CGAffineTransform(translationX: 0, y: self.purchaseControlView.bounds.height)
+            }) { (_) in
+                me.purchaseControlView.isHidden = true
             }
         }
     }
