@@ -18,9 +18,8 @@ final class ItemShopViewModel {
         let oldItemList = BehaviorSubject<[ItemListModel]>(value: [])
         
         let initialItemList = Observable<[ItemListModel]>
-            .combineLatest(tabSelected,
-                           itemShopModel.itemList,
-                           itemShopModel.possessionItemList) { [unowned self] type, items, possessions in
+            .combineLatest(itemShopModel.itemList,
+                           itemShopModel.possessionItemList) { [unowned self] items, possessions in
                             let itemList = items.map { ItemListModel(item: $0, possessionNumber: possessions[$0.id] ?? 0, purchaseNumber: self.purchaseList[$0.id] ?? 0)}
                             return itemList
         }
@@ -63,7 +62,11 @@ final class ItemShopViewModel {
         let itemListStream = Observable.merge(initialItemList, newItemList, noSelectionList)
         itemListStream.bind(to: oldItemList).disposed(by: disposeBag)
         
-        itemListStream.map { [SectionObItemList(items: $0)] }.bind(to: itemListSubject).disposed(by: disposeBag)
+        let filteredItemListStream = Observable.combineLatest(tabSelected, itemListStream) { ($0, $1) }.map { [unowned self] type, list in
+            list.filter { self.convertItemType(tab: type).contains($0.item.itemType) }
+        }
+        
+        filteredItemListStream.map { [SectionObItemList(items: $0)] }.bind(to: itemListSubject).disposed(by: disposeBag)
         
     }
     

@@ -11,7 +11,7 @@ class ItemShopViewController: UIViewController, NavigationChildViewController {
     
     private let disposeBag = DisposeBag()
     private lazy var viewModel = ItemShopViewModel(tabSelected: categoryTabView.tabSelected, selectCell: itemListTableView.rx.modelSelected(ItemListModel.self).asObservable(), purchaseNumberChanged: purchaseControlView.purchaseNumber, hidePurchaseControl: hidePurchaseControlViewEvent)
-    private lazy var hidePurchaseControlViewEvent = Observable.merge(purchaseControlView.hideViewEvent, itemListTableView.rx.didScroll.asObservable()).throttle(.seconds(1), scheduler: MainScheduler())
+    private lazy var hidePurchaseControlViewEvent = Observable.merge(purchaseControlView.hideViewEvent, itemListTableView.rx.didScroll.asObservable(), categoryTabView.tabSelected.map{ _ in () }).throttle(.seconds(1), scheduler: MainScheduler())
     
     let dataSource = RxTableViewSectionedReloadDataSource<SectionObItemList>(
       configureCell: { dataSource, tableView, indexPath, item in
