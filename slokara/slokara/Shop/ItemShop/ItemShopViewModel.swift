@@ -9,9 +9,7 @@ final class ItemShopViewModel {
         return itemListSubject.asObservable()
     }
     
-    private var purchaseList = [Int: Int]() {
-        willSet { newValue.filter { $0.value > 0 } }
-    }
+    private var purchaseList = [Int: Int]()
     
 
     init(tabSelected: Observable<ItemCategoryTab.TabKind>, selectCell: Observable<ItemListModel>, purchaseNumberChanged: Observable<Int>, itemShopModel: ItemShopModelProtocol = ItemShopModelImpl()) {
@@ -31,11 +29,20 @@ final class ItemShopViewModel {
             var editedItem = item
             self?.purchaseList[editedItem.item.id] = number
             editedItem.purchaseNumber = number
+            editedItem.isSelected = true
             return editedItem
         }
         
         let newItemList = updateItem.withLatestFrom(oldItemList) { ($0, $1) }.map { (item, list) -> [ItemListModel] in
             var newList = list
+            
+            // 過去に選択されていたセルの選択状態を解除
+            if var deSelectItem = list.first(where: { $0.isSelected }),
+               let index = list.firstIndex(where: { $0.item.id == deSelectItem.item.id}) {
+                deSelectItem.isSelected = false
+                newList[index] = deSelectItem
+            }
+            
             if let index = list.firstIndex(where: { $0.item.id == item.item.id }) {
                 newList[index] = item
             }

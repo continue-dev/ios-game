@@ -18,16 +18,9 @@ class ItemShopListCell: UITableViewCell {
             applyPurchaseBorderColor()
         }
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        choosingLayerImageView.isHidden = !selected
-        itemNameLabel.strokeColor = selected ? selectedBorderColor : .black
-        priceLabel.strokeColor = selected ? selectedBorderColor : .black
-        possessionNumberLabel.strokeColor = selected ? selectedBorderColor : .black
-        if purchaseNumber == 0 {
-            purchaseNumberLabel.strokeColor = selected ? selectedBorderColor : .black
-        }
+    
+    var didSelected = false {
+        didSet { applyViewSelection(selected: didSelected) }
     }
     
     func setItem(item: Item) {
@@ -49,6 +42,16 @@ class ItemShopListCell: UITableViewCell {
             purchaseNumberLabel.strokeColor = purchaseBorderColor
         } else {
             purchaseNumberLabel.strokeColor = self.isSelected ? selectedBorderColor : .black
+        }
+    }
+    
+    private func applyViewSelection(selected: Bool) {
+        choosingLayerImageView.isHidden = !selected
+        itemNameLabel.strokeColor = selected ? selectedBorderColor : .black
+        priceLabel.strokeColor = selected ? selectedBorderColor : .black
+        possessionNumberLabel.strokeColor = selected ? selectedBorderColor : .black
+        if purchaseNumber == 0 {
+            purchaseNumberLabel.strokeColor = selected ? selectedBorderColor : .black
         }
     }
 }

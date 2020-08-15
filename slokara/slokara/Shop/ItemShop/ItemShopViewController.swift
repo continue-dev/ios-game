@@ -18,6 +18,7 @@ class ItemShopViewController: UIViewController, NavigationChildViewController {
         cell.setItem(item: item.item)
         cell.setPossession(number: item.possessionNumber)
         cell.setPurchase(number: item.purchaseNumber)
+        cell.didSelected = item.isSelected
         return cell
     })
 
