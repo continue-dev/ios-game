@@ -23,18 +23,22 @@
                             <constraint firstAttribute="width" secondItem="L26-TW-iGy" secondAttribute="height" multiplier="1:1" id="zyt-Av-KiA"/>
                         </constraints>
                     </imageView>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3w9-eZ-3VG">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3w9-eZ-3VG" userLabel="UnderBar">
                         <rect key="frame" x="77.5" y="60.5" width="325.5" height="2"/>
                         <color key="backgroundColor" red="0.79653197529999997" green="0.94214063879999999" blue="0.86665898559999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="2" id="7EF-dh-Shp"/>
                         </constraints>
                     </view>
+                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="choosing_frame" translatesAutoresizingMaskIntoConstraints="NO" id="hKe-Av-kUx">
+                        <rect key="frame" x="6" y="2" width="401" height="73.5"/>
+                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="wjX-kX-uHz" customClass="BorderedLabel" customModule="slokara_dev" customModuleProvider="target">
                         <rect key="frame" x="354.5" y="35.5" width="38.5" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
+                        <size key="shadowOffset" width="0.0" height="0.0"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="strokeSize">
                                 <real key="value" value="4"/>
@@ -54,7 +58,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="k4h-Wr-SLZ" customClass="BorderedLabel" customModule="slokara_dev" customModuleProvider="target">
-                                <rect key="frame" x="26" y="35.5" width="59" height="21"/>
+                                <rect key="frame" x="24" y="35.5" width="63" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -65,6 +69,12 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
                                         <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rightPadding">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
                         </subviews>
@@ -73,9 +83,9 @@
                             <constraint firstItem="jFS-S8-VM1" firstAttribute="height" secondItem="a9m-Vv-nFF" secondAttribute="height" multiplier="1:2" id="0VV-U1-775"/>
                             <constraint firstAttribute="bottom" secondItem="jFS-S8-VM1" secondAttribute="bottom" constant="2" id="7gQ-9V-aMI"/>
                             <constraint firstAttribute="bottom" secondItem="k4h-Wr-SLZ" secondAttribute="bottom" constant="4" id="eLy-6Z-8uO"/>
-                            <constraint firstAttribute="trailing" secondItem="k4h-Wr-SLZ" secondAttribute="trailing" constant="2" id="m5L-84-eXD"/>
+                            <constraint firstAttribute="trailing" secondItem="k4h-Wr-SLZ" secondAttribute="trailing" id="m5L-84-eXD"/>
                             <constraint firstItem="jFS-S8-VM1" firstAttribute="leading" secondItem="a9m-Vv-nFF" secondAttribute="leading" id="qhP-ST-X0v"/>
-                            <constraint firstItem="k4h-Wr-SLZ" firstAttribute="leading" secondItem="jFS-S8-VM1" secondAttribute="trailing" constant="2" id="zlR-zC-XeO"/>
+                            <constraint firstItem="k4h-Wr-SLZ" firstAttribute="leading" secondItem="jFS-S8-VM1" secondAttribute="trailing" id="zlR-zC-XeO"/>
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V0A-SY-bt8">
@@ -88,7 +98,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="Hf0-lU-j2J" customClass="BorderedLabel" customModule="slokara_dev" customModuleProvider="target">
-                                <rect key="frame" x="25.5" y="35.5" width="24.5" height="21"/>
+                                <rect key="frame" x="21.5" y="35.5" width="30.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -99,14 +109,20 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
                                         <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rightPadding">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="SZt-0Y-zx2" firstAttribute="height" secondItem="V0A-SY-bt8" secondAttribute="height" multiplier="1:2" id="5FB-l1-V4X"/>
-                            <constraint firstItem="Hf0-lU-j2J" firstAttribute="leading" secondItem="SZt-0Y-zx2" secondAttribute="trailing" constant="4" id="6FS-j1-7tP"/>
-                            <constraint firstAttribute="trailing" secondItem="Hf0-lU-j2J" secondAttribute="trailing" constant="2" id="NVu-CY-JLY"/>
+                            <constraint firstItem="Hf0-lU-j2J" firstAttribute="leading" secondItem="SZt-0Y-zx2" secondAttribute="trailing" id="6FS-j1-7tP"/>
+                            <constraint firstAttribute="trailing" secondItem="Hf0-lU-j2J" secondAttribute="trailing" id="NVu-CY-JLY"/>
                             <constraint firstItem="SZt-0Y-zx2" firstAttribute="leading" secondItem="V0A-SY-bt8" secondAttribute="leading" id="OU1-RT-93F"/>
                             <constraint firstAttribute="bottom" secondItem="Hf0-lU-j2J" secondAttribute="bottom" constant="4" id="gQ5-HE-A3e"/>
                             <constraint firstAttribute="bottom" secondItem="SZt-0Y-zx2" secondAttribute="bottom" constant="2" id="ud1-ny-kxe"/>
@@ -126,15 +142,13 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </label>
-                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="choosing_frame" translatesAutoresizingMaskIntoConstraints="NO" id="hKe-Av-kUx">
-                        <rect key="frame" x="6" y="2" width="401" height="73.5"/>
-                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="3w9-eZ-3VG" firstAttribute="top" secondItem="V0A-SY-bt8" secondAttribute="bottom" id="016-u4-o9p"/>
                     <constraint firstItem="L26-TW-iGy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="2PZ-IY-oQt"/>
                     <constraint firstItem="3w9-eZ-3VG" firstAttribute="top" secondItem="a9m-Vv-nFF" secondAttribute="bottom" id="44S-pD-VHa"/>
                     <constraint firstAttribute="trailing" secondItem="hKe-Av-kUx" secondAttribute="trailing" constant="16" id="4ee-BM-Wfs"/>
+                    <constraint firstItem="Ghg-Uk-qUv" firstAttribute="top" relation="greaterThanOrEqual" secondItem="L26-TW-iGy" secondAttribute="top" id="9gS-cj-SbI"/>
                     <constraint firstItem="hKe-Av-kUx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="6" id="BIV-0T-DtN"/>
                     <constraint firstItem="L26-TW-iGy" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="1:7" id="EYj-G9-MmP"/>
                     <constraint firstItem="wjX-kX-uHz" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="1:11" id="Ey1-4E-Tao"/>

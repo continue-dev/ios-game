@@ -11,7 +11,7 @@ class ItemShopViewController: UIViewController, NavigationChildViewController {
     
     private let disposeBag = DisposeBag()
     private lazy var viewModel = ItemShopViewModel(tabSelected: categoryTabView.tabSelected, selectCell: itemListTableView.rx.modelSelected(ItemListModel.self).asObservable(), purchaseNumberChanged: purchaseControlView.purchaseNumber, hidePurchaseControl: hidePurchaseControlViewEvent)
-    private lazy var hidePurchaseControlViewEvent = Observable.merge(purchaseControlView.hideViewEvent, itemListTableView.rx.didScroll.asObservable(), categoryTabView.tabSelected.map{ _ in () }).throttle(.seconds(1), scheduler: MainScheduler())
+    private lazy var hidePurchaseControlViewEvent = Observable.merge(purchaseControlView.hideViewEvent, itemListTableView.rx.didScroll.asObservable(), categoryTabView.tabSelected.map{ _ in () }).throttle(.seconds(1), latest: false, scheduler: MainScheduler())
     
     let dataSource = RxTableViewSectionedReloadDataSource<SectionObItemList>(
       configureCell: { dataSource, tableView, indexPath, item in
@@ -39,6 +39,11 @@ class ItemShopViewController: UIViewController, NavigationChildViewController {
         viewModel.itemList.bind(to: itemListTableView.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
         itemListTableView.rx.modelSelected(ItemListModel.self).bind(to: showPurchaseControlView).disposed(by: disposeBag)
         hidePurchaseControlViewEvent.bind(to: hidePurchaseControlView).disposed(by: disposeBag)
+        
+        itemListTableView.rx.didScroll.subscribe({ [unowned self] _ in
+            guard let indicator = self.itemListTableView.subviews.last else { return }
+            indicator.backgroundColor = UIColor(red: 47.0 / 255, green: 214.0 / 255, blue: 130.0 / 255, alpha: 1)
+            }).disposed(by: disposeBag)
     }
 }
 
