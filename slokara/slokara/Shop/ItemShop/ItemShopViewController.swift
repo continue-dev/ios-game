@@ -9,9 +9,14 @@ class ItemShopViewController: UIViewController, NavigationChildViewController {
     @IBOutlet private weak var categoryTabView: ItemCategoryTab!
     @IBOutlet private weak var purchaseControlView: PurchaseControlView!
     
+    @IBOutlet private weak var puchaseControlBottomConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var purchaseControlTopConstraint: NSLayoutConstraint!
+    private var isAnimating = false
+    
     private let disposeBag = DisposeBag()
+    private let tableDragEvent = PublishRelay<Void>()
     private lazy var viewModel = ItemShopViewModel(tabSelected: categoryTabView.tabSelected, selectCell: itemListTableView.rx.modelSelected(ItemListModel.self).asObservable(), purchaseNumberChanged: purchaseControlView.purchaseNumber, hidePurchaseControl: hidePurchaseControlViewEvent)
-    private lazy var hidePurchaseControlViewEvent = Observable.merge(purchaseControlView.hideViewEvent, itemListTableView.rx.didScroll.asObservable(), categoryTabView.tabSelected.map{ _ in () }).throttle(.seconds(1), latest: false, scheduler: MainScheduler())
+    private lazy var hidePurchaseControlViewEvent = Observable.merge(purchaseControlView.hideViewEvent, tableDragEvent.asObservable(), categoryTabView.tabSelected.map{ _ in () }).filter { [unowned self] in !self.purchaseControlView.isHidden && !self.isAnimating  }.throttle(.seconds(1), latest: false, scheduler: MainScheduler())
     
     let dataSource = RxTableViewSectionedReloadDataSource<SectionObItemList>(
       configureCell: { dataSource, tableView, indexPath, item in
@@ -29,15 +34,11 @@ class ItemShopViewController: UIViewController, NavigationChildViewController {
         bind()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        self.purchaseControlView.translatesAutoresizingMaskIntoConstraints = true
-        self.purchaseControlView.transform = CGAffineTransform(translationX: 0, y: self.purchaseControlView.bounds.height)
-    }
-    
     private func bind() {
         viewModel.itemList.bind(to: itemListTableView.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
+        itemListTableView.rx.setDelegate(self).disposed(by: disposeBag)
         itemListTableView.rx.modelSelected(ItemListModel.self).bind(to: showPurchaseControlView).disposed(by: disposeBag)
+        itemListTableView.rx.itemSelected.bind(to: fixTableViewOffset).disposed(by: disposeBag)
         hidePurchaseControlViewEvent.bind(to: hidePurchaseControlView).disposed(by: disposeBag)
         
         itemListTableView.rx.didScroll.subscribe({ [unowned self] _ in
@@ -50,22 +51,47 @@ class ItemShopViewController: UIViewController, NavigationChildViewController {
 extension ItemShopViewController {
     private var showPurchaseControlView: Binder<ItemListModel> {
         return Binder(self) { me, item in
+            me.isAnimating = true
             me.purchaseControlView.isHidden = false
             me.purchaseControlView.setItemListModel(model: item)
-            UIView.animate(withDuration: 0.2) {
-                me.purchaseControlView.transform = .identity
+            UIView.animate(withDuration: 0.2, animations: {
+                me.purchaseControlTopConstraint.isActive = false
+                me.puchaseControlBottomConstraint.isActive = true
+                me.view.layoutIfNeeded()
+            }) { _ in
+                me.isAnimating = false
             }
         }
     }
     
     private var hidePurchaseControlView: Binder<Void> {
         return Binder(self) { me, _ in
-            guard !me.purchaseControlView.isHidden else { return }
+            guard !me.purchaseControlView.isHidden && !me.isAnimating else { return }
+            me.isAnimating = true
             UIView.animate(withDuration: 0.2, animations: {
-                me.purchaseControlView.transform = CGAffineTransform(translationX: 0, y: self.purchaseControlView.bounds.height)
-            }) { (_) in
+                me.purchaseControlTopConstraint.isActive = true
+                me.puchaseControlBottomConstraint.isActive = false
+                me.view.layoutIfNeeded()
+            }) { _ in
                 me.purchaseControlView.isHidden = true
+                me.isAnimating = false
             }
         }
+    }
+    
+    private var fixTableViewOffset: Binder<IndexPath> {
+        return Binder(self) { me, index in
+            let cellRect = me.itemListTableView.rectForRow(at: index)
+            let rectInView = me.itemListTableView.convert(cellRect, to: me.view)
+            if rectInView.maxY >= me.itemListTableView.frame.maxY {
+                me.itemListTableView.scrollToRow(at: index, at: .bottom, animated: true)
+            }
+        }
+    }
+}
+
+extension ItemShopViewController: UIScrollViewDelegate {
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        tableDragEvent.accept(())
     }
 }
