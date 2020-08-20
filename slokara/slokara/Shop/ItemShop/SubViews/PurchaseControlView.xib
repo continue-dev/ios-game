@@ -58,9 +58,6 @@ Lable</string>
                                 <constraint firstAttribute="width" secondItem="359-uM-VIP" secondAttribute="height" multiplier="1:1" id="9do-hH-Es9"/>
                             </constraints>
                             <state key="normal" image="plus_button_green"/>
-                            <connections>
-                                <action selector="plusButtonTapped:" destination="-1" eventType="touchUpInside" id="NjE-kd-LJH"/>
-                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -79,9 +76,6 @@ Lable</string>
                                 <constraint firstAttribute="width" secondItem="p0S-Sc-WR2" secondAttribute="height" multiplier="1:1" id="MaL-Rk-Xzv"/>
                             </constraints>
                             <state key="normal" image="minus_button_green"/>
-                            <connections>
-                                <action selector="minusButtonTapped:" destination="-1" eventType="touchUpInside" id="lGR-d7-MfD"/>
-                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

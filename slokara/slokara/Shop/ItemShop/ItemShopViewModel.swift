@@ -9,13 +9,29 @@ final class ItemShopViewModel {
         return itemListSubject.asObservable()
     }
     
-    private var purchaseList = [Int: Int]()
+    private let costCoinsSubject = BehaviorSubject<Int>(value: 0)
+    var costCoins: Observable<Int> {
+        return costCoinsSubject.asObservable()
+    }
     
+    private let editedPurchaseNumSubject = PublishSubject<Int>()
+    var purchaseNumber: Observable<Int> {
+        return editedPurchaseNumSubject.asObservable()
+    }
+    
+    private var purchaseList = [Int: Int]()
+    private var haveCoins = 0
+    
+    lazy var currentCoins = itemShopModel.currentCoins.do(onNext:{ [weak self] value in self?.haveCoins = value })
 
-    init(tabSelected: Observable<ItemCategoryTab.TabKind>, selectCell: Observable<ItemListModel>, purchaseNumberChanged: Observable<Int>, hidePurchaseControl: Observable<Void>, itemShopModel: ItemShopModelProtocol = ItemShopModelImpl()) {
+    init(tabSelected: Observable<ItemCategoryTab.TabKind>, selectCell: Observable<ItemListModel>, hidePurchaseControl: Observable<Void>, purchasePlusTapped: Observable<Void>, purchaseMinusTapped: Observable<Void>, itemShopModel: ItemShopModelProtocol = ItemShopModelImpl()) {
         self.itemShopModel = itemShopModel
         
         let oldItemList = BehaviorSubject<[ItemListModel]>(value: [])
+        let selectedItemSubject = BehaviorSubject<ItemListModel?>(value: nil)
+        selectCell.bind(to: selectedItemSubject).disposed(by: disposeBag)
+        let selectedItem = selectedItemSubject.asObserver().filter { $0 != nil}.map{ $0!}
+        
         
         let initialItemList = Observable<[ItemListModel]>
             .combineLatest(itemShopModel.itemList,
@@ -24,29 +40,58 @@ final class ItemShopViewModel {
                             return itemList
         }
         
-        let updateItem = purchaseNumberChanged.withLatestFrom(selectCell) { ($0, $1) }.map { [weak self] (number, item) -> ItemListModel in
-            var editedItem = item
-            self?.purchaseList[editedItem.item.id] = number
-            editedItem.purchaseNumber = number
-            editedItem.isSelected = true
-            return editedItem
-        }
+        let incrementItem = purchasePlusTapped
+            .withLatestFrom(selectedItem) { ($0, $1) }
+            .filter { [unowned self] (_, item) in return self.canPurchasingCost(addCost: item.item.price) }
+            .map { [weak self] (_, item) -> ItemListModel in
+                var editedItem = item
+                var purchaseNum = 1
+                if let alredyPurchaseNum = self?.purchaseList[editedItem.item.id] {
+                    purchaseNum += alredyPurchaseNum
+                }
+                self?.purchaseList[editedItem.item.id] = purchaseNum
+                editedItem.purchaseNumber = purchaseNum
+                self?.editedPurchaseNumSubject.onNext(purchaseNum)
+                return editedItem
+        }.share()
         
-        let newItemList = updateItem.withLatestFrom(oldItemList) { ($0, $1) }.map { (item, list) -> [ItemListModel] in
-            var newList = list
-            
-            // 過去に選択されていたセルの選択状態を解除
-            if var deSelectItem = list.first(where: { $0.isSelected }),
-               let index = list.firstIndex(where: { $0.item.id == deSelectItem.item.id}) {
-                deSelectItem.isSelected = false
-                newList[index] = deSelectItem
-            }
-            
-            if let index = list.firstIndex(where: { $0.item.id == item.item.id }) {
-                newList[index] = item
-            }
-            return newList
-        }
+        let decrementItem = purchaseMinusTapped
+            .withLatestFrom(selectedItem) { ($0, $1) }
+            .filter { $1.purchaseNumber > 0 }
+            .map { [weak self] (_, item) -> ItemListModel in
+                var editedItem = item
+                guard let alredyPurchaseNum = self?.purchaseList[editedItem.item.id] else { return editedItem }
+                let purchaseNum = alredyPurchaseNum - 1
+                self?.purchaseList[editedItem.item.id] = purchaseNum
+                editedItem.purchaseNumber = purchaseNum
+                self?.editedPurchaseNumSubject.onNext(purchaseNum)
+                return editedItem
+        }.share()
+        
+        let newItemList = Observable.merge(selectCell, incrementItem, decrementItem)
+            .withLatestFrom(oldItemList) { ($0, $1) }
+            .map { (item, list) -> [ItemListModel] in
+                var newList = list
+                var selectItem = item
+                selectItem.isSelected = true
+                // 過去に選択されていたセルの選択状態を解除
+                if var deSelectItem = list.first(where: { $0.isSelected }),
+                    let index = list.firstIndex(where: { $0.item.id == deSelectItem.item.id}) {
+                    deSelectItem.isSelected = false
+                    newList[index] = deSelectItem
+                }
+                
+                if let index = list.firstIndex(where: { $0.item.id == item.item.id }) {
+                    newList[index] = selectItem
+                }
+                
+                selectedItemSubject.onNext(selectItem)
+                return newList
+        }.share()
+        
+        newItemList.map { list in
+            list.reduce(0) { $0 + $1.purchaseNumber * $1.item.price }
+            }.bind(to: costCoinsSubject).disposed(by: disposeBag)
         
         let noSelectionList = hidePurchaseControl.withLatestFrom(oldItemList) { $1 }.map { list -> [ItemListModel] in
             var newList = list
@@ -62,8 +107,9 @@ final class ItemShopViewModel {
         let itemListStream = Observable.merge(initialItemList, newItemList, noSelectionList)
         itemListStream.bind(to: oldItemList).disposed(by: disposeBag)
         
-        let filteredItemListStream = Observable.combineLatest(tabSelected, itemListStream) { ($0, $1) }.map { [unowned self] type, list in
-            list.filter { self.convertItemType(tab: type).contains($0.item.itemType) }
+        let filteredItemListStream = Observable.combineLatest(tabSelected, itemListStream) { ($0, $1) }
+            .map { [unowned self] type, list in
+                list.filter { self.convertItemType(tab: type).contains($0.item.itemType) }
         }
         
         filteredItemListStream.map { [SectionObItemList(items: $0)] }.bind(to: itemListSubject).disposed(by: disposeBag)
@@ -81,5 +127,10 @@ final class ItemShopViewModel {
         case .equipment:
             return [.equipment]
         }
+    }
+    
+    private func canPurchasingCost(addCost: Int) -> Bool {
+        guard let base = try? costCoinsSubject.value() else { return false }
+        return haveCoins >= base + addCost
     }
 }

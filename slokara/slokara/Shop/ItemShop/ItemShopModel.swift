@@ -1,9 +1,11 @@
 import Foundation
 import RxSwift
+import RealmSwift
 
 protocol ItemShopModelProtocol {
     var itemList: Observable<[Item]> { get }
     var possessionItemList: Observable<[Int: Int]> { get }
+    var currentCoins: Observable<Int> { get }
 }
 
 final class ItemShopModelImpl: ItemShopModelProtocol {
@@ -12,6 +14,11 @@ final class ItemShopModelImpl: ItemShopModelProtocol {
     }
     var possessionItemList: Observable<[Int : Int]> {
         return Observable.just([1: 1])
+    }
+    var currentCoins: Observable<Int> {
+        guard let realm = try? Realm() else { assert(false, "Realmをインスタンス化できませんでした") }
+        guard let status = realm.objects(UserStatus.self).first else { assert(false, "ユーザーステータスを取得できませんでした") }
+        return Observable.just(status.numberOfCoins)
     }
 }
 
