@@ -36,6 +36,11 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MPx-Ni-ktR">
                                 <rect key="frame" x="0.0" y="142.5" width="375" height="524.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="gyX-yh-Qj2" appends="YES" id="zhb-JI-nJO"/>
+                                    <outletCollection property="gestureRecognizers" destination="zR4-Kp-qDn" appends="YES" id="hot-ih-Nc5"/>
+                                </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aBc-6X-edS">
                                 <rect key="frame" x="0.0" y="50" width="375" height="47.5"/>
@@ -144,6 +149,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zsL-bK-yza" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="gyX-yh-Qj2">
+                    <connections>
+                        <action selector="rightSwipeAction:" destination="3ER-wr-T5M" id="cew-R1-8Bl"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="zR4-Kp-qDn">
+                    <connections>
+                        <action selector="leftSwipeAction:" destination="3ER-wr-T5M" id="gls-LK-C7t"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-133.59999999999999" y="101.19940029985008"/>
         </scene>

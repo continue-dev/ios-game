@@ -53,6 +53,28 @@ class ItemShopViewController: UIViewController, NavigationChildViewController {
             indicator.backgroundColor = UIColor(red: 47.0 / 255, green: 214.0 / 255, blue: 130.0 / 255, alpha: 1)
             }).disposed(by: disposeBag)
     }
+    
+    @IBAction func rightSwipeAction(_ sender: UISwipeGestureRecognizer) {
+        guard categoryTabView.canBackPrev() else { return }
+        itemListTableView.layer.add(switchTabTransition(from: .fromLeft), forKey: nil)
+        categoryTabView.switchPrevTab()
+    }
+    
+    @IBAction func leftSwipeAction(_ sender: UISwipeGestureRecognizer) {
+        guard categoryTabView.canGoNext() else { return }
+        itemListTableView.layer.add(switchTabTransition(from: .fromRight), forKey: nil)
+        categoryTabView.switchNextTab()
+    }
+    
+    private func switchTabTransition(from: CATransitionSubtype) -> CATransition {
+        let transition:CATransition = CATransition()
+        transition.startProgress = 0
+        transition.endProgress = 1.0
+        transition.type = .push
+        transition.subtype = from
+        transition.duration = 0.2
+        return transition
+    }
 }
 
 extension ItemShopViewController {
