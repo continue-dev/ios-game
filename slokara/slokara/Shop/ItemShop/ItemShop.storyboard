@@ -132,6 +132,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="cartButton" destination="rcA-m4-4IB" id="U06-RM-ZvY"/>
                         <outlet property="categoryTabView" destination="Pub-YH-tcN" id="A6Q-yD-OId"/>
                         <outlet property="currentCoinsLabel" destination="hI8-If-wo0" id="LYO-0P-Ug1"/>
                         <outlet property="futureCoinsLabel" destination="h1R-BM-Eb5" id="A5k-3o-Mol"/>

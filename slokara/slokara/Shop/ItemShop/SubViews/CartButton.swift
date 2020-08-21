@@ -95,6 +95,7 @@ class CartButton: UIView {
 // Internal method
 extension CartButton {
     func deSelect() {
+        guard state == .highlighted else { return }
         state = .animatingToNormal
     }
 }

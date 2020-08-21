@@ -6,6 +6,8 @@ protocol ItemShopModelProtocol {
     var itemList: Observable<[Item]> { get }
     var possessionItemList: Observable<[Int: Int]> { get }
     var currentCoins: Observable<Int> { get }
+    func savePossessionItemList(list: [Int: Int])
+    func saveFutureCoins(_ coins: Int)
 }
 
 final class ItemShopModelImpl: ItemShopModelProtocol {
@@ -13,12 +15,45 @@ final class ItemShopModelImpl: ItemShopModelProtocol {
         return Observable.just(getItems())
     }
     var possessionItemList: Observable<[Int : Int]> {
-        return Observable.just([1: 1])
+        guard let realm = try? Realm() else { assert(false, "Realmをインスタンス化できませんでした") }
+        let list = realm.objects(ItemPossession.self)
+        if list.isEmpty {
+            return Observable.just([:])
+        } else {
+            var possessionDic = [Int: Int]()
+            list.forEach { possessionDic[$0.itemId] = $0.possessionNumber }
+            return Observable.just(possessionDic)
+        }
     }
     var currentCoins: Observable<Int> {
         guard let realm = try? Realm() else { assert(false, "Realmをインスタンス化できませんでした") }
         guard let status = realm.objects(UserStatus.self).first else { assert(false, "ユーザーステータスを取得できませんでした") }
+        self.status = status
         return Observable.just(status.numberOfCoins)
+    }
+    
+    private var status: UserStatus!
+    
+    func savePossessionItemList(list: [Int : Int]) {
+        guard let realm = try? Realm() else { assert(false, "Realmをインスタンス化できませんでした") }
+        list.forEach { itemPossession in
+            if let item  = realm.object(ofType: ItemPossession.self, forPrimaryKey: itemPossession.key) {
+                try! realm.write {
+                    item.possessionNumber += itemPossession.value
+                }
+            } else {
+                try! realm.write {
+                    realm.add(ItemPossession(id: itemPossession.key, possessionNumber: itemPossession.value))
+                }
+            }
+        }
+    }
+    
+    func saveFutureCoins(_ coins: Int) {
+        guard let realm = try? Realm() else { assert(false, "Realmをインスタンス化できませんでした") }
+        try! realm.write {
+            status.numberOfCoins = coins
+        }
     }
 }
 

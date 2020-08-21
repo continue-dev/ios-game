@@ -19,12 +19,17 @@ final class ItemShopViewModel {
         return editedPurchaseNumSubject.asObservable()
     }
     
+    private let completePurchaseSubject = PublishSubject<Void>()
+    var completePurchase: Observable<Void> {
+        return completePurchaseSubject.asObservable()
+    }
+    
     private var purchaseList = [Int: Int]()
     private var haveCoins = 0
     
     lazy var currentCoins = itemShopModel.currentCoins.do(onNext:{ [weak self] value in self?.haveCoins = value })
 
-    init(tabSelected: Observable<ItemCategoryTab.TabKind>, selectCell: Observable<ItemListModel>, hidePurchaseControl: Observable<Void>, purchasePlusTapped: Observable<Void>, purchaseMinusTapped: Observable<Void>, itemShopModel: ItemShopModelProtocol = ItemShopModelImpl()) {
+    init(tabSelected: Observable<ItemCategoryTab.TabKind>, selectCell: Observable<ItemListModel>, hidePurchaseControl: Observable<Void>, purchasePlusTapped: Observable<Void>, purchaseMinusTapped: Observable<Void>, purchaseButtonTapped: Observable<Void>, itemShopModel: ItemShopModelProtocol = ItemShopModelImpl()) {
         self.itemShopModel = itemShopModel
         
         let oldItemList = BehaviorSubject<[ItemListModel]>(value: [])
@@ -114,6 +119,13 @@ final class ItemShopViewModel {
         
         filteredItemListStream.map { [SectionObItemList(items: $0)] }.bind(to: itemListSubject).disposed(by: disposeBag)
         
+        purchaseButtonTapped.subscribe(onNext: { [weak self] _ in
+            guard let list = self?.purchaseList else { return }
+            guard let cost = try? self?.costCoinsSubject.value(), let current = self?.haveCoins else { return }
+            self?.itemShopModel.savePossessionItemList(list: list.filter { $0.value > 0 })
+            self?.itemShopModel.saveFutureCoins(current - cost)
+            self?.completePurchaseSubject.onNext(())
+        }).disposed(by: disposeBag)
     }
     
     private func convertItemType(tab: ItemCategoryTab.TabKind) -> [Item.ItemType] {
