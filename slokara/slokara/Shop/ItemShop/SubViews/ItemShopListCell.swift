@@ -23,6 +23,14 @@ class ItemShopListCell: UITableViewCell {
         didSet { applyViewSelection(selected: didSelected) }
     }
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        itemNameLabel.setFont(.logoTypeGothic)
+        priceLabel.setFont(.logoTypeGothic)
+        possessionNumberLabel.setFont(.logoTypeGothic)
+        purchaseNumberLabel.setFont(.logoTypeGothic)
+    }
+    
     func setItem(item: Item) {
         iconImageView.image = item.icon
         itemNameLabel.text = item.name

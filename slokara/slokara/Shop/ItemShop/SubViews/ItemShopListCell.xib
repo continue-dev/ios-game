@@ -34,7 +34,7 @@
                         <rect key="frame" x="6" y="2" width="401" height="73.5"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="wjX-kX-uHz" customClass="BorderedLabel" customModule="slokara_dev" customModuleProvider="target">
-                        <rect key="frame" x="354.5" y="35.5" width="38.5" height="21"/>
+                        <rect key="frame" x="354.5" y="32.5" width="38.5" height="21.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -58,7 +58,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="k4h-Wr-SLZ" customClass="BorderedLabel" customModule="slokara_dev" customModuleProvider="target">
-                                <rect key="frame" x="24" y="35.5" width="63" height="21"/>
+                                <rect key="frame" x="24" y="32.5" width="63" height="21.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -75,6 +75,12 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="rightPadding">
                                         <real key="value" value="2"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="topPadding">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="bottomPadding">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
                         </subviews>
@@ -82,9 +88,10 @@
                         <constraints>
                             <constraint firstItem="jFS-S8-VM1" firstAttribute="height" secondItem="a9m-Vv-nFF" secondAttribute="height" multiplier="1:2" id="0VV-U1-775"/>
                             <constraint firstAttribute="bottom" secondItem="jFS-S8-VM1" secondAttribute="bottom" constant="2" id="7gQ-9V-aMI"/>
-                            <constraint firstAttribute="bottom" secondItem="k4h-Wr-SLZ" secondAttribute="bottom" constant="4" id="eLy-6Z-8uO"/>
                             <constraint firstAttribute="trailing" secondItem="k4h-Wr-SLZ" secondAttribute="trailing" id="m5L-84-eXD"/>
                             <constraint firstItem="jFS-S8-VM1" firstAttribute="leading" secondItem="a9m-Vv-nFF" secondAttribute="leading" id="qhP-ST-X0v"/>
+                            <constraint firstItem="k4h-Wr-SLZ" firstAttribute="centerY" secondItem="jFS-S8-VM1" secondAttribute="centerY" id="vLv-cA-7QH"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="k4h-Wr-SLZ" secondAttribute="bottom" id="zjV-4a-Klu"/>
                             <constraint firstItem="k4h-Wr-SLZ" firstAttribute="leading" secondItem="jFS-S8-VM1" secondAttribute="trailing" id="zlR-zC-XeO"/>
                         </constraints>
                     </view>
@@ -98,7 +105,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="Hf0-lU-j2J" customClass="BorderedLabel" customModule="slokara_dev" customModuleProvider="target">
-                                <rect key="frame" x="21.5" y="35.5" width="30.5" height="21"/>
+                                <rect key="frame" x="21.5" y="32.5" width="30.5" height="21.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -115,16 +122,23 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="rightPadding">
                                         <real key="value" value="2"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="topPadding">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="bottomPadding">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Hf0-lU-j2J" firstAttribute="centerY" secondItem="SZt-0Y-zx2" secondAttribute="centerY" id="3ig-yP-GkF"/>
                             <constraint firstItem="SZt-0Y-zx2" firstAttribute="height" secondItem="V0A-SY-bt8" secondAttribute="height" multiplier="1:2" id="5FB-l1-V4X"/>
                             <constraint firstItem="Hf0-lU-j2J" firstAttribute="leading" secondItem="SZt-0Y-zx2" secondAttribute="trailing" id="6FS-j1-7tP"/>
                             <constraint firstAttribute="trailing" secondItem="Hf0-lU-j2J" secondAttribute="trailing" id="NVu-CY-JLY"/>
                             <constraint firstItem="SZt-0Y-zx2" firstAttribute="leading" secondItem="V0A-SY-bt8" secondAttribute="leading" id="OU1-RT-93F"/>
-                            <constraint firstAttribute="bottom" secondItem="Hf0-lU-j2J" secondAttribute="bottom" constant="4" id="gQ5-HE-A3e"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Hf0-lU-j2J" secondAttribute="bottom" id="gQ5-HE-A3e"/>
                             <constraint firstAttribute="bottom" secondItem="SZt-0Y-zx2" secondAttribute="bottom" constant="2" id="ud1-ny-kxe"/>
                         </constraints>
                     </view>
@@ -153,8 +167,9 @@
                     <constraint firstItem="L26-TW-iGy" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="1:7" id="EYj-G9-MmP"/>
                     <constraint firstItem="wjX-kX-uHz" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="1:11" id="Ey1-4E-Tao"/>
                     <constraint firstItem="wjX-kX-uHz" firstAttribute="leading" secondItem="V0A-SY-bt8" secondAttribute="trailing" constant="4" id="J7t-Nd-HEL"/>
-                    <constraint firstItem="3w9-eZ-3VG" firstAttribute="top" secondItem="wjX-kX-uHz" secondAttribute="bottom" constant="4" id="Kwx-3E-gUN"/>
+                    <constraint firstItem="3w9-eZ-3VG" firstAttribute="top" relation="greaterThanOrEqual" secondItem="wjX-kX-uHz" secondAttribute="bottom" id="Kwx-3E-gUN"/>
                     <constraint firstItem="a9m-Vv-nFF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="KxP-Fr-Qws"/>
+                    <constraint firstItem="wjX-kX-uHz" firstAttribute="centerY" secondItem="jFS-S8-VM1" secondAttribute="centerY" id="NPP-tF-g7i"/>
                     <constraint firstItem="hKe-Av-kUx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="RaA-0r-KS1"/>
                     <constraint firstItem="Ghg-Uk-qUv" firstAttribute="leading" secondItem="L26-TW-iGy" secondAttribute="trailing" constant="4" id="TFg-EN-Z1x"/>
                     <constraint firstAttribute="bottom" secondItem="hKe-Av-kUx" secondAttribute="bottom" constant="2" id="UOv-d5-GBA"/>
