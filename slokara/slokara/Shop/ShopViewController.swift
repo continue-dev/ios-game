@@ -36,8 +36,10 @@ extension ShopViewController {
     
     private var transitionReelShop: Binder<Void> {
         return Binder(self) { me, _ in
-            // リールショップ画面へ遷移
-        }
+            let navigation = me.parent as! NavigationViewController
+            let reelShopVC = UIStoryboard(name: "ReelShop", bundle: nil).instantiateInitialViewController() as! ReelShopViewController
+            reelShopVC.title = "リール購入"
+            navigation.push(reelShopVC, animate: true)        }
     }
     
     private var showRewardAd: Binder<Void> {
