@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TaskListTab" customModule="slokara" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TaskListTab" customModule="slokara_dev" customModuleProvider="target">
             <connections>
                 <outlet property="tabView" destination="haa-zN-zHP" id="6K1-2M-qup"/>
             </connections>
@@ -21,37 +21,62 @@
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="haa-zN-zHP">
                     <rect key="frame" x="0.0" y="0.0" width="433" height="78"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5VK-2P-hNt" customClass="TabButton" customModule="slokara" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5VK-2P-hNt" customClass="TabButton" customModule="slokara_dev" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="86" height="78"/>
                             <state key="normal" title="すべて"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="hilightedColor">
+                                    <color key="value" red="0.1436411142" green="0.34986722469999998" blue="0.6549324393" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="tappedTabAction:" destination="-1" eventType="touchUpInside" id="TO3-XY-sy3"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pfP-9b-Tjj" customClass="TabButton" customModule="slokara" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pfP-9b-Tjj" customClass="TabButton" customModule="slokara_dev" customModuleProvider="target">
                             <rect key="frame" x="87" y="0.0" width="85.5" height="78"/>
                             <state key="normal" title="幼"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="hilightedColor">
+                                    <color key="value" red="0.1436411142" green="0.34986722469999998" blue="0.6549324393" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="tappedTabAction:" destination="-1" eventType="touchUpInside" id="xNF-8x-BOD"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S2m-66-opa" customClass="TabButton" customModule="slokara" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S2m-66-opa" customClass="TabButton" customModule="slokara_dev" customModuleProvider="target">
                             <rect key="frame" x="173.5" y="0.0" width="86" height="78"/>
                             <state key="normal" title="初"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="hilightedColor">
+                                    <color key="value" red="0.1436411142" green="0.34986722469999998" blue="0.6549324393" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="tappedTabAction:" destination="-1" eventType="touchUpInside" id="F3Y-8N-qmK"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GQw-Kd-wpq" customClass="TabButton" customModule="slokara" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GQw-Kd-wpq" customClass="TabButton" customModule="slokara_dev" customModuleProvider="target">
                             <rect key="frame" x="260.5" y="0.0" width="85.5" height="78"/>
                             <state key="normal" title="中"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="hilightedColor">
+                                    <color key="value" red="0.1436411142" green="0.34986722469999998" blue="0.6549324393" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="tappedTabAction:" destination="-1" eventType="touchUpInside" id="Krd-oj-cds"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B03-Nq-JW9" customClass="TabButton" customModule="slokara" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B03-Nq-JW9" customClass="TabButton" customModule="slokara_dev" customModuleProvider="target">
                             <rect key="frame" x="347" y="0.0" width="86" height="78"/>
                             <state key="normal" title="高"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="hilightedColor">
+                                    <color key="value" red="0.1436411142" green="0.34986722469999998" blue="0.6549324393" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="tappedTabAction:" destination="-1" eventType="touchUpInside" id="SKu-Tx-Sr0"/>
                             </connections>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PurchaseControlView" customModule="slokara_dev" customModuleProvider="target">
+            <connections>
+                <outlet property="itemImageView" destination="eRU-90-Ip7" id="Gfv-QC-qXN"/>
+                <outlet property="itemInfoLabel" destination="Ht2-KW-h8I" id="1pV-B1-Otj"/>
+                <outlet property="minusButton" destination="p0S-Sc-WR2" id="cpE-zC-fH6"/>
+                <outlet property="plusButton" destination="359-uM-VIP" id="Bju-xS-TIK"/>
+                <outlet property="purchaseNumberLabel" destination="ndM-Tg-D5G" id="MkE-b0-z4M"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="228"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JAj-Y5-nxs">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="2"/>
+                    <color key="backgroundColor" red="0.42745098039215684" green="0.67450980392156867" blue="0.50588235294117645" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="ShZ-MA-9BC"/>
+                    </constraints>
+                </view>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eRU-90-Ip7">
+                    <rect key="frame" x="165.5" y="12" width="83" height="83"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="eRU-90-Ip7" secondAttribute="height" multiplier="1:1" id="KuI-kC-ANQ"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="Ht2-KW-h8I" customClass="CommonFontLabel" customModule="slokara_dev" customModuleProvider="target">
+                    <rect key="frame" x="10" y="105" width="394" height="45"/>
+                    <string key="text">Label
+Lable</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndM-Tg-D5G" customClass="CommonFontLabel" customModule="slokara_dev" customModuleProvider="target">
+                    <rect key="frame" x="194.5" y="160" width="25" height="48"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0QW-vn-5mJ" userLabel="PlusButtonBaseView">
+                    <rect key="frame" x="219.5" y="160" width="194.5" height="48"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="359-uM-VIP">
+                            <rect key="frame" x="73.5" y="0.0" width="48" height="48"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="359-uM-VIP" secondAttribute="height" multiplier="1:1" id="9do-hH-Es9"/>
+                            </constraints>
+                            <state key="normal" image="plus_button_green"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="359-uM-VIP" firstAttribute="centerX" secondItem="0QW-vn-5mJ" secondAttribute="centerX" id="KIy-j5-dpA"/>
+                        <constraint firstAttribute="bottom" secondItem="359-uM-VIP" secondAttribute="bottom" id="UVk-Rm-HC4"/>
+                        <constraint firstItem="359-uM-VIP" firstAttribute="top" secondItem="0QW-vn-5mJ" secondAttribute="top" id="fth-Hp-jHW"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QHW-ww-Yhn" userLabel="MinusButtonBaseView">
+                    <rect key="frame" x="0.0" y="160" width="194.5" height="48"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p0S-Sc-WR2">
+                            <rect key="frame" x="73.5" y="0.0" width="48" height="48"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="p0S-Sc-WR2" secondAttribute="height" multiplier="1:1" id="MaL-Rk-Xzv"/>
+                            </constraints>
+                            <state key="normal" image="minus_button_green"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="p0S-Sc-WR2" secondAttribute="bottom" id="ZhP-KN-xah"/>
+                        <constraint firstItem="p0S-Sc-WR2" firstAttribute="top" secondItem="QHW-ww-Yhn" secondAttribute="top" id="oel-W1-ug2"/>
+                        <constraint firstItem="p0S-Sc-WR2" firstAttribute="centerX" secondItem="QHW-ww-Yhn" secondAttribute="centerX" id="yZJ-2U-4lZ"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.082352941176470587" green="0.21176470588235294" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstItem="eRU-90-Ip7" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="1:5" id="1v4-ut-cf8"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="JAj-Y5-nxs" secondAttribute="trailing" id="6Ey-tQ-9BG"/>
+                <constraint firstItem="ndM-Tg-D5G" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="AaZ-oS-Vgf"/>
+                <constraint firstItem="Ht2-KW-h8I" firstAttribute="top" secondItem="eRU-90-Ip7" secondAttribute="bottom" constant="10" id="DZh-5F-qRb"/>
+                <constraint firstItem="JAj-Y5-nxs" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="GkV-Un-q6B"/>
+                <constraint firstItem="0QW-vn-5mJ" firstAttribute="height" secondItem="ndM-Tg-D5G" secondAttribute="height" id="NO3-wu-frn"/>
+                <constraint firstItem="ndM-Tg-D5G" firstAttribute="centerY" secondItem="QHW-ww-Yhn" secondAttribute="centerY" id="NbG-1w-BWV"/>
+                <constraint firstItem="0QW-vn-5mJ" firstAttribute="leading" secondItem="ndM-Tg-D5G" secondAttribute="trailing" id="OM5-rl-4BJ"/>
+                <constraint firstAttribute="trailing" secondItem="0QW-vn-5mJ" secondAttribute="trailing" id="Pw3-qo-z1H"/>
+                <constraint firstItem="QHW-ww-Yhn" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="VdC-xI-C9R"/>
+                <constraint firstItem="ndM-Tg-D5G" firstAttribute="height" secondItem="QHW-ww-Yhn" secondAttribute="height" id="WHE-pR-RCu"/>
+                <constraint firstItem="0QW-vn-5mJ" firstAttribute="centerY" secondItem="ndM-Tg-D5G" secondAttribute="centerY" id="YaL-e5-lty"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="ndM-Tg-D5G" secondAttribute="bottom" constant="20" id="ZzC-nS-Lco"/>
+                <constraint firstItem="ndM-Tg-D5G" firstAttribute="leading" secondItem="QHW-ww-Yhn" secondAttribute="trailing" id="b6M-Z7-AFT"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Ht2-KW-h8I" secondAttribute="trailing" constant="10" id="iKA-Gg-EwI"/>
+                <constraint firstItem="eRU-90-Ip7" firstAttribute="top" secondItem="JAj-Y5-nxs" secondAttribute="bottom" constant="10" id="oGM-rK-spL"/>
+                <constraint firstItem="Ht2-KW-h8I" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="rIG-YY-g6a"/>
+                <constraint firstItem="ndM-Tg-D5G" firstAttribute="top" secondItem="Ht2-KW-h8I" secondAttribute="bottom" constant="10" id="tXg-Y5-nqu"/>
+                <constraint firstItem="JAj-Y5-nxs" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="uhn-mK-e3O"/>
+                <constraint firstItem="eRU-90-Ip7" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="zDS-px-bKE"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="bj0-NQ-OMZ" appends="YES" id="FAq-03-glo"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="-10.044642857142856"/>
+        </view>
+        <swipeGestureRecognizer direction="down" id="bj0-NQ-OMZ">
+            <connections>
+                <action selector="swipeAction:" destination="-1" id="9zF-On-Ddu"/>
+            </connections>
+        </swipeGestureRecognizer>
+    </objects>
+    <resources>
+        <image name="minus_button_green" width="40.5" height="36"/>
+        <image name="plus_button_green" width="40.5" height="36"/>
+    </resources>
+</document>
