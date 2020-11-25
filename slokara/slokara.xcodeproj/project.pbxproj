@@ -262,6 +262,18 @@
 		6ABF319023AF59660014E0BD /* TaskListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABF318F23AF59660014E0BD /* TaskListModel.swift */; };
 		6ABF319323AF5A5B0014E0BD /* TaskListTab.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6ABF319223AF5A5B0014E0BD /* TaskListTab.xib */; };
 		6ABF319523AF5A6C0014E0BD /* TaskListTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABF319423AF5A6C0014E0BD /* TaskListTab.swift */; };
+		6ACC4D36256E8AC400D5C101 /* ReelShop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6ACC4D35256E8AC400D5C101 /* ReelShop.storyboard */; };
+		6ACC4D37256E8AC400D5C101 /* ReelShop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6ACC4D35256E8AC400D5C101 /* ReelShop.storyboard */; };
+		6ACC4D38256E8AC400D5C101 /* ReelShop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6ACC4D35256E8AC400D5C101 /* ReelShop.storyboard */; };
+		6ACC4D3F256E8AD800D5C101 /* ReelShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACC4D3E256E8AD800D5C101 /* ReelShopViewController.swift */; };
+		6ACC4D40256E8AD800D5C101 /* ReelShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACC4D3E256E8AD800D5C101 /* ReelShopViewController.swift */; };
+		6ACC4D41256E8AD800D5C101 /* ReelShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACC4D3E256E8AD800D5C101 /* ReelShopViewController.swift */; };
+		6ACC4D48256E8AE700D5C101 /* ReelShopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACC4D47256E8AE700D5C101 /* ReelShopViewModel.swift */; };
+		6ACC4D49256E8AE700D5C101 /* ReelShopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACC4D47256E8AE700D5C101 /* ReelShopViewModel.swift */; };
+		6ACC4D4A256E8AE700D5C101 /* ReelShopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACC4D47256E8AE700D5C101 /* ReelShopViewModel.swift */; };
+		6ACC4D51256E8AF200D5C101 /* ReelShopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACC4D50256E8AF200D5C101 /* ReelShopModel.swift */; };
+		6ACC4D52256E8AF200D5C101 /* ReelShopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACC4D50256E8AF200D5C101 /* ReelShopModel.swift */; };
+		6ACC4D53256E8AF200D5C101 /* ReelShopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACC4D50256E8AF200D5C101 /* ReelShopModel.swift */; };
 		6AEC13FD24E2D2D600E33682 /* ItemShopListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEC13FB24E2D2D600E33682 /* ItemShopListCell.swift */; };
 		6AEC13FE24E2D2D600E33682 /* ItemShopListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEC13FB24E2D2D600E33682 /* ItemShopListCell.swift */; };
 		6AEC13FF24E2D2D600E33682 /* ItemShopListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEC13FB24E2D2D600E33682 /* ItemShopListCell.swift */; };
@@ -409,6 +421,10 @@
 		6ABF318F23AF59660014E0BD /* TaskListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListModel.swift; sourceTree = "<group>"; };
 		6ABF319223AF5A5B0014E0BD /* TaskListTab.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskListTab.xib; sourceTree = "<group>"; };
 		6ABF319423AF5A6C0014E0BD /* TaskListTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListTab.swift; sourceTree = "<group>"; };
+		6ACC4D35256E8AC400D5C101 /* ReelShop.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReelShop.storyboard; sourceTree = "<group>"; };
+		6ACC4D3E256E8AD800D5C101 /* ReelShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReelShopViewController.swift; sourceTree = "<group>"; };
+		6ACC4D47256E8AE700D5C101 /* ReelShopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReelShopViewModel.swift; sourceTree = "<group>"; };
+		6ACC4D50256E8AF200D5C101 /* ReelShopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReelShopModel.swift; sourceTree = "<group>"; };
 		6AEC13FB24E2D2D600E33682 /* ItemShopListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemShopListCell.swift; sourceTree = "<group>"; };
 		6AEC13FC24E2D2D600E33682 /* ItemShopListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemShopListCell.xib; sourceTree = "<group>"; };
 		6AEC144324E5165D00E33682 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
@@ -605,6 +621,7 @@
 		6A5E310124D6FCDB00FDBBEE /* Shop */ = {
 			isa = PBXGroup;
 			children = (
+				6ACC4D34256E8A9C00D5C101 /* ReelShop */,
 				6A5E310A24D9D26600FDBBEE /* ItemShop */,
 				6A5E310224D6FD2200FDBBEE /* Shop.storyboard */,
 				6A5E310624D6FD3900FDBBEE /* ShopViewController.swift */,
@@ -738,6 +755,17 @@
 				6A1C490723B26CCD00261DF5 /* TaskListCell.swift */,
 			);
 			path = SubViews;
+			sourceTree = "<group>";
+		};
+		6ACC4D34256E8A9C00D5C101 /* ReelShop */ = {
+			isa = PBXGroup;
+			children = (
+				6ACC4D35256E8AC400D5C101 /* ReelShop.storyboard */,
+				6ACC4D3E256E8AD800D5C101 /* ReelShopViewController.swift */,
+				6ACC4D47256E8AE700D5C101 /* ReelShopViewModel.swift */,
+				6ACC4D50256E8AF200D5C101 /* ReelShopModel.swift */,
+			);
+			path = ReelShop;
 			sourceTree = "<group>";
 		};
 		981D12DE23B4538A002A6B1E /* Models */ = {
@@ -1048,6 +1076,7 @@
 				6A8BEBB92451AA6900142587 /* Oranienbaum.ttf in Resources */,
 				6A8BEC8C245BB9C500142587 /* TuningReel.storyboard in Resources */,
 				6A8BEBBA2451AA6900142587 /* TaskListCell.xib in Resources */,
+				6ACC4D37256E8AC400D5C101 /* ReelShop.storyboard in Resources */,
 				6A5E312224D9D93400FDBBEE /* CartButton.xib in Resources */,
 				6A8BEC302458A06F00142587 /* AttributeSelectView.xib in Resources */,
 				6A8BEBBB2451AA6900142587 /* Assets.xcassets in Resources */,
@@ -1088,6 +1117,7 @@
 				6A8BEC7224597F3C00142587 /* Oranienbaum.ttf in Resources */,
 				6A8BEC8D245BB9C600142587 /* TuningReel.storyboard in Resources */,
 				6A8BEC7324597F3C00142587 /* TaskListCell.xib in Resources */,
+				6ACC4D38256E8AC400D5C101 /* ReelShop.storyboard in Resources */,
 				6A5E312324D9D93400FDBBEE /* CartButton.xib in Resources */,
 				6A8BEC7424597F3C00142587 /* AttributeSelectView.xib in Resources */,
 				6A8BEC7524597F3C00142587 /* Assets.xcassets in Resources */,
@@ -1135,6 +1165,7 @@
 				6A1C490D23B8E8C500261DF5 /* AlertView.xib in Resources */,
 				6ABF319323AF5A5B0014E0BD /* TaskListTab.xib in Resources */,
 				98367113239810E000F590ED /* Navigation.storyboard in Resources */,
+				6ACC4D36256E8AC400D5C101 /* ReelShop.storyboard in Resources */,
 				6A599E8A2426807200067D7A /* ReelView.xib in Resources */,
 				6A5A8A442434F40200F8A829 /* Cleared.storyboard in Resources */,
 				6A1C491423B9DE1F00261DF5 /* TaskConfirm.storyboard in Resources */,
@@ -1267,6 +1298,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6ACC4D49256E8AE700D5C101 /* ReelShopViewModel.swift in Sources */,
 				6A8BEB862451AA6900142587 /* ClearedModel.swift in Sources */,
 				6A8BEB872451AA6900142587 /* Reel.swift in Sources */,
 				6A8BEB882451AA6900142587 /* BattleProgressView.swift in Sources */,
@@ -1283,6 +1315,7 @@
 				6A5E311124D9D29400FDBBEE /* ItemShopViewController.swift in Sources */,
 				6AEC13FE24E2D2D600E33682 /* ItemShopListCell.swift in Sources */,
 				6A8BEC21245725B000142587 /* TuningStageTableViewCell.swift in Sources */,
+				6ACC4D52256E8AF200D5C101 /* ReelShopModel.swift in Sources */,
 				6A5E310824D6FD3900FDBBEE /* ShopViewController.swift in Sources */,
 				6A8BEB8F2451AA6900142587 /* TaskListViewController.swift in Sources */,
 				6A8BEB902451AA6900142587 /* Enemy.swift in Sources */,
@@ -1327,6 +1360,7 @@
 				6A8BEBA92451AA6900142587 /* HomeViewController.swift in Sources */,
 				6A8BEBAA2451AA6900142587 /* NavigationModel.swift in Sources */,
 				6A8BEC332458A0F800142587 /* AttributeSelectView.swift in Sources */,
+				6ACC4D40256E8AD800D5C101 /* ReelShopViewController.swift in Sources */,
 				6A8BEBAB2451AA6900142587 /* BorderedLabel.swift in Sources */,
 				6A8BEBAC2451AA6900142587 /* ToggleButton.swift in Sources */,
 				6A5E311524D9D2AA00FDBBEE /* ItemShopViewModel.swift in Sources */,
@@ -1341,6 +1375,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6ACC4D4A256E8AE700D5C101 /* ReelShopViewModel.swift in Sources */,
 				6A8BEC3824597F3C00142587 /* ClearedModel.swift in Sources */,
 				6A8BEC3924597F3C00142587 /* Reel.swift in Sources */,
 				6A8BEC3A24597F3C00142587 /* BattleProgressView.swift in Sources */,
@@ -1357,6 +1392,7 @@
 				6A5E311224D9D29400FDBBEE /* ItemShopViewController.swift in Sources */,
 				6AEC13FF24E2D2D600E33682 /* ItemShopListCell.swift in Sources */,
 				6A8BEC4224597F3C00142587 /* TuningStageTableViewCell.swift in Sources */,
+				6ACC4D53256E8AF200D5C101 /* ReelShopModel.swift in Sources */,
 				6A5E310924D6FD3900FDBBEE /* ShopViewController.swift in Sources */,
 				6A8BEC4324597F3C00142587 /* TaskListViewController.swift in Sources */,
 				6A8BEC4424597F3C00142587 /* Enemy.swift in Sources */,
@@ -1401,6 +1437,7 @@
 				6A8BEC5F24597F3C00142587 /* HomeViewController.swift in Sources */,
 				6A8BEC6024597F3C00142587 /* NavigationModel.swift in Sources */,
 				6A8BEC6124597F3C00142587 /* AttributeSelectView.swift in Sources */,
+				6ACC4D41256E8AD800D5C101 /* ReelShopViewController.swift in Sources */,
 				6A8BEC6224597F3C00142587 /* BorderedLabel.swift in Sources */,
 				6A8BEC6324597F3C00142587 /* ToggleButton.swift in Sources */,
 				6A5E311624D9D2AA00FDBBEE /* ItemShopViewModel.swift in Sources */,
@@ -1425,6 +1462,7 @@
 				98367115239810F200F590ED /* NavigationViewModel.swift in Sources */,
 				6A5E310724D6FD3900FDBBEE /* ShopViewController.swift in Sources */,
 				6AA5AE8024603EB6003BCBD9 /* EditParameter.swift in Sources */,
+				6ACC4D51256E8AF200D5C101 /* ReelShopModel.swift in Sources */,
 				6A1C491623B9DE2B00261DF5 /* TaskConfirmViewController.swift in Sources */,
 				6AA5AE56245F0565003BCBD9 /* DormitoryViewController.swift in Sources */,
 				6A5E311424D9D2AA00FDBBEE /* ItemShopViewModel.swift in Sources */,
@@ -1438,10 +1476,12 @@
 				6A5A8A462434F77400F8A829 /* ClearedViewController.swift in Sources */,
 				6A599E852426786800067D7A /* BattleViewModel.swift in Sources */,
 				6A1C491123B903D200261DF5 /* BorderedButton.swift in Sources */,
+				6ACC4D3F256E8AD800D5C101 /* ReelShopViewController.swift in Sources */,
 				6AA5AE67245F10DE003BCBD9 /* ParameterViewController.swift in Sources */,
 				981D12DD23B0DDCA002A6B1E /* TabButton.swift in Sources */,
 				6A5E311D24D9D91B00FDBBEE /* CartButton.swift in Sources */,
 				6A5A8A4F243C6AD300F8A829 /* Array+.swift in Sources */,
+				6ACC4D48256E8AE700D5C101 /* ReelShopViewModel.swift in Sources */,
 				6A599E8C242682B500067D7A /* ReelView.swift in Sources */,
 				6A5A8A482436227300F8A829 /* ClearedViewModel.swift in Sources */,
 				98D0497C239953AF00CA868A /* NavigationChildViewController.swift in Sources */,
