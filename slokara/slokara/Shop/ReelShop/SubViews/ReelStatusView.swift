@@ -7,6 +7,13 @@ class ReelStatusView: UIView {
     @IBOutlet private weak var leftBredgeView: UIView!
     @IBOutlet private weak var rightBredgeView: UIView!
     @IBOutlet private weak var reelImageView: UIImageView!
+    @IBOutlet private weak var titleLabel: BorderedLabel!
+    
+    private var statusType: ShopReelStatus = .disable {
+        didSet {
+            applyState(type: statusType)
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -19,6 +26,10 @@ class ReelStatusView: UIView {
     }
     
     func setState(type: ShopReelStatus) {
+        statusType = type
+    }
+    
+    private func applyState(type: ShopReelStatus) {        
         if case .hold(let contacts) = type {
             backgroundColor = contacts.count >= 4 ? .white : .black
             topBridgeView.isHidden = !contacts.contains(.top)
@@ -30,6 +41,9 @@ class ReelStatusView: UIView {
         }
         
         reelImageView.image = type.reelImage
+        titleLabel.text = type.title
+        titleLabel.textColor = type.titleColor
+        titleLabel.strokeSize = type == .selected ? 2 : 0
     }
     
     private func setUp() {
@@ -37,9 +51,26 @@ class ReelStatusView: UIView {
         view.frame = self.bounds
         view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         addSubview(view)
+        
+        titleLabel.setFont(.logoTypeGothic)
+        
+        let recognizer = UITapGestureRecognizer(target: self, action: #selector(didTap(_:)))
+        addGestureRecognizer(recognizer)
     }
     
-    enum ShopReelStatus {
+    @objc
+    private func didTap(_ sender: UITapGestureRecognizer) {
+        switch statusType {
+        case .onSale:
+            statusType = .selected
+        case .selected:
+            statusType = .onSale
+        default:
+            return
+        }
+    }
+    
+    enum ShopReelStatus: Equatable {
         case onSale                 // 購入可能
         case selected               // 選択中
         case hold([ContactArea])    // 保有済
@@ -56,6 +87,30 @@ class ReelStatusView: UIView {
                 return UIImage(named: "shop_reel_selected")
             default:
                 return nil
+            }
+        }
+        
+        var title: String {
+            switch self {
+            case .center, .hold(_):
+                return "取得済み"
+            case .onSale:
+                return "購入する"
+            case .selected:
+                return "選択中"
+            default:
+                return ""
+            }
+        }
+        
+        var titleColor: UIColor {
+            switch self {
+            case .center, .hold(_):
+                return .black
+            case .onSale, .selected:
+                return .white
+            default:
+                return .clear
             }
         }
         
