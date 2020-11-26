@@ -60,19 +60,19 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HeS-nA-dti">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="93.5"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mTN-9d-v1V">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mTN-9d-v1V" customClass="ReelStatusView" customModule="slokara_dev" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="93.5" height="93.5"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hze-As-N7l">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hze-As-N7l" customClass="ReelStatusView" customModule="slokara_dev" customModuleProvider="target">
                                                         <rect key="frame" x="93.5" y="0.0" width="93.5" height="93.5"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fli-8q-tUi">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fli-8q-tUi" customClass="ReelStatusView" customModule="slokara_dev" customModuleProvider="target">
                                                         <rect key="frame" x="187" y="0.0" width="93.5" height="93.5"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bqM-lJ-a1h">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bqM-lJ-a1h" customClass="ReelStatusView" customModule="slokara_dev" customModuleProvider="target">
                                                         <rect key="frame" x="280.5" y="0.0" width="93.5" height="93.5"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     </view>
@@ -86,19 +86,19 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fec-KT-ehi">
                                                 <rect key="frame" x="0.0" y="93.5" width="374" height="93.5"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4It-Ml-4dB">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4It-Ml-4dB" customClass="ReelStatusView" customModule="slokara_dev" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="93.5" height="93.5"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ycP-8o-deQ">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ycP-8o-deQ" customClass="ReelStatusView" customModule="slokara_dev" customModuleProvider="target">
                                                         <rect key="frame" x="93.5" y="0.0" width="93.5" height="93.5"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="reg-G8-503">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="reg-G8-503" customClass="ReelStatusView" customModule="slokara_dev" customModuleProvider="target">
                                                         <rect key="frame" x="187" y="0.0" width="93.5" height="93.5"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3eK-tr-BCL">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3eK-tr-BCL" customClass="ReelStatusView" customModule="slokara_dev" customModuleProvider="target">
                                                         <rect key="frame" x="280.5" y="0.0" width="93.5" height="93.5"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     </view>
@@ -112,19 +112,19 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4kv-cC-L0R">
                                                 <rect key="frame" x="0.0" y="187" width="374" height="93.5"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tcl-si-UnQ">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tcl-si-UnQ" customClass="ReelStatusView" customModule="slokara_dev" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="93.5" height="93.5"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YSx-jT-VCr">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YSx-jT-VCr" customClass="ReelStatusView" customModule="slokara_dev" customModuleProvider="target">
                                                         <rect key="frame" x="93.5" y="0.0" width="93.5" height="93.5"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yA6-aF-O3u">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yA6-aF-O3u" customClass="ReelStatusView" customModule="slokara_dev" customModuleProvider="target">
                                                         <rect key="frame" x="187" y="0.0" width="93.5" height="93.5"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EOJ-pv-D9Z">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EOJ-pv-D9Z" customClass="ReelStatusView" customModule="slokara_dev" customModuleProvider="target">
                                                         <rect key="frame" x="280.5" y="0.0" width="93.5" height="93.5"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     </view>
@@ -138,19 +138,19 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fBN-9n-Lll">
                                                 <rect key="frame" x="0.0" y="280.5" width="374" height="93.5"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1hA-Oq-rME">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1hA-Oq-rME" customClass="ReelStatusView" customModule="slokara_dev" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="93.5" height="93.5"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hXT-qf-S4w">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hXT-qf-S4w" customClass="ReelStatusView" customModule="slokara_dev" customModuleProvider="target">
                                                         <rect key="frame" x="93.5" y="0.0" width="93.5" height="93.5"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BxX-2w-Ew7">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BxX-2w-Ew7" customClass="ReelStatusView" customModule="slokara_dev" customModuleProvider="target">
                                                         <rect key="frame" x="187" y="0.0" width="93.5" height="93.5"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vQl-hI-tay">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vQl-hI-tay" customClass="ReelStatusView" customModule="slokara_dev" customModuleProvider="target">
                                                         <rect key="frame" x="280.5" y="0.0" width="93.5" height="93.5"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     </view>
