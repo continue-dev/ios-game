@@ -27,6 +27,11 @@ struct Reel: Codable {
         return [top, center, bottom].filter { $0.contains(true) }
     }
     
+    init(object: ReelStatus) {
+        top = [object.topLeft, object.topCenter, object.topRight]
+        center = [object.middleLeft, object.middleCenter, object.middleRight]
+        bottom = [object.bottomLeft, object.bottomCenter, object.bottomRight]
+    }
 }
 
 enum ReelLine {
