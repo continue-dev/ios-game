@@ -32,6 +32,12 @@ struct Reel: Codable {
         center = [object.middleLeft, object.middleCenter, object.middleRight]
         bottom = [object.bottomLeft, object.bottomCenter, object.bottomRight]
     }
+    
+    init(top: [Bool], center: [Bool], bottom: [Bool]) {
+        self.top = top
+        self.center = center
+        self.bottom = bottom
+    }
 }
 
 enum ReelLine {
