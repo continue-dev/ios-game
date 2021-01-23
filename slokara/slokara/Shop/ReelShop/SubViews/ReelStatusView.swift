@@ -6,6 +6,10 @@ class ReelStatusView: UIView {
     @IBOutlet private weak var bottomBredgeView: UIView!
     @IBOutlet private weak var leftBredgeView: UIView!
     @IBOutlet private weak var rightBredgeView: UIView!
+    @IBOutlet private weak var topLeftCornerView: UIView!
+    @IBOutlet private weak var topRightCornerView: UIView!
+    @IBOutlet private weak var bottomLeftCornerView: UIView!
+    @IBOutlet private weak var bottomRightCornerView: UIView!
     @IBOutlet private weak var reelImageView: UIImageView!
     @IBOutlet private weak var titleLabel: BorderedLabel!
     
@@ -31,11 +35,13 @@ class ReelStatusView: UIView {
     
     private func applyState(type: ShopReelStatus) {        
         if case .hold(let contacts) = type {
-            backgroundColor = contacts.count >= 4 ? .white : .black
+            backgroundColor = .black
             topBridgeView.isHidden = !contacts.contains(.top)
             bottomBredgeView.isHidden = !contacts.contains(.bottom)
             leftBredgeView.isHidden = !contacts.contains(.left)
             rightBredgeView.isHidden = !contacts.contains(.right)
+            
+            applyCornerView(contacts: contacts)
         } else {
             backgroundColor = .clear
         }
@@ -44,6 +50,14 @@ class ReelStatusView: UIView {
         titleLabel.text = type.title
         titleLabel.textColor = type.titleColor
         titleLabel.strokeSize = type == .selected ? 2 : 0
+    }
+    
+    private func applyCornerView(contacts: [ShopReelStatus.ContactArea]) {
+        let currentSet = Set(contacts)
+        topLeftCornerView.isHidden = !Set<ShopReelStatus.ContactArea>([.top, .left, .topLeft]).isSubset(of: currentSet)
+        topRightCornerView.isHidden = !Set<ShopReelStatus.ContactArea>([.top, .right, .topRight]).isSubset(of: currentSet)
+        bottomLeftCornerView.isHidden = !Set<ShopReelStatus.ContactArea>([.bottom, .left, .bottomLeft]).isSubset(of: currentSet)
+        bottomRightCornerView.isHidden = !Set<ShopReelStatus.ContactArea>([.right, .bottom, .bottomRight]).isSubset(of: currentSet)
     }
     
     private func setUp() {
@@ -115,7 +129,7 @@ class ReelStatusView: UIView {
         }
         
         enum ContactArea {
-            case top, bottom, left, right
+            case top, bottom, left, right, topLeft, topRight, bottomLeft, bottomRight
         }
     }
 }
