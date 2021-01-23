@@ -10,7 +10,7 @@ class ReelShopViewController: UIViewController, NavigationChildViewController {
     @IBOutlet private weak var shoppingView: ReelShoppingView!
     
     private let disposeBag = DisposeBag()
-    private lazy var viewModel = ReelShopViewModel(reelStatus: shoppingView.reelStateObservable)
+    private lazy var viewModel = ReelShopViewModel(reelStatus: shoppingView.reelStateObservable, enterButtonTapped: enterButton.buttonTapped)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +31,8 @@ class ReelShopViewController: UIViewController, NavigationChildViewController {
             }
             .bind(to: canSopping)
             .disposed(by: disposeBag)
+        
+        enterButton.buttonTapped.bind(to: dismiss).disposed(by: disposeBag)
     }
 }
 
@@ -39,6 +41,13 @@ extension ReelShopViewController {
         return Binder(self) { me, can in
             me.paymentCoinsLabel.textColor = can ? .white : .red
             me.enterButton.isHidden = !can
+        }
+    }
+    
+    private var dismiss: Binder<Void> {
+        return Binder(self) { me, _ in
+            let navigation = me.parent as! NavigationViewController
+            navigation.popViewController(animate: true)
         }
     }
 }
