@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReelShoppingView" customModule="slokara_dev" customModuleProvider="target">
+            <connections>
+                <outlet property="firstStackView" destination="ZLF-Pn-Tet" id="lOP-CK-ki3"/>
+                <outlet property="secondStackView" destination="dPA-OG-lFG" id="ULJ-4m-jjq"/>
+                <outlet property="thirdStackView" destination="20A-5z-apB" id="HaG-Xx-uss"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="DMf-zv-Nqn">
+                    <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZLF-Pn-Tet">
+                            <rect key="frame" x="0.0" y="0.0" width="400" height="133.5"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x8Z-YT-w1a" customClass="ReelStatusView" customModule="slokara_dev" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="133.5" height="133.5"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ERv-Sm-Gax" customClass="ReelStatusView" customModule="slokara_dev" customModuleProvider="target">
+                                    <rect key="frame" x="133.5" y="0.0" width="133" height="133.5"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DTH-22-jCS" customClass="ReelStatusView" customModule="slokara_dev" customModuleProvider="target">
+                                    <rect key="frame" x="266.5" y="0.0" width="133.5" height="133.5"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="DTH-22-jCS" firstAttribute="width" secondItem="x8Z-YT-w1a" secondAttribute="width" id="iwy-zz-bPP"/>
+                                <constraint firstItem="ERv-Sm-Gax" firstAttribute="width" secondItem="x8Z-YT-w1a" secondAttribute="width" id="tQ0-ig-PK6"/>
+                            </constraints>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dPA-OG-lFG">
+                            <rect key="frame" x="0.0" y="133.5" width="400" height="133"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fkh-ie-iMb" customClass="ReelStatusView" customModule="slokara_dev" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="133.5" height="133"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Kb-F6-b3a" customClass="ReelStatusView" customModule="slokara_dev" customModuleProvider="target">
+                                    <rect key="frame" x="133.5" y="0.0" width="133" height="133"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="whM-7L-sMm" customClass="ReelStatusView" customModule="slokara_dev" customModuleProvider="target">
+                                    <rect key="frame" x="266.5" y="0.0" width="133.5" height="133"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="whM-7L-sMm" firstAttribute="width" secondItem="fkh-ie-iMb" secondAttribute="width" id="KdW-w0-9PU"/>
+                                <constraint firstItem="6Kb-F6-b3a" firstAttribute="width" secondItem="fkh-ie-iMb" secondAttribute="width" id="tIC-Ne-llS"/>
+                            </constraints>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="20A-5z-apB">
+                            <rect key="frame" x="0.0" y="266.5" width="400" height="133.5"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cPm-Ns-ON3" customClass="ReelStatusView" customModule="slokara_dev" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="133.5" height="133.5"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YZS-6A-Cp9" customClass="ReelStatusView" customModule="slokara_dev" customModuleProvider="target">
+                                    <rect key="frame" x="133.5" y="0.0" width="133" height="133.5"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ge-ma-Mae" customClass="ReelStatusView" customModule="slokara_dev" customModuleProvider="target">
+                                    <rect key="frame" x="266.5" y="0.0" width="133.5" height="133.5"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="8ge-ma-Mae" firstAttribute="width" secondItem="cPm-Ns-ON3" secondAttribute="width" id="3yS-4c-1yU"/>
+                                <constraint firstItem="YZS-6A-Cp9" firstAttribute="width" secondItem="cPm-Ns-ON3" secondAttribute="width" id="svr-WB-YFf"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="fkh-ie-iMb" firstAttribute="height" secondItem="x8Z-YT-w1a" secondAttribute="height" id="CAT-o5-JAC"/>
+                        <constraint firstItem="cPm-Ns-ON3" firstAttribute="height" secondItem="x8Z-YT-w1a" secondAttribute="height" id="Y7F-CB-FvI"/>
+                        <constraint firstAttribute="width" secondItem="DMf-zv-Nqn" secondAttribute="height" multiplier="1:1" id="a3G-2b-aXs"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="DMf-zv-Nqn" secondAttribute="bottom" id="Kb9-Vu-GbU"/>
+                <constraint firstItem="DMf-zv-Nqn" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="QD7-g3-nkT"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="DMf-zv-Nqn" secondAttribute="trailing" id="eXD-F4-bGb"/>
+                <constraint firstItem="DMf-zv-Nqn" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="lco-wE-cKX"/>
+                <constraint firstItem="DMf-zv-Nqn" firstAttribute="width" secondItem="DMf-zv-Nqn" secondAttribute="height" multiplier="1:1" id="zmv-9k-Fcj"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="139" y="98"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
