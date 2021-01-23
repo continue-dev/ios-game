@@ -1,4 +1,5 @@
 import UIKit
+import RxSwift
 
 class ReelStatusView: UIView {
     
@@ -19,6 +20,11 @@ class ReelStatusView: UIView {
         }
     }
     
+    private let tapedRelay = PublishSubject<Void>()
+    var taped: Observable<Void> {
+        return tapedRelay.asObservable()
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUp()
@@ -31,6 +37,10 @@ class ReelStatusView: UIView {
     
     func setState(type: ShopReelStatus) {
         statusType = type
+    }
+    
+    func getState() -> ShopReelStatus {
+        return statusType
     }
     
     private func applyState(type: ShopReelStatus) {        
@@ -77,8 +87,10 @@ class ReelStatusView: UIView {
         switch statusType {
         case .onSale:
             statusType = .selected
+            tapedRelay.onNext(())
         case .selected:
             statusType = .onSale
+            tapedRelay.onNext(())
         default:
             return
         }

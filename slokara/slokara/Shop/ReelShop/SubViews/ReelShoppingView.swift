@@ -1,4 +1,5 @@
 import UIKit
+import RxSwift
 
 class ReelShoppingView: UIView {
     @IBOutlet private weak var firstStackView: UIStackView!
@@ -6,6 +7,12 @@ class ReelShoppingView: UIView {
     @IBOutlet private weak var thirdStackView: UIStackView!
     
     private var reelStatus: [[ReelStatusView.ShopReelStatus]]!
+    private let disposeBag = DisposeBag()
+    
+    private let reelStatusRelay = PublishSubject<[[ReelStatusView.ShopReelStatus]]>()
+    var reelStateObservable: Observable<[[ReelStatusView.ShopReelStatus]]> {
+        reelStatusRelay.asObservable()
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -30,15 +37,39 @@ class ReelShoppingView: UIView {
     }
     
     private func applyReel() {
-        (firstStackView.arrangedSubviews[0] as? ReelStatusView)?.setState(type: self.reelStatus[0][0])
-        (firstStackView.arrangedSubviews[1] as? ReelStatusView)?.setState(type: self.reelStatus[0][1])
-        (firstStackView.arrangedSubviews[2] as? ReelStatusView)?.setState(type: self.reelStatus[0][2])
-        (secondStackView.arrangedSubviews[0] as? ReelStatusView)?.setState(type: self.reelStatus[1][0])
-        (secondStackView.arrangedSubviews[1] as? ReelStatusView)?.setState(type: self.reelStatus[1][1])
-        (secondStackView.arrangedSubviews[2] as? ReelStatusView)?.setState(type: self.reelStatus[1][2])
-        (thirdStackView.arrangedSubviews[0] as? ReelStatusView)?.setState(type: self.reelStatus[2][0])
-        (thirdStackView.arrangedSubviews[1] as? ReelStatusView)?.setState(type: self.reelStatus[2][1])
-        (thirdStackView.arrangedSubviews[2] as? ReelStatusView)?.setState(type: self.reelStatus[2][2])
+        guard let topLeft = firstStackView.arrangedSubviews[0] as? ReelStatusView,
+              let topMiddle = firstStackView.arrangedSubviews[1] as? ReelStatusView,
+              let topRight = firstStackView.arrangedSubviews[2] as? ReelStatusView,
+              let centerLeft = secondStackView.arrangedSubviews[0] as? ReelStatusView,
+              let centerMiddle = secondStackView.arrangedSubviews[1] as? ReelStatusView,
+              let centerRight = secondStackView.arrangedSubviews[2] as? ReelStatusView,
+              let bottomLeft = thirdStackView.arrangedSubviews[0] as? ReelStatusView,
+              let bottomMiddle = thirdStackView.arrangedSubviews[1] as? ReelStatusView,
+              let bottomRight = thirdStackView.arrangedSubviews[2] as? ReelStatusView else { return }
+        
+        topLeft.setState(type: self.reelStatus[0][0])
+        topMiddle.setState(type: self.reelStatus[0][1])
+        topRight.setState(type: self.reelStatus[0][2])
+        centerLeft.setState(type: self.reelStatus[1][0])
+        centerMiddle.setState(type: self.reelStatus[1][1])
+        centerRight.setState(type: self.reelStatus[1][2])
+        bottomLeft.setState(type: self.reelStatus[2][0])
+        bottomMiddle.setState(type: self.reelStatus[2][1])
+        bottomRight.setState(type: self.reelStatus[2][2])
+        
+        Observable.merge([
+            topLeft.taped, topMiddle.taped, topRight.taped,
+            centerLeft.taped, centerMiddle.taped, centerRight.taped,
+            bottomLeft.taped, bottomMiddle.taped, bottomRight.taped
+        ]).subscribe(onNext: { [weak self] (_) in
+            let newReel = [
+                [topLeft.getState(), topMiddle.getState(), topRight.getState()],
+                [centerLeft.getState(), centerMiddle.getState(), centerRight.getState()],
+                [bottomLeft.getState(), bottomMiddle.getState(), bottomRight.getState()]
+            ]
+            self?.reelStatusRelay.onNext(newReel)
+        }).disposed(by: disposeBag)
+
     }
     
     private func trancerateStatus(reel: Reel) -> [[ReelStatusView.ShopReelStatus]] {
