@@ -14,7 +14,7 @@ class ItemPossession: Object {
         self.possessionNumber = possessionNumber
     }
     
-    required init() {
+    required override init() {
         self.itemId = -1
         self.possessionNumber = 0
     }
