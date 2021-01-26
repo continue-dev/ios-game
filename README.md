@@ -13,6 +13,10 @@ MVVM
 RxSwift https://github.com/ReactiveX/RxSwift
 Realm https://github.com/realm/realm-cocoa
 
+ ### Install
+ 1. リポジトリをクローン
+ 2. 'pod install'
+
 ### CustomViews
 
 #### NavigationViewController
