@@ -16,7 +16,7 @@ class TaskStatus: Object {
         self.isPassed = isPassed
     }
     
-    required init() {
+    required override init() {
         self.taskId = 0
         self.isNew = true
         self.isPassed = false

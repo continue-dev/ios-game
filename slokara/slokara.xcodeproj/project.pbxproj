@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		10377E6ED351259EA933B162 /* Pods_slokaraUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2089619EA01BEF941BD01E4D /* Pods_slokaraUITests.framework */; };
 		10AC9BB6B1EB3931051A36DF /* Pods_slokaraTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C900A38A419D57E2BDEECE08 /* Pods_slokaraTests.framework */; };
+		68B59B54083B7A5F2500443C /* Pods_slokara_adhoc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6002DEBF5E0C0AD487F7255F /* Pods_slokara_adhoc.framework */; };
 		6A035F0424E6F10D00278700 /* SectionOfItemList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A035F0324E6F10D00278700 /* SectionOfItemList.swift */; };
 		6A035F0524E6F10D00278700 /* SectionOfItemList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A035F0324E6F10D00278700 /* SectionOfItemList.swift */; };
 		6A035F0624E6F10D00278700 /* SectionOfItemList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A035F0324E6F10D00278700 /* SectionOfItemList.swift */; };
@@ -333,6 +334,7 @@
 		98D0497C239953AF00CA868A /* NavigationChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D0497B239953AF00CA868A /* NavigationChildViewController.swift */; };
 		F47D662F23926C88009BA0EA /* 07LogoTypeGothic7.otf in Resources */ = {isa = PBXBuildFile; fileRef = F47D662E23926C88009BA0EA /* 07LogoTypeGothic7.otf */; };
 		F7CC822837DDD1BD79B885D4 /* Pods_slokara.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB3FE3407287E8AE2D0827B2 /* Pods_slokara.framework */; };
+		FD2DAB207F181E47C2D2DDDC /* Pods_slokara_dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10600697044AC8BE20D6D657 /* Pods_slokara_dev.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -354,10 +356,14 @@
 
 /* Begin PBXFileReference section */
 		09AD9FE9BF8E61C7F51BFFCF /* Pods-slokaraTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-slokaraTests.debug.xcconfig"; path = "Target Support Files/Pods-slokaraTests/Pods-slokaraTests.debug.xcconfig"; sourceTree = "<group>"; };
+		0F7989011C9F060EC96600D6 /* Pods-slokara_dev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-slokara_dev.debug.xcconfig"; path = "Target Support Files/Pods-slokara_dev/Pods-slokara_dev.debug.xcconfig"; sourceTree = "<group>"; };
+		10600697044AC8BE20D6D657 /* Pods_slokara_dev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_slokara_dev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		10AAB434C0AF5C395D0E7E12 /* Pods-slokara_dev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-slokara_dev.release.xcconfig"; path = "Target Support Files/Pods-slokara_dev/Pods-slokara_dev.release.xcconfig"; sourceTree = "<group>"; };
 		1A9BC219CAFC163BBCF48527 /* Pods-slokara.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-slokara.release.xcconfig"; path = "Target Support Files/Pods-slokara/Pods-slokara.release.xcconfig"; sourceTree = "<group>"; };
 		1F8C41C9950E6D4D2AAD34BC /* Pods-slokaraTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-slokaraTests.release.xcconfig"; path = "Target Support Files/Pods-slokaraTests/Pods-slokaraTests.release.xcconfig"; sourceTree = "<group>"; };
 		2089619EA01BEF941BD01E4D /* Pods_slokaraUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_slokaraUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		592E166B5A076F77C09601C3 /* Pods-slokara.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-slokara.debug.xcconfig"; path = "Target Support Files/Pods-slokara/Pods-slokara.debug.xcconfig"; sourceTree = "<group>"; };
+		6002DEBF5E0C0AD487F7255F /* Pods_slokara_adhoc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_slokara_adhoc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A035F0324E6F10D00278700 /* SectionOfItemList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionOfItemList.swift; sourceTree = "<group>"; };
 		6A1C490523B26C8F00261DF5 /* TaskListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskListCell.xib; sourceTree = "<group>"; };
 		6A1C490723B26CCD00261DF5 /* TaskListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListCell.swift; sourceTree = "<group>"; };
@@ -470,6 +476,7 @@
 		98367114239810F200F590ED /* NavigationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewModel.swift; sourceTree = "<group>"; };
 		987F28A72392BCC800131C27 /* Oranienbaum.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Oranienbaum.ttf; sourceTree = "<group>"; };
 		987F28AA2392BD7F00131C27 /* CommonFontLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonFontLabel.swift; sourceTree = "<group>"; };
+		988F2614EB1054E1354D8C43 /* Pods-slokara_adhoc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-slokara_adhoc.debug.xcconfig"; path = "Target Support Files/Pods-slokara_adhoc/Pods-slokara_adhoc.debug.xcconfig"; sourceTree = "<group>"; };
 		989F52F523AF2B0200009D14 /* BorderedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedLabel.swift; sourceTree = "<group>"; };
 		98B652A6237DA9E200C4A5B5 /* Title.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Title.storyboard; sourceTree = "<group>"; };
 		98B652A8237DA9F300C4A5B5 /* TitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
@@ -484,6 +491,7 @@
 		BB3FE3407287E8AE2D0827B2 /* Pods_slokara.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_slokara.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C900A38A419D57E2BDEECE08 /* Pods_slokaraTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_slokaraTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E621BD475B31DAB477190F56 /* Pods-slokaraUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-slokaraUITests.debug.xcconfig"; path = "Target Support Files/Pods-slokaraUITests/Pods-slokaraUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E717C3E747C09D364A8288AC /* Pods-slokara_adhoc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-slokara_adhoc.release.xcconfig"; path = "Target Support Files/Pods-slokara_adhoc/Pods-slokara_adhoc.release.xcconfig"; sourceTree = "<group>"; };
 		F47D662E23926C88009BA0EA /* 07LogoTypeGothic7.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 07LogoTypeGothic7.otf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -492,6 +500,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD2DAB207F181E47C2D2DDDC /* Pods_slokara_dev.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,6 +508,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68B59B54083B7A5F2500443C /* Pods_slokara_adhoc.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -536,6 +546,8 @@
 				BB3FE3407287E8AE2D0827B2 /* Pods_slokara.framework */,
 				C900A38A419D57E2BDEECE08 /* Pods_slokaraTests.framework */,
 				2089619EA01BEF941BD01E4D /* Pods_slokaraUITests.framework */,
+				6002DEBF5E0C0AD487F7255F /* Pods_slokara_adhoc.framework */,
+				10600697044AC8BE20D6D657 /* Pods_slokara_dev.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -549,6 +561,10 @@
 				A289E1AEE7FA019E770B30B7 /* Pods-slokaraUITests.release.xcconfig */,
 				592E166B5A076F77C09601C3 /* Pods-slokara.debug.xcconfig */,
 				1A9BC219CAFC163BBCF48527 /* Pods-slokara.release.xcconfig */,
+				988F2614EB1054E1354D8C43 /* Pods-slokara_adhoc.debug.xcconfig */,
+				E717C3E747C09D364A8288AC /* Pods-slokara_adhoc.release.xcconfig */,
+				0F7989011C9F060EC96600D6 /* Pods-slokara_dev.debug.xcconfig */,
+				10AAB434C0AF5C395D0E7E12 /* Pods-slokara_dev.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -955,9 +971,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6A8BEBC72451AA6900142587 /* Build configuration list for PBXNativeTarget "slokara_dev" */;
 			buildPhases = (
+				F44B6BCE98C9E52D2D645D30 /* [CP] Check Pods Manifest.lock */,
 				6A8BEB852451AA6900142587 /* Sources */,
 				6A8BEBB02451AA6900142587 /* Frameworks */,
 				6A8BEBB22451AA6900142587 /* Resources */,
+				B9126FA0C1CE1360FC91056D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -972,9 +990,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6A8BEC8224597F3C00142587 /* Build configuration list for PBXNativeTarget "slokara_adhoc" */;
 			buildPhases = (
+				60D1A239C8D5866A29203286 /* [CP] Check Pods Manifest.lock */,
 				6A8BEC3724597F3C00142587 /* Sources */,
 				6A8BEC6724597F3C00142587 /* Frameworks */,
 				6A8BEC6924597F3C00142587 /* Resources */,
+				BC998BD8CE9A6E8170772DD9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1269,6 +1289,28 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-slokaraTests/Pods-slokaraTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		60D1A239C8D5866A29203286 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-slokara_adhoc-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		82EB4BE219200D042D079BAD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1308,6 +1350,40 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-slokara/Pods-slokara-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		B9126FA0C1CE1360FC91056D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-slokara_dev/Pods-slokara_dev-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-slokara_dev/Pods-slokara_dev-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-slokara_dev/Pods-slokara_dev-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC998BD8CE9A6E8170772DD9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-slokara_adhoc/Pods-slokara_adhoc-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-slokara_adhoc/Pods-slokara_adhoc-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-slokara_adhoc/Pods-slokara_adhoc-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C394E81C09C5A0CD7EDAAEBD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1324,6 +1400,28 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-slokaraTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F44B6BCE98C9E52D2D645D30 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-slokara_dev-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1616,6 +1714,7 @@
 /* Begin XCBuildConfiguration section */
 		6A8BEBC82451AA6900142587 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F7989011C9F060EC96600D6 /* Pods-slokara_dev.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1643,6 +1742,7 @@
 		};
 		6A8BEBC92451AA6900142587 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10AAB434C0AF5C395D0E7E12 /* Pods-slokara_dev.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1670,6 +1770,7 @@
 		};
 		6A8BEC8324597F3C00142587 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 988F2614EB1054E1354D8C43 /* Pods-slokara_adhoc.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
@@ -1697,6 +1798,7 @@
 		};
 		6A8BEC8424597F3C00142587 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E717C3E747C09D364A8288AC /* Pods-slokara_adhoc.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
