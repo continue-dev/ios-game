@@ -24,7 +24,7 @@ final class ReelShopModelImpl: ReelShopModelProtocol {
         }
         #endif
         
-        return Observable.just(status.numberOfCoins)
+        return Observable.just(self.status.numberOfCoins)
     }
     
     var currentReel: Observable<Reel> {
