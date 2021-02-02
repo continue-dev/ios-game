@@ -95,16 +95,7 @@ extension HomeViewController {
     }
     
     private var transitionToShop: Binder<Void> {
-        return Binder(self) { me, _ in
-            #if !PROD
-            if UserDefaults.standard.bool(forKey: "tuningMode") {
-                let navigation = me.parent as! NavigationViewController
-                let tuningReelVC = UIStoryboard(name: "TuningReel", bundle: nil).instantiateInitialViewController() as! TuningReelViewController
-                navigation.push(tuningReelVC, animate: true)
-                return
-            }
-            #endif
-            
+        return Binder(self) { me, _ in            
             let navigation = me.parent as! NavigationViewController
             let shopVC = UIStoryboard(name: "Shop", bundle: nil).instantiateInitialViewController() as! ShopViewController
             shopVC.title = "購買部"

@@ -226,10 +226,6 @@
 		6A8BEC8024597F3C00142587 /* TaskConfirm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A1C491323B9DE1F00261DF5 /* TaskConfirm.storyboard */; };
 		6A8BEC882459CF6500142587 /* EnemyImageCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8BEC872459CF6500142587 /* EnemyImageCollectionCell.swift */; };
 		6A8BEC892459CF6500142587 /* EnemyImageCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8BEC872459CF6500142587 /* EnemyImageCollectionCell.swift */; };
-		6A8BEC8C245BB9C500142587 /* TuningReel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A8BEC8B245BB9C500142587 /* TuningReel.storyboard */; };
-		6A8BEC8D245BB9C600142587 /* TuningReel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A8BEC8B245BB9C500142587 /* TuningReel.storyboard */; };
-		6A8BEC8F245BB9E400142587 /* TuningReelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8BEC8E245BB9E400142587 /* TuningReelViewController.swift */; };
-		6A8BEC90245BB9E400142587 /* TuningReelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8BEC8E245BB9E400142587 /* TuningReelViewController.swift */; };
 		6AA5AE52245F0543003BCBD9 /* Dormitory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AA5AE51245F0543003BCBD9 /* Dormitory.storyboard */; };
 		6AA5AE53245F0543003BCBD9 /* Dormitory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AA5AE51245F0543003BCBD9 /* Dormitory.storyboard */; };
 		6AA5AE54245F0543003BCBD9 /* Dormitory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AA5AE51245F0543003BCBD9 /* Dormitory.storyboard */; };
@@ -425,8 +421,6 @@
 		6A8BEC322458A0F800142587 /* AttributeSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributeSelectView.swift; sourceTree = "<group>"; };
 		6A8BEC8524597F3C00142587 /* スロから_adhoc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "スロから_adhoc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A8BEC872459CF6500142587 /* EnemyImageCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyImageCollectionCell.swift; sourceTree = "<group>"; };
-		6A8BEC8B245BB9C500142587 /* TuningReel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TuningReel.storyboard; sourceTree = "<group>"; };
-		6A8BEC8E245BB9E400142587 /* TuningReelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuningReelViewController.swift; sourceTree = "<group>"; };
 		6AA5AE51245F0543003BCBD9 /* Dormitory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dormitory.storyboard; sourceTree = "<group>"; };
 		6AA5AE55245F0565003BCBD9 /* DormitoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DormitoryViewController.swift; sourceTree = "<group>"; };
 		6AA5AE62245F10CF003BCBD9 /* Parameter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Parameter.storyboard; sourceTree = "<group>"; };
@@ -708,7 +702,6 @@
 		6A8BEC1524570DD300142587 /* Tuning */ = {
 			isa = PBXGroup;
 			children = (
-				6A8BEC8A245BB99800142587 /* TuningReel */,
 				6A8BEC1624570DF800142587 /* TuningStage */,
 			);
 			path = Tuning;
@@ -729,15 +722,6 @@
 				6A8BEC322458A0F800142587 /* AttributeSelectView.swift */,
 			);
 			path = TuningStage;
-			sourceTree = "<group>";
-		};
-		6A8BEC8A245BB99800142587 /* TuningReel */ = {
-			isa = PBXGroup;
-			children = (
-				6A8BEC8B245BB9C500142587 /* TuningReel.storyboard */,
-				6A8BEC8E245BB9E400142587 /* TuningReelViewController.swift */,
-			);
-			path = TuningReel;
 			sourceTree = "<group>";
 		};
 		6AA5AE50245F04E3003BCBD9 /* Dormitory */ = {
@@ -1128,7 +1112,6 @@
 				6ACC4DB4257CC05000D5C101 /* ReelShoppingView.xib in Resources */,
 				6A8BEC182457186500142587 /* TuningStage.storyboard in Resources */,
 				6A8BEBB92451AA6900142587 /* Oranienbaum.ttf in Resources */,
-				6A8BEC8C245BB9C500142587 /* TuningReel.storyboard in Resources */,
 				6A8BEBBA2451AA6900142587 /* TaskListCell.xib in Resources */,
 				6ACC4D67256FE44C00D5C101 /* ReelStatusView.xib in Resources */,
 				6ACC4D37256E8AC400D5C101 /* ReelShop.storyboard in Resources */,
@@ -1171,7 +1154,6 @@
 				6ACC4DB5257CC05000D5C101 /* ReelShoppingView.xib in Resources */,
 				6A8BEC7124597F3C00142587 /* TuningStage.storyboard in Resources */,
 				6A8BEC7224597F3C00142587 /* Oranienbaum.ttf in Resources */,
-				6A8BEC8D245BB9C600142587 /* TuningReel.storyboard in Resources */,
 				6A8BEC7324597F3C00142587 /* TaskListCell.xib in Resources */,
 				6ACC4D68256FE44C00D5C101 /* ReelStatusView.xib in Resources */,
 				6ACC4D38256E8AC400D5C101 /* ReelShop.storyboard in Resources */,
@@ -1505,7 +1487,6 @@
 				6A8BEBAD2451AA6900142587 /* HomeModel.swift in Sources */,
 				6A8BEBAE2451AA6900142587 /* NavigationViewController.swift in Sources */,
 				6A8BEBAF2451AA6900142587 /* HomeViewModel.swift in Sources */,
-				6A8BEC8F245BB9E400142587 /* TuningReelViewController.swift in Sources */,
 				6ACC4DBD257CC06900D5C101 /* ReelShoppingView.swift in Sources */,
 				6ACC4D812575401D00D5C101 /* ReelStatus.swift in Sources */,
 			);
@@ -1585,7 +1566,6 @@
 				6A8BEC6424597F3C00142587 /* HomeModel.swift in Sources */,
 				6A8BEC6524597F3C00142587 /* NavigationViewController.swift in Sources */,
 				6A8BEC6624597F3C00142587 /* HomeViewModel.swift in Sources */,
-				6A8BEC90245BB9E400142587 /* TuningReelViewController.swift in Sources */,
 				6ACC4DBE257CC06900D5C101 /* ReelShoppingView.swift in Sources */,
 				6ACC4D822575401D00D5C101 /* ReelStatus.swift in Sources */,
 			);
