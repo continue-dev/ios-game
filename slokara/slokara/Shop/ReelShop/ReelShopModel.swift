@@ -28,16 +28,15 @@ final class ReelShopModelImpl: ReelShopModelProtocol {
     }
     
     var currentReel: Observable<Reel> {
+        guard let realm = try? Realm() else { assert(false, "Realmをインスタンス化できませんでした") }
+
         #if !PROD
         if UserDefaults.standard.bool(forKey: "tuningMode") {
-            guard let json =  UserDefaults.standard.data(forKey: "reel") else {
-                return Observable.just(Reel(top: [false, false, false], center: [false, true, false], bottom: [false, false, false]))
-            }
-            guard let debugReel = try? JSONDecoder().decode(Reel.self, from: json) else { fatalError("Reel decode failed.") }
-            return Observable.just(debugReel)
+            let debugReel = realm.objects(ReelStatus.self)[1]
+            self.reel = debugReel
+            return Observable.just(Reel(object: debugReel))
         }
         #endif
-        guard let realm = try? Realm() else { assert(false, "Realmをインスタンス化できませんでした") }
         guard let reel = realm.objects(ReelStatus.self).first else { assert(false, "リールステータスを取得できませんでした") }
         self.reel = reel
         return Observable.just(Reel(object: reel))
@@ -50,15 +49,7 @@ final class ReelShopModelImpl: ReelShopModelProtocol {
         }
     }
     
-    func saveFutureReel(_ reel: Reel) {
-        #if !PROD
-        if UserDefaults.standard.bool(forKey: "tuningMode") {
-            guard let json = try? JSONEncoder().encode(reel) else { fatalError("Reel encode failed.") }
-            UserDefaults.standard.set(json, forKey: "reel")
-            return
-        }
-        #endif
-        
+    func saveFutureReel(_ reel: Reel) {        
         guard let realm = try? Realm() else { assert(false, "Realmをインスタンス化できませんでした") }
         try! realm.write {
             self.reel.topLeft = reel.top[0]

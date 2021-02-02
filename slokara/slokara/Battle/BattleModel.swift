@@ -48,16 +48,17 @@ final class BattleModelImpl: BattleModelProtocol {
     }
     
     var reelStatus: Observable<Reel> {
+        guard let realm = try? Realm() else { assert(false, "Realmをインスタンス化できませんでした") }
+        
         #if !PROD
         if UserDefaults.standard.bool(forKey: "tuningMode") {
-            if let json = UserDefaults.standard.data(forKey: "reel") {
-                guard let reel = try? JSONDecoder().decode(Reel.self, from: json) else { fatalError("Reel decode failed.") }
-                return Observable.just(reel)
-            }
+            let debugReel = realm.objects(ReelStatus.self)[1]
+            return Observable.just(Reel(object: debugReel))
         }
         #endif
         
-        return Observable.just(Reel(top: [true, true, true], center: [false, true, true], bottom: [true, false, true]))
+        guard let reel = realm.objects(ReelStatus.self).first else { assert(false, "リールステータスを取得できませんでした") }
+        return Observable.just(Reel(object: reel))
     }
     
     func culcUserHp(_ value: Int64) {
