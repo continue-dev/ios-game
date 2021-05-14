@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		10377E6ED351259EA933B162 /* Pods_slokaraUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2089619EA01BEF941BD01E4D /* Pods_slokaraUITests.framework */; };
 		10AC9BB6B1EB3931051A36DF /* Pods_slokaraTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C900A38A419D57E2BDEECE08 /* Pods_slokaraTests.framework */; };
+		68B59B54083B7A5F2500443C /* Pods_slokara_adhoc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6002DEBF5E0C0AD487F7255F /* Pods_slokara_adhoc.framework */; };
 		6A035F0424E6F10D00278700 /* SectionOfItemList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A035F0324E6F10D00278700 /* SectionOfItemList.swift */; };
 		6A035F0524E6F10D00278700 /* SectionOfItemList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A035F0324E6F10D00278700 /* SectionOfItemList.swift */; };
 		6A035F0624E6F10D00278700 /* SectionOfItemList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A035F0324E6F10D00278700 /* SectionOfItemList.swift */; };
@@ -225,10 +226,6 @@
 		6A8BEC8024597F3C00142587 /* TaskConfirm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A1C491323B9DE1F00261DF5 /* TaskConfirm.storyboard */; };
 		6A8BEC882459CF6500142587 /* EnemyImageCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8BEC872459CF6500142587 /* EnemyImageCollectionCell.swift */; };
 		6A8BEC892459CF6500142587 /* EnemyImageCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8BEC872459CF6500142587 /* EnemyImageCollectionCell.swift */; };
-		6A8BEC8C245BB9C500142587 /* TuningReel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A8BEC8B245BB9C500142587 /* TuningReel.storyboard */; };
-		6A8BEC8D245BB9C600142587 /* TuningReel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A8BEC8B245BB9C500142587 /* TuningReel.storyboard */; };
-		6A8BEC8F245BB9E400142587 /* TuningReelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8BEC8E245BB9E400142587 /* TuningReelViewController.swift */; };
-		6A8BEC90245BB9E400142587 /* TuningReelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8BEC8E245BB9E400142587 /* TuningReelViewController.swift */; };
 		6AA5AE52245F0543003BCBD9 /* Dormitory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AA5AE51245F0543003BCBD9 /* Dormitory.storyboard */; };
 		6AA5AE53245F0543003BCBD9 /* Dormitory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AA5AE51245F0543003BCBD9 /* Dormitory.storyboard */; };
 		6AA5AE54245F0543003BCBD9 /* Dormitory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AA5AE51245F0543003BCBD9 /* Dormitory.storyboard */; };
@@ -262,6 +259,33 @@
 		6ABF319023AF59660014E0BD /* TaskListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABF318F23AF59660014E0BD /* TaskListModel.swift */; };
 		6ABF319323AF5A5B0014E0BD /* TaskListTab.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6ABF319223AF5A5B0014E0BD /* TaskListTab.xib */; };
 		6ABF319523AF5A6C0014E0BD /* TaskListTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABF319423AF5A6C0014E0BD /* TaskListTab.swift */; };
+		6ACC4D36256E8AC400D5C101 /* ReelShop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6ACC4D35256E8AC400D5C101 /* ReelShop.storyboard */; };
+		6ACC4D37256E8AC400D5C101 /* ReelShop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6ACC4D35256E8AC400D5C101 /* ReelShop.storyboard */; };
+		6ACC4D38256E8AC400D5C101 /* ReelShop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6ACC4D35256E8AC400D5C101 /* ReelShop.storyboard */; };
+		6ACC4D3F256E8AD800D5C101 /* ReelShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACC4D3E256E8AD800D5C101 /* ReelShopViewController.swift */; };
+		6ACC4D40256E8AD800D5C101 /* ReelShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACC4D3E256E8AD800D5C101 /* ReelShopViewController.swift */; };
+		6ACC4D41256E8AD800D5C101 /* ReelShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACC4D3E256E8AD800D5C101 /* ReelShopViewController.swift */; };
+		6ACC4D48256E8AE700D5C101 /* ReelShopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACC4D47256E8AE700D5C101 /* ReelShopViewModel.swift */; };
+		6ACC4D49256E8AE700D5C101 /* ReelShopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACC4D47256E8AE700D5C101 /* ReelShopViewModel.swift */; };
+		6ACC4D4A256E8AE700D5C101 /* ReelShopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACC4D47256E8AE700D5C101 /* ReelShopViewModel.swift */; };
+		6ACC4D51256E8AF200D5C101 /* ReelShopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACC4D50256E8AF200D5C101 /* ReelShopModel.swift */; };
+		6ACC4D52256E8AF200D5C101 /* ReelShopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACC4D50256E8AF200D5C101 /* ReelShopModel.swift */; };
+		6ACC4D53256E8AF200D5C101 /* ReelShopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACC4D50256E8AF200D5C101 /* ReelShopModel.swift */; };
+		6ACC4D66256FE44C00D5C101 /* ReelStatusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6ACC4D65256FE44C00D5C101 /* ReelStatusView.xib */; };
+		6ACC4D67256FE44C00D5C101 /* ReelStatusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6ACC4D65256FE44C00D5C101 /* ReelStatusView.xib */; };
+		6ACC4D68256FE44C00D5C101 /* ReelStatusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6ACC4D65256FE44C00D5C101 /* ReelStatusView.xib */; };
+		6ACC4D74256FE45900D5C101 /* ReelStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACC4D73256FE45900D5C101 /* ReelStatusView.swift */; };
+		6ACC4D75256FE45900D5C101 /* ReelStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACC4D73256FE45900D5C101 /* ReelStatusView.swift */; };
+		6ACC4D76256FE45900D5C101 /* ReelStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACC4D73256FE45900D5C101 /* ReelStatusView.swift */; };
+		6ACC4D802575401D00D5C101 /* ReelStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACC4D7F2575401D00D5C101 /* ReelStatus.swift */; };
+		6ACC4D812575401D00D5C101 /* ReelStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACC4D7F2575401D00D5C101 /* ReelStatus.swift */; };
+		6ACC4D822575401D00D5C101 /* ReelStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACC4D7F2575401D00D5C101 /* ReelStatus.swift */; };
+		6ACC4DB3257CC05000D5C101 /* ReelShoppingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6ACC4DB2257CC05000D5C101 /* ReelShoppingView.xib */; };
+		6ACC4DB4257CC05000D5C101 /* ReelShoppingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6ACC4DB2257CC05000D5C101 /* ReelShoppingView.xib */; };
+		6ACC4DB5257CC05000D5C101 /* ReelShoppingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6ACC4DB2257CC05000D5C101 /* ReelShoppingView.xib */; };
+		6ACC4DBC257CC06900D5C101 /* ReelShoppingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACC4DBB257CC06900D5C101 /* ReelShoppingView.swift */; };
+		6ACC4DBD257CC06900D5C101 /* ReelShoppingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACC4DBB257CC06900D5C101 /* ReelShoppingView.swift */; };
+		6ACC4DBE257CC06900D5C101 /* ReelShoppingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACC4DBB257CC06900D5C101 /* ReelShoppingView.swift */; };
 		6AEC13FD24E2D2D600E33682 /* ItemShopListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEC13FB24E2D2D600E33682 /* ItemShopListCell.swift */; };
 		6AEC13FE24E2D2D600E33682 /* ItemShopListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEC13FB24E2D2D600E33682 /* ItemShopListCell.swift */; };
 		6AEC13FF24E2D2D600E33682 /* ItemShopListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEC13FB24E2D2D600E33682 /* ItemShopListCell.swift */; };
@@ -306,6 +330,7 @@
 		98D0497C239953AF00CA868A /* NavigationChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D0497B239953AF00CA868A /* NavigationChildViewController.swift */; };
 		F47D662F23926C88009BA0EA /* 07LogoTypeGothic7.otf in Resources */ = {isa = PBXBuildFile; fileRef = F47D662E23926C88009BA0EA /* 07LogoTypeGothic7.otf */; };
 		F7CC822837DDD1BD79B885D4 /* Pods_slokara.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB3FE3407287E8AE2D0827B2 /* Pods_slokara.framework */; };
+		FD2DAB207F181E47C2D2DDDC /* Pods_slokara_dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10600697044AC8BE20D6D657 /* Pods_slokara_dev.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -327,10 +352,14 @@
 
 /* Begin PBXFileReference section */
 		09AD9FE9BF8E61C7F51BFFCF /* Pods-slokaraTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-slokaraTests.debug.xcconfig"; path = "Target Support Files/Pods-slokaraTests/Pods-slokaraTests.debug.xcconfig"; sourceTree = "<group>"; };
+		0F7989011C9F060EC96600D6 /* Pods-slokara_dev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-slokara_dev.debug.xcconfig"; path = "Target Support Files/Pods-slokara_dev/Pods-slokara_dev.debug.xcconfig"; sourceTree = "<group>"; };
+		10600697044AC8BE20D6D657 /* Pods_slokara_dev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_slokara_dev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		10AAB434C0AF5C395D0E7E12 /* Pods-slokara_dev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-slokara_dev.release.xcconfig"; path = "Target Support Files/Pods-slokara_dev/Pods-slokara_dev.release.xcconfig"; sourceTree = "<group>"; };
 		1A9BC219CAFC163BBCF48527 /* Pods-slokara.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-slokara.release.xcconfig"; path = "Target Support Files/Pods-slokara/Pods-slokara.release.xcconfig"; sourceTree = "<group>"; };
 		1F8C41C9950E6D4D2AAD34BC /* Pods-slokaraTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-slokaraTests.release.xcconfig"; path = "Target Support Files/Pods-slokaraTests/Pods-slokaraTests.release.xcconfig"; sourceTree = "<group>"; };
 		2089619EA01BEF941BD01E4D /* Pods_slokaraUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_slokaraUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		592E166B5A076F77C09601C3 /* Pods-slokara.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-slokara.debug.xcconfig"; path = "Target Support Files/Pods-slokara/Pods-slokara.debug.xcconfig"; sourceTree = "<group>"; };
+		6002DEBF5E0C0AD487F7255F /* Pods_slokara_adhoc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_slokara_adhoc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A035F0324E6F10D00278700 /* SectionOfItemList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionOfItemList.swift; sourceTree = "<group>"; };
 		6A1C490523B26C8F00261DF5 /* TaskListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskListCell.xib; sourceTree = "<group>"; };
 		6A1C490723B26CCD00261DF5 /* TaskListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListCell.swift; sourceTree = "<group>"; };
@@ -392,8 +421,6 @@
 		6A8BEC322458A0F800142587 /* AttributeSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributeSelectView.swift; sourceTree = "<group>"; };
 		6A8BEC8524597F3C00142587 /* スロから_adhoc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "スロから_adhoc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A8BEC872459CF6500142587 /* EnemyImageCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyImageCollectionCell.swift; sourceTree = "<group>"; };
-		6A8BEC8B245BB9C500142587 /* TuningReel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TuningReel.storyboard; sourceTree = "<group>"; };
-		6A8BEC8E245BB9E400142587 /* TuningReelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuningReelViewController.swift; sourceTree = "<group>"; };
 		6AA5AE51245F0543003BCBD9 /* Dormitory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dormitory.storyboard; sourceTree = "<group>"; };
 		6AA5AE55245F0565003BCBD9 /* DormitoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DormitoryViewController.swift; sourceTree = "<group>"; };
 		6AA5AE62245F10CF003BCBD9 /* Parameter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Parameter.storyboard; sourceTree = "<group>"; };
@@ -409,6 +436,15 @@
 		6ABF318F23AF59660014E0BD /* TaskListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListModel.swift; sourceTree = "<group>"; };
 		6ABF319223AF5A5B0014E0BD /* TaskListTab.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskListTab.xib; sourceTree = "<group>"; };
 		6ABF319423AF5A6C0014E0BD /* TaskListTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListTab.swift; sourceTree = "<group>"; };
+		6ACC4D35256E8AC400D5C101 /* ReelShop.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReelShop.storyboard; sourceTree = "<group>"; };
+		6ACC4D3E256E8AD800D5C101 /* ReelShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReelShopViewController.swift; sourceTree = "<group>"; };
+		6ACC4D47256E8AE700D5C101 /* ReelShopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReelShopViewModel.swift; sourceTree = "<group>"; };
+		6ACC4D50256E8AF200D5C101 /* ReelShopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReelShopModel.swift; sourceTree = "<group>"; };
+		6ACC4D65256FE44C00D5C101 /* ReelStatusView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReelStatusView.xib; sourceTree = "<group>"; };
+		6ACC4D73256FE45900D5C101 /* ReelStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReelStatusView.swift; sourceTree = "<group>"; };
+		6ACC4D7F2575401D00D5C101 /* ReelStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReelStatus.swift; sourceTree = "<group>"; };
+		6ACC4DB2257CC05000D5C101 /* ReelShoppingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReelShoppingView.xib; sourceTree = "<group>"; };
+		6ACC4DBB257CC06900D5C101 /* ReelShoppingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReelShoppingView.swift; sourceTree = "<group>"; };
 		6AEC13FB24E2D2D600E33682 /* ItemShopListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemShopListCell.swift; sourceTree = "<group>"; };
 		6AEC13FC24E2D2D600E33682 /* ItemShopListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemShopListCell.xib; sourceTree = "<group>"; };
 		6AEC144324E5165D00E33682 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
@@ -434,6 +470,7 @@
 		98367114239810F200F590ED /* NavigationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewModel.swift; sourceTree = "<group>"; };
 		987F28A72392BCC800131C27 /* Oranienbaum.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Oranienbaum.ttf; sourceTree = "<group>"; };
 		987F28AA2392BD7F00131C27 /* CommonFontLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonFontLabel.swift; sourceTree = "<group>"; };
+		988F2614EB1054E1354D8C43 /* Pods-slokara_adhoc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-slokara_adhoc.debug.xcconfig"; path = "Target Support Files/Pods-slokara_adhoc/Pods-slokara_adhoc.debug.xcconfig"; sourceTree = "<group>"; };
 		989F52F523AF2B0200009D14 /* BorderedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedLabel.swift; sourceTree = "<group>"; };
 		98B652A6237DA9E200C4A5B5 /* Title.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Title.storyboard; sourceTree = "<group>"; };
 		98B652A8237DA9F300C4A5B5 /* TitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
@@ -448,6 +485,7 @@
 		BB3FE3407287E8AE2D0827B2 /* Pods_slokara.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_slokara.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C900A38A419D57E2BDEECE08 /* Pods_slokaraTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_slokaraTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E621BD475B31DAB477190F56 /* Pods-slokaraUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-slokaraUITests.debug.xcconfig"; path = "Target Support Files/Pods-slokaraUITests/Pods-slokaraUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E717C3E747C09D364A8288AC /* Pods-slokara_adhoc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-slokara_adhoc.release.xcconfig"; path = "Target Support Files/Pods-slokara_adhoc/Pods-slokara_adhoc.release.xcconfig"; sourceTree = "<group>"; };
 		F47D662E23926C88009BA0EA /* 07LogoTypeGothic7.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 07LogoTypeGothic7.otf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -456,6 +494,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD2DAB207F181E47C2D2DDDC /* Pods_slokara_dev.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,6 +502,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68B59B54083B7A5F2500443C /* Pods_slokara_adhoc.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,6 +540,8 @@
 				BB3FE3407287E8AE2D0827B2 /* Pods_slokara.framework */,
 				C900A38A419D57E2BDEECE08 /* Pods_slokaraTests.framework */,
 				2089619EA01BEF941BD01E4D /* Pods_slokaraUITests.framework */,
+				6002DEBF5E0C0AD487F7255F /* Pods_slokara_adhoc.framework */,
+				10600697044AC8BE20D6D657 /* Pods_slokara_dev.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -513,6 +555,10 @@
 				A289E1AEE7FA019E770B30B7 /* Pods-slokaraUITests.release.xcconfig */,
 				592E166B5A076F77C09601C3 /* Pods-slokara.debug.xcconfig */,
 				1A9BC219CAFC163BBCF48527 /* Pods-slokara.release.xcconfig */,
+				988F2614EB1054E1354D8C43 /* Pods-slokara_adhoc.debug.xcconfig */,
+				E717C3E747C09D364A8288AC /* Pods-slokara_adhoc.release.xcconfig */,
+				0F7989011C9F060EC96600D6 /* Pods-slokara_dev.debug.xcconfig */,
+				10AAB434C0AF5C395D0E7E12 /* Pods-slokara_dev.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -605,6 +651,7 @@
 		6A5E310124D6FCDB00FDBBEE /* Shop */ = {
 			isa = PBXGroup;
 			children = (
+				6ACC4D34256E8A9C00D5C101 /* ReelShop */,
 				6A5E310A24D9D26600FDBBEE /* ItemShop */,
 				6A5E310224D6FD2200FDBBEE /* Shop.storyboard */,
 				6A5E310624D6FD3900FDBBEE /* ShopViewController.swift */,
@@ -647,6 +694,7 @@
 				6A68CA12242F97900047F413 /* UserStatus.swift */,
 				6A5A8A4B243A159B00F8A829 /* TaskStatus.swift */,
 				6A5BE5B124EFA74D00C5BB21 /* ItemPossession.swift */,
+				6ACC4D7F2575401D00D5C101 /* ReelStatus.swift */,
 			);
 			path = RealmObjects;
 			sourceTree = "<group>";
@@ -654,7 +702,6 @@
 		6A8BEC1524570DD300142587 /* Tuning */ = {
 			isa = PBXGroup;
 			children = (
-				6A8BEC8A245BB99800142587 /* TuningReel */,
 				6A8BEC1624570DF800142587 /* TuningStage */,
 			);
 			path = Tuning;
@@ -675,15 +722,6 @@
 				6A8BEC322458A0F800142587 /* AttributeSelectView.swift */,
 			);
 			path = TuningStage;
-			sourceTree = "<group>";
-		};
-		6A8BEC8A245BB99800142587 /* TuningReel */ = {
-			isa = PBXGroup;
-			children = (
-				6A8BEC8B245BB9C500142587 /* TuningReel.storyboard */,
-				6A8BEC8E245BB9E400142587 /* TuningReelViewController.swift */,
-			);
-			path = TuningReel;
 			sourceTree = "<group>";
 		};
 		6AA5AE50245F04E3003BCBD9 /* Dormitory */ = {
@@ -736,6 +774,29 @@
 				6ABF319423AF5A6C0014E0BD /* TaskListTab.swift */,
 				6A1C490523B26C8F00261DF5 /* TaskListCell.xib */,
 				6A1C490723B26CCD00261DF5 /* TaskListCell.swift */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
+		6ACC4D34256E8A9C00D5C101 /* ReelShop */ = {
+			isa = PBXGroup;
+			children = (
+				6ACC4D64256FE3DC00D5C101 /* SubViews */,
+				6ACC4D35256E8AC400D5C101 /* ReelShop.storyboard */,
+				6ACC4D3E256E8AD800D5C101 /* ReelShopViewController.swift */,
+				6ACC4D47256E8AE700D5C101 /* ReelShopViewModel.swift */,
+				6ACC4D50256E8AF200D5C101 /* ReelShopModel.swift */,
+			);
+			path = ReelShop;
+			sourceTree = "<group>";
+		};
+		6ACC4D64256FE3DC00D5C101 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				6ACC4D65256FE44C00D5C101 /* ReelStatusView.xib */,
+				6ACC4D73256FE45900D5C101 /* ReelStatusView.swift */,
+				6ACC4DB2257CC05000D5C101 /* ReelShoppingView.xib */,
+				6ACC4DBB257CC06900D5C101 /* ReelShoppingView.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -894,9 +955,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6A8BEBC72451AA6900142587 /* Build configuration list for PBXNativeTarget "slokara_dev" */;
 			buildPhases = (
+				F44B6BCE98C9E52D2D645D30 /* [CP] Check Pods Manifest.lock */,
 				6A8BEB852451AA6900142587 /* Sources */,
 				6A8BEBB02451AA6900142587 /* Frameworks */,
 				6A8BEBB22451AA6900142587 /* Resources */,
+				B9126FA0C1CE1360FC91056D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -911,9 +974,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6A8BEC8224597F3C00142587 /* Build configuration list for PBXNativeTarget "slokara_adhoc" */;
 			buildPhases = (
+				60D1A239C8D5866A29203286 /* [CP] Check Pods Manifest.lock */,
 				6A8BEC3724597F3C00142587 /* Sources */,
 				6A8BEC6724597F3C00142587 /* Frameworks */,
 				6A8BEC6924597F3C00142587 /* Resources */,
+				BC998BD8CE9A6E8170772DD9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1044,10 +1109,12 @@
 				6A8BEBB82451AA6900142587 /* Battle.storyboard in Resources */,
 				6AEC140124E2D2D600E33682 /* ItemShopListCell.xib in Resources */,
 				6AA5AE75245F1394003BCBD9 /* ParameterBarView.xib in Resources */,
+				6ACC4DB4257CC05000D5C101 /* ReelShoppingView.xib in Resources */,
 				6A8BEC182457186500142587 /* TuningStage.storyboard in Resources */,
 				6A8BEBB92451AA6900142587 /* Oranienbaum.ttf in Resources */,
-				6A8BEC8C245BB9C500142587 /* TuningReel.storyboard in Resources */,
 				6A8BEBBA2451AA6900142587 /* TaskListCell.xib in Resources */,
+				6ACC4D67256FE44C00D5C101 /* ReelStatusView.xib in Resources */,
+				6ACC4D37256E8AC400D5C101 /* ReelShop.storyboard in Resources */,
 				6A5E312224D9D93400FDBBEE /* CartButton.xib in Resources */,
 				6A8BEC302458A06F00142587 /* AttributeSelectView.xib in Resources */,
 				6A8BEBBB2451AA6900142587 /* Assets.xcassets in Resources */,
@@ -1084,10 +1151,12 @@
 				6A8BEC7024597F3C00142587 /* Battle.storyboard in Resources */,
 				6AEC140224E2D2D600E33682 /* ItemShopListCell.xib in Resources */,
 				6AA5AE76245F1394003BCBD9 /* ParameterBarView.xib in Resources */,
+				6ACC4DB5257CC05000D5C101 /* ReelShoppingView.xib in Resources */,
 				6A8BEC7124597F3C00142587 /* TuningStage.storyboard in Resources */,
 				6A8BEC7224597F3C00142587 /* Oranienbaum.ttf in Resources */,
-				6A8BEC8D245BB9C600142587 /* TuningReel.storyboard in Resources */,
 				6A8BEC7324597F3C00142587 /* TaskListCell.xib in Resources */,
+				6ACC4D68256FE44C00D5C101 /* ReelStatusView.xib in Resources */,
+				6ACC4D38256E8AC400D5C101 /* ReelShop.storyboard in Resources */,
 				6A5E312324D9D93400FDBBEE /* CartButton.xib in Resources */,
 				6A8BEC7424597F3C00142587 /* AttributeSelectView.xib in Resources */,
 				6A8BEC7524597F3C00142587 /* Assets.xcassets in Resources */,
@@ -1113,6 +1182,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9821B33A2378560400CF964D /* LaunchScreen.storyboard in Resources */,
+				6ACC4DB3257CC05000D5C101 /* ReelShoppingView.xib in Resources */,
 				6ABF318C23AF58780014E0BD /* TaskList.storyboard in Resources */,
 				6A599E972427D2D600067D7A /* BattleProgressView.xib in Resources */,
 				98B652A7237DA9E200C4A5B5 /* Title.storyboard in Resources */,
@@ -1135,8 +1205,10 @@
 				6A1C490D23B8E8C500261DF5 /* AlertView.xib in Resources */,
 				6ABF319323AF5A5B0014E0BD /* TaskListTab.xib in Resources */,
 				98367113239810E000F590ED /* Navigation.storyboard in Resources */,
+				6ACC4D36256E8AC400D5C101 /* ReelShop.storyboard in Resources */,
 				6A599E8A2426807200067D7A /* ReelView.xib in Resources */,
 				6A5A8A442434F40200F8A829 /* Cleared.storyboard in Resources */,
+				6ACC4D66256FE44C00D5C101 /* ReelStatusView.xib in Resources */,
 				6A1C491423B9DE1F00261DF5 /* TaskConfirm.storyboard in Resources */,
 				6AEC140024E2D2D600E33682 /* ItemShopListCell.xib in Resources */,
 				6AEC144C24E6A28000E33682 /* PurchaseControlView.xib in Resources */,
@@ -1199,6 +1271,28 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-slokaraTests/Pods-slokaraTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		60D1A239C8D5866A29203286 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-slokara_adhoc-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		82EB4BE219200D042D079BAD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1238,6 +1332,40 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-slokara/Pods-slokara-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		B9126FA0C1CE1360FC91056D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-slokara_dev/Pods-slokara_dev-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-slokara_dev/Pods-slokara_dev-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-slokara_dev/Pods-slokara_dev-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC998BD8CE9A6E8170772DD9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-slokara_adhoc/Pods-slokara_adhoc-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-slokara_adhoc/Pods-slokara_adhoc-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-slokara_adhoc/Pods-slokara_adhoc-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C394E81C09C5A0CD7EDAAEBD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1260,6 +1388,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F44B6BCE98C9E52D2D645D30 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-slokara_dev-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1267,6 +1417,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6ACC4D49256E8AE700D5C101 /* ReelShopViewModel.swift in Sources */,
 				6A8BEB862451AA6900142587 /* ClearedModel.swift in Sources */,
 				6A8BEB872451AA6900142587 /* Reel.swift in Sources */,
 				6A8BEB882451AA6900142587 /* BattleProgressView.swift in Sources */,
@@ -1283,6 +1434,7 @@
 				6A5E311124D9D29400FDBBEE /* ItemShopViewController.swift in Sources */,
 				6AEC13FE24E2D2D600E33682 /* ItemShopListCell.swift in Sources */,
 				6A8BEC21245725B000142587 /* TuningStageTableViewCell.swift in Sources */,
+				6ACC4D52256E8AF200D5C101 /* ReelShopModel.swift in Sources */,
 				6A5E310824D6FD3900FDBBEE /* ShopViewController.swift in Sources */,
 				6A8BEB8F2451AA6900142587 /* TaskListViewController.swift in Sources */,
 				6A8BEB902451AA6900142587 /* Enemy.swift in Sources */,
@@ -1322,18 +1474,21 @@
 				6A8BEC1B24571A3700142587 /* TuningStageViewController.swift in Sources */,
 				6AA5AE79245F13A4003BCBD9 /* ParameterBarView.swift in Sources */,
 				6AA5AE68245F10DE003BCBD9 /* ParameterViewController.swift in Sources */,
+				6ACC4D75256FE45900D5C101 /* ReelStatusView.swift in Sources */,
 				6A8BEBA82451AA6900142587 /* TaskListViewModel.swift in Sources */,
 				6A5E313224DEE8B700FDBBEE /* ItemCategoryTab.swift in Sources */,
 				6A8BEBA92451AA6900142587 /* HomeViewController.swift in Sources */,
 				6A8BEBAA2451AA6900142587 /* NavigationModel.swift in Sources */,
 				6A8BEC332458A0F800142587 /* AttributeSelectView.swift in Sources */,
+				6ACC4D40256E8AD800D5C101 /* ReelShopViewController.swift in Sources */,
 				6A8BEBAB2451AA6900142587 /* BorderedLabel.swift in Sources */,
 				6A8BEBAC2451AA6900142587 /* ToggleButton.swift in Sources */,
 				6A5E311524D9D2AA00FDBBEE /* ItemShopViewModel.swift in Sources */,
 				6A8BEBAD2451AA6900142587 /* HomeModel.swift in Sources */,
 				6A8BEBAE2451AA6900142587 /* NavigationViewController.swift in Sources */,
 				6A8BEBAF2451AA6900142587 /* HomeViewModel.swift in Sources */,
-				6A8BEC8F245BB9E400142587 /* TuningReelViewController.swift in Sources */,
+				6ACC4DBD257CC06900D5C101 /* ReelShoppingView.swift in Sources */,
+				6ACC4D812575401D00D5C101 /* ReelStatus.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1341,6 +1496,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6ACC4D4A256E8AE700D5C101 /* ReelShopViewModel.swift in Sources */,
 				6A8BEC3824597F3C00142587 /* ClearedModel.swift in Sources */,
 				6A8BEC3924597F3C00142587 /* Reel.swift in Sources */,
 				6A8BEC3A24597F3C00142587 /* BattleProgressView.swift in Sources */,
@@ -1357,6 +1513,7 @@
 				6A5E311224D9D29400FDBBEE /* ItemShopViewController.swift in Sources */,
 				6AEC13FF24E2D2D600E33682 /* ItemShopListCell.swift in Sources */,
 				6A8BEC4224597F3C00142587 /* TuningStageTableViewCell.swift in Sources */,
+				6ACC4D53256E8AF200D5C101 /* ReelShopModel.swift in Sources */,
 				6A5E310924D6FD3900FDBBEE /* ShopViewController.swift in Sources */,
 				6A8BEC4324597F3C00142587 /* TaskListViewController.swift in Sources */,
 				6A8BEC4424597F3C00142587 /* Enemy.swift in Sources */,
@@ -1396,18 +1553,21 @@
 				6A8BEC5D24597F3C00142587 /* TuningStageViewController.swift in Sources */,
 				6AA5AE7A245F13A4003BCBD9 /* ParameterBarView.swift in Sources */,
 				6AA5AE69245F10DE003BCBD9 /* ParameterViewController.swift in Sources */,
+				6ACC4D76256FE45900D5C101 /* ReelStatusView.swift in Sources */,
 				6A8BEC5E24597F3C00142587 /* TaskListViewModel.swift in Sources */,
 				6A5E313324DEE8B700FDBBEE /* ItemCategoryTab.swift in Sources */,
 				6A8BEC5F24597F3C00142587 /* HomeViewController.swift in Sources */,
 				6A8BEC6024597F3C00142587 /* NavigationModel.swift in Sources */,
 				6A8BEC6124597F3C00142587 /* AttributeSelectView.swift in Sources */,
+				6ACC4D41256E8AD800D5C101 /* ReelShopViewController.swift in Sources */,
 				6A8BEC6224597F3C00142587 /* BorderedLabel.swift in Sources */,
 				6A8BEC6324597F3C00142587 /* ToggleButton.swift in Sources */,
 				6A5E311624D9D2AA00FDBBEE /* ItemShopViewModel.swift in Sources */,
 				6A8BEC6424597F3C00142587 /* HomeModel.swift in Sources */,
 				6A8BEC6524597F3C00142587 /* NavigationViewController.swift in Sources */,
 				6A8BEC6624597F3C00142587 /* HomeViewModel.swift in Sources */,
-				6A8BEC90245BB9E400142587 /* TuningReelViewController.swift in Sources */,
+				6ACC4DBE257CC06900D5C101 /* ReelShoppingView.swift in Sources */,
+				6ACC4D822575401D00D5C101 /* ReelStatus.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1415,6 +1575,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6ACC4D802575401D00D5C101 /* ReelStatus.swift in Sources */,
 				6A5A8A4A2436228000F8A829 /* ClearedModel.swift in Sources */,
 				6A8BEB80244DD67A00142587 /* Reel.swift in Sources */,
 				6A599E992427D5C700067D7A /* BattleProgressView.swift in Sources */,
@@ -1425,10 +1586,12 @@
 				98367115239810F200F590ED /* NavigationViewModel.swift in Sources */,
 				6A5E310724D6FD3900FDBBEE /* ShopViewController.swift in Sources */,
 				6AA5AE8024603EB6003BCBD9 /* EditParameter.swift in Sources */,
+				6ACC4D51256E8AF200D5C101 /* ReelShopModel.swift in Sources */,
 				6A1C491623B9DE2B00261DF5 /* TaskConfirmViewController.swift in Sources */,
 				6AA5AE56245F0565003BCBD9 /* DormitoryViewController.swift in Sources */,
 				6A5E311424D9D2AA00FDBBEE /* ItemShopViewModel.swift in Sources */,
 				6A1C490F23B8E8D400261DF5 /* AlertView.swift in Sources */,
+				6ACC4DBC257CC06900D5C101 /* ReelShoppingView.swift in Sources */,
 				6ABF319523AF5A6C0014E0BD /* TaskListTab.swift in Sources */,
 				6A5E311824D9D2BD00FDBBEE /* ItemShopModel.swift in Sources */,
 				6A599E872426787300067D7A /* BattleModel.swift in Sources */,
@@ -1436,12 +1599,15 @@
 				6A63B27A2402AC2F00B8719D /* Enemy.swift in Sources */,
 				9821B32E2378560300CF964D /* AppDelegate.swift in Sources */,
 				6A5A8A462434F77400F8A829 /* ClearedViewController.swift in Sources */,
+				6ACC4D74256FE45900D5C101 /* ReelStatusView.swift in Sources */,
 				6A599E852426786800067D7A /* BattleViewModel.swift in Sources */,
 				6A1C491123B903D200261DF5 /* BorderedButton.swift in Sources */,
+				6ACC4D3F256E8AD800D5C101 /* ReelShopViewController.swift in Sources */,
 				6AA5AE67245F10DE003BCBD9 /* ParameterViewController.swift in Sources */,
 				981D12DD23B0DDCA002A6B1E /* TabButton.swift in Sources */,
 				6A5E311D24D9D91B00FDBBEE /* CartButton.swift in Sources */,
 				6A5A8A4F243C6AD300F8A829 /* Array+.swift in Sources */,
+				6ACC4D48256E8AE700D5C101 /* ReelShopViewModel.swift in Sources */,
 				6A599E8C242682B500067D7A /* ReelView.swift in Sources */,
 				6A5A8A482436227300F8A829 /* ClearedViewModel.swift in Sources */,
 				98D0497C239953AF00CA868A /* NavigationChildViewController.swift in Sources */,
@@ -1528,6 +1694,7 @@
 /* Begin XCBuildConfiguration section */
 		6A8BEBC82451AA6900142587 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F7989011C9F060EC96600D6 /* Pods-slokara_dev.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1555,6 +1722,7 @@
 		};
 		6A8BEBC92451AA6900142587 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10AAB434C0AF5C395D0E7E12 /* Pods-slokara_dev.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1582,6 +1750,7 @@
 		};
 		6A8BEC8324597F3C00142587 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 988F2614EB1054E1354D8C43 /* Pods-slokara_adhoc.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
@@ -1609,6 +1778,7 @@
 		};
 		6A8BEC8424597F3C00142587 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E717C3E747C09D364A8288AC /* Pods-slokara_adhoc.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";

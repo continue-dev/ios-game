@@ -33,11 +33,24 @@ class TitleViewController: UIViewController {
                 realm.add(UserStatus())
             }
         }
+        if realm.objects(ReelStatus.self).isEmpty {
+            try! realm.write {
+                realm.add(ReelStatus())
+            }
+        }
         
         #if !PROD
         if realm.objects(UserStatus.self).count < 2 {
+            let user = UserStatus()
+            user.numberOfCoins = 9999999
+            user.numberOfCredit = 9999
             try! realm.write {
-                realm.add(UserStatus())
+                realm.add(user)
+            }
+        }
+        if realm.objects(ReelStatus.self).count < 2 {
+            try! realm.write {
+                realm.add(ReelStatus())
             }
         }
         #endif
